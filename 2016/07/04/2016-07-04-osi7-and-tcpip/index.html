@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>OSI 7 layer and TCP/IP model | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="osi7, tcp/ip" />
+    
+    <meta name="description" content="10년이 넘도록 외워지지 않는 Network 기초…
+OSI 7 layerOSI (Open System Interconnection) 7 Layer 는
+
+Network Communication 시 발생하는 충돌들을 완화하기 위해 ISO에서 표준화된 Network 구조로 제시한 기본 모델이다.
+ISO/IEC 7498 Spec.
+ISO/IEC 7498-1: Th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OSI 7 layer and TCP/IP model">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/07/04/2016-07-04-osi7-and-tcpip/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="10년이 넘도록 외워지지 않는 Network 기초…
+OSI 7 layerOSI (Open System Interconnection) 7 Layer 는
+
+Network Communication 시 발생하는 충돌들을 완화하기 위해 ISO에서 표준화된 Network 구조로 제시한 기본 모델이다.
+ISO/IEC 7498 Spec.
+ISO/IEC 7498-1: Th">
+<meta property="og:image" content="http://lazyrodi.github.io/assets/images/2016-07-04-network-osi7-and-tcpip-001.jpg">
+<meta property="og:updated_time" content="2016-07-11T13:58:10.182Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OSI 7 layer and TCP/IP model">
+<meta name="twitter:description" content="10년이 넘도록 외워지지 않는 Network 기초…
+OSI 7 layerOSI (Open System Interconnection) 7 Layer 는
+
+Network Communication 시 발생하는 충돌들을 완화하기 위해 ISO에서 표준화된 Network 구조로 제시한 기본 모델이다.
+ISO/IEC 7498 Spec.
+ISO/IEC 7498-1: Th">
+<meta name="twitter:image" content="http://lazyrodi.github.io/assets/images/2016-07-04-network-osi7-and-tcpip-001.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/network/">network</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-07-04-osi7-and-tcpip" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        OSI 7 layer and TCP/IP model
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/07/04/2016-07-04-osi7-and-tcpip/" class="article-date">
+    <time datetime="2016-07-04T06:47:50.000Z" itemprop="datePublished">2016-07-04</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osi7-tcp-ip/">osi7, tcp/ip</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><del>10년이 넘도록 외워지지 않는 Network 기초…</del></p>
+<h2 id="OSI-7-layer"><a href="#OSI-7-layer" class="headerlink" title="OSI 7 layer"></a>OSI 7 layer</h2><p>OSI (Open System Interconnection) 7 Layer 는</p>
+<ul>
+<li>Network Communication 시 발생하는 충돌들을 완화하기 위해 ISO에서 표준화된 Network 구조로 제시한 기본 모델이다.</li>
+<li>ISO/IEC 7498 Spec.<ul>
+<li>ISO/IEC 7498-1: The Basic Model</li>
+<li>ISO 7498-2: Security Architecture</li>
+<li>ISO/IEC 7498-3: Naming and addressing</li>
+<li>ISO/IEC 7498-4: Management framework</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>[7] 응용 계층 (Application)<ul>
+<li>Application Software에 API 제공</li>
+<li>Data type: Message</li>
+<li>Equipment: L7 ~ L5 Switch, Gateway (IP + TCP / UDP + Packet)</li>
+<li>Protocol: DNS, SNMP</li>
+</ul>
+</li>
+<li>[6] 표현 계층 (Presentation)<ul>
+<li>Network Security (번역기 역할)</li>
+<li>암호화, 압축, 변환</li>
+<li>Data type: Message</li>
+<li>Equipment: L7 ~ L5 Switch, Gateway (IP + TCP / UDP + Packet)</li>
+<li>Protocol: MPEG, JPG, MIME</li>
+</ul>
+</li>
+<li>[5] 세션 계층 (Session)<ul>
+<li>Socket Program</li>
+<li>동기화, 통신 선로 구축 및 유지</li>
+<li>Session 연결, 관리, 종료</li>
+<li>Data type: Message</li>
+<li>Equipment: L7 ~ L5 Switch, Gateway (IP + TCP/UDP + Packet)</li>
+<li>Protocol: 전송 모드 결정 (반이중, 전이중, 직렬, 병렬, 동기, 비동기) RTP (Real-time Transport Protocol)</li>
+</ul>
+</li>
+<li>[4] 전송 계층 (Transport)<ul>
+<li>데이터 전송 보장</li>
+<li>흐름 제어 (정지 대기, 슬라이드)</li>
+<li>QoS (Quality of Service)</li>
+<li>Data type: Segment</li>
+<li>Equipment: L4 Switch (IP+TCP/UDP, Load balancing)</li>
+<li>Protocol: TCP, UDP</li>
+</ul>
+</li>
+<li>[3] 네트워크 계층 (Network)<ul>
+<li>통신 경로 설정 (Routing): 중계 기능 담당, 교환</li>
+<li>혼잡 제어</li>
+<li>IPv4, IPv6</li>
+<li>Data type: Packet</li>
+<li>Equipment: L3 Switch (IP 주소 참조), Router (유선, 무선)</li>
+<li>Protocol: IP, ARP, RARP, 회선 교환, 패킷 교환</li>
+</ul>
+</li>
+<li>[2] 데이터 링크 계층 (Datalink)<ul>
+<li>오류 제어, Frame 형식 정의 및 생성, MAC 제어</li>
+<li>에러 검출 및 정정, 흐름 제어</li>
+<li>Data type: Frame</li>
+<li>Equipment: L2 Switch<ul>
+<li>MAC 주소 참조</li>
+<li>Bridge (segment)</li>
+<li>Switch (frame)</li>
+</ul>
+</li>
+<li>Protocol: FEC, ARQ, H-ARG, 해밍코드</li>
+</ul>
+</li>
+<li>[1] 물리 계층 (Physical)<ul>
+<li>물리적 연결 설정, 해제</li>
+<li>Data 코딩, 변조 방식 (AM, FM, PM)</li>
+<li>Data 부호화 방식 (ASK, FSK, PSK)</li>
+<li>Multiplexing (TDM, FDM)</li>
+<li>Data 전송 속도 (bps, Baud)</li>
+<li>Data type: Bit stream</li>
+<li>Equipment: Repeater/Hub</li>
+<li>Protocol: 전기적 신호, 절차적 규격, 맨체스터 코드</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>OSI 7 Layer가 적용된 Protocol들에는 다음과 같은 것들이 있음.<ul>
+<li>Bluetooth</li>
+<li>USB</li>
+<li>SATA</li>
+<li>PCI-E</li>
+<li>Zigbee</li>
+<li>Thunderbolt</li>
+</ul>
+</li>
+</ul>
+<p>인터넷에 떠다니는 그림인데 원래 출처를 모르겠습니다. 문제가 되면 삭제하겠습니다.</p>
+<p><img src="/assets/images/2016-07-04-network-osi7-and-tcpip-001.jpg" alt="osi7layer">{:class=”img-responsive”}</p>
+<hr>
+<h2 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h2><p>위 그림에서 보듯 TCP/IP는 OSI 7 Layer 대신 4개의 Layer로 정의해 둔 것이다.</p>
+<p>Network를 상호 연결시켜 정보를 전송하는 기능을 가진 여러 개의 Protocol을 집합으로 묶어둔 것이 특징이다.</p>
+<p>TCP/IP 각각의 Protocol이 하는 기능은 다음과 같다.</p>
+<p>| 구분     | 기능   | Protocol | Description |<br>| 응용계층 | FTP    | FTP      | 파일 전송 프로토콜 |<br>|          |        | TFTP     | 소형 파일 전송 Protocol |<br>|          | E-mail | SMTP     | 메일 서버 간의 메일 송수신 |<br>|          |        | POP3     | 메일 클라이언트와 메일 서버 간의 메일 송수신 |<br>|          |        | IMAP4    | POP3의 단점을 보완함 (원격 서버의 계층 구조를 유지한다.) |<br>|          | Telnet | Telnet   | 다른 시스템으로 로그인하는 기능 |<br>|          | 인터넷 | HTTP     | Web service protocol |<br>|          |        | SNMP     | 데이터 흐름 정보 (네트워크 및 Host 상태 모니터링) |<br>|          |        | DNS      | Host 이름에 대한 IP 주소 통보기능 |<br>|          |        | NFS      | SUN에서 개발한 분산형 파일 시스템 |<br>| 전송계층 | End-to-End Data 전송 | TCP       | 연결 지향 Protocol |<br>|          |                      | UDP       | 비연결 지향 Protocol |<br>|          |                      | SCTP      | 신뢰성 제공 (UDP+TCP), 4Way handshaking 사용 |<br>| 인터넷계층 | OSI의 Network 계층 | IP | 목적지까지 패킷 전달 (IPv4, IPv6) |<br>|            | Routing (경로 설정) | IPx | PC용 Network, 경로 선택, 패킷 처리 |<br>|            | Gateway (Network 간 Data 연결) | ARP | 논리 주소 IP로 물리 주소 IP(MAC)를 탐색  |<br>|            |                                | RARP | 물리 주소 IP로 논리 주소 IP를 탐색 |<br>|            |                                | BOOTB | 디스크 없는 시스템 부팅 시 사용 |<br>|            |                                | DHCP | 임시 IP 주소 할당 기술 |<br>|            |                                | ICMP | IP 계층 이용 Message 교환 (ping) |<br>|            |                                | IGMP | 인터넷 그룹 관리, Multicast 그룹을 router에게 통보 |<br>| 링크계층   | 기존 표준 기술 지원 | Etehrenet | 기존의 모든 표준 Protocol과 기술적 호환성 유지 |<br>|            |                     | X.25      | |</p>
+<hr>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><ul>
+<li><a href="https://en.wikipedia.org/wiki/Open_Systems_Interconnection" target="_blank" rel="external">OSI</a></li>
+<li><a href="https://en.wikipedia.org/wiki/OSI_model" target="_blank" rel="external">OSI model</a></li>
+<li>정보관리기술사 &amp; 컴퓨터시스템응용기술사 - 성안당</li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/07/04/2016-07-04-osi7-and-tcpip/" data-id="ciqjk1wyf002w98kxdffbfg16" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/07/10/2016-07-10-android-permission/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Android permission
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/07/04/2016-07-04-etc-disqus/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Jekyll에 Disqus 적용하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/07/11/2016-07-11-life-change-to-hexo/" class="title">Hexo로 변경</a></p>
+                            <p class="item-date"><time datetime="2016-07-11T13:00:00.000Z" itemprop="datePublished">2016-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
+                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/network/">network</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-osi7-and-tcpip/" class="title">OSI 7 layer and TCP/IP model</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T06:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-etc-disqus/" class="title">Jekyll에 Disqus 적용하기</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T04:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/07/03/2016-07-03-java-queue/" class="title">[Java] Queue</a></p>
+                            <p class="item-date"><time datetime="2016-07-03T04:47:50.000Z" itemprop="datePublished">2016-07-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </h1>
+                <p>&copy; 2016 Lazy Rodriguez</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/07/04/2016-07-04-osi7-and-tcpip/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

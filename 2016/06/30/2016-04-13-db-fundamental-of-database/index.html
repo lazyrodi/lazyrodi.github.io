@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Fundamental of Database | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="database" />
+    
+    <meta name="description" content="Database는 간단히 데이터들의 모임 이라고 보면 된다.
+아래의 속성들을 충족해야 한다.
+
+의존성
+일관성
+보안성
+경제성
+무결성
+
+결론뜬금없이 두괄식 정리를 해본다.
+
+|———-+———————————————————–+———————————————————————–|| Database | 장점">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fundamental of Database">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/06/30/2016-04-13-db-fundamental-of-database/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Database는 간단히 데이터들의 모임 이라고 보면 된다.
+아래의 속성들을 충족해야 한다.
+
+의존성
+일관성
+보안성
+경제성
+무결성
+
+결론뜬금없이 두괄식 정리를 해본다.
+
+|———-+———————————————————–+———————————————————————–|| Database | 장점">
+<meta property="og:image" content="http://lazyrodi.github.io/assets/images/2016-06-30-db-fundamental-of-database-001.jpg">
+<meta property="og:updated_time" content="2016-07-11T13:54:59.464Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fundamental of Database">
+<meta name="twitter:description" content="Database는 간단히 데이터들의 모임 이라고 보면 된다.
+아래의 속성들을 충족해야 한다.
+
+의존성
+일관성
+보안성
+경제성
+무결성
+
+결론뜬금없이 두괄식 정리를 해본다.
+
+|———-+———————————————————–+———————————————————————–|| Database | 장점">
+<meta name="twitter:image" content="http://lazyrodi.github.io/assets/images/2016-06-30-db-fundamental-of-database-001.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/database/">database</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-04-13-db-fundamental-of-database" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Fundamental of Database
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/06/30/2016-04-13-db-fundamental-of-database/" class="article-date">
+    <time datetime="2016-06-30T11:00:00.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>Database는 간단히 <code>데이터들의 모임</code> 이라고 보면 된다.</p>
+<p>아래의 속성들을 충족해야 한다.</p>
+<ul>
+<li>의존성</li>
+<li>일관성</li>
+<li>보안성</li>
+<li>경제성</li>
+<li>무결성</li>
+</ul>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>뜬금없이 두괄식 정리를 해본다.</p>
+<hr>
+<p>|———-+———————————————————–+———————————————————————–|<br>| Database | 장점                                                      | 단점                                                                  |<br>|==========+===========================================================+=======================================================================|<br>| HDB      | 구조가 간단하고 판독이 용이하다.                          | 데이터 상호 간의 유연성이 부족하다.                                   |<br>|          | 구현, 수정, 검색이 용이하다.                              | 검색 경로가 한정되어 있다.                                            |<br>|          | 데이터 액세스 속도가 빠르다.                              | 삽입/삭제 연산이 매우 복잡하다.                                       |<br>|          | 데이터의 사용량을 쉽게 예측 가능하다.                     | 다 대 다 관계를 처리하기 어렵다.                                      |<br>| NDB      | 상하 종속적인 관계를 쉽게 해결한다.                       | 구성, 설계가 복잡하다.                                                |<br>|          |                                                           | 데이터의 종속성을 해결하지 못한 시스템이다.                           |<br>| RDB      | 데이터의 일관성을 보증할 수 있음. (Transaction)           | 대량 데이터 처리 시 성능 이슈.                                        |<br>|          | 정규화를 전제로 하기 때문에 갱신 시의 비용이 적게 든다.   | 갱신이 발생한 Table의 인덱스 생성이나 스키마 변경에 대한 처리 이슈.   |<br>|          | JOIN 등 복잡한 검색 조건으로 검색이 가능함.               | Column을 확실히 정의하기 어려운 경우에 대한 처리 이슈.                |<br>|          | 간결하고, 보기 편하다.                                    | 단순히 빨리 결과를 조회하고자 할 때의 성능 이슈.                      |<br>| OODB     |                                                           |                                                                       |<br>| NoSQL    | 대량의 Record 처리에 유리하다.                            | JOIN 연산이 불가능하다.                                               |</p>
+<hr>
+<ul>
+<li><p>Database의 구성요소</p>
+<ul>
+<li>Database</li>
+<li>Schema</li>
+<li>DBMS (Database Management System)</li>
+<li>Database Language</li>
+<li>Database Storage</li>
+<li>User</li>
+</ul>
+</li>
+<li><p>Database의 종류</p>
+<ul>
+<li>File System - File type</li>
+<li>HDB (Hierachical Database, 계층형 데이터베이스) - Segment type</li>
+<li>NDB (Network Database, 네트워크형 데이터베이스) - Record type</li>
+<li>RDB (Relational Database, 관계형 데이터베이스) - Table type</li>
+<li>OODB (Object-Oriented Database 객체지향형 데이터베이스) - Class type</li>
+<li>NoSQL (Not only SQL)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Database의-종류"><a href="#Database의-종류" class="headerlink" title="Database의 종류"></a>Database의 종류</h2><h3 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h3><p>말 그대로 파일시스템을 의미한다.</p>
+<h3 id="HDB-Hierachical-Database"><a href="#HDB-Hierachical-Database" class="headerlink" title="HDB (Hierachical Database)"></a>HDB (Hierachical Database)</h3><ul>
+<li>트리구조를 기반으로 하는 계층형 데이터 모델을 사용한다.</li>
+<li>데이터는 트리 형태로 구성되며 각 데이터 요소(Entity)들은 상하 관계를 나타내는 Link로 구성된다.</li>
+<li>제품<ul>
+<li>Adabas</li>
+<li>GT.M</li>
+<li>IMS</li>
+<li>MUMPS</li>
+<li>Cache</li>
+<li>Metakit</li>
+<li>Multidimensional hierachical toolkit</li>
+<li>Mumps compiler</li>
+<li>DMSII</li>
+<li>FOCUS</li>
+</ul>
+</li>
+</ul>
+<h3 id="NDB-Network-Database"><a href="#NDB-Network-Database" class="headerlink" title="NDB (Network Database)"></a>NDB (Network Database)</h3><ul>
+<li>그래프 구조를 기반으로 하는 네트워크형 데이터 모델을 사용한다. 이는 Entity와 Entity 간의 Relationship을 그래프로 연결한다.</li>
+<li>HDB와 비슷하지만 부모(상위 Entity)를 여러 개 가질 수 있다.</li>
+<li>제품<ul>
+<li>IDS</li>
+<li>IDMS</li>
+<li>RDM Embedded</li>
+<li>RDM Server</li>
+<li>터보이미지</li>
+<li>유니박 DMS-1100</li>
+</ul>
+</li>
+</ul>
+<h3 id="RDB-Relational-Database"><a href="#RDB-Relational-Database" class="headerlink" title="RDB (Relational Database)"></a>RDB (Relational Database)</h3><ul>
+<li>현재까지 가장 안정적이고 효율적인 Database로 알려져있다.</li>
+<li>Entity를 Table로 사용하고 Entity 간의 공동 Attribute를 이용하여 서로 연결하는 독립된 형태의 데이터 모델이다.</li>
+<li>SQL을 사용한다.</li>
+<li>제품<ul>
+<li>Oracle (Oracle)</li>
+<li>MS-SQL Serve (Microsoft)</li>
+<li>MySQL (Oracle -SunMicroSystems-)</li>
+<li>DB2 (IBM)</li>
+<li>Infomix (IBM)</li>
+<li>Sybase (Sybase)</li>
+<li>Derby (Apache)</li>
+<li>SQLite (Opensource)</li>
+</ul>
+</li>
+</ul>
+<h3 id="OODB-Object-Oriented-Database"><a href="#OODB-Object-Oriented-Database" class="headerlink" title="OODB (Object-Oriented Database)"></a>OODB (Object-Oriented Database)</h3><ul>
+<li>Class, Object, Attribute, Method, Instance, Capsulation, Inheritance 등을 기반으로 데이터를 구조화하는 데이터 모델이다.</li>
+<li>비지니스형 데이터 타입만 처리되는 RDBMS의 기본적인 제한점을 극복하기 위해 고안되었다.</li>
+</ul>
+<h3 id="NoSQL-Not-only-SQL"><a href="#NoSQL-Not-only-SQL" class="headerlink" title="NoSQL (Not only SQL)"></a>NoSQL (Not only SQL)</h3><ul>
+<li>SQL을 사용하지 않는다는 뜻이다.</li>
+<li>Schema가 없다.</li>
+<li>대용량 데이터 처리에 유리하고 분산 처리가 가능하여 Cloud computing에 유리하다.</li>
+<li>종류<ul>
+<li>Key/Value type<ul>
+<li>Memchached</li>
+<li>Tokyo Tyrant</li>
+<li>Flare</li>
+<li>Roma</li>
+<li>Redis</li>
+</ul>
+</li>
+<li>Document type: 여러가지 형태의 값들을 모아둔 논리적 구조.<ul>
+<li>MongoDB</li>
+<li>CouchDB</li>
+</ul>
+</li>
+<li>Big Table (Column) type: RDB는 Row 단위로 데이터를 관리하지만 Colume type은 Column 단위로 데이터를 관리한다.<ul>
+<li>HBase</li>
+<li>Casandra</li>
+<li>Hypertable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Schema-Meta-Data"><a href="#Schema-Meta-Data" class="headerlink" title="Schema (Meta-Data)"></a>Schema (Meta-Data)</h2><p>Database의 구조 및 제약 조건에 대해 전반적으로 기술한 것을 <code>Schema</code>라고 한다.</p>
+<p><code>Entity(Table)</code>, <code>Attribute(Field)</code>, <code>Relationship</code> 및 데이터 조작 시 데이터 값들이 갖는 제약 조건 등에 대해 정의한다.</p>
+<p>Schema는 Data Dictionary에 저장된다.</p>
+<p>쉽게 말해 Data structure가 어떻게 생겼는지 정의하며, RDB에서는 아래 코드처럼 생겼다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Player (</div><div class="line">  name    CHAR(20),</div><div class="line">  number  INTEGER(4)</div><div class="line">);</div><div class="line"></div><div class="line">Status (</div><div class="line">  number    INTEGER(4),</div><div class="line">  point     INTEGER(4),</div><div class="line">  trophy    CHAR(20)</div><div class="line">);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="DBMS"><a href="#DBMS" class="headerlink" title="DBMS"></a>DBMS</h2><p>기존 파일 시스템이 갖는 데이터 종속성과 중복성 문제를 해결하기 위해 제안된 시스템으로 모든 Application들이 Database를 공용으로 사용할 수 있도록 관리한다.</p>
+<p>DBMS의 궁극적 목표는 <code>데이터의 독립성</code>이다.</p>
+<ul>
+<li><code>논리적 독립성</code>: <code>Application</code>과 <code>Database</code>를 독립시켜 Data에 변경이 발생하여도 Application은 변경되지 않는다.</li>
+<li><code>물리적 독립성</code>: <code>Application</code>과 <code>Storage</code>를 독립시켜 디스크에 변경이 발생하여도 Application은 변경되지 않는다.</li>
+</ul>
+<h3 id="DBMS의-필수-기능"><a href="#DBMS의-필수-기능" class="headerlink" title="DBMS의 필수 기능"></a>DBMS의 필수 기능</h3><ul>
+<li><code>정의 (Definition)</code>: Type 및 Structure에 대한 정의, 이용 방식, 제약 조건을 정의한다.</li>
+<li><code>조작 (Manipulation)</code>: 데이터의 검색, 갱신, 삽입, 삭제 등의 처리를 위해 User와 Database 사이의 Interface를 제공하는 것을 의미한다.</li>
+<li><code>제어 (Control)</code>: 데이터의 정확성, 무결성, 보안 및 권한 검사, 병행수행 제어 등의 기능을 정한다.</li>
+</ul>
+<hr>
+<h2 id="Releationship-관계"><a href="#Releationship-관계" class="headerlink" title="Releationship (관계)"></a>Releationship (관계)</h2><ul>
+<li>일 대 일</li>
+<li>일 대 다</li>
+<li>다 대 다</li>
+</ul>
+<hr>
+<h2 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h2><p>조건을 만족하는 Tuple을 찾거나 순서대로 정렬할 때 Tuple들을 구분할 수 있는 기준이 되는 Attribute를 의미한다.</p>
+<h3 id="Candidate-Key-후보키"><a href="#Candidate-Key-후보키" class="headerlink" title="Candidate Key (후보키)"></a>Candidate Key (후보키)</h3><p>Relation을 구성하는 Attribute들 중에서 <code>Tuple을 식별하기 위해 사용하는 Attribute들의 부분 집합</code>을 의미한다. <code>Primary Key로 사용할 수 있는 Attribute</code>이다.</p>
+<p>ex) <code>주민</code> Relation에서의 <code>주민등록번호</code> 또는 <code>지문</code></p>
+<ul>
+<li>유일성 (Unique): 하나의 Key 값으로 하나의 Tuple만을 식별할 수 있어야 한다.</li>
+<li>최소성 (Minimality): 모든 Record들을 유일하게 식별하는데 꼭 필요한 Attribute들로만 이루어져야 한다.</li>
+</ul>
+<h3 id="Primary-Key-기본키"><a href="#Primary-Key-기본키" class="headerlink" title="Primary Key (기본키)"></a>Primary Key (기본키)</h3><p>Candidate Key 중 선택한 Main Key를 의미하며 NULL 이 될 수 없다.</p>
+<h3 id="Alternate-Key-대체키"><a href="#Alternate-Key-대체키" class="headerlink" title="Alternate Key (대체키)"></a>Alternate Key (대체키)</h3><p>Candidate Key가 두 개 이상일 때 Primary Key를 제외한 나머지 Candidate Key들을 의미하며 보조키라고도 부른다.</p>
+<h3 id="Super-Key-슈퍼키"><a href="#Super-Key-슈퍼키" class="headerlink" title="Super Key (슈퍼키)"></a>Super Key (슈퍼키)</h3><p>하나의 Table 내에 있는 Attribute들의 집합으로 구성된 Key를 말한다. Table을 구성하는 모든 Tuple 중 Super Key로 구성된 Attribute의 집합과 동일한 값은 나타나지 않는다.</p>
+<p>Super Key는 Table을 구성하는 모든 Tuple에 대해 <code>유일성</code>은 만족시키지만 <code>최소성</code>은 만족시키지 못한다.</p>
+<h3 id="Foreign-Key-외래키"><a href="#Foreign-Key-외래키" class="headerlink" title="Foreign Key (외래키)"></a>Foreign Key (외래키)</h3><p>두 개의 Table이 Relationship을 맺고있을 때 A의 Primary Key와 같은 B의 Attribute 를 Foreign Key 라 부른다.</p>
+<p>즉, 아래 그림에서 A가 B를 참조한다고 하면 B의 <code>주민등록번호</code>는 Primary Key가 되고 A의 <code>주민등록번호</code>는 Foreign Key가 된다.</p>
+<p><del>Field가 적어서 예시가 적절하지 않은 것도 같고…</del></p>
+<p><img src="/assets/images/2016-06-30-db-fundamental-of-database-001.jpg" alt="Foreign Key">{:class=”img-responsive”}</p>
+<p>Foreign Key를 사용하면 실수로 Data를 삭제하는 것을 막을 수 있다. 다른 Table의 Foreign Key로 참조하고 있는 Row는 Table에서 삭제할 수 없기 때문이다. 이를 <code>참조 무결성(Reference Integrity)</code>이라고 부른다.</p>
+<p><code>Integrity (무결성)</code> 이란 데이터를 보호하고 항상 정상인 상태를 유지하는 것을 말한다.</p>
+<ol>
+<li>개체 무결성<ul>
+<li>Table에서 Primary Key를 구성하는 Attribute는 NULL이나 중복값을 가져서는 안 된다.</li>
+</ul>
+</li>
+<li>참조 무결성<ul>
+<li>Foreign Key의 값은 NULL이나 참조 Table의 Primary Key값과 동일해야 한다. 즉, Table은 참조할 수 없는 Foreign Key의 값을 가질 수 없다. (실수로 삭제하는 것을 예방할 수 있는 이유이다.)</li>
+<li>Foreign Key와 참조하려는 Table의 Primary Key는 Domain과 Attribute의 개수가 같아야 한다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h2><p>한 단위를 이루는 일련의 연관된 데이터베이스 조작.</p>
+<p>하나의 Transaction에 속하는 작업 중 하나라도 실패하면 Transaction 전체가 실패한 것으로 간주하여 변경한 내용을 모두 원래대로 되돌려 놓는다. 이를 <code>Rollback</code>이라 한다.</p>
+<p>모든 작업이 성공적으로 처리되면 모든 변경 내용을 한꺼번에 반영하고 이를 <code>Commit</code>이라 한다.</p>
+<ul>
+<li>Transaction의 특성 (ACID)<ul>
+<li>Atomicity (원자성)<ul>
+<li>Transaction에 포함된 모든 작업이 성공적으로 처리되지 않으면 어떠한 작업도 처리되지 않아야 한다.</li>
+</ul>
+</li>
+<li>Consistency (일관성)<ul>
+<li>Transaction의 시작 전과 종료 후의 Database가 일관된 상태를 유지해야 한다. 참조 무결성이 깨져서는 안된다.</li>
+</ul>
+</li>
+<li>Isolation (고립성)<ul>
+<li>하나의 Transaction에서 Database를 변경한 내용은 Transaction이 Commit될 때까지 다른 어떤 Query나 Transaction과도 고립되어야 한다.</li>
+</ul>
+</li>
+<li>Durability (영속성)<ul>
+<li>Commit이 이루어지면 Transaction에 의해 변경된 내용은 영구적으로 유지되어야 한다. DBMS는 Database의 현재 상태가 유실되지 않도록 시스템 충돌 등의 문제로부터 복구할 수 있는 방안을 갖춰야 한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="용어"><a href="#용어" class="headerlink" title="용어"></a>용어</h2><ul>
+<li><code>Table</code><ul>
+<li><code>Relation(관계)</code> 또는 <code>Entity(개체)</code>라 부른다. <code>Column</code>(열, ↕) 과 <code>Row</code>(행, ↔) 으로 구성된다.</li>
+</ul>
+</li>
+<li><code>Field</code><ul>
+<li><code>Attribute(속성)</code>이라고도 한다. <code>Table</code>의 <code>Column</code>을 의미한다.</li>
+</ul>
+</li>
+<li><code>Degree(차수)</code><ul>
+<li><code>Attribute</code>의 수를 뜻한다.</li>
+</ul>
+</li>
+<li><code>Record</code><ul>
+<li><code>Tuple</code> 이라고도 하며 <code>Table</code>의 <code>Row</code>를 의미한다.</li>
+</ul>
+</li>
+<li><code>Cardinality</code><ul>
+<li>하나의 <code>Relation</code>을 구성하는 <code>Tuple(Record)</code>의 수를 의미한다.</li>
+</ul>
+</li>
+<li><code>Domain</code><ul>
+<li>하나의 <code>Attribute</code>가 가질 수 있는 <code>같은 type의 Atomic(원자) 집합</code> 을 의미한다.<ul>
+<li>예) <code>학생</code> relation에서 <code>학년</code>의 <code>domain</code>은 <code>1 ~ 6</code> 이다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>DBMS (Database Management System)</code></li>
+<li><code>DDL (Data Definition Language)</code><ul>
+<li>테이블을 생성하고 삭제하는 언어를 뜻한다.</li>
+<li>CREATE, ALTER, DROP</li>
+</ul>
+</li>
+<li><code>DML (Data Manipulation Language) = 서브 언어</code><ul>
+<li>User가 데이터를 처리할 수 있게 도와주는 도구.</li>
+<li>SELECT, INSERT, UPDATE, DELETE</li>
+</ul>
+</li>
+<li><code>DCL (Data Control Language)</code><ul>
+<li>데이터의 보호, 관리를 위해 사용된다.</li>
+<li>COMMIT, ROLLBACK, GRANT, REVOKE</li>
+</ul>
+</li>
+<li><code>Scale up</code><ul>
+<li>사용 중인 서버를 고성능으로 바꿔 처리 능력을 향상시키는 방법으로 비용이 발생하지만 소스에 대한 변경이 없다.</li>
+</ul>
+</li>
+<li><code>Scale down</code><ul>
+<li>저가의 여러 장비를 사용하여 능력을 향상시키는 방법으로 소스에 대한 수정이 필요하다. 주로 NoSQL에서 제공하는 방식이다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><p>아래의 글들을 교재삼아 작성하였습니다.</p>
+<ul>
+<li><a href="http://dreamzelkova.tistory.com/393" target="_blank" rel="external">http://dreamzelkova.tistory.com/393</a></li>
+<li><a href="http://blog.naver.com/bobojisu/220561467061" target="_blank" rel="external">http://blog.naver.com/bobojisu/220561467061</a></li>
+<li><a href="http://ourcstory.tistory.com/30" target="_blank" rel="external">http://ourcstory.tistory.com/30</a></li>
+<li><a href="http://cafe.naver.com/junes81/5895" target="_blank" rel="external">http://cafe.naver.com/junes81/5895</a></li>
+<li><a href="https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EB%AA%A8%EB%8D%B8" target="_blank" rel="external">https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EB%AA%A8%EB%8D%B8</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/06/30/2016-04-13-db-fundamental-of-database/" data-id="ciqjk1ww0000h98kxo0vxfsr7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/07/01/2016-07-01-common-memory-management/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Memory management
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/06/29/2016-06-29-java-fileio/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">File IO(Input/Output)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/07/11/2016-07-11-life-change-to-hexo/" class="title">Hexo로 변경</a></p>
+                            <p class="item-date"><time datetime="2016-07-11T13:00:00.000Z" itemprop="datePublished">2016-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
+                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/network/">network</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-osi7-and-tcpip/" class="title">OSI 7 layer and TCP/IP model</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T06:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-etc-disqus/" class="title">Jekyll에 Disqus 적용하기</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T04:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/07/03/2016-07-03-java-queue/" class="title">[Java] Queue</a></p>
+                            <p class="item-date"><time datetime="2016-07-03T04:47:50.000Z" itemprop="datePublished">2016-07-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </h1>
+                <p>&copy; 2016 Lazy Rodriguez</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/06/30/2016-04-13-db-fundamental-of-database/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

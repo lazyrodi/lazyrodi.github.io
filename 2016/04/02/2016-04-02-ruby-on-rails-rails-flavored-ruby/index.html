@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[RoR] Rails-flavored Ruby | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="ruby on rails, ruby" />
+    
+    <meta name="description" content="Rails 에서는 Ruby 중 일부를 사용할 수 있다.
+아래는 application.css 파일을 link하는 것이다. 일단 이건 뒤에서 다시 보자.1&amp;lt;%= stylesheet_link_tag &apos;application&apos;, media: &apos;all&apos;, &apos;data-turbolinks-track&apos; =&amp;gt; true %&amp;gt;
+String and Method
+주">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[RoR] Rails-flavored Ruby">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/04/02/2016-04-02-ruby-on-rails-rails-flavored-ruby/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Rails 에서는 Ruby 중 일부를 사용할 수 있다.
+아래는 application.css 파일을 link하는 것이다. 일단 이건 뒤에서 다시 보자.1&amp;lt;%= stylesheet_link_tag &apos;application&apos;, media: &apos;all&apos;, &apos;data-turbolinks-track&apos; =&amp;gt; true %&amp;gt;
+String and Method
+주">
+<meta property="og:updated_time" content="2016-07-11T13:53:37.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[RoR] Rails-flavored Ruby">
+<meta name="twitter:description" content="Rails 에서는 Ruby 중 일부를 사용할 수 있다.
+아래는 application.css 파일을 link하는 것이다. 일단 이건 뒤에서 다시 보자.1&amp;lt;%= stylesheet_link_tag &apos;application&apos;, media: &apos;all&apos;, &apos;data-turbolinks-track&apos; =&amp;gt; true %&amp;gt;
+String and Method
+주">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-04-02-ruby-on-rails-rails-flavored-ruby" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [RoR] Rails-flavored Ruby
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/04/02/2016-04-02-ruby-on-rails-rails-flavored-ruby/" class="article-date">
+    <time datetime="2016-04-01T15:04:00.000Z" itemprop="datePublished">2016-04-02</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ruby-on-rails-ruby/">ruby on rails, ruby</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>Rails 에서는 Ruby 중 일부를 사용할 수 있다.</p>
+<p>아래는 application.css 파일을 link하는 것이다. 일단 이건 뒤에서 다시 보자.<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= stylesheet_link_tag <span class="string">'application'</span>, <span class="symbol">media:</span> <span class="string">'all'</span>, <span class="string">'data-turbolinks-track'</span> =&gt; <span class="literal">true</span> %&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="String-and-Method"><a href="#String-and-Method" class="headerlink" title="String and Method"></a>String and Method</h2><ul>
+<li>주석은 <code>#</code> 으로 처리한다.</li>
+<li>String은 <code>&quot;&quot;</code> 으로 처리하며 다음과 같은 연산들이 가능하다. <code>&#39;&#39;</code> 도 가능하지만 single quotation은 interpolation 기능을 지원하지 않는다.</li>
+<li>interpolation은 <code>#{ }</code> 를 통해 변수를 따옴표 안에서 사용할 수 있는 기능이다.<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"foo"</span> + <span class="string">"bar"</span></div><div class="line"><span class="meta">&gt;&gt;</span> first_name = <span class="string">"Michael"</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"<span class="subst">#&#123;first_name&#125;</span> Hartl"</span>     <span class="comment">#interpolation</span></div><div class="line"><span class="meta">&gt;&gt;</span> first_name + <span class="string">"Hartl"</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"foobar"</span>.length           <span class="comment">#get length</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"foobar"</span>.empty?           <span class="comment">#true/false</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"foobar"</span>.nil?             <span class="comment">#true/false</span></div><div class="line">    </div></pre></td></tr></table></figure></li>
+<li>print는 <code>puts &quot;foo&quot;</code> 의 방식으로 한다.</li>
+<li>if문은 다음과 같은 방식으로 사용한다. <code>&amp;&amp;, ||, !</code> 으로 논리식을 표현한다.<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> s.<span class="literal">nil</span>?</div><div class="line">  <span class="string">"abc"</span></div><div class="line">elseif s.empty?</div><div class="line">  <span class="string">"def"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">  <span class="string">"gkl"</span></div><div class="line"><span class="keyword">end</span></div><div class="line">    </div></pre></td></tr></table></figure></li>
+<li>아래 방식으로 출력문에 조건문을 더할 수도 있다.<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = <span class="string">"foo"</span></div><div class="line">puts x <span class="keyword">if</span> !x.empty?</div><div class="line">    </div></pre></td></tr></table></figure></li>
+<li>String으로 변환은 <code>abc.to_s</code> 으로 가능하다.</li>
+<li>if문 대신 unless문을 사용할 수 있는데, if는 조건이 <code>true</code>일 때 실행되고 unless는 조건이 <code>false</code>일 때 실행된다.<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = <span class="string">"foo"</span></div><div class="line">puts x <span class="keyword">unless</span> x.empty?</div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Method-definitions"><a href="#Method-definitions" class="headerlink" title="Method definitions"></a>Method definitions</h2><ul>
+<li><p>method 선언의 간단한 예이다. method 호출 시 parameter가 하나 있으면 str에 들어가고 없으면 기본 값으로 <code>&#39;&#39;</code>를 사용한다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">string_message</span><span class="params">(str = <span class="string">''</span>)</span></span></div><div class="line">  <span class="keyword">if</span> str.empty?</div><div class="line">    <span class="string">"empty string"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="string">"not empty string"</span></div><div class="line"><span class="keyword">end</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>Ruby 함수는 <code>implicit return</code>을 지원한다. 한 statement의 마지막에 있는 것을 return한다. return을 기입하는 <code>explicit return</code> 역시 지원한다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">string_message</span><span class="params">(str = <span class="string">''</span>)</span></span></div><div class="line">  <span class="keyword">return</span> <span class="string">"abc"</span> <span class="keyword">if</span> str.empty?</div><div class="line">  <span class="keyword">return</span> <span class="string">"nonempty"</span></div><div class="line"><span class="keyword">end</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>Array는 다음과 같이 편하게 생성할 수도 있다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"foo bar    baz"</span>.split      <span class="comment"># ["foo", "bar", "baz"]</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"fooxbarxbazx"</span>.split(<span class="string">'x'</span>)   <span class="comment"># ["foo", "bar", "baz"]</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;</span> a = [<span class="number">42</span>, <span class="number">8</span>, <span class="number">17</span>]</div><div class="line"><span class="meta">&gt;&gt;</span> a[<span class="number">0</span>]                        <span class="comment"># 42</span></div><div class="line"><span class="meta">&gt;&gt;</span> a[-<span class="number">1</span>]                       <span class="comment"># 17</span></div><div class="line"><span class="meta">&gt;&gt;</span> a.first</div><div class="line"><span class="meta">&gt;&gt;</span> a.second</div><div class="line"><span class="meta">&gt;&gt;</span> a.last</div><div class="line"><span class="meta">&gt;&gt;</span> a.length</div><div class="line"><span class="meta">&gt;&gt;</span> a.empty?</div><div class="line">&gt;&gt; a.include?(<span class="number">3</span>)               <span class="comment"># true</span></div><div class="line"><span class="meta">&gt;&gt;</span> a.sort                      <span class="comment"># [8, 17, 42]</span></div><div class="line"><span class="meta">&gt;&gt;</span> a.reverse                   <span class="comment"># [17, 8, 42]</span></div><div class="line"><span class="meta">&gt;&gt;</span> a.shuffle                   <span class="comment"># [17, 42, 8] 이건 랜덤으루다가.</span></div><div class="line"><span class="meta">&gt;&gt;</span> a                           <span class="comment"># [42, 8, 17] 변하지 않음</span></div><div class="line"><span class="meta">&gt;&gt;</span> a.sort!                     <span class="comment"># [8, 17, 42]</span></div><div class="line"><span class="meta">&gt;&gt;</span> a                           <span class="comment"># [8, 17, 42] 변했음</span></div><div class="line">    </div></pre></td></tr></table></figure>
+<ul>
+<li><p>위에서 <code>!</code> 를 <code>Bang</code> method라 한다.</p>
+</li>
+<li><p><code>&lt;&lt;</code> 연산자를 통해 배열에 새로운 아이템을 넣을 수 있다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> a.push(<span class="number">5</span>)             <span class="comment"># [42, 8, 17, 5]</span></div><div class="line"><span class="meta">&gt;&gt;</span> a &lt;&lt; <span class="number">7</span>                <span class="comment"># [42, 8, 17, 5, 7]</span></div><div class="line"><span class="meta">&gt;&gt;</span> a &lt;&lt; <span class="string">"foo"</span> &lt;&lt; <span class="string">"bar"</span>   <span class="comment"># [42, 8, 17, 5, 7, "foo", "bar"]</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>..</code> 을 통해 range를 나타낼 수 있다. <code>to_a</code> 는 array를 생성해 준다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> <span class="number">0</span>..<span class="number">9</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="number">0</span>..<span class="number">9</span>.to_a      <span class="comment"># error. 이건 9.to_a 와 같다.</span></div><div class="line"><span class="meta">&gt;&gt;</span> (<span class="number">0</span>..<span class="number">9</span>).to_a    <span class="comment"># [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;</span> a = <span class="string">%w[foo bar baz quux]</span>    <span class="comment"># %w 는 string array를 만들어 준다.</span></div><div class="line"><span class="meta">&gt;&gt;</span> a[<span class="number">0</span>..<span class="number">2</span>]                     <span class="comment"># ["foo", "bar", "baz"]</span></div><div class="line"><span class="meta">&gt;&gt;</span> a[<span class="number">2</span>..(a.length-<span class="number">1</span>)]          <span class="comment"># [2, 3, 4, 5, 6, 7, 8, 9]</span></div><div class="line"><span class="meta">&gt;&gt;</span> a[<span class="number">2</span>..-<span class="number">1</span>]                    <span class="comment"># [2, 3, 4, 5, 6, 7, 8, 9]</span></div><div class="line"><span class="meta">&gt;&gt;</span> (<span class="string">'a'</span>..<span class="string">'e'</span>).to_a             <span class="comment"># ["a", "b", "c", "d", "e"]</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>Ruby의 강력한 기능 중 하나인 <code>Block</code>은 다음과 같다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> (<span class="number">1</span>..<span class="number">5</span>).each &#123; <span class="params">|i|</span> puts <span class="number">2</span> * i &#125;     <span class="comment">#2 4 6 8 10 이 출력된다.</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p><code>|i|</code> 는 <code>Block variable</code> 이라고 부른다. <code>{ }</code> 를 사용하지 않고도 같은 효과를 낼 수 있다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(<span class="number">1</span>..<span class="number">5</span>).each <span class="keyword">do</span> <span class="params">|i|</span></div><div class="line">    puts <span class="number">2</span> * i</div><div class="line"><span class="keyword">end</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>보통 Rails에서는 one-line일 때에는 block을 사용하고 multi-line일 때는 do..end 구문을 사용한다.</p>
+</li>
+<li><p><code>map</code> 메소드를 통해 다음과 같은 변환도 가능하다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> <span class="number">3</span>.times &#123; puts <span class="string">"abc"</span> &#125;                 <span class="comment"># abc를 세 번 출력</span></div><div class="line"><span class="meta">&gt;&gt;</span> (<span class="number">1</span>..<span class="number">5</span>).map &#123; <span class="params">|i|</span> i**<span class="number">2</span> &#125;                <span class="comment"># [1, 4, 9, 16, 25]</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">%w[a b c]</span>.map &#123; <span class="params">|char|</span> char.upcase &#125;   <span class="comment"># [A, B, C] 로 바뀜</span></div><div class="line"><span class="meta">&gt;&gt;</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p><code>join</code> 메소드는 배열을 하나의 String으로 변환시켜준다. 아래 코드는 a ~ z 중 임의의 8가지 문자로 배열을 생성하고 이를 합쳐서 하나의 String으로 만들어준다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> (<span class="string">'a'</span>..<span class="string">'z'</span>).to_a.shuffle[<span class="number">0</span>..<span class="number">7</span>].join</div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>다음과 같이 <code>hash</code>를 사용할 수 있다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> user = &#123;&#125;                   <span class="comment"># empty hash</span></div><div class="line"><span class="meta">&gt;&gt;</span> user[<span class="string">"first"</span>] = <span class="string">"Michael"</span>   <span class="comment"># Key : first , Value : Michael</span></div><div class="line"><span class="meta">&gt;&gt;</span> user[<span class="string">"last"</span>] = <span class="string">"Hartl"</span>      <span class="comment"># Key : last , Value : Hartl</span></div><div class="line"><span class="meta">&gt;&gt;</span> user[<span class="string">"first"</span>]               <span class="comment"># return "Michael"</span></div><div class="line"><span class="meta">&gt;&gt;</span> user                        <span class="comment"># return &#123;"last"=&gt;"Hartl", "first"=&gt;"Michael"&#125;</span></div><div class="line"></div><div class="line"><span class="comment"># 처음부터 이렇게 선언도 가능함. =&gt; 를 "hashrocket" 이라 부른다.</span></div><div class="line"><span class="meta">&gt;&gt;</span> useruser = &#123;<span class="string">"first"</span>=&gt;<span class="string">"Michael"</span>, <span class="string">"last"</span>=&gt;<span class="string">"Hartl"</span>&#125;</div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>Ruby에서의 symbol은 <code>:name</code> 처럼 콜론으로 시작한다. 숫자로 시작할 수 없고 dash ‘-‘ 를 사용할 수 없다. hash에서 다음과 같이 사용할 수 있다.</p>
+</li>
+<li><p>Ruby에서는 hash끼리의 비교도 가능하다. hash A, B 가 있을 때 ‘A == B’ 식으로…</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> user = &#123; <span class="symbol">:name=&gt;<span class="string">"Michael Hartl"</span></span>, <span class="symbol">:email=&gt;<span class="string">"michael@ex.com"</span></span> &#125;</div><div class="line"><span class="meta">&gt;&gt;</span> user[<span class="symbol">:name</span>]       <span class="comment"># return "Michael Hartl"</span></div><div class="line"><span class="meta">&gt;&gt;</span> user[<span class="symbol">:passwd</span>]     <span class="comment"># return nil</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>다음과 같은 방식으로도 hash를 선언할 수 있으나 :name 과 다르게 name은 독자적으로 사용할 수 없다. 말이 좀 어려운데 아래처럼 선언해도 사용할 때는 <code>user[:name]</code> 형식이 된다는 말이다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> user = &#123; <span class="symbol">name:</span> <span class="string">"abc"</span>, <span class="symbol">email:</span> <span class="string">"asdf"</span> &#125;</div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>Nested hash 형식도 가능하다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> params = &#123;&#125;</div><div class="line"><span class="meta">&gt;&gt;</span> params[<span class="symbol">:user</span>] = &#123;<span class="symbol">name:</span> <span class="string">"asdf"</span>, <span class="symbol">age:</span> <span class="string">"55"</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;</span> params                   <span class="comment"># return &#123;:user=&gt;&#123;:name=&gt;"asdf", :age=&gt;"55"&#125;&#125;</span></div><div class="line"><span class="meta">&gt;&gt;</span> params[<span class="symbol">:user</span>][<span class="symbol">:age</span>]      <span class="comment"># "55"</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p><code>inspect</code> 메소드는 변수를 문자 그대로(literally) 출력한다.</p>
+</li>
+<li><p>puts + inspect 를 줄여서 <code>p</code> 로 쓸 수도 있다.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> puts <span class="symbol">:name</span>, <span class="symbol">:name</span>.inspect</div><div class="line">    <span class="comment"># name</span></div><div class="line">    <span class="comment"># :name</span></div><div class="line"><span class="meta">&gt;&gt;</span> puts <span class="string">"it worked"</span>, <span class="string">"it worked"</span>.inspect</div><div class="line">    <span class="comment"># it worked</span></div><div class="line">    <span class="comment"># "it worked"</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;</span> puts <span class="symbol">:name</span>.inspect    <span class="comment"># :name</span></div><div class="line"><span class="meta">&gt;&gt;</span> p <span class="symbol">:name</span>               <span class="comment"># :name</span></div><div class="line">    </div></pre></td></tr></table></figure>
+<p>위에서 나왔던 아래 소스를 살펴보자.<br>ruby는 괄호(parentheses)<code>( )</code> 및 중괄호(braces)<code>{ }</code>를 생략할 수 있다.<br>즉, 아래 소스는 <code>stylesheet_link_tag</code> 라는 이름의 함수이다.</p>
+<ul>
+<li><code>stylesheet_link_tag</code> 함수는 두 개의 인자를 갖는다.<ul>
+<li>string (stylesheet의 path)</li>
+<li>hash<ul>
+<li>media type</li>
+<li>Rails 4.0에 추가된 <a href="https://github.com/turbolinks/turbolinks" target="_blank" rel="external">turbolinks</a> 기능의 사용 여부<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;%= stylesheet_link_tag <span class="string">'application'</span>, <span class="symbol">media:</span> <span class="string">'all'</span>, <span class="string">'data-turbolinks-track'</span> =&gt; <span class="literal">true</span> %&gt;</div><div class="line"><span class="comment"># 아래와 같이 표현될 수 있다.</span></div><div class="line">&lt;%= stylesheet_link_tag (<span class="string">'application'</span>, &#123; <span class="symbol">media:</span> <span class="string">'all'</span>, <span class="string">'data-turbolinks-track'</span> =&gt; <span class="literal">true</span> &#125; ) %&gt;</div><div class="line"><span class="comment"># 'data-turbolinks-track' 이 =&gt; (hashrocket) 을 사용한 이유는 변수명에 dash '-' 가 들어갈 수 없기 때문이다.</span></div><div class="line"><span class="comment"># Ruby는 new line이나 space에 제한을 받지 않으므로 맘대로 끊어쓰면 된다. 보통 80 글자 기준으로 엔터 치는 듯 하다.</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>&lt;%= %&gt;</code> 로 둘러싸여있는 구문은 ERb에 의해 HTML에 들어가게 된다. 브라우저의 소스 보기를 통해 보면 다음과 같이 보이게 된다.<br>    <figure class="highlight plain"><figcaption><span>:true</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;link data-turbolinks-track=&quot;true&quot; href=&quot;/assets/application.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">    </div></pre></td></tr></table></figure></p>
+<h2 id="Ruby-classes"><a href="#Ruby-classes" class="headerlink" title="Ruby classes"></a>Ruby classes</h2><hr>
+<p>Ruby는 객체 지향 언어이기 때문에 method의 집합인 class로 이루어져 있고, 초기화를 통해 object를 생성한다. 이로 인한 몇 가지 특성을 보자.</p>
+<ul>
+<li><p>Constructor</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> s = <span class="string">"foobar"</span></div><div class="line"><span class="meta">&gt;&gt;</span> s = String.new(<span class="string">"foobar"</span>)</div><div class="line"><span class="meta">&gt;&gt;</span> a = Array.new([<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>])</div><div class="line"><span class="meta">&gt;&gt;</span> h = Hash.new</div><div class="line"><span class="meta">&gt;&gt;</span> h = Hash.new(<span class="number">0</span>)           <span class="comment"># 인자들을 0으로 초기화</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>Class inheritance</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> s = String.new(<span class="string">"foobar"</span>)</div><div class="line"><span class="meta">&gt;&gt;</span> s.class                                     <span class="comment"># String</span></div><div class="line"><span class="meta">&gt;&gt;</span> s.class.superclass                          <span class="comment"># Object</span></div><div class="line"><span class="meta">&gt;&gt;</span> s.class.superclass.superclass               <span class="comment"># BasicObject</span></div><div class="line"><span class="meta">&gt;&gt;</span> s.class.superclass.superclass.superclass    <span class="comment"># nil</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="class"><span class="keyword">class</span> <span class="title">ABC</span> &lt; String                          <span class="comment"># 상속</span></span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>build-in class 수정하기</p>
+<ul>
+<li>JavaScript의 navigator와 비슷한 개념인가 싶은데… override는 아니고 직접 그 class를 다시 선언해서 native class의 method를 수정하여 사용할 수 있다.<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></div><div class="line"><span class="meta">&gt;&gt;</span>   <span class="comment"># Returns true if the string is its own reverse.</span></div><div class="line"><span class="meta">&gt;&gt;</span>   <span class="function"><span class="keyword">def</span> <span class="title">palindrome?</span></span></div><div class="line"><span class="meta">&gt;&gt;</span>     self == self.reverse</div><div class="line"><span class="meta">&gt;&gt;</span>   end</div><div class="line"><span class="meta">&gt;&gt;</span> end</div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>blank</code>와 <code>empty</code>의 차이. (irb에서는 지원하지 않는다. ERb에서 되는지는 안해봤지만 되니까 써놓지 않았을까…)</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">""</span>.blank?             <span class="comment"># true</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"  "</span>.empty?           <span class="comment"># false</span></div><div class="line"><span class="meta">&gt;&gt;</span> <span class="string">"  "</span>.blank?           <span class="comment"># true</span></div><div class="line"><span class="meta">&gt;&gt;</span> nil.blank?            <span class="comment"># true</span></div><div class="line">    </div></pre></td></tr></table></figure>
+</li>
+<li><p>Controller class</p>
+<ul>
+<li>Controller class는 다음과 같은 상속 구조를 갖는다.<ul>
+<li><code>StaticPagesController &lt; ApplicationController &lt; ActionController::Base &lt; ActionController::Metal &lt; AbstractController::Base &lt; Object</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>User model에 대해 살펴보자.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></div><div class="line">  <span class="keyword">attr_accessor</span> <span class="symbol">:name</span>, <span class="symbol">:email</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(attributes = &#123;&#125;)</span></span></div><div class="line">    @name  = attributes[<span class="symbol">:name</span>]</div><div class="line">    @email = attributes[<span class="symbol">:email</span>]</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">formatted_email</span></span></div><div class="line">    <span class="string">"<span class="subst">#&#123;@name&#125;</span> &lt;<span class="subst">#&#123;@email&#125;</span>&gt;"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line">    </div></pre></td></tr></table></figure>
+<ul>
+<li>attribute accessors는 <code>getter</code>와 <code>setter</code> 메소드를 만들겠다는 의미이다. <code>@name</code>, <code>@email</code> instance 변수에 대해 retrieve(get), assign(set)을 도와준다.<br>instance 변수는 언제나 <code>@</code>로 시작하며, 정의하지 않을 시 <code>nil</code> 이 된다</li>
+<li>위의 <code>initialize</code> 메소드는 <code>User.new</code> 를 수행하면 호출된다. <code>initialize</code>는 <code>attributs:</code> 라는 하나의 인자만 갖는다. 위 코드를 통해 인자는 Hash값이라는 것을 알 수 있다.</li>
+<li>책의 예제에서는 console에서 위 파일을 가져와서 수행했는데 파일을 가져오기 위해서는 <code>require</code> 메소드를 사용한다. 파일명도 생략한다.<ul>
+<li><code>require &#39;./example_user&#39;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/04/02/2016-04-02-ruby-on-rails-rails-flavored-ruby/" data-id="ciqjk1wvu000c98kxixff789i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/04/02/2016-04-02-docthread-web/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Web
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/04/01/2016-04-01-android-default-skills/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Android Default Skills</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/07/11/2016-07-11-life-change-to-hexo/" class="title">Hexo로 변경</a></p>
+                            <p class="item-date"><time datetime="2016-07-11T13:00:00.000Z" itemprop="datePublished">2016-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
+                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/network/">network</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-osi7-and-tcpip/" class="title">OSI 7 layer and TCP/IP model</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T06:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-etc-disqus/" class="title">Jekyll에 Disqus 적용하기</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T04:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/07/03/2016-07-03-java-queue/" class="title">[Java] Queue</a></p>
+                            <p class="item-date"><time datetime="2016-07-03T04:47:50.000Z" itemprop="datePublished">2016-07-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </h1>
+                <p>&copy; 2016 Lazy Rodriguez</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/04/02/2016-04-02-ruby-on-rails-rails-flavored-ruby/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

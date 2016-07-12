@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[RoR] Settings | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="ruby on rails, settings" />
+    
+    <meta name="description" content="회사에서 존경하는 선배님과 함께 Ruby on rails를 이용하여 스터디를 진행하기로 하였다.
+Virtualbox를 설치하고 Ubuntu 환경에서 진행하였다.
+
+https://www.railstutorial.org/book/static_pages 를 보고 공부한 내용.
+
+Ruby on rails 란?
+Rails는 Ruby 언어에서 동작하는 Web Appl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[RoR] Settings">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/03/20/2016-03-20-ruby-on-rails-setting/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="회사에서 존경하는 선배님과 함께 Ruby on rails를 이용하여 스터디를 진행하기로 하였다.
+Virtualbox를 설치하고 Ubuntu 환경에서 진행하였다.
+
+https://www.railstutorial.org/book/static_pages 를 보고 공부한 내용.
+
+Ruby on rails 란?
+Rails는 Ruby 언어에서 동작하는 Web Appl">
+<meta property="og:updated_time" content="2016-07-11T13:53:23.652Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[RoR] Settings">
+<meta name="twitter:description" content="회사에서 존경하는 선배님과 함께 Ruby on rails를 이용하여 스터디를 진행하기로 하였다.
+Virtualbox를 설치하고 Ubuntu 환경에서 진행하였다.
+
+https://www.railstutorial.org/book/static_pages 를 보고 공부한 내용.
+
+Ruby on rails 란?
+Rails는 Ruby 언어에서 동작하는 Web Appl">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-03-20-ruby-on-rails-setting" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [RoR] Settings
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/03/20/2016-03-20-ruby-on-rails-setting/" class="article-date">
+    <time datetime="2016-03-19T15:01:00.000Z" itemprop="datePublished">2016-03-20</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ruby-on-rails-settings/">ruby on rails, settings</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>회사에서 존경하는 선배님과 함께 Ruby on rails를 이용하여 스터디를 진행하기로 하였다.</p>
+<p><a href="https://www.virtualbox.org" target="_blank" rel="external">Virtualbox</a>를 설치하고 <a href="http://www.ubuntu.com" target="_blank" rel="external">Ubuntu</a> 환경에서 진행하였다.</p>
+<blockquote>
+<p><a href="https://www.railstutorial.org/book/static_pages" target="_blank" rel="external">https://www.railstutorial.org/book/static_pages</a> 를 보고 공부한 내용.</p>
+</blockquote>
+<h2 id="Ruby-on-rails-란"><a href="#Ruby-on-rails-란" class="headerlink" title="Ruby on rails 란?"></a>Ruby on rails 란?</h2><hr>
+<p>Rails는 Ruby 언어에서 동작하는 Web Application Framework이다. 단순한 코드로 CRUD를 쉽게 구현할 수 있다고 한다. 제대로 사용할 줄 알면 빠른 시간 내에 웹 서비스를 구축할 수 있다.</p>
+<h2 id="Ruby-on-rails-세팅"><a href="#Ruby-on-rails-세팅" class="headerlink" title="Ruby on rails 세팅"></a>Ruby on rails 세팅</h2><hr>
+<h3 id="rbenv-설치"><a href="#rbenv-설치" class="headerlink" title="rbenv 설치"></a>rbenv 설치</h3><p><a href="https://github.com/rbenv/rbenv" target="_blank" rel="external">rbenv</a>는 이름에서도 유추 가능하듯 Ruby Environment의 관리 편의를 제공한다. Ruby on rails application 별로 다른 ruby version을 유지할 수 있게 해준다. <a href="https://github.com/rbenv/rbenv#command-reference" target="_blank" rel="external">rbenv Command Reference</a>에서 자세한 정보를 확인할 수 있다.</p>
+<p>설명서대로 설치를 진행해본다.</p>
+<p><code>~/.rbenv</code> 에 땡겨온다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/rbenv/rbenv.git ~/.rbenv</div></pre></td></tr></table></figure></p>
+<p>$PATH에 <code>~/.rbenv/bin</code> 을 추가한다. 그리고 적용을 위해 <code>source .bashrc</code>를 수행한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH="$HOME/.rbenv/bin:$PATH"'</span> &gt;&gt; ~/.bashrc</div></pre></td></tr></table></figure></p>
+<p>다음 명령을 통해 shell에 관계 없이 rbenv를 자동으로 초기화할 수 있다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ~/.rbenv/bin/rbenv init</div></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/rbenv/ruby-build#readme" target="_blank" rel="external">ruby-build</a>를 추가로 설치하자. 이를 통해 <code>rbenv install</code> 명령어를 사용할 수 있게 된다. 설치 후 <code>rbenv install -l</code> 명령을 수행하면 설치 가능한 ruby의 version들이 쫙나온다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build</div></pre></td></tr></table></figure></p>
+<p>나는 2.3.0 을 설치해 보기로 했다. <code>rbenv install 2.3.0</code> 명령으로 간단하게 ruby를 설치할 수 있다.</p>
+<blockquote>
+<p>한 번 실패했는데 <code>sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev</code>를 설치했어야 했다.</p>
+</blockquote>
+<p><code>rbenv versions</code> 명령을 통해 현재 설치/설정된 ruby version들을 볼 수 있다. <code>rbenv local 2.3.0</code> 으로 local 계정에 적용되는 ruby version을 2.3.0으로 변경하였다.</p>
+<p>추가로, 새 version의 ruby나 gem을 설치하게 되면 변경된 실행 정보를 알리기 위해 <code>rbenv rehash</code> 명령을 수행해야 한다.</p>
+<p>다음은 gem을 이용하여 bundler를 설치한다.</p>
+<blockquote>
+<p>gem이란 ruby의 plugin 정도로 이해하면 편하겠다. ruby에 종속된다.</p>
+<p>bundler란 모듈을 한데 모아서 관리하는 것이다. ruby의 경우 gem들을 모아서 관리하는 주체라고 보면 되겠다.</p>
+</blockquote>
+<p><code>gem install bundler</code> 로 bundler gem을 설치할 수 있으며, sudo 권한은 필요치 않다. rbenv를 통해 ruby version을 변경할 경우 그 버전에 맞는 gem을 추가로 설치해야 한다.</p>
+<p>그런데 에러가 났다. 에러 내용은 이렇게.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR: While executing gem ... (Errno::EACCES)</div><div class="line">    Permission denied @ dir_s_mkdir - /var/lib/gems</div></pre></td></tr></table></figure></p>
+<p>rbenv를 통해 설치한 ruby는 <code>~/.rbenv/versions/2.3.0/bin</code>에 있는데 system에 기본 설치된 ruby가 실행되어 생기는 문제이다. <code>~/.bashrc</code> 에 경로를 추가해두자. rbenv에서 이것까지 관리가 될 것 같은데 뭔가 좀 이상하다. 그래도 일단은 해결하고 넘어가자.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH="$HOME/.rbenv/versions/2.3.0/bin:$PATH"'</span> &gt;&gt; ~/.bashrc</div></pre></td></tr></table></figure></p>
+<h3 id="rails-설치"><a href="#rails-설치" class="headerlink" title="rails 설치"></a>rails 설치</h3><p>이제 ruby의 설치가 끝났다. rails 세팅에 돌입하자. rails는 ruby gem 중 하나이다.</p>
+<blockquote>
+<p><a href="https://www.railstutorial.org/book" target="_blank" rel="external">THE RUBY ON RAILS TUTORIAL</a> 를 베이스로 진행한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem install rails</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="rails-project-생성"><a href="#rails-project-생성" class="headerlink" title="rails project 생성"></a>rails project 생성</h2><hr>
+<p>아래의 명령으로 ‘blog’라는 이름을 갖는 rails project(application)을 생성할 수 있다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails new blog</div></pre></td></tr></table></figure></p>
+<p>rails application은 아래의 명령을 통해 실행한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails server</div></pre></td></tr></table></figure></p>
+<p>일단 에러가 날 것이다. 이유는 해당 application이 필요로 하는 gem들이 설치되지 않아서이다.<br>필요로 하는 gem들의 정보는 “Gemfile” 에 선언되어 있고, 구현하고자 하는 application에서 사용할 gem들을 직접 정의해 줄 수도 있다.</p>
+<p>아래 명령으로 gem들을 설치한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ bundle install</div></pre></td></tr></table></figure></p>
+<p>내 pc(virtual box로 돌리는 ubuntu) 기준으로 아래와 같은 에러가 발생한다.<br>An error occured while installing sqlite3 (1.3.11), and Bundler cannot continue.<br>Make sure that ‘gem install sqlite3 -v ‘1.3.11’’ succeeds before building.</p>
+<p>시키는대로 설치를 해보자.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem install sqlite3 -v <span class="string">'1.3.11'</span></div></pre></td></tr></table></figure></p>
+<p>에러를 뿜는다. 이번에는 <code>apt-get install libsqlite3-dev</code> 를 설치하라고 한다. 하고 sqlite3 gem을 install하자.</p>
+<p>자, 이제 대망의 <code>rails server</code> 를 실행한다.</p>
+<p>또 에러가 난다… <code>Could not find gem &#39;sass-rails (~&gt;5.0)&#39; in any of the gem sources listed in your Gemfile or available on this machine.</code> … 힘들다. <code>gem install sass-rails</code> 를 통해 최신 버전을 설치한 후 <code>bundle install</code> 그리고 <code>rails server</code> 를 다시 실행한다.</p>
+<p>이번에는 다음과 같은 에러가 발생했다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/home/user/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gem/bundler-1.11.2/lib/bundler/runtime.rb:80:<span class="keyword">in</span> <span class="string">'rescue in block (2 levels) in requir'</span>: There was an error <span class="keyword">while</span> trying to load the gem <span class="string">'uglifier'</span>.</div></pre></td></tr></table></figure>
+<p>그냥 구글에 검색해본다. <a href="http://stackoverflow.com/questions/34420554/there-was-an-error-while-trying-to-load-the-gem-uglifier-bundlergemrequire" target="_blank" rel="external">검색 뚝딱뚝딱</a></p>
+<p>그렇다. stackoverflow에 답이 있다. <code>apt-get install nodejs</code> 후 <code>rails server</code>를 하니 드디어 된다.</p>
+<p><a href="https://github.com/lautis/uglifier" target="_blank" rel="external">uglifier</a>가 뭔지 찾아보니 JavaScript parser, minifier, compressor, beautifier 등의 역할을 하는 툴인 것 같다. 나중에 기회가 되면 알아보자.</p>
+<p>이제 브라우저에서 <code>localhost:3000</code> 을 입력하면 접속이 되어야 한다.</p>
+<p>나의 경우 virtualbox에서 실행하였으므로, 네트워크 브리지를 통해 Windows의 Browser를 통해 접속하여 확인하였다.</p>
+<p><a href="http://goo.gl/icTynR" target="_blank" rel="external">VirtualBox 리눅스 SSH 연결 (브리지)</a>를 참조하였으며, ifconfig를 통해 Virtual box에 할당된 IP를 알아낼 수 있는데 rails 실행 시 옵션을 추가해 주어야 제대로 된 실행 결과를 볼 수 있다.</p>
+<p>00.00.00.00은 ifconfig를 통해 알아낸 IP를 적고, 3000 자리에는 마음에 드는 port number를 적어준다.</p>
+<p>그리고 Windows의 Browser에서 00.00.00.00:3000 으로 접속하면 드디어 <code>Welcome aboard</code> 화면을 볼 수 있게 된다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rails server -b 00.00.00.00 -p 3000</div></pre></td></tr></table></figure>
+<h2 id="Virtual-box-공유폴더-설정"><a href="#Virtual-box-공유폴더-설정" class="headerlink" title="Virtual box 공유폴더 설정"></a>Virtual box 공유폴더 설정</h2><hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. 장치 -&gt; 공유 폴더 -&gt; 공유 폴더 설정</div><div class="line">2. 장치 -&gt; 게스트확장 이미지 삽입</div><div class="line">3. /media/sf_폴더이름 으로 생긴 것 확인</div><div class="line">4. 폴더의 Group permission이 vboxsf로 되어있으므로 아래 명령으로 계정을 그룹에 추가</div><div class="line">    - sudo gpasswd <span class="_">-a</span> 계정명 vboxsf</div><div class="line">5. reboot 명령으로 시스템 재부팅</div></pre></td></tr></table></figure>
+<p>경로를 돌아가는 것이 불편하여 아래와 같이 symbolic ilnk를 걸어 사용하기로 한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /media/sf_shared ~/shared</div></pre></td></tr></table></figure></p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/03/20/2016-03-20-ruby-on-rails-setting/" data-id="ciqjk1wvw000f98kxeptv0004" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/03/25/2016-03-25-ruby-on-rails-crud/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            [RoR] CRUD
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/03/19/2016-03-19-bookmark/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Bookmark</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/07/11/2016-07-11-life-change-to-hexo/" class="title">Hexo로 변경</a></p>
+                            <p class="item-date"><time datetime="2016-07-11T13:00:00.000Z" itemprop="datePublished">2016-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
+                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/network/">network</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-osi7-and-tcpip/" class="title">OSI 7 layer and TCP/IP model</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T06:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-etc-disqus/" class="title">Jekyll에 Disqus 적용하기</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T04:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/07/03/2016-07-03-java-queue/" class="title">[Java] Queue</a></p>
+                            <p class="item-date"><time datetime="2016-07-03T04:47:50.000Z" itemprop="datePublished">2016-07-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </h1>
+                <p>&copy; 2016 Lazy Rodriguez</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/03/20/2016-03-20-ruby-on-rails-setting/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

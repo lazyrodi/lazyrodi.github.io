@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Java] Queue | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="algorithm, data structure, queue, java" />
+    
+    <meta name="description" content="Queue의 종류Queue는 공통적으로 Front, Rear 두 개의 pointer를 갖는다.
+Queue는 Array나 Linked List를 사용하여 구현한다.
+
+Simple or linear Queue
+일반적으로 Linked-list로 구현된다. FIFO(First In First Out)의 기본을 기킨다.
+
+
+Circular Queue
+말 그대로 he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Java] Queue">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/07/03/2016-07-03-java-queue/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Queue의 종류Queue는 공통적으로 Front, Rear 두 개의 pointer를 갖는다.
+Queue는 Array나 Linked List를 사용하여 구현한다.
+
+Simple or linear Queue
+일반적으로 Linked-list로 구현된다. FIFO(First In First Out)의 기본을 기킨다.
+
+
+Circular Queue
+말 그대로 he">
+<meta property="og:updated_time" content="2016-07-11T13:57:17.724Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Java] Queue">
+<meta name="twitter:description" content="Queue의 종류Queue는 공통적으로 Front, Rear 두 개의 pointer를 갖는다.
+Queue는 Array나 Linked List를 사용하여 구현한다.
+
+Simple or linear Queue
+일반적으로 Linked-list로 구현된다. FIFO(First In First Out)의 기본을 기킨다.
+
+
+Circular Queue
+말 그대로 he">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/java/">java</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-07-03-java-queue" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Java] Queue
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/07/03/2016-07-03-java-queue/" class="article-date">
+    <time datetime="2016-07-03T04:47:50.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm-data-structure-queue-java/">algorithm, data structure, queue, java</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Queue의-종류"><a href="#Queue의-종류" class="headerlink" title="Queue의 종류"></a>Queue의 종류</h2><p>Queue는 공통적으로 <code>Front</code>, <code>Rear</code> 두 개의 pointer를 갖는다.</p>
+<p>Queue는 <code>Array</code>나 <code>Linked List</code>를 사용하여 구현한다.</p>
+<ul>
+<li>Simple or linear Queue<ul>
+<li>일반적으로 <code>Linked-list</code>로 구현된다. <code>FIFO(First In First Out)</code>의 기본을 기킨다.</li>
+</ul>
+</li>
+<li>Circular Queue<ul>
+<li>말 그대로 <code>head</code>와 <code>rear</code>가 이어져있는 구조.</li>
+</ul>
+</li>
+<li>Priority Queue<ul>
+<li>각 개체(node, item, etc.)가 <code>Priority</code>를 가지고 있어서 First in은 성립하지만 <code>Priority</code>가 높은 녀석이 먼저 나오게 된다.</li>
+</ul>
+</li>
+<li>Dequeue<ul>
+<li><code>Double-Ended Queue</code>를 의미하며 front (head) 쪽과 back (tail) 쪽 모두에서 추가/삭제될 수 있는 구조를 말한다.<br><code>Head-tail linked list</code> 라고도 불리운다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="java-util-Queue"><a href="#java-util-Queue" class="headerlink" title="java.util.Queue"></a>java.util.Queue</h2><p>Java에서는 기본적으로 <a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank" rel="external">Queue</a>를 지원한다. (실제로 이걸 사용한 코드는 적어도 회사에서는 본 적 없다.)</p>
+<p>이 Queue는 <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/collections/index.html" target="_blank" rel="external">Java Collections Framework</a>에 속한 interface로 세부 내용들은 구현 해주어야 한다.</p>
+<p><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/collections/index.html" target="_blank" rel="external">Java Collections Framework</a>에 속한 interface들은 다음과 같은 것들이 있다.</p>
+<ul>
+<li>java.util.Collection에 속한 것들<ul>
+<li>java.util.Set</li>
+<li>java.util.SortedSet</li>
+<li>java.util.NavigableSet</li>
+<li>java.util.Queue</li>
+<li>java.util.concurrent.BlockingQueue</li>
+<li>java.util.concurrent.TransferQueue</li>
+<li>java.util.Degue</li>
+<li>java.util.concurrent.BlockingDegue</li>
+</ul>
+</li>
+<li>java.util.Map에 속한 것들<ul>
+<li>java.util.SortedMap</li>
+<li>java.util.NavigableMap</li>
+<li>java.util.concurrent.ConcurrentMap</li>
+<li>java.util.concurrent.ConcurrentNavigableMap</li>
+</ul>
+</li>
+</ul>
+<p>이걸 바로 사용하기 위해서는 아래와 같은 방식으로 사용 용도에 맞게 초기화 해주어야 한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Queue&lt;Integer&gt; aQueue = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</div><div class="line">Queue&lt;Integer&gt; bQueue = <span class="keyword">new</span> PriorityQueue&lt;Integer&gt;();</div><div class="line">Queue&lt;Integer&gt; cQueue = <span class="keyword">new</span> LinkedBlockingQueue&lt;Integer&gt;();</div><div class="line">Queue&lt;Integer&gt; dQueue = <span class="keyword">new</span> ArrayBlockingQueue(<span class="number">20</span>);</div><div class="line">Queue&lt;Integer&gt; eQueue = <span class="keyword">new</span> PriorityBlockingQueue&lt;Integer&gt;();</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="해보자"><a href="#해보자" class="headerlink" title="해보자"></a>해보자</h2><p>기본적인 <code>add</code> (혹은 push)와 <code>poll</code> (혹은 pop)을 Linked List로 구현해보자.</p>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><p>사용할 Node를 만든다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">    <span class="keyword">private</span> T item;</div><div class="line">    Node&lt;T&gt; next;</div><div class="line">    </div><div class="line">    Node(T item) &#123;</div><div class="line">        <span class="keyword">this</span>.item = item;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getItem</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> item;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>Node를 이용한 Queue를 생성한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">    Node&lt;T&gt; head;</div><div class="line">    Node&lt;T&gt; rear;</div><div class="line">    </div><div class="line">    MyQueue() &#123;</div><div class="line">        head = <span class="keyword">null</span>;</div><div class="line">        rear = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(T item)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</div><div class="line">            head = <span class="keyword">new</span> Node&lt;T&gt;(item);</div><div class="line">            rear = head;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            Node&lt;T&gt; newNode = <span class="keyword">new</span> Node&lt;T&gt;(item);</div><div class="line">            rear.next = newNode;</div><div class="line">            rear = newNode;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">poll</span><span class="params">()</span> </span>&#123;</div><div class="line">        Node&lt;T&gt; tmp = <span class="keyword">null</span>;</div><div class="line">        T ret = <span class="keyword">null</span>;</div><div class="line">        </div><div class="line">        ret = (head != <span class="keyword">null</span>) ? head.getItem() : <span class="keyword">null</span>;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (head == rear) &#123;</div><div class="line">            head = <span class="keyword">null</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            tmp = head;</div><div class="line">            head = head.next;</div><div class="line">            tmp = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h3><p>그리고 사용하자. 아래 예시에서는 3개를 넣고 4개를 빼기 때문에 <code>NullPointerException</code>이 발생한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">        MyQueue&lt;Integer&gt; mQueue = <span class="keyword">new</span> MyQueue&lt;Integer&gt;();</div><div class="line">        </div><div class="line">        mQueue.add(<span class="number">1</span>);</div><div class="line">        mQueue.add(<span class="number">2</span>);</div><div class="line">        mQueue.add(<span class="number">3</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            System.out.println(mQueue.poll());</div><div class="line">            System.out.println(mQueue.poll());</div><div class="line">            System.out.println(mQueue.poll());</div><div class="line">            System.out.println(mQueue.poll());</div><div class="line">        &#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</div><div class="line">            System.out.println(<span class="string">"null"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><p>아래의 글들을 교재삼아 작성하였습니다.</p>
+<ul>
+<li><a href="http://krishneshsingh.blogspot.kr/p/what-is-queue-explain-types-of-queue.html" target="_blank" rel="external">http://krishneshsingh.blogspot.kr/p/what-is-queue-explain-types-of-queue.html</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank" rel="external">javadoc-queue</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/collections/index.html" target="_blank" rel="external">javadoc-collection</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/07/03/2016-07-03-java-queue/" data-id="ciqjk1wy7002p98kx9s3i8uui" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/07/04/2016-07-04-etc-disqus/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Jekyll에 Disqus 적용하기
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/07/02/2016-07-02-etc-regular-expression/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Regular Expression (정규표현식)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/07/11/2016-07-11-life-change-to-hexo/" class="title">Hexo로 변경</a></p>
+                            <p class="item-date"><time datetime="2016-07-11T13:00:00.000Z" itemprop="datePublished">2016-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
+                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/network/">network</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-osi7-and-tcpip/" class="title">OSI 7 layer and TCP/IP model</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T06:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-etc-disqus/" class="title">Jekyll에 Disqus 적용하기</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T04:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/07/03/2016-07-03-java-queue/" class="title">[Java] Queue</a></p>
+                            <p class="item-date"><time datetime="2016-07-03T04:47:50.000Z" itemprop="datePublished">2016-07-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </h1>
+                <p>&copy; 2016 Lazy Rodriguez</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/07/03/2016-07-03-java-queue/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
