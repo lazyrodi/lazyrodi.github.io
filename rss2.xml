@@ -8,13 +8,13 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 13 Jul 2016 15:10:45 GMT</pubDate>
+    <pubDate>Wed, 13 Jul 2016 15:16:29 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>Thread</title>
-      <link>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-map/</link>
-      <guid>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-map/</guid>
+      <link>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-thread/</link>
+      <guid>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-thread/</guid>
       <pubDate>Wed, 13 Jul 2016 11:42:50 GMT</pubDate>
       <description>
       
@@ -114,7 +114,7 @@
 &lt;/ul&gt;
 </content:encoded>
       
-      <comments>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-map/#disqus_thread</comments>
+      <comments>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-thread/#disqus_thread</comments>
     </item>
     
     <item>
