@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Thread | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="java, thread" />
+    
+    <meta name="description" content="Thread란 프로그램 실행 시 프로세스 내부에 존재하는 수행 단위를 말한다.
+Java에서는 두 가지의 Thread의 구현 방법이 있다.
+
+Thread를 상속받아서 사용하는 방법
+이 경우 다른 Class의 상속이 불가능하다.
+
+
+Runnable interface를 구현하는 방법
+일반적인 방법이다.
+다른 Class의 상속이 가능하다.
+
+
+
+Thread 생성T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thread">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/07/13/2016-07-13-java-map/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Thread란 프로그램 실행 시 프로세스 내부에 존재하는 수행 단위를 말한다.
+Java에서는 두 가지의 Thread의 구현 방법이 있다.
+
+Thread를 상속받아서 사용하는 방법
+이 경우 다른 Class의 상속이 불가능하다.
+
+
+Runnable interface를 구현하는 방법
+일반적인 방법이다.
+다른 Class의 상속이 가능하다.
+
+
+
+Thread 생성T">
+<meta property="og:image" content="http://lazyrodi.github.io/assets/images/2016-07-13-java-thread-001.jpg">
+<meta property="og:updated_time" content="2016-07-13T15:10:45.636Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thread">
+<meta name="twitter:description" content="Thread란 프로그램 실행 시 프로세스 내부에 존재하는 수행 단위를 말한다.
+Java에서는 두 가지의 Thread의 구현 방법이 있다.
+
+Thread를 상속받아서 사용하는 방법
+이 경우 다른 Class의 상속이 불가능하다.
+
+
+Runnable interface를 구현하는 방법
+일반적인 방법이다.
+다른 Class의 상속이 가능하다.
+
+
+
+Thread 생성T">
+<meta name="twitter:image" content="http://lazyrodi.github.io/assets/images/2016-07-13-java-thread-001.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/java/">java</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-07-13-java-map" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Thread
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/07/13/2016-07-13-java-map/" class="article-date">
+    <time datetime="2016-07-13T11:42:50.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-thread/">java, thread</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>Thread란 <code>프로그램 실행 시 프로세스 내부에 존재하는 수행 단위</code>를 말한다.</p>
+<p>Java에서는 <code>두 가지</code>의 Thread의 구현 방법이 있다.</p>
+<ul>
+<li>Thread를 상속받아서 사용하는 방법<ul>
+<li>이 경우 다른 Class의 상속이 불가능하다.</li>
+</ul>
+</li>
+<li>Runnable interface를 구현하는 방법<ul>
+<li>일반적인 방법이다.</li>
+<li>다른 Class의 상속이 가능하다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Thread-생성"><a href="#Thread-생성" class="headerlink" title="Thread 생성"></a>Thread 생성</h2><p>Thread 는 상태 변환을 통해 아래 그림과 같은 Lifecycle을 갖는다.</p>
+<p><img src="/assets/images/2016-07-13-java-thread-001.jpg" alt=""></p>
+<table><tr><th>동작</th><th>상태</th><th>설명</th></tr><tr><td>객체 생성</td><td>NEW</td><td>Thread 객체의 생성 / start() 호출 전</td></tr><td>실행 대기</td><td>RUNNABLE</td><td>실행 상태로 언제든 갈 수 있는 상태</td><tr><td rowspan="3">일시정지</td><td>WAITING</td><td>다른 Thread가 통지할 때까지 기다리는 상태</td></tr><tr><td>TIMES_WAITING</td><td>주어진 시간동안 기다리는 상태</td></tr><tr><td>BLOCKED</td><td>사용하고자 하는 객체의 Lock이 해제될 때까지 기다리는 상태</td></tr><tr><td>종료</td><td>TERMINATED</td><td>실행을 마친 상태</td></tr></table>
+
+<h3 id="Thread를-상속받아-사용하는-방법"><a href="#Thread를-상속받아-사용하는-방법" class="headerlink" title="Thread를 상속받아 사용하는 방법"></a>Thread를 상속받아 사용하는 방법</h3><ul>
+<li>Thread로 수행될 <code>Task</code> class를 생성한다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line"></div><div class="line">    String mName;</div><div class="line">    </div><div class="line">    Task(String str) &#123;</div><div class="line">        mName = str;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">// Thread 시작 시 수행된다.</span></div><div class="line">        System.out.println(<span class="string">"run "</span> + mName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Thread를 만들어 실행한다.</li>
+</ul>
+<p><code>start()</code>가 호출되면 새로운 Thread가 작업을 실행하는데 필요한 Call Stack을 생성하고 <code>run()</code>을 호출하여 Stack에 저장한다.</p>
+<p><code>run()</code> 메소드는 Thread scheduler에게 전달된다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Task tA = <span class="keyword">new</span> Task(<span class="string">"a"</span>);</div><div class="line">        Task tB = <span class="keyword">new</span> Task(<span class="string">"b"</span>);</div><div class="line">        Task tC = <span class="keyword">new</span> Task(<span class="string">"c"</span>);</div><div class="line">        </div><div class="line">        tA.start(); <span class="comment">// start()를 호출하면 앞에서 만든 Task의 run()이 실행된다.</span></div><div class="line">        tB.start();</div><div class="line">        tC.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Runnable-interface를-구현하여-사용하는-방법"><a href="#Runnable-interface를-구현하여-사용하는-방법" class="headerlink" title="Runnable interface를 구현하여 사용하는 방법"></a>Runnable interface를 구현하여 사용하는 방법</h3><ul>
+<li>Thread로 돌아갈 class를 생성한다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line"></div><div class="line">    String mName;</div><div class="line">    </div><div class="line">    Task(String str) &#123;</div><div class="line">        mName = str;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"run "</span> + mName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>새 Thread 객체를 생성하여 start() 한다.</li>
+</ul>
+<p>run() 으로 실행하면 단순히 Task 객체의 run() 메소드가 수행되는 것 뿐이다. start()로 해야 별도의 Thread가 생성되어 수행된다.</p>
+<p>Thread가 제대로 생성되어 수행되는지는 Eclipse의 debug 모드 등에서 threadStatus 등 thread 관련 항목들이 제대로 수행되는지 확인한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Task tA = <span class="keyword">new</span> Task(<span class="string">"a"</span>);</div><div class="line">        Task tB = <span class="keyword">new</span> Task(<span class="string">"b"</span>);</div><div class="line">        </div><div class="line">        Thread t1 = <span class="keyword">new</span> Thread(tA);</div><div class="line">        Thread t2 = <span class="keyword">new</span> Thread(tB);</div><div class="line">        Thread t3 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"c"</span>));</div><div class="line">        </div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="아래와-같이-구현도-가능하다"><a href="#아래와-같이-구현도-가능하다" class="headerlink" title="아래와 같이 구현도 가능하다."></a>아래와 같이 구현도 가능하다.</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Thread t = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                System.out.println(<span class="string">"run"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        t.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><p>Thread의 수행 시간이 오래 걸릴 때, Thread보다 Main 함수가 먼저 종료되는 경우가 있다.</p>
+<p>이런 경우 <code>join()</code> 메소드를 사용하면 모든 Thread들이 종료된 후 Main 함수가 종료된다.</p>
+<p>예를 들어, 아래 코드를 실행한 결과를 보면 <code>fin</code>이 먼저 호출되는 것을 볼 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Task tA = <span class="keyword">new</span> Task(<span class="string">"a"</span>);</div><div class="line">        Task tB = <span class="keyword">new</span> Task(<span class="string">"b"</span>);</div><div class="line">        </div><div class="line">        Thread t1 = <span class="keyword">new</span> Thread(tA);</div><div class="line">        Thread t2 = <span class="keyword">new</span> Thread(tB);</div><div class="line">        Thread t3 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"c"</span>));</div><div class="line">        Thread t4 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"d"</span>));</div><div class="line">        Thread t5 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"e"</span>));</div><div class="line">        </div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">        t5.start();</div><div class="line">        </div><div class="line">        System.out.println(<span class="string">"fin"</span>);</div><div class="line">    &#125;       </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 결과</span></div><div class="line">run a</div><div class="line">run c</div><div class="line">fin</div><div class="line">run d</div><div class="line">run e</div><div class="line">run b</div></pre></td></tr></table></figure>
+<p>다음과 같이 join()을 사용할 경우, Thread들이 모두 실행된 이후에 <code>fin</code>이 찍힌다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Task tA = <span class="keyword">new</span> Task(<span class="string">"a"</span>);</div><div class="line">        Task tB = <span class="keyword">new</span> Task(<span class="string">"b"</span>);</div><div class="line">        </div><div class="line">        Thread t1 = <span class="keyword">new</span> Thread(tA);</div><div class="line">        Thread t2 = <span class="keyword">new</span> Thread(tB);</div><div class="line">        Thread t3 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"c"</span>));</div><div class="line">        Thread t4 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"d"</span>));</div><div class="line">        Thread t5 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"e"</span>));</div><div class="line">        </div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">        t5.start();</div><div class="line">        </div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            t1.join();</div><div class="line">            t2.join();</div><div class="line">            t3.join();</div><div class="line">            t4.join();</div><div class="line">            t5.join();</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        System.out.println(<span class="string">"fin"</span>);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">        </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 결과</span></div><div class="line">run a</div><div class="line">run d</div><div class="line">run e</div><div class="line">run b</div><div class="line">run c</div><div class="line">fin</div></pre></td></tr></table></figure>
+<h2 id="Synchronized"><a href="#Synchronized" class="headerlink" title="Synchronized"></a>Synchronized</h2><p>Thread가 함수를 통해 전역변수에 변형을 가할 경우, 각 Thread가 돌면서 값이 잘못 변하는 경우가 있다.</p>
+<p>만약 아래와 같은 코드가 있다고 하면 (여기서는 10개지만 더 많이…) 마지막에 결과값이 10이 안 찍히고 9가 찍히는 것을 볼 수 있다.</p>
+<p>물론 실행할 때마다 값이 다르다.</p>
+<p><del>내가 만들어서 그런지 예시가 거지같다.</del></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line"></div><div class="line">    String mName;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> no = <span class="number">0</span>;</div><div class="line">    </div><div class="line">    Task(String str) &#123;</div><div class="line">        mName = str;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">inc</span><span class="params">()</span> </span>&#123;</div><div class="line">        no++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Thread.sleep(<span class="number">1000</span>);</div><div class="line">            inc();</div><div class="line">            </div><div class="line">        &#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        System.out.println(<span class="string">"run "</span> + mName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Task tA = <span class="keyword">new</span> Task(<span class="string">"a"</span>);</div><div class="line">        Task tB = <span class="keyword">new</span> Task(<span class="string">"b"</span>);</div><div class="line">        </div><div class="line">        Thread t1 = <span class="keyword">new</span> Thread(tA);</div><div class="line">        Thread t2 = <span class="keyword">new</span> Thread(tB);</div><div class="line">        Thread t3 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"c"</span>));</div><div class="line">        Thread t4 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"d"</span>));</div><div class="line">        Thread t5 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"e"</span>));</div><div class="line">        Thread t6 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"f"</span>));</div><div class="line">        Thread t7 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"g"</span>));</div><div class="line">        Thread t8 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"h"</span>));</div><div class="line">        Thread t9 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"i"</span>));</div><div class="line">        Thread t10 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Task(<span class="string">"j"</span>));</div><div class="line">        </div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">        t5.start();</div><div class="line">        t6.start();</div><div class="line">        t7.start();</div><div class="line">        t8.start();</div><div class="line">        t9.start();</div><div class="line">        t10.start();</div><div class="line">        </div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            t1.join();</div><div class="line">            t2.join();</div><div class="line">            t3.join();</div><div class="line">            t4.join();</div><div class="line">            t5.join();</div><div class="line">            t6.join();</div><div class="line">            t7.join();</div><div class="line">            t8.join();</div><div class="line">            t9.join();</div><div class="line">            t10.join();</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        System.out.println(tA.no);</div><div class="line">        System.out.println(<span class="string">"fin"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 결과</span></div><div class="line">run a no: <span class="number">0</span></div><div class="line">run d no: <span class="number">7</span></div><div class="line">run c no: <span class="number">0</span></div><div class="line">run i no: <span class="number">6</span></div><div class="line">run j no: <span class="number">5</span></div><div class="line">run e no: <span class="number">3</span></div><div class="line">run f no: <span class="number">4</span></div><div class="line">run g no: <span class="number">2</span></div><div class="line">run b no: <span class="number">1</span></div><div class="line">run h no: <span class="number">8</span></div><div class="line"><span class="number">9</span></div><div class="line">fin</div></pre></td></tr></table></figure>
+<p>위의 문제가 발생하는 이유는 예를 들면 하나의 Thread가 no를 3에서 4로 증가시키고 있을 때 다른 Thread가 접근하고, 그 Thread도 3에서 4로 증가시키게 된다.</p>
+<p>그러면 <code>inc()</code>가 두 번 수행되었더라도 <code>no</code>는 4에 머물러있게 된다.</p>
+<p>이러한 문제를 방지하기 위해 <code>no++</code> 과정을 <code>synchronized(동기화)</code> 시켜주면 된다.</p>
+<p>하나의 Thread가 <code>synchronized</code> 키워드 안의 내용을 수행 중이라면 다른 Thread는 그 자원에 접근할 수 없게 된다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line"></div><div class="line">    String mName;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> no = <span class="number">0</span>;</div><div class="line">    </div><div class="line">    Task(String str) &#123;</div><div class="line">        mName = str;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">synchronized</span> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">inc</span><span class="params">()</span> </span>&#123;</div><div class="line">        no++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Thread.sleep(<span class="number">1000</span>);</div><div class="line">            inc();</div><div class="line">            </div><div class="line">        &#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        System.out.println(<span class="string">"run "</span> + mName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Thread-Pool"><a href="#Thread-Pool" class="headerlink" title="Thread Pool"></a>Thread Pool</h2><p>Thread를 생성하기 위해서는 시간과 메모리가 소요된다. Java는 JVM(Java Virtual Machine) 위에서 돌아가고 JVM은 Thread의 생성 개수를 제한하지 않는다.</p>
+<p>때문에 Thread를 과도하게 생성한다면 성능 저하는 물론 Memory leak이 발생한다.</p>
+<p>Thread의 무분별한 생성을 막기 위해 쓰레드 관리 방식인 <code>Thread Pool</code>을 사용한다.</p>
+<p>Thread Pool은 Thread를 허용된 개수 안에서 사용할 수 있도록 제약한다. 이 제약은 JVM이 하는 것이 아니라 어플리케이션에서 해야 한다.</p>
+<p>JDK 1.5 이전에는 개발자가 직접 만들어서 사용했으며, 1.5부터 <code>java.util.concurrent</code> 를 통해 지원하게 되었다.</p>
+<ul>
+<li>Excutors.newFixedThreadPool(n)<ul>
+<li>최대 Thread 수가 n 개인 Pool.</li>
+<li>동시에 일어나는 업무량이 비교적 일정할 때 사용한다.</li>
+</ul>
+</li>
+<li>Excutors.newCachedThreadPool()<ul>
+<li>Thread 수의 제한을 두지 않는다. 새로운 Thread 시작 요청이 들어올 때마다 Thread를 하나씩 생성한다.</li>
+<li>수행이 종료된 Thread들이 바로 사라지지 않고 1분동안 살아있다가 다른 작업 요청이 없다면 사라지게 된다.</li>
+<li>짧고 반복되는 작업에 사용한다.</li>
+</ul>
+</li>
+<li>Executors.newSingleThreadExecutor()<ul>
+<li>하나의 Thread를 생성한다.</li>
+<li>주로 Thread 작업 중 예외가 발생한 경우 예외 처리를 위한 Thread 생성 용으로 사용한다.</li>
+</ul>
+</li>
+</ul>
+<p>선언은 <code>ExecutorService</code> 로 한다.</p>
+<h4 id="Excutors-newFixedThreadPool-n"><a href="#Excutors-newFixedThreadPool-n" class="headerlink" title="Excutors.newFixedThreadPool(n)"></a>Excutors.newFixedThreadPool(n)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ExecutorService executorService = Executors.newFixedThreadPool(<span class="number">2</span>);</div><div class="line"><span class="comment">// Thread 생성 요청.</span></div><div class="line"><span class="comment">// Task는 수행할 class 명.</span></div><div class="line"><span class="comment">// 세 번 요청하면 세 번째 Thread는 앞의 두 개 중 하나가 종료될 때까지 수행되지 않는다.</span></div><div class="line">executorService.execute(<span class="keyword">new</span> Task(<span class="string">"name"</span>));</div><div class="line">executorService.shutdown(); <span class="comment">// 추가적인 Thread 요청을 거부한다.</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> (!executorService.isTreminated()) &#123; <span class="comment">// 모든 Thread가 완료될 때까지 대기한다.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Excutors-newCachedThreadPool"><a href="#Excutors-newCachedThreadPool" class="headerlink" title="Excutors.newCachedThreadPool()"></a>Excutors.newCachedThreadPool()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ExecutorService executorService = Executor.newCachedThreadPool();</div><div class="line">executorService.execute(<span class="keyword">new</span> Task(<span class="string">"name"</span>));</div><div class="line">executorService.shutdown();</div><div class="line"></div><div class="line"><span class="keyword">while</span> (!executorService.isTreminated()) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Executors-newSingleThreadExecutor"><a href="#Executors-newSingleThreadExecutor" class="headerlink" title="Executors.newSingleThreadExecutor()"></a>Executors.newSingleThreadExecutor()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">ExecutorService executorService = Executors.newSingleThreadExecutor();</div><div class="line">executorService.execute(()-&gt;&#123;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">          Thread.sleep(<span class="number">1000</span>);</div><div class="line">      &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line"></div><div class="line">      &#125;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">executorService.shutdown();</div><div class="line"></div><div class="line"><span class="keyword">while</span> (!executorService.isTreminated()) &#123;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><ul>
+<li><a href="http://blog.naver.com/2feelus/220728222140" target="_blank" rel="external">http://blog.naver.com/2feelus/220728222140</a></li>
+<li><a href="http://blog.naver.com/kksssii/220676622695" target="_blank" rel="external">http://blog.naver.com/kksssii/220676622695</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/07/13/2016-07-13-java-map/" data-id="ciqkvk6yh0005xokx35qa8eic" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/07/11/2016-07-11-life-change-to-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Hexo로 변경</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/07/13/2016-07-13-java-map/" class="title">Thread</a></p>
+                            <p class="item-date"><time datetime="2016-07-13T11:42:50.000Z" itemprop="datePublished">2016-07-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/07/11/2016-07-11-life-change-to-hexo/" class="title">Hexo로 변경</a></p>
+                            <p class="item-date"><time datetime="2016-07-11T13:00:00.000Z" itemprop="datePublished">2016-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
+                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/network/">network</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-osi7-and-tcpip/" class="title">OSI 7 layer and TCP/IP model</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T06:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/07/04/2016-07-04-etc-disqus/" class="title">Jekyll에 Disqus 적용하기</a></p>
+                            <p class="item-date"><time datetime="2016-07-04T04:47:50.000Z" itemprop="datePublished">2016-07-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/java-thread/" style="font-size: 10px;">java, thread</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </h1>
+                <p>&copy; 2016 Lazy Rodriguez</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/07/13/2016-07-13-java-map/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
