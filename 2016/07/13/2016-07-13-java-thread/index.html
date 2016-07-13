@@ -40,8 +40,8 @@ Runnable interface를 구현하는 방법
 
 
 Thread 생성T">
-<meta property="og:image" content="http://lazyrodi.github.io/assets/images/2016-07-13-java-thread-001.jpg">
-<meta property="og:updated_time" content="2016-07-13T15:16:29.446Z">
+<meta property="og:image" content="http://lazyrodi.github.io/images/2016-07-13-java-thread-001.jpg">
+<meta property="og:updated_time" content="2016-07-13T15:22:12.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thread">
 <meta name="twitter:description" content="Thread란 프로그램 실행 시 프로세스 내부에 존재하는 수행 단위를 말한다.
@@ -58,7 +58,7 @@ Runnable interface를 구현하는 방법
 
 
 Thread 생성T">
-<meta name="twitter:image" content="http://lazyrodi.github.io/assets/images/2016-07-13-java-thread-001.jpg">
+<meta name="twitter:image" content="http://lazyrodi.github.io/images/2016-07-13-java-thread-001.jpg">
     
 
     
@@ -222,7 +222,7 @@ Thread 생성T">
 </li>
 </ul>
 <h2 id="Thread-생성"><a href="#Thread-생성" class="headerlink" title="Thread 생성"></a>Thread 생성</h2><p>Thread 는 상태 변환을 통해 아래 그림과 같은 Lifecycle을 갖는다.</p>
-<p><img src="/assets/images/2016-07-13-java-thread-001.jpg" alt=""></p>
+<p><img src="/images/2016-07-13-java-thread-001.jpg" alt="Thread lifecycle"></p>
 <table><tr><th>동작</th><th>상태</th><th>설명</th></tr><tr><td>객체 생성</td><td>NEW</td><td>Thread 객체의 생성 / start() 호출 전</td></tr><td>실행 대기</td><td>RUNNABLE</td><td>실행 상태로 언제든 갈 수 있는 상태</td><tr><td rowspan="3">일시정지</td><td>WAITING</td><td>다른 Thread가 통지할 때까지 기다리는 상태</td></tr><tr><td>TIMES_WAITING</td><td>주어진 시간동안 기다리는 상태</td></tr><tr><td>BLOCKED</td><td>사용하고자 하는 객체의 Lock이 해제될 때까지 기다리는 상태</td></tr><tr><td>종료</td><td>TERMINATED</td><td>실행을 마친 상태</td></tr></table>
 
 <h3 id="Thread를-상속받아-사용하는-방법"><a href="#Thread를-상속받아-사용하는-방법" class="headerlink" title="Thread를 상속받아 사용하는 방법"></a>Thread를 상속받아 사용하는 방법</h3><ul>
