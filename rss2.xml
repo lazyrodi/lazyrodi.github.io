@@ -64,6 +64,28 @@
     </item>
     
     <item>
+      <title>[Reference] My Favorite Colors</title>
+      <link>http://lazyrodi.github.io/2016/07/16/2016-07-16-works-my-favorite-colors/</link>
+      <guid>http://lazyrodi.github.io/2016/07/16/2016-07-16-works-my-favorite-colors/</guid>
+      <pubDate>Sat, 16 Jul 2016 08:20:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Color reference that I like.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Link : &lt;a href=&quot;http://lazyrodi.github.io/misc/MyFavoriteColors.html&quot;&gt;http://lazyrodi.github.io
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;Color reference that I like.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Link : &lt;a href=&quot;http://lazyrodi.github.io/misc/MyFavoriteColors.html&quot;&gt;http://lazyrodi.github.io/misc/MyFavoriteColors.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/07/16/2016-07-16-works-my-favorite-colors/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>Java Thread</title>
       <link>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-thread/</link>
       <guid>http://lazyrodi.github.io/2016/07/13/2016-07-13-java-thread/</guid>
@@ -1667,29 +1689,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/06/07/2016-06-07-works-document-word-parser/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[조직문화] 명언, 격언</title>
-      <link>http://lazyrodi.github.io/2016/05/16/2016-05-01-hr-famous-saying/</link>
-      <guid>http://lazyrodi.github.io/2016/05/16/2016-05-01-hr-famous-saying/</guid>
-      <pubDate>Mon, 16 May 2016 11:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;blockquote&gt;&lt;p&gt;직원들은 다른 회사에서 더 나은 직책이나 연봉을 제안받았을 때가 아니라 지금 회사에서 존중받지 못했을 때 이직한다.&lt;/p&gt;
-&lt;footer&gt;&lt;strong&gt;Tom Mendoza&lt;/strong&gt;&lt;cite&gt;NetApp Vice pr
-      
-      </description>
-      
-      <content:encoded>&lt;blockquote&gt;&lt;p&gt;직원들은 다른 회사에서 더 나은 직책이나 연봉을 제안받았을 때가 아니라 지금 회사에서 존중받지 못했을 때 이직한다.&lt;/p&gt;
-&lt;footer&gt;&lt;strong&gt;Tom Mendoza&lt;/strong&gt;&lt;cite&gt;NetApp Vice president&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;&lt;p&gt;단순함, 그것은 천재에게 주어진 재능이다.&lt;br&gt;어떤 지적인 바보도 사물을 더 크고, 더 복잡하고, 더 격렬하게 만들 수 있다.&lt;br&gt;하지만 그 반대편으로 나아가려면 약간의 천재성과 많은 용기가 필요하다.&lt;br&gt;만약 당신이 어떤 것을 단순하게 설명할 수 없다면, 당신은 그것을 충분히 이해하지 못한 것이다.&lt;/p&gt;
-&lt;footer&gt;&lt;strong&gt;Albert Einstein (알버트 아인슈타인)&lt;/strong&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;&lt;p&gt;더 더할게 없을 때가 아니라, 더 뺄게 없을 때 완벽한 디자인에 도달할 수 있다.&lt;/p&gt;
-&lt;footer&gt;&lt;strong&gt;Antoine Marie Roger De Saint Expery (생텍쥐페리)&lt;/strong&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/05/16/2016-05-01-hr-famous-saying/#disqus_thread</comments>
     </item>
     
   </channel>
