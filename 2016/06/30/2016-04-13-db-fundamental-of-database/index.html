@@ -19,7 +19,7 @@
 
 결론뜬금없이 두괄식 정리를 해본다.
 
-|———-+———————————————————–+———————————————————————–|| Database | 장점">
+Database장점단점HDB구조가 간단하고 판독이 용이하다.데이터 상호 간의 유연성이 부족하다.구현, 수정, 검색이 용이하다.검색 경로가 한정되어 있다.데이터 액세스 속도가 빠르다.삽입/삭">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fundamental of Database">
 <meta property="og:url" content="http://lazyrodi.github.io/2016/06/30/2016-04-13-db-fundamental-of-database/index.html">
@@ -35,9 +35,9 @@
 
 결론뜬금없이 두괄식 정리를 해본다.
 
-|———-+———————————————————–+———————————————————————–|| Database | 장점">
-<meta property="og:image" content="http://lazyrodi.github.io/assets/images/2016-06-30-db-fundamental-of-database-001.jpg">
-<meta property="og:updated_time" content="2016-07-11T13:54:59.464Z">
+Database장점단점HDB구조가 간단하고 판독이 용이하다.데이터 상호 간의 유연성이 부족하다.구현, 수정, 검색이 용이하다.검색 경로가 한정되어 있다.데이터 액세스 속도가 빠르다.삽입/삭">
+<meta property="og:image" content="http://lazyrodi.github.io/images/2016-06-30-db-fundamental-of-database-001.jpg">
+<meta property="og:updated_time" content="2016-07-18T15:20:29.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fundamental of Database">
 <meta name="twitter:description" content="Database는 간단히 데이터들의 모임 이라고 보면 된다.
@@ -51,8 +51,8 @@
 
 결론뜬금없이 두괄식 정리를 해본다.
 
-|———-+———————————————————–+———————————————————————–|| Database | 장점">
-<meta name="twitter:image" content="http://lazyrodi.github.io/assets/images/2016-06-30-db-fundamental-of-database-001.jpg">
+Database장점단점HDB구조가 간단하고 판독이 용이하다.데이터 상호 간의 유연성이 부족하다.구현, 수정, 검색이 용이하다.검색 경로가 한정되어 있다.데이터 액세스 속도가 빠르다.삽입/삭">
+<meta name="twitter:image" content="http://lazyrodi.github.io/images/2016-06-30-db-fundamental-of-database-001.jpg">
     
 
     
@@ -213,7 +213,8 @@
 </ul>
 <h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>뜬금없이 두괄식 정리를 해본다.</p>
 <hr>
-<p>|———-+———————————————————–+———————————————————————–|<br>| Database | 장점                                                      | 단점                                                                  |<br>|==========+===========================================================+=======================================================================|<br>| HDB      | 구조가 간단하고 판독이 용이하다.                          | 데이터 상호 간의 유연성이 부족하다.                                   |<br>|          | 구현, 수정, 검색이 용이하다.                              | 검색 경로가 한정되어 있다.                                            |<br>|          | 데이터 액세스 속도가 빠르다.                              | 삽입/삭제 연산이 매우 복잡하다.                                       |<br>|          | 데이터의 사용량을 쉽게 예측 가능하다.                     | 다 대 다 관계를 처리하기 어렵다.                                      |<br>| NDB      | 상하 종속적인 관계를 쉽게 해결한다.                       | 구성, 설계가 복잡하다.                                                |<br>|          |                                                           | 데이터의 종속성을 해결하지 못한 시스템이다.                           |<br>| RDB      | 데이터의 일관성을 보증할 수 있음. (Transaction)           | 대량 데이터 처리 시 성능 이슈.                                        |<br>|          | 정규화를 전제로 하기 때문에 갱신 시의 비용이 적게 든다.   | 갱신이 발생한 Table의 인덱스 생성이나 스키마 변경에 대한 처리 이슈.   |<br>|          | JOIN 등 복잡한 검색 조건으로 검색이 가능함.               | Column을 확실히 정의하기 어려운 경우에 대한 처리 이슈.                |<br>|          | 간결하고, 보기 편하다.                                    | 단순히 빨리 결과를 조회하고자 할 때의 성능 이슈.                      |<br>| OODB     |                                                           |                                                                       |<br>| NoSQL    | 대량의 Record 처리에 유리하다.                            | JOIN 연산이 불가능하다.                                               |</p>
+<table><tr><th>Database</th><th>장점</th><th>단점</th></tr><tr><td rowspan="4">HDB</td><td>구조가 간단하고 판독이 용이하다.</td><td>데이터 상호 간의 유연성이 부족하다.</td></tr><tr><td>구현, 수정, 검색이 용이하다.</td><td>검색 경로가 한정되어 있다.</td></tr><tr><td>데이터 액세스 속도가 빠르다.</td><td>삽입/삭제 연산이 매우 복잡하다.</td></tr><tr><td>데이터의 사용량을 쉽게 예측 가능하다.</td><td>다 대 다 관계를 처리하기 어렵다.</td></tr><tr><td rowspan="2">NDB</td><td>상하 종속적인 관계를 쉽게 해결한다.</td><td>구성, 설계가 복잡하다.</td></tr><tr><td></td><td>데이터의 종속성을 해결하지 못한 시스템이다.</td></tr><tr><td rowspan="4">RDB</td><td>데이터의 일관성을 보증할 수 있음. (Transaction)</td><td>대량 데이터 처리 시 성능 이슈.</td></tr><tr><td>정규화를 전제로 하기 때문에 갱신 시의 비용이 적게 든다.</td><td>갱신이 발생한 Table의 인덱스 생성이나 스키마 변경에 대한 처리 이슈.</td></tr><tr><td>JOIN 등 복잡한 검색 조건으로 검색이 가능함.</td><td>Column을 확실히 정의하기 어려운 경우에 대한 처리 이슈.</td></tr><tr><td>간결하고, 보기 편하다.</td><td>단순히 빨리 결과를 조회하고자 할 때의 성능 이슈.</td></tr><tr><td>OODB</td><td></td><td></td></tr><br><tr><td>NoSQL</td><td>대량의 Record 처리에 유리하다.</td><td>JOIN 연산이 불가능하다.</td></tr></table>
+
 <hr>
 <ul>
 <li><p>Database의 구성요소</p>
@@ -355,7 +356,7 @@
 <h3 id="Foreign-Key-외래키"><a href="#Foreign-Key-외래키" class="headerlink" title="Foreign Key (외래키)"></a>Foreign Key (외래키)</h3><p>두 개의 Table이 Relationship을 맺고있을 때 A의 Primary Key와 같은 B의 Attribute 를 Foreign Key 라 부른다.</p>
 <p>즉, 아래 그림에서 A가 B를 참조한다고 하면 B의 <code>주민등록번호</code>는 Primary Key가 되고 A의 <code>주민등록번호</code>는 Foreign Key가 된다.</p>
 <p><del>Field가 적어서 예시가 적절하지 않은 것도 같고…</del></p>
-<p><img src="/assets/images/2016-06-30-db-fundamental-of-database-001.jpg" alt="Foreign Key">{:class=”img-responsive”}</p>
+<p><img src="/images/2016-06-30-db-fundamental-of-database-001.jpg" alt="Foreign Key">{:class=”img-responsive”}</p>
 <p>Foreign Key를 사용하면 실수로 Data를 삭제하는 것을 막을 수 있다. 다른 Table의 Foreign Key로 참조하고 있는 Row는 Table에서 삭제할 수 없기 때문이다. 이를 <code>참조 무결성(Reference Integrity)</code>이라고 부른다.</p>
 <p><code>Integrity (무결성)</code> 이란 데이터를 보호하고 항상 정상인 상태를 유지하는 것을 말한다.</p>
 <ol>
@@ -618,6 +619,15 @@
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/17/2016-07-17-android-intent/" class="title">Intent</a></p>
+                            <p class="item-date"><time datetime="2016-07-16T23:00:00.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/pattern/">pattern</a></p>
                             <p class="item-title"><a href="/2016/07/16/2016-07-16-pattern-singleton/" class="title">Singleton</a></p>
                             <p class="item-date"><time datetime="2016-07-16T09:42:50.000Z" itemprop="datePublished">2016-07-16</time></p>
@@ -651,15 +661,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
-                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
-                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -669,7 +670,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -679,7 +680,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-pattern-singleton/" style="font-size: 10px;">java, pattern, singleton</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/java-thread/" style="font-size: 10px;">java, thread</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a> <a href="/tags/ui-design-color/" style="font-size: 10px;">ui, design, color</a>
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-intent/" style="font-size: 10px;">android, intent</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-pattern-singleton/" style="font-size: 10px;">java, pattern, singleton</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/java-thread/" style="font-size: 10px;">java, thread</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a> <a href="/tags/ui-design-color/" style="font-size: 10px;">ui, design, color</a>
         </div>
     </div>
 

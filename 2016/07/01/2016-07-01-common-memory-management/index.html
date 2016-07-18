@@ -20,15 +20,15 @@ CPU는 여기에서 command를 load하여 processing 한다.
 CPU는 여기에서 command를 load하여 processing 한다.
 보통 CPU는 register에 1 clock cycle 내에 접근이 가능하다.
 하지만 만약 command가 Main memory에 있을 경우 1 clock이상의 시간이 소요되어 stall(지">
-<meta property="og:image" content="http://lazyrodi.github.io/assets/images/2016-07-01-common-memory-management-001.jpg">
-<meta property="og:updated_time" content="2016-07-11T14:32:12.343Z">
+<meta property="og:image" content="http://lazyrodi.github.io/images/2016-07-01-common-memory-management-001.jpg">
+<meta property="og:updated_time" content="2016-07-18T15:21:00.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Memory management">
 <meta name="twitter:description" content="CPU가 접근 가능한 저장소는 CPU 내부의 Register그리고 Main memory이다.
 CPU는 여기에서 command를 load하여 processing 한다.
 보통 CPU는 register에 1 clock cycle 내에 접근이 가능하다.
 하지만 만약 command가 Main memory에 있을 경우 1 clock이상의 시간이 소요되어 stall(지">
-<meta name="twitter:image" content="http://lazyrodi.github.io/assets/images/2016-07-01-common-memory-management-001.jpg">
+<meta name="twitter:image" content="http://lazyrodi.github.io/images/2016-07-01-common-memory-management-001.jpg">
     
 
     
@@ -216,14 +216,14 @@ CPU는 여기에서 command를 load하여 processing 한다.
 </ul>
 <h4 id="Paging"><a href="#Paging" class="headerlink" title="Paging"></a>Paging</h4><p>  Physical memory는 <code>frame</code>이라는 같은 크기의 block들로 나누어져 있고 Logical memory는 <code>page</code>라는 같은 크기의 block들로 나누어져 있다.</p>
 <p>  CPU에서 나오는 모든 주소는 <code>Page number(p)</code>와 <code>Offset(d)</code>로 구성된다. <code>Page number</code>는 <code>Page table</code>에 access할 때 사용되며 <code>Page table</code>은 Main memory에서 각 page가 점유하는 주소를 가지고 있다. 이 주소에 <code>Offset</code>을 더하면 원하는 <code>Physical address</code>가 된다.</p>
-<p><img src="/assets/images/2016-07-01-common-memory-management-001.jpg" alt="paging hardware">{:class=”img-responsive”}</p>
+<p><img src="/images/2016-07-01-common-memory-management-001.jpg" alt="paging hardware">{:class=”img-responsive”}</p>
 <p>  Frame 및 Page의 크기는 Hardware에 의해 정의되며 <code>Page의 크기는 일반적으로 512 byte ~ 16 MB 사이이며 2의 제곱으로 증가한다.</code></p>
 <p>  Logical address의 크기가 2^m 이고 page가 2^n의 크기를 갖는다면 Logical address의 상위 m-n 비트는 page number를 나타내고, 하위 n 비트는 page offset을 나타낸다.</p>
-<p><img src="/assets/images/2016-07-01-common-memory-management-002.jpg" alt="paging model">{:class=”img-responsive”}</p>
+<p><img src="/images/2016-07-01-common-memory-management-002.jpg" alt="paging model">{:class=”img-responsive”}</p>
 <h4 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h4><p>  사용자는 하나의 Program을 <code>subroutine</code>, <code>procedure</code>, <code>function 또는 module</code>들을 가지고 있는 것으로 생각하고, <code>Table</code>, <code>Array</code>, <code>Stack</code> 등의 다양한 변수를 사용한다. </p>
 <p>  이러한 사용자가 바라보는 Memory의 관점을 그대로 지원하는 Memory Management 기법이다.</p>
 <p>  쉬운 구현을 위해 Segment name 대신 Segment number가 System에 의해 매겨지고 Segment는 number로 불리운다. 때문에 Logical address는 <code>&lt;segment-number, offset&gt;</code>으로 구성된다.</p>
-<p><img src="/assets/images/2016-07-01-common-memory-management-003.jpg" alt="segment example">{:class=”img-responsive”}</p>
+<p><img src="/images/2016-07-01-common-memory-management-003.jpg" alt="segment example">{:class=”img-responsive”}</p>
 <h2 id="Virtual-Memory"><a href="#Virtual-Memory" class="headerlink" title="Virtual Memory"></a>Virtual Memory</h2><p>  Process 전체가 Memory에 올라오지 않더라도 실행이 가능하게 하는 기법이다. Physical memory로부터 사용자 관점의 Logical memory를 분리시켜 Main memory를 균일한 크기의 저장 공간으로 구성된 엄청나게 큰 배열로 추상화시켜 준다.</p>
 <ul>
 <li>장점<ul>
@@ -276,7 +276,7 @@ CPU는 여기에서 command를 load하여 processing 한다.
 </ul>
 </li>
 </ul>
-<p><img src="/assets/images/2016-07-01-common-memory-management-004.jpg" alt="virtual memory">{:class=”img-responsive”}</p>
+<p><img src="/images/2016-07-01-common-memory-management-004.jpg" alt="virtual memory">{:class=”img-responsive”}</p>
 <ul>
 <li>Code, Data, Stack 영역은 Compiler가 Memory의 크기를 결정한다.</li>
 <li>Heap 영역의 크기는 개발자에 의해 프로그램 동작 시 결정된다.</li>
@@ -460,6 +460,15 @@ CPU는 여기에서 command를 load하여 processing 한다.
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/17/2016-07-17-android-intent/" class="title">Intent</a></p>
+                            <p class="item-date"><time datetime="2016-07-16T23:00:00.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/pattern/">pattern</a></p>
                             <p class="item-title"><a href="/2016/07/16/2016-07-16-pattern-singleton/" class="title">Singleton</a></p>
                             <p class="item-date"><time datetime="2016-07-16T09:42:50.000Z" itemprop="datePublished">2016-07-16</time></p>
@@ -493,15 +502,6 @@ CPU는 여기에서 command를 load하여 processing 한다.
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
-                            <p class="item-title"><a href="/2016/07/10/2016-07-10-android-permission/" class="title">Android permission</a></p>
-                            <p class="item-date"><time datetime="2016-07-10T10:47:50.000Z" itemprop="datePublished">2016-07-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -511,7 +511,7 @@ CPU는 여기에서 command를 load하여 processing 한다.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -521,7 +521,7 @@ CPU는 여기에서 command를 load하여 processing 한다.
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-pattern-singleton/" style="font-size: 10px;">java, pattern, singleton</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/java-thread/" style="font-size: 10px;">java, thread</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a> <a href="/tags/ui-design-color/" style="font-size: 10px;">ui, design, color</a>
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-intent/" style="font-size: 10px;">android, intent</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-pattern-singleton/" style="font-size: 10px;">java, pattern, singleton</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/java-thread/" style="font-size: 10px;">java, thread</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a> <a href="/tags/ui-design-color/" style="font-size: 10px;">ui, design, color</a>
         </div>
     </div>
 
