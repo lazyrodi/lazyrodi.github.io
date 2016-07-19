@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Android Interview | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="interview, android" />
+    
+    <meta name="description" content="Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.
+다음 AndroidManifest.xml 파일을 설명하라.
+Activity에 대해 간단히 설명하라.
+Android Architecture의 key component는 무엇인가?
+Intent에 대해 설명하라.
+Android에서 SMS를 발신하기 위해서는 어떻게 해야 하는지 설">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Interview">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/07/19/2016-07-19-interview-android/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.
+다음 AndroidManifest.xml 파일을 설명하라.
+Activity에 대해 간단히 설명하라.
+Android Architecture의 key component는 무엇인가?
+Intent에 대해 설명하라.
+Android에서 SMS를 발신하기 위해서는 어떻게 해야 하는지 설">
+<meta property="og:updated_time" content="2016-07-19T13:49:29.588Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Interview">
+<meta name="twitter:description" content="Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.
+다음 AndroidManifest.xml 파일을 설명하라.
+Activity에 대해 간단히 설명하라.
+Android Architecture의 key component는 무엇인가?
+Intent에 대해 설명하라.
+Android에서 SMS를 발신하기 위해서는 어떻게 해야 하는지 설">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/interview/">interview</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-07-19-interview-android" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Android Interview
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/07/19/2016-07-19-interview-android/" class="article-date">
+    <time datetime="2016-07-19T10:00:00.000Z" itemprop="datePublished">2016-07-19</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interview-android/">interview, android</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <ol>
+<li>Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.</li>
+<li>다음 AndroidManifest.xml 파일을 설명하라.</li>
+<li>Activity에 대해 간단히 설명하라.</li>
+<li>Android Architecture의 key component는 무엇인가?</li>
+<li>Intent에 대해 설명하라.</li>
+<li>Android에서 SMS를 발신하기 위해서는 어떻게 해야 하는지 설명하라.</li>
+<li>SMSManager class에 대해 설명하라.</li>
+<li>당신의 application에서 어떻게 Messaging application을 사용할 수 있겠는가?</li>
+<li>Android에서 사용할 수 있는 Data storage에는 어떤 것들이 있는가?</li>
+<li>SharedPreference에 대해 예시와 함께 설명하라.</li>
+</ol>
+<hr>
+<h2 id="Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라"><a href="#Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라" class="headerlink" title="Android application을 생성할 때 중요한 폴더 및 파일을 설명하라."></a>Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.</h2><table><tr><th>Value</th><th>Description</th></tr><tr><td>src</td><td>.java파일을 포함한다.</td></tr><tr><td>gen</td><td>Compiler가 자동으로 생성하는 Resource파일인 R.java 파일을 가지고 있다. 이 파일은 수정해서는 아니된다.</td></tr><tr><td>library</td><td>android.jar 파일을 포함한다. 해당 Android application에 대한 library들이다.</td></tr><tr><td>assets</td><td>HTML, text, database등의 파일을 포함한다.</td></tr><tr><td>bin</td><td>빌드 후 생성되는 .apk 파일을 포함한다.</td></tr><tr><td>res</td><td>Application에서 사용하는 리소스 파일들을 포함한다.</td></tr></table>
+
+<hr>
+<h2 id="다음-AndroidManifest-xml-파일을-설명하라"><a href="#다음-AndroidManifest-xml-파일을-설명하라" class="headerlink" title="다음 AndroidManifest.xml 파일을 설명하라."></a>다음 AndroidManifest.xml 파일을 설명하라.</h2><ul>
+<li>Package 이름(@string/app_name)을 포함한다.</li>
+<li>Version code가 1이고 이는 어플리케이션의 version(몇 번째 release인지)을 나타낸다.</li>
+<li>Version name이 1.0임을 알 수 있다.</li>
+<li>android.minSdkVersion이 8이고 이는 이 어플리케이션이 실행될 수 있는 Android OS의 최소 version을 나타낸다.</li>
+<li>MainActivity에 대한 activity 정보를 확인할 수 있다. Intent-filter를 통해 Main임을 확인할 수 있다.</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.careerride" android:versionCode="1" android:versionName="1.0"&gt;</div><div class="line"></div><div class="line">&lt;uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18" /&gt;</div><div class="line"></div><div class="line">&lt;application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme"&gt;</div><div class="line"></div><div class="line">&lt;activity android:name="com.example.careerride.MainActivity" android:label="@string/app_name"&gt;</div><div class="line">&lt;intent-filter&gt;</div><div class="line">&lt;action android:name="android.intent.action.MAIN" /&gt;</div><div class="line">&lt;category android:name="android.intent.category.LAUNCHER" /&gt;</div><div class="line">&lt;/intent-filter&gt;</div><div class="line">&lt;/activity&gt;</div><div class="line">&lt;/application&gt;</div><div class="line"></div><div class="line">&lt;/manifest&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Activity에-대해-간단히-설명하라"><a href="#Activity에-대해-간단히-설명하라" class="headerlink" title="Activity에 대해 간단히 설명하라."></a>Activity에 대해 간단히 설명하라.</h2><p>Activity는 User interface를 보여준다. Android application 생성 시 하나의 activity가 생성되며, 기본 이름은 MainActivity이며 맘대로 이름을 붙일 수 있다.</p>
+<p>기본적으로 Activity class를 상속받는다.</p>
+<p>Android Application은 0개 이상의 Activity를 가질 수 있으며 사용자와의 interaction을 위해 사용한다.</p>
+<p>Activity는 onCreate()로 시작하여 onDestroy()로 끝나는 Lifecycle을 가지고 있다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">packagecom.example.careerride; <span class="comment">//Application name careerride</span></div><div class="line"></div><div class="line">importandroid.os.Bundle; <span class="comment">// Default packages</span></div><div class="line">importandroid.app.Activity; <span class="comment">// Default packages</span></div><div class="line">importandroid.view.Menu;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span></div><div class="line">&#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line">publicbooleanonCreateOptionsMenu(Menu menu) </div><div class="line">&#123;</div><div class="line">        <span class="comment">// Inflate the menu; this adds items to the action bar if it is present.</span></div><div class="line">        getMenuInflater().inflate(R.menu.main, menu);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Android-Architecture의-key-component는-무엇인가"><a href="#Android-Architecture의-key-component는-무엇인가" class="headerlink" title="Android Architecture의 key component는 무엇인가?"></a>Android Architecture의 key component는 무엇인가?</h2><ul>
+<li>Linux Kernel</li>
+<li>Libraries</li>
+<li>Android Framework</li>
+<li>Android Applications</li>
+</ul>
+<hr>
+<h2 id="Intent에-대해-설명하라"><a href="#Intent에-대해-설명하라" class="headerlink" title="Intent에 대해 설명하라."></a>Intent에 대해 설명하라.</h2><p>Android의 기본 구성요소(Component)에는 Acivity, Service, ContentProvider, BroadcastReceiver 네 가지가 있는데 이 중 Activity, Service, BroadcastReceiver 사이에 data를 주고 받기 위해 intent를 사용한다.</p>
+<p>다른 activity를 호출하거나 service를 시작하거나 broadcast할 수 있다.</p>
+<p>Intent는 명시적 intent와 암시적 intent 두 가지로 나눌 수 있다.</p>
+<p>명시적 intent는 intent를 전달할 class 정보를 포함한다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent intent = newIntent (<span class="keyword">this</span>, SecondActivity.class);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>암시적 intent는 동작을 원하는 값을 action값으로 하여 URI, MIME type, category 등과 함께 던지면 Android system에서 적절한 application을 찾아서 원하는 동작을 시켜준다.</p>
+<p>적절한 application을 찾는 과정에서 다른 application 내의 intent-filter를 검색하여 매칭되는지 확인한다.</p>
+<p>암시적 intent를 던질 때 call, sms 등과 같은 특정한 동작을 원할 때에는 자신이 그 동작을 수행할 수 있는 permission을 가지고 있어야 한다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent i = newIntent(android.content.Intent.ACTION_VIEW,Uri.parse(“http:<span class="comment">//www.amazon.com”));</span></div><div class="line">startActivity(i);</div><div class="line"><span class="comment">/**/</span></div><div class="line">Intent i = newIntent (android.content.Intent.ACTION_DIAL,Uri.parse(“tel:+9923.....”));</div><div class="line">startActivity(i);</div><div class="line">/**/</div><div class="line">Intent i = newIntent (android.content.Intent.ACTION_CALL,Uri.parse(“tel:+<span class="number">9923</span>.....”));</div><div class="line">startActivity(i);</div><div class="line"></div><div class="line"><span class="comment">/* permission */</span></div><div class="line">&lt;uses-permissionandroid:name=”android.permission.CALL_PHONE”/&gt;</div><div class="line">&lt;uses-permissionandroid:name=”android.permission.INTERNET”/&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Android에서-SMS를-발신하기-위해서는-어떻게-해야-하는지-설명하라"><a href="#Android에서-SMS를-발신하기-위해서는-어떻게-해야-하는지-설명하라" class="headerlink" title="Android에서 SMS를 발신하기 위해서는 어떻게 해야 하는지 설명하라."></a>Android에서 SMS를 발신하기 위해서는 어떻게 해야 하는지 설명하라.</h2><ol>
+<li>“send sms” Button을 생성한다.</li>
+<li>AndroidManifest.xml 에 permisson을 설정한다.<ul>
+<li><uses-permissionandroid:name="android.permission.send_sms"></uses-permissionandroid:name="android.permission.send_sms"></li>
+</ul>
+</li>
+<li>다음과 같은 메소드를 만들어서 SMS를 발신한다.<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">publicvoidsendmySMS(View v)</div><div class="line">&#123;</div><div class="line">     SmsManager sms = SmsManager.getDefault();</div><div class="line">     sms.sendTextMessage(<span class="string">"5556"</span>, <span class="keyword">null</span>, <span class="string">"Hello from careerRide"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="SMSManager-class에-대해-설명하라"><a href="#SMSManager-class에-대해-설명하라" class="headerlink" title="SMSManager class에 대해 설명하라."></a>SMSManager class에 대해 설명하라.</h2><p>SMS를 발신할 때 사용하는 class이며, 직접적으로 초기화하여 사용할 수 없고 getDefault()를 사용해야 한다.</p>
+<p>발신하는 메소드는 sendTextMessage()인데 다음과 같은 파라미터들을 갖는다.</p>
+<ul>
+<li>destinationAddress: 수신자의 전화번호</li>
+<li>scAddress: Service center address (null로 설정해도 된다.)</li>
+<li>text: 메시지 내용</li>
+<li>sentIntent: 메시지가 발신되었음을 알려주는 intent.</li>
+<li>deliveryIntent: 메시지가 상대방에게 도착하였음을 알려주는 intent. 어플리케이션에서 delivery status option을 체크해줘야 한다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">publicvoidsendmySMS(View v)</div><div class="line">&#123;</div><div class="line">     SmsManager sms = SmsManager.getDefault();</div><div class="line">     sms.sendTextMessage(<span class="string">"5556"</span>, <span class="keyword">null</span>, <span class="string">"Hello from careerRide"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="당신의-application에서-어떻게-Messaging-application을-사용할-수-있겠는가"><a href="#당신의-application에서-어떻게-Messaging-application을-사용할-수-있겠는가" class="headerlink" title="당신의 application에서 어떻게 Messaging application을 사용할 수 있겠는가?"></a>당신의 application에서 어떻게 Messaging application을 사용할 수 있겠는가?</h2><p>SMS 발신 permission을 얻은 후, Intent를 던지면 Default SMS Application으로 설정되어 있는 Application을 통해 SMS를 발신할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent (android.content.Intent.ACTION_VIEW);</div><div class="line">intent.putExtra(<span class="string">"address"</span>, <span class="string">"5556; 5558;"</span>); <span class="comment">// Send the message to multiple recipient.</span></div><div class="line">itent.putExtra(<span class="string">"sms_body"</span>, <span class="string">"Hello my friends!"</span>);</div><div class="line">intent.setType(<span class="string">"vnd.android-dir/mms-sms"</span>);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Android에서-사용할-수-있는-Data-storage에는-어떤-것들이-있는가"><a href="#Android에서-사용할-수-있는-Data-storage에는-어떤-것들이-있는가" class="headerlink" title="Android에서 사용할 수 있는 Data storage에는 어떤 것들이 있는가?"></a>Android에서 사용할 수 있는 Data storage에는 어떤 것들이 있는가?</h2><ul>
+<li>SharedPreferences</li>
+<li>SQLite</li>
+<li>ContentProvider</li>
+<li>File Storage</li>
+<li>Cloud Storage</li>
+</ul>
+<hr>
+<h2 id="SharedPreference에-대해-예시와-함께-설명하라"><a href="#SharedPreference에-대해-예시와-함께-설명하라" class="headerlink" title="SharedPreference에 대해 예시와 함께 설명하라."></a>SharedPreference에 대해 예시와 함께 설명하라.</h2><p>SharedPreference는 Android storage 중 가장 간단한 방법을 가진다.</p>
+<p>Data를 XML 파일에 저장하는데 Key-Value pair로 한다. Primitive data type을 사용할 수 있다. (boolean, float, int, long, string)</p>
+<p>XML 파일은 data/data/자신의 패키지명(com.a.b)/shared-prefs/ 디렉토리에 저장된다.</p>
+<p>A Activity에서 저장한 내용도 B Activity에서 가져다가 사용할 수 있다.</p>
+<h3 id="저장"><a href="#저장" class="headerlink" title="저장"></a>저장</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">SharedPreferences sf = getSharedPreferences(<span class="string">"MyData"</span>, MODE_PRIVATE); <span class="comment">// "Mydata" XML file, MODE_PRIVATE은 이 어플리케이션에서만 사용하겠다는 의미.</span></div><div class="line">SharedPreferences.Editor ed = sf.edit();</div><div class="line">ed.putString(<span class="string">"name"</span>, txtusername.getText().toString());</div><div class="line">ed.putString(<span class="string">"pass"</span>, txtpassword.getText().toString());</div><div class="line">ed.commit();</div></pre></td></tr></table></figure>
+<h3 id="읽어오기"><a href="#읽어오기" class="headerlink" title="읽어오기"></a>읽어오기</h3><p>getString(value, default) 형식으로 읽어오면 되며, value가 SharedPreference에 존재하지 않을 때 “default” 값을 가져온다.</p>
+<p>그리고 아래 코드에서는 name이나 pass 중 하나라도 못 읽어오면 “No data is found” Toast를 발생시킨다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT = <span class="string">"N/A"</span>;</div><div class="line"></div><div class="line">SharedPreferences sf = getSharedPreferences(<span class="string">"MyData"</span>, Context.MODE_PRIVATE);</div><div class="line">String Uname = sf.getString(<span class="string">"name"</span>, DEFAULT);</div><div class="line">String UPass = sf.getString(<span class="string">"pass"</span>, DEFAULT);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(name.equals(DEFAULT) || Pass.equals(DEFAULT)) &#123;</div><div class="line">    Toast.makeText(<span class="keyword">this</span>, <span class="string">"No data is found"</span>, Toast.LENGTH_LONG).show();</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    Txtusername.setText(Uname);</div><div class="line">    Txtpassword.setText(UPass) ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><ul>
+<li><a href="http://www.careerride.com/android-interview-questions.aspx" target="_blank" rel="external">http://www.careerride.com/android-interview-questions.aspx</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/07/19/2016-07-19-interview-android/" data-id="ciqte9k8900001skx8b4gn3rb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/07/17/2016-07-17-android-intent/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Intent</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/interview/">interview</a></p>
+                            <p class="item-title"><a href="/2016/07/19/2016-07-19-interview-android/" class="title">Android Interview</a></p>
+                            <p class="item-date"><time datetime="2016-07-19T10:00:00.000Z" itemprop="datePublished">2016-07-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/07/17/2016-07-17-android-intent/" class="title">Intent</a></p>
+                            <p class="item-date"><time datetime="2016-07-16T23:00:00.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/pattern/">pattern</a></p>
+                            <p class="item-title"><a href="/2016/07/16/2016-07-16-pattern-singleton/" class="title">Singleton</a></p>
+                            <p class="item-date"><time datetime="2016-07-16T09:42:50.000Z" itemprop="datePublished">2016-07-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/works/">works</a></p>
+                            <p class="item-title"><a href="/2016/07/16/2016-07-16-works-my-favorite-colors/" class="title">[Reference] My Favorite Colors</a></p>
+                            <p class="item-date"><time datetime="2016-07-16T08:20:00.000Z" itemprop="datePublished">2016-07-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/07/13/2016-07-13-java-thread/" class="title">Java Thread</a></p>
+                            <p class="item-date"><time datetime="2016-07-13T11:42:50.000Z" itemprop="datePublished">2016-07-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-intent/" style="font-size: 10px;">android, intent</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/interview-android/" style="font-size: 10px;">interview, android</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-pattern-singleton/" style="font-size: 10px;">java, pattern, singleton</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/java-thread/" style="font-size: 10px;">java, thread</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a> <a href="/tags/ui-design-color/" style="font-size: 10px;">ui, design, color</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2016 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/07/19/2016-07-19-interview-android/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
