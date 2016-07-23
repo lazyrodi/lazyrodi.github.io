@@ -8,8 +8,48 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 19 Jul 2016 13:49:29 GMT</pubDate>
+    <pubDate>Sat, 23 Jul 2016 14:19:42 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>SVG (Scalable Vector Graphic)</title>
+      <link>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-tutorial/</link>
+      <guid>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-tutorial/</guid>
+      <pubDate>Sat, 23 Jul 2016 12:02:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Jekyll이나 Hexo를 이용할 때 SVG 포맷을 처음 보게 되어서 한 번 찾아보았다.&lt;/p&gt;
+&lt;p&gt;SVG는 Scalable Vector Graphic 의 약자로 XML을 통해 Vector Image(단순하게 말해서 확대해도 깨지지 않는 이미지
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;Jekyll이나 Hexo를 이용할 때 SVG 포맷을 처음 보게 되어서 한 번 찾아보았다.&lt;/p&gt;
+&lt;p&gt;SVG는 Scalable Vector Graphic 의 약자로 XML을 통해 Vector Image(단순하게 말해서 확대해도 깨지지 않는 이미지)를 표현할 수 있게 정의된 포맷이다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/SVG/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;W3C에서 SVG를 정의&lt;/a&gt;하고 있고 &lt;a href=&quot;http://www.w3schools.com/svg/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tutorial&lt;/a&gt;도 잘 정리해 두었다.&lt;/p&gt;
+&lt;p&gt;사용법은 굉장히 단순하게 보이지만 파고들면 역시나 쉽지 않다. (물론 시간만 있다면 &lt;a href=&quot;http://www.w3schools.com/svg/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tutorial&lt;/a&gt;만 보고도 뭐든 그릴 수 있을 것 같긴 하다.)&lt;/p&gt;
+&lt;p&gt;뭘 그려볼까 하다가 LG의 CI를 그려보았다.&lt;/p&gt;
+&lt;p&gt;구성요소는 다음과 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;배경이 되는 빨간 &lt;code&gt;circle&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;G의 기본이 되는 하얀 &lt;code&gt;circle&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;우 상단 1/4 영역의 하얀 색을 지우기 위한 mask역할의 &lt;code&gt;path&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;G의 가로줄 &lt;code&gt;line&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;코 역할의 L을 그려줄 &lt;code&gt;polyline&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;아래의 소스를 ~~~.svg 로 저장하고 html에서 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag를 통해 사용할 수 있다.&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;svg&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;version&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;1.1&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/2000/svg&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns:xlink&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/1999/xlink&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;80&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;80&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- background circle --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;circle&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cx&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cy&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;r&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;fill&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;#C3013B&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- inner circle --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;circle&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cx&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cy&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;r&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;32&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;fill:none;stroke:#FFFFFF;stroke-width:3&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- masking --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;d&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;M40,8 A32,32 0 0,1 72,39&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stroke:#C3013B;stroke-width:4;fill:none&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;x1&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;y1&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;x2&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;73.5&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;y2&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stroke:#FFFFFF;stroke-width:3&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- eye --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;circle&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cx&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;25&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cy&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;27&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;r&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;5&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;fill&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;#FFFFFF&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- L --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;polyline&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;points&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;40,22 40,58 50,58&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;fill:none;stroke:#FFFFFF;stroke-width:3&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;svg&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;그림의 결과는 아래와 같다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/LG_CI.svg&quot; alt=&quot;LG_CI.svg&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.w3.org/TR/SVG/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SVG Specification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.w3schools.com/svg/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SVG Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://tutorials.jenkov.com/svg/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tutorials.jenkov.com/svg/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://css-tricks.com/scale-svg/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://css-tricks.com/scale-svg/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-tutorial/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Android Interview</title>
@@ -1959,28 +1999,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/06/22/2016-06-22-hr-conference/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>UX</title>
-      <link>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-ux/</link>
-      <guid>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-ux/</guid>
-      <pubDate>Wed, 22 Jun 2016 10:47:50 GMT</pubDate>
-      <description>
-      
-        &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://uxd-trend.tistory.com/37&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;같은 듯 다른 사용자경험(UX)과 고객경험(CX)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-      </description>
-      
-      <content:encoded>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://uxd-trend.tistory.com/37&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;같은 듯 다른 사용자경험(UX)과 고객경험(CX)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-ux/#disqus_thread</comments>
     </item>
     
   </channel>
