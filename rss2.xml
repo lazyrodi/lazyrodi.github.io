@@ -8,13 +8,90 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 23 Jul 2016 14:19:42 GMT</pubDate>
+    <pubDate>Sun, 24 Jul 2016 08:59:33 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
+      <title>Hexo plugin development</title>
+      <link>http://lazyrodi.github.io/2016/07/24/2016-07-24-works-hexo-strava/</link>
+      <guid>http://lazyrodi.github.io/2016/07/24/2016-07-24-works-hexo-strava/</guid>
+      <pubDate>Sun, 24 Jul 2016 01:02:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;a href=&quot;https://hexo.io/docs/plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/plugins.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hexo는 강력한 plugin 
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;&lt;a href=&quot;https://hexo.io/docs/plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/plugins.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hexo는 강력한 plugin system을 가지고 있다. Core module의 소스코드를 수정하지 않더라도 추가 기능을 쉽게 구현할 수 있다.&lt;/p&gt;
+&lt;p&gt;두 종류의 hexo plugin에 대해 알아보자.&lt;/p&gt;
+&lt;h3 id=&quot;Script&quot;&gt;&lt;a href=&quot;#Script&quot; class=&quot;headerlink&quot; title=&quot;Script&quot;&gt;&lt;/a&gt;Script&lt;/h3&gt;&lt;p&gt;비교적 간단한 plugin을 구현한다면 script의 사용을 추천한다. 당신이 해야 할 일은 오직 JavaScript 파일을 script 폴더에 넣어두는 것이다. Hexo가 초기화 과정에서 그 파일을 가져다가 사용할 것이다.&lt;/p&gt;
+&lt;h3 id=&quot;Plugin&quot;&gt;&lt;a href=&quot;#Plugin&quot; class=&quot;headerlink&quot; title=&quot;Plugin&quot;&gt;&lt;/a&gt;Plugin&lt;/h3&gt;&lt;p&gt;당신의 코드가 복잡하거나 NPM registry에 publish하기를 원한다면, plugin의 사용을 추천한다. 우선, &lt;code&gt;node_modules&lt;/code&gt; 폴더 안에 새로 만들 plugin 폴더를 생성한다. 이 폴더의 이름은 &lt;code&gt;hexo-&lt;/code&gt; 로 시작해야 한다. 다른 이름으로 시작하다면 Hexo는 이를 무시한다.&lt;/p&gt;
+&lt;p&gt;당신의 새 폴더는 적어도 두 개의 파일을 가지고 있어야 한다.&lt;/p&gt;
+&lt;p&gt;하나는 실제 동작을 할 JavaScript 코드가 들어있는 파일이며, 하나는 package.json 파일이다. package.json 파일에는 plugin의 목적과 의존적인 set들에 대한 내용이 들어있어야 한다.&lt;/p&gt;
+&lt;p&gt;.&lt;br&gt;├── index.js&lt;br&gt;└── package.json&lt;/p&gt;
+&lt;p&gt;최소한의 정보로, 당신은 name, version, main entry를 package.json 파일에 기술해야 한다. 아래 예시를 보라.&lt;/p&gt;
+&lt;p&gt;package.json&lt;br&gt;{&lt;br&gt;  “name”: “hexo-my-plugin”,&lt;br&gt;  “version”: “0.0.1”,&lt;br&gt;  “main”: “index”&lt;br&gt;}&lt;/p&gt;
+&lt;p&gt;당신은 또한 root에 있는 package.json 파일에 당신의 plugin에 대한 hexo instance 정보를 추가하여 Hexo가 당신의 plugin을 발견하고 로딩할 수 있게 해야한다.&lt;/p&gt;
+&lt;h3 id=&quot;Tools&quot;&gt;&lt;a href=&quot;#Tools&quot; class=&quot;headerlink&quot; title=&quot;Tools&quot;&gt;&lt;/a&gt;Tools&lt;/h3&gt;&lt;p&gt;당신은 Hexo에서 제공하는 공식적인 tool들을 사용할 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hexo-fs：File IO&lt;/li&gt;
+&lt;li&gt;hexo-util：Utilities&lt;/li&gt;
+&lt;li&gt;hexo-i18n：Localization (i18n)&lt;/li&gt;
+&lt;li&gt;hexo-pagination：Generate pagination data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Publishing&quot;&gt;&lt;a href=&quot;#Publishing&quot; class=&quot;headerlink&quot; title=&quot;Publishing&quot;&gt;&lt;/a&gt;Publishing&lt;/h3&gt;&lt;p&gt;Plugin을 완성하면, 다른 사람들로 하여금 이를 사용할 수 있게 publicshing을 고려해야 한다. 이 과정은 문서를 업데이트 하는 과정과 매우 유사하다.&lt;/p&gt;
+&lt;h4 id=&quot;Fork-hexojs-site&quot;&gt;&lt;a href=&quot;#Fork-hexojs-site&quot; class=&quot;headerlink&quot; title=&quot;Fork hexojs/site&quot;&gt;&lt;/a&gt;Fork hexojs/site&lt;/h4&gt;&lt;p&gt;Clone the repository to your computer and install dependencies.&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/&lt;/a&gt;&lt;username&gt;/site.git&lt;br&gt;$ cd site&lt;br&gt;$ npm install&lt;br&gt;Edit source/_data/plugins.yml and add your plugin. For example:&lt;/username&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: hexo-server&lt;br&gt;description: Server module for Hexo.&lt;br&gt;link: &lt;a href=&quot;https://github.com/hexojs/hexo-server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hexojs/hexo-server&lt;/a&gt;&lt;br&gt;tags:&lt;ul&gt;
+&lt;li&gt;official&lt;/li&gt;
+&lt;li&gt;server&lt;/li&gt;
+&lt;li&gt;console&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;여기에 푸시한 후 &lt;code&gt;pull request&lt;/code&gt;를 생성하면 된다.&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/07/24/2016-07-24-works-hexo-strava/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>GIT command for me</title>
+      <link>http://lazyrodi.github.io/2016/07/24/2016-07-24-etc-git/</link>
+      <guid>http://lazyrodi.github.io/2016/07/24/2016-07-24-etc-git/</guid>
+      <pubDate>Sun, 24 Jul 2016 01:02:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;간단한 GIT command 정리.&lt;/p&gt;
+&lt;p&gt;회사에서는 형상관리팀이 존재하고, &lt;a href=&quot;https://source.android.com/source/using-repo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;간단한 GIT command 정리.&lt;/p&gt;
+&lt;p&gt;회사에서는 형상관리팀이 존재하고, &lt;a href=&quot;https://source.android.com/source/using-repo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;repo&lt;/a&gt;와 &lt;a href=&quot;https://www.gerritcodereview.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gerrit&lt;/a&gt;을 사용하여 편하게 소스 관리를 하고있다.&lt;/p&gt;
+&lt;table&gt;&lt;tr&gt;&lt;th&gt;Command&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git config --global user.name &amp;lt;name&amp;gt;&lt;/td&gt;&lt;td&gt;사용자 이름을 설정한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git config --global user.email &amp;lt;email&amp;gt;&lt;/td&gt;&lt;td&gt;사용자 이메일을 설정한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git clone &amp;lt;url&amp;gt;&lt;/td&gt;&lt;td&gt;저장소(remote)로부터 소스를 가져온다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git branch &amp;lt;new-branch&amp;gt;&lt;/td&gt;&lt;td&gt;Local에 새로운 branch를 만든다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git branch&lt;/td&gt;&lt;td&gt;Local에 있는 branch들을 확인할 수 있다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git checkout &amp;lt;branch&amp;gt; | &amp;lt;filename&amp;gt;&lt;/td&gt;&lt;td&gt;&amp;lt;branch&amp;gt;를 사용할 경우 branch를 변경하고, &amp;lt;filename&amp;gt;인 경우 add를 통해 stage에 올린 file을 내릴 수 있다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git push origin &amp;lt;branch name&amp;gt;&lt;/td&gt;&lt;td&gt;Local에서 생성한 branch를 저장소에 push한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git diff&lt;/td&gt;&lt;td&gt;현재 수정사항이 무엇을 변경한 것인지 확인할 수 있다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git status&lt;/td&gt;&lt;td&gt;수정한 파일들의 현재 상태를 나타낸다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git add -A&lt;/td&gt;&lt;td&gt;수정한 소스들을 stage area에 올린다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git commit [-m “description”]&lt;/td&gt;&lt;td&gt;새 commit을 생성한다. &lt;code&gt;-m&lt;/code&gt; 옵션을 사용하면 한 줄 짜리 commit 내용을 만들 수 있다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git commit --amend&lt;/td&gt;&lt;td&gt;한 번 commit 작성 후 다른 commit을 생성하고 싶지 않을 때, 수정하고 &lt;code&gt;git add -A&lt;/code&gt;하고 &lt;code&gt;git commit --amend&lt;/code&gt;를 하면 commit id를 새로 생성하지 않아도 된다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git push&lt;/td&gt;&lt;td&gt;작성한 commit(들)을 저장소로 업로드한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git revert &amp;lt;commit id&amp;gt;&lt;/td&gt;&lt;td&gt;push한 commit을 제거한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git log [–author &amp;lt;username&amp;gt;]&lt;/td&gt;&lt;td&gt;&amp;lt;username&amp;gt;이 반영한 commit들을 볼 수 있다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git blame &amp;lt;filename&amp;gt;&lt;/td&gt;&lt;td&gt;&amp;lt;filename&amp;gt; line 별로 누가 반영한 것인지 확인할 수 있다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git merge &amp;lt;source branch&amp;gt;&lt;/td&gt;&lt;td&gt;&amp;lt;source branch&amp;gt;의 내용을 현재 branch에 merge한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;git reset [–hard HEAD^]&lt;/td&gt;&lt;td&gt;강제로 HEAD^ 상태로 돌린다. HEAD^ 에는 commit id를 넣어도 된다.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://source.android.com/source/using-repo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gerritcodereview.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gerrit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.google.co.kr/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=9&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0ahUKEwj-_sOOpYvOAhVLnZQKHccRBHQQFgg9MAg&amp;amp;url=https%3A%2F%2Fwww.atlassian.com%2Fdms%2Fwac%2Fimages%2Flanding%2Fgit%2Fatlassian_git_cheatsheet.pdf&amp;amp;usg=AFQjCNGqtOA5UPshK3MhDPRsKd3Cz0ytZQ&amp;amp;sig2=fJAYtlly_ZTG7Cd2mIY5bw&amp;amp;bvm=bv.127984354,d.dGo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Atlassian GIT Cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cheat-sheets.org/saved-copy/git-cheat-sheet-v2.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cheat-sheets.org/saved-copy/git-cheat-sheet-v2.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cheat-sheets.org/saved-copy/Git_Cheat_Sheet_grey.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cheat-sheets.org/saved-copy/Git_Cheat_Sheet_grey.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cheat-sheets.org/saved-copy/github-git-cheat-sheet.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cheat-sheets.org/saved-copy/github-git-cheat-sheet.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/07/24/2016-07-24-etc-git/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>SVG (Scalable Vector Graphic)</title>
-      <link>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-tutorial/</link>
-      <guid>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-tutorial/</guid>
+      <link>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-svg/</link>
+      <guid>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-svg/</guid>
       <pubDate>Sat, 23 Jul 2016 12:02:50 GMT</pubDate>
       <description>
       
@@ -48,7 +125,7 @@
 &lt;/ul&gt;
 </content:encoded>
       
-      <comments>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-tutorial/#disqus_thread</comments>
+      <comments>http://lazyrodi.github.io/2016/07/23/2016-07-23-etc-svg/#disqus_thread</comments>
     </item>
     
     <item>
@@ -953,7 +1030,9 @@
 &lt;h2 id=&quot;TCP-IP&quot;&gt;&lt;a href=&quot;#TCP-IP&quot; class=&quot;headerlink&quot; title=&quot;TCP/IP&quot;&gt;&lt;/a&gt;TCP/IP&lt;/h2&gt;&lt;p&gt;위 그림에서 보듯 TCP/IP는 OSI 7 Layer 대신 4개의 Layer로 정의해 둔 것이다.&lt;/p&gt;
 &lt;p&gt;Network를 상호 연결시켜 정보를 전송하는 기능을 가진 여러 개의 Protocol을 집합으로 묶어둔 것이 특징이다.&lt;/p&gt;
 &lt;p&gt;TCP/IP 각각의 Protocol이 하는 기능은 다음과 같다.&lt;/p&gt;
-&lt;p&gt;| 구분     | 기능   | Protocol | Description |&lt;br&gt;| 응용계층 | FTP    | FTP      | 파일 전송 프로토콜 |&lt;br&gt;|          |        | TFTP     | 소형 파일 전송 Protocol |&lt;br&gt;|          | E-mail | SMTP     | 메일 서버 간의 메일 송수신 |&lt;br&gt;|          |        | POP3     | 메일 클라이언트와 메일 서버 간의 메일 송수신 |&lt;br&gt;|          |        | IMAP4    | POP3의 단점을 보완함 (원격 서버의 계층 구조를 유지한다.) |&lt;br&gt;|          | Telnet | Telnet   | 다른 시스템으로 로그인하는 기능 |&lt;br&gt;|          | 인터넷 | HTTP     | Web service protocol |&lt;br&gt;|          |        | SNMP     | 데이터 흐름 정보 (네트워크 및 Host 상태 모니터링) |&lt;br&gt;|          |        | DNS      | Host 이름에 대한 IP 주소 통보기능 |&lt;br&gt;|          |        | NFS      | SUN에서 개발한 분산형 파일 시스템 |&lt;br&gt;| 전송계층 | End-to-End Data 전송 | TCP       | 연결 지향 Protocol |&lt;br&gt;|          |                      | UDP       | 비연결 지향 Protocol |&lt;br&gt;|          |                      | SCTP      | 신뢰성 제공 (UDP+TCP), 4Way handshaking 사용 |&lt;br&gt;| 인터넷계층 | OSI의 Network 계층 | IP | 목적지까지 패킷 전달 (IPv4, IPv6) |&lt;br&gt;|            | Routing (경로 설정) | IPx | PC용 Network, 경로 선택, 패킷 처리 |&lt;br&gt;|            | Gateway (Network 간 Data 연결) | ARP | 논리 주소 IP로 물리 주소 IP(MAC)를 탐색  |&lt;br&gt;|            |                                | RARP | 물리 주소 IP로 논리 주소 IP를 탐색 |&lt;br&gt;|            |                                | BOOTB | 디스크 없는 시스템 부팅 시 사용 |&lt;br&gt;|            |                                | DHCP | 임시 IP 주소 할당 기술 |&lt;br&gt;|            |                                | ICMP | IP 계층 이용 Message 교환 (ping) |&lt;br&gt;|            |                                | IGMP | 인터넷 그룹 관리, Multicast 그룹을 router에게 통보 |&lt;br&gt;| 링크계층   | 기존 표준 기술 지원 | Etehrenet | 기존의 모든 표준 Protocol과 기술적 호환성 유지 |&lt;br&gt;|            |                     | X.25      | |&lt;/p&gt;
+&lt;table&gt;&lt;tr&gt;&lt;th&gt;구분&lt;/th&gt;&lt;th&gt;기능&lt;/th&gt;&lt;th&gt;Protocol&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;10&quot;&gt;응용계층&lt;/td&gt;&lt;td rowspan=&quot;2&quot;&gt;FTP&lt;/td&gt;&lt;td&gt;FTP&lt;/td&gt;&lt;td&gt;파일 전송 프로토콜&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TFTP&lt;/td&gt;&lt;td&gt;소형 파일 전송 Protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;3&quot;&gt;E-mail&lt;/td&gt;&lt;td&gt;SMTP&lt;/td&gt;&lt;td&gt;메일 서버 간의 메일 송수신&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;POP3&lt;/td&gt;&lt;td&gt;메일 클라이언트와 메일 서버 간의 메일 송수신&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IMAP4&lt;/td&gt;&lt;td&gt;POP3의 단점을 보완함 (원격 서버의 계층 구조를 유지한다.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Telnet&lt;/td&gt;&lt;td&gt;Telnet&lt;/td&gt;&lt;td&gt;다른 시스템으로 로그인하는 기능&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;4&quot;&gt;인터넷&lt;/td&gt;&lt;td&gt;HTTP&lt;/td&gt;&lt;td&gt;Web service protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SNMP&lt;/td&gt;&lt;td&gt;데이터 흐름 정보 (네트워크 및 Host 상태 모니터링)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DNS&lt;/td&gt;&lt;td&gt;Host 이름에 대한 IP 주소 통보기능&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;NFS&lt;/td&gt;&lt;td&gt;SUN에서 개발한 분산형 파일 시스템&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;3&quot;&gt;전송계층&lt;/td&gt;&lt;td rowspan=&quot;3&quot;&gt;End-to-End Data 전송&lt;/td&gt;&lt;td&gt;TCP  &lt;/td&gt;&lt;td&gt;연결 지향 Protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;UDP&lt;/td&gt;&lt;td&gt;비연결 지향 Protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SCTP&lt;/td&gt;&lt;td&gt;신뢰성 제공 (UDP+TCP), 4Way handshaking 사용&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;8&quot;&gt;인터넷계층&lt;/td&gt;&lt;td&gt;OSI의 Network 계층&lt;/td&gt;&lt;td&gt;IP&lt;/td&gt;&lt;td&gt;목적지까지 패킷 전달 (IPv4, IPv6)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Routing (경로 설정)&lt;/td&gt;&lt;td&gt;IPx&lt;/td&gt;&lt;td&gt;PC용 Network, 경로 선택, 패킷 처리&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;6&quot;&gt;Gateway (Network 간 Data 연결)&lt;/td&gt;&lt;td&gt;ARP&lt;/td&gt;&lt;td&gt;논리 주소 IP로 물리 주소 IP(MAC)를 탐색&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RARP&lt;/td&gt;&lt;td&gt;물리 주소 IP로 논리 주소 IP를 탐색&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BOOTB&lt;/td&gt;&lt;td&gt;디스크 없는 시스템 부팅 시 사용&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DHCP&lt;/td&gt;&lt;td&gt;임시 IP 주소 할당 기술&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ICMP&lt;/td&gt;&lt;td&gt;IP 계층 이용 Message 교환 (ping)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IGMP&lt;/td&gt;&lt;td&gt;인터넷 그룹 관리, Multicast 그룹을 router에게 통보&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;2&quot;&gt;링크계층&lt;/td&gt;&lt;td rowspan=&quot;2&quot;&gt;기존 표준 기술 지원&lt;/td&gt;&lt;td&gt;Etehrenet&lt;/td&gt;&lt;td&gt;기존의 모든 표준 Protocol과 기술적 호환성 유지&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;X.25 &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+
 &lt;hr&gt;
 &lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Open_Systems_Interconnection&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OSI&lt;/a&gt;&lt;/li&gt;
@@ -1953,52 +2032,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/06/27/2016-06-27-life-jaksimilill/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>동영상 모음</title>
-      <link>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/</link>
-      <guid>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/</guid>
-      <pubDate>Wed, 22 Jun 2016 11:01:00 GMT</pubDate>
-      <description>
-      
-        &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=i0pkKABS-YY&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;개발자가 보면 암걸리는 동영상&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https:/
-      
-      </description>
-      
-      <content:encoded>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=i0pkKABS-YY&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;개발자가 보면 암걸리는 동영상&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/VypDiN-X5FA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;산으로 가는 광고&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=O7YzjUNL-Z4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;오늘 미래를 만나다 - 허태균 교수&lt;/a&gt; : 대한민국에서 행복 찾기&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=OL2iHMBRd7g&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;자기 적성을 몰라 헤매는 당신이 반드시 들어야 할 대답&lt;/a&gt; : 송길영 다음소프트 부사장&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cNN_tTXABUA&amp;amp;feature=youtu.be&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How a CPU Works&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[조직문화] 회의</title>
-      <link>http://lazyrodi.github.io/2016/06/22/2016-06-22-hr-conference/</link>
-      <guid>http://lazyrodi.github.io/2016/06/22/2016-06-22-hr-conference/</guid>
-      <pubDate>Wed, 22 Jun 2016 11:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;&lt;a href=&quot;http://www.andrewahn.co/silicon-valley/silicon-valley-meeting-tips/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;실리콘밸리 임원들이 회의 하는 법&lt;/a&gt; - www
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;&lt;a href=&quot;http://www.andrewahn.co/silicon-valley/silicon-valley-meeting-tips/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;실리콘밸리 임원들이 회의 하는 법&lt;/a&gt; - www.andrewahn.co&lt;br&gt;&lt;a href=&quot;http://www.andrewahn.co/silicon-valley/5-day-rule-and-clean-escalation/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;신속한 합의를 위한 5일의 법칙&lt;/a&gt; - www.andrewahn.co&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/06/22/2016-06-22-hr-conference/#disqus_thread</comments>
     </item>
     
   </channel>
