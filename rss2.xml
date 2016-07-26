@@ -8,54 +8,8 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 24 Jul 2016 08:59:33 GMT</pubDate>
+    <pubDate>Sun, 24 Jul 2016 08:00:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>Hexo plugin development</title>
-      <link>http://lazyrodi.github.io/2016/07/24/2016-07-24-works-hexo-strava/</link>
-      <guid>http://lazyrodi.github.io/2016/07/24/2016-07-24-works-hexo-strava/</guid>
-      <pubDate>Sun, 24 Jul 2016 01:02:50 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;&lt;a href=&quot;https://hexo.io/docs/plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/plugins.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Hexo는 강력한 plugin 
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;&lt;a href=&quot;https://hexo.io/docs/plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/plugins.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Hexo는 강력한 plugin system을 가지고 있다. Core module의 소스코드를 수정하지 않더라도 추가 기능을 쉽게 구현할 수 있다.&lt;/p&gt;
-&lt;p&gt;두 종류의 hexo plugin에 대해 알아보자.&lt;/p&gt;
-&lt;h3 id=&quot;Script&quot;&gt;&lt;a href=&quot;#Script&quot; class=&quot;headerlink&quot; title=&quot;Script&quot;&gt;&lt;/a&gt;Script&lt;/h3&gt;&lt;p&gt;비교적 간단한 plugin을 구현한다면 script의 사용을 추천한다. 당신이 해야 할 일은 오직 JavaScript 파일을 script 폴더에 넣어두는 것이다. Hexo가 초기화 과정에서 그 파일을 가져다가 사용할 것이다.&lt;/p&gt;
-&lt;h3 id=&quot;Plugin&quot;&gt;&lt;a href=&quot;#Plugin&quot; class=&quot;headerlink&quot; title=&quot;Plugin&quot;&gt;&lt;/a&gt;Plugin&lt;/h3&gt;&lt;p&gt;당신의 코드가 복잡하거나 NPM registry에 publish하기를 원한다면, plugin의 사용을 추천한다. 우선, &lt;code&gt;node_modules&lt;/code&gt; 폴더 안에 새로 만들 plugin 폴더를 생성한다. 이 폴더의 이름은 &lt;code&gt;hexo-&lt;/code&gt; 로 시작해야 한다. 다른 이름으로 시작하다면 Hexo는 이를 무시한다.&lt;/p&gt;
-&lt;p&gt;당신의 새 폴더는 적어도 두 개의 파일을 가지고 있어야 한다.&lt;/p&gt;
-&lt;p&gt;하나는 실제 동작을 할 JavaScript 코드가 들어있는 파일이며, 하나는 package.json 파일이다. package.json 파일에는 plugin의 목적과 의존적인 set들에 대한 내용이 들어있어야 한다.&lt;/p&gt;
-&lt;p&gt;.&lt;br&gt;├── index.js&lt;br&gt;└── package.json&lt;/p&gt;
-&lt;p&gt;최소한의 정보로, 당신은 name, version, main entry를 package.json 파일에 기술해야 한다. 아래 예시를 보라.&lt;/p&gt;
-&lt;p&gt;package.json&lt;br&gt;{&lt;br&gt;  “name”: “hexo-my-plugin”,&lt;br&gt;  “version”: “0.0.1”,&lt;br&gt;  “main”: “index”&lt;br&gt;}&lt;/p&gt;
-&lt;p&gt;당신은 또한 root에 있는 package.json 파일에 당신의 plugin에 대한 hexo instance 정보를 추가하여 Hexo가 당신의 plugin을 발견하고 로딩할 수 있게 해야한다.&lt;/p&gt;
-&lt;h3 id=&quot;Tools&quot;&gt;&lt;a href=&quot;#Tools&quot; class=&quot;headerlink&quot; title=&quot;Tools&quot;&gt;&lt;/a&gt;Tools&lt;/h3&gt;&lt;p&gt;당신은 Hexo에서 제공하는 공식적인 tool들을 사용할 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;hexo-fs：File IO&lt;/li&gt;
-&lt;li&gt;hexo-util：Utilities&lt;/li&gt;
-&lt;li&gt;hexo-i18n：Localization (i18n)&lt;/li&gt;
-&lt;li&gt;hexo-pagination：Generate pagination data&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Publishing&quot;&gt;&lt;a href=&quot;#Publishing&quot; class=&quot;headerlink&quot; title=&quot;Publishing&quot;&gt;&lt;/a&gt;Publishing&lt;/h3&gt;&lt;p&gt;Plugin을 완성하면, 다른 사람들로 하여금 이를 사용할 수 있게 publicshing을 고려해야 한다. 이 과정은 문서를 업데이트 하는 과정과 매우 유사하다.&lt;/p&gt;
-&lt;h4 id=&quot;Fork-hexojs-site&quot;&gt;&lt;a href=&quot;#Fork-hexojs-site&quot; class=&quot;headerlink&quot; title=&quot;Fork hexojs/site&quot;&gt;&lt;/a&gt;Fork hexojs/site&lt;/h4&gt;&lt;p&gt;Clone the repository to your computer and install dependencies.&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/&lt;/a&gt;&lt;username&gt;/site.git&lt;br&gt;$ cd site&lt;br&gt;$ npm install&lt;br&gt;Edit source/_data/plugins.yml and add your plugin. For example:&lt;/username&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;name: hexo-server&lt;br&gt;description: Server module for Hexo.&lt;br&gt;link: &lt;a href=&quot;https://github.com/hexojs/hexo-server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hexojs/hexo-server&lt;/a&gt;&lt;br&gt;tags:&lt;ul&gt;
-&lt;li&gt;official&lt;/li&gt;
-&lt;li&gt;server&lt;/li&gt;
-&lt;li&gt;console&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;여기에 푸시한 후 &lt;code&gt;pull request&lt;/code&gt;를 생성하면 된다.&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/07/24/2016-07-24-works-hexo-strava/#disqus_thread</comments>
-    </item>
     
     <item>
       <title>GIT command for me</title>
@@ -2032,6 +1986,35 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/06/27/2016-06-27-life-jaksimilill/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>동영상 모음</title>
+      <link>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/</link>
+      <guid>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/</guid>
+      <pubDate>Wed, 22 Jun 2016 11:01:00 GMT</pubDate>
+      <description>
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=i0pkKABS-YY&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;개발자가 보면 암걸리는 동영상&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https:/
+      
+      </description>
+      
+      <content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=i0pkKABS-YY&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;개발자가 보면 암걸리는 동영상&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/VypDiN-X5FA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;산으로 가는 광고&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=O7YzjUNL-Z4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;오늘 미래를 만나다 - 허태균 교수&lt;/a&gt; : 대한민국에서 행복 찾기&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=OL2iHMBRd7g&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;자기 적성을 몰라 헤매는 당신이 반드시 들어야 할 대답&lt;/a&gt; : 송길영 다음소프트 부사장&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cNN_tTXABUA&amp;amp;feature=youtu.be&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How a CPU Works&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/#disqus_thread</comments>
     </item>
     
   </channel>
