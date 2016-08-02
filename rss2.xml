@@ -8,8 +8,59 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 24 Jul 2016 08:00:04 GMT</pubDate>
+    <pubDate>Tue, 02 Aug 2016 11:45:24 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hexo 한국어 번역</title>
+      <link>http://lazyrodi.github.io/2016/08/02/2016-08-02-works-translate-hexo-site/</link>
+      <guid>http://lazyrodi.github.io/2016/08/02/2016-08-02-works-translate-hexo-site/</guid>
+      <pubDate>Tue, 02 Aug 2016 10:02:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;a href=&quot;http://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo.io&lt;/a&gt;에 한국어 설명이 없어서 직접 번역해 보았습니다.&lt;/p&gt;
+&lt;p&gt;사이트 접속 후 우 상단에서 언어를 한국어로 변경하시거나 &lt;a 
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;&lt;a href=&quot;http://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo.io&lt;/a&gt;에 한국어 설명이 없어서 직접 번역해 보았습니다.&lt;/p&gt;
+&lt;p&gt;사이트 접속 후 우 상단에서 언어를 한국어로 변경하시거나 &lt;a href=&quot;https://hexo.io/ko/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/ko/&lt;/a&gt;로 접속하시면 결과물을 확인하실 수 있습니다.&lt;/p&gt;
+&lt;p&gt;영어는 잘 못하지만 &lt;del&gt;구글 번역기가 절 구원하시고&lt;/del&gt; 양이 많지 않아 하루면 끝날 줄 알았는데 꽤 많은 시간이 소요되었습니다.&lt;/p&gt;
+&lt;p&gt;매뉴얼 또는 튜토리얼 그리고 회사에서는 규격을 번역하는 일은 스스로에게 굉장히 도움이 되는 일이라고 생각하고 있습니다.&lt;/p&gt;
+&lt;p&gt;번역을 해보면서 얻을 수 있는 장점은 무궁무진합니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;따로는 절대 공부하지 않을 영어를 직접 마주할 수 있고&lt;/li&gt;
+&lt;li&gt;한 번 정리해 둠으로써 다음에는 문서를 편하게 볼 수 있습니다.&lt;/li&gt;
+&lt;li&gt;심지어 자기 말투로 번역해두었기 때문에 남들의 번역서보다 가독성도 좋습니다(남들은 번역본을 욕할지언정).&lt;/li&gt;
+&lt;li&gt;‘이런 때에는 이런 단어와 표현을 사용하는구나’를 배울 수 있습니다.&lt;/li&gt;
+&lt;li&gt;작업을 완료했을 때 성취감을 얻을 수 있습니다.&lt;/li&gt;
+&lt;li&gt;완벽하진 않지만 번역을 통해 문서가 설명하려고 하는 규격이나 동작 방식 등을 전부 다 훑어봄으로써 개요를 파악할 수 있습니다. 그리고 이 문서의 어디쯤 무슨 내용이 있었는지 기억하여 검색을 편하게 할 수 있게되죠.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;아마 제가 설명하지 못한 장점이 더욱 더 많이 있을겁니다.&lt;/p&gt;
+&lt;p&gt;Hexo의 번역을 생각하게 된 이유는 우선 Hexo가 굉장히 맘에 들어서 사용하게 되었기 때문이고, 제가 가지고 있는 안 좋은 습관 떄문입니다.&lt;/p&gt;
+&lt;p&gt;영문을 매끄럽게 읽어나가지 못하기 떄문에 일 할 때에도 한글로 한 번 번역을 하는 과정을 거치고 그 다음에 내용을 머리로 생각하는 것이 안 좋은 습관입니다.&lt;/p&gt;
+&lt;p&gt;역량 부족이라고 해두겠습니다.&lt;/p&gt;
+&lt;p&gt;결론은 한글로 된 문서를 편하게 보고 싶었습니다.&lt;/p&gt;
+&lt;p&gt;번역을 할 때 어려움을 겪은 부분들을 정리해보면 다음과 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;file, thread, method, database 등의 단어를 영어로 놔둘 것인지 ‘파일’, ‘스레드’, ‘메소드’, ‘데이터베이스’ 등으로 한글로 변환할지에 대한 고민.&lt;/li&gt;
+&lt;li&gt;마찬가지로 processing, reder, iterate, command 등의 표현을 어떻게 다룰 것인지에 대한 고민.&lt;/li&gt;
+&lt;li&gt;직역을 할지 의역을 할지에 대한 고민.&lt;/li&gt;
+&lt;li&gt;장난스런 말투를 사용할지 딱딱한 말투를 사용할지에 대한 고민.&lt;/li&gt;
+&lt;li&gt;해석도 안 되는데 구글 번역기도 날 도와주지 않을 때.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;욕 먹을 고민부터 해야하는거 아니냐 하실 수도 있지만 스스로가 잘 못하는 것을 알기 때문에 그 또한 저한테 공부가 될 것이라 생각합니다.&lt;/p&gt;
+&lt;p&gt;위의 과정을 마주하면서 스스로 굉장히 많이 생각하게 되어 발전할 수 있는 기회가 되었습니다.&lt;/p&gt;
+&lt;p&gt;해결책도 이 공간에 턱하니 올려두면 좋겠지만 미숙해서 아직 답을 찾지 못하였습니다.&lt;/p&gt;
+&lt;p&gt;여러 번 시행착오를 겪으면 되지 않을까 싶습니다. &lt;del&gt;이미 나이를 많이 먹었지만&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;여하튼 번역에 대한 결과물은 다음과 같습니다.&lt;/p&gt;
+&lt;p&gt;원작자가 Pull Request를 받아줄 때 쾌감이 상당했습니다. 물론 코드가 아닌 번역이고, 원작자가 한국어를 모르니 검증 과정은 까다롭지 않았을 것이라 생각합니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/hexojs/site/pull/286&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hexojs/site/pull/286&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;큰 일이건 작은 일이건 기분 좋은 경험이었습니다.&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/02/2016-08-02-works-translate-hexo-site/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>GIT command for me</title>
@@ -1986,35 +2037,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/06/27/2016-06-27-life-jaksimilill/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>동영상 모음</title>
-      <link>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/</link>
-      <guid>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/</guid>
-      <pubDate>Wed, 22 Jun 2016 11:01:00 GMT</pubDate>
-      <description>
-      
-        &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=i0pkKABS-YY&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;개발자가 보면 암걸리는 동영상&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https:/
-      
-      </description>
-      
-      <content:encoded>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=i0pkKABS-YY&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;개발자가 보면 암걸리는 동영상&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/VypDiN-X5FA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;산으로 가는 광고&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=O7YzjUNL-Z4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;오늘 미래를 만나다 - 허태균 교수&lt;/a&gt; : 대한민국에서 행복 찾기&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=OL2iHMBRd7g&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;자기 적성을 몰라 헤매는 당신이 반드시 들어야 할 대답&lt;/a&gt; : 송길영 다음소프트 부사장&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cNN_tTXABUA&amp;amp;feature=youtu.be&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How a CPU Works&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/06/22/2016-06-22-docthread-video-collecting/#disqus_thread</comments>
     </item>
     
   </channel>
