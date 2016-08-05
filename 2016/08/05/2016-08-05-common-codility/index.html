@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Codility | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="codility, interview" />
+    
+    <meta name="description" content="https://codility.com/programmers/lessons/
+
+Iterations프로그램 내에서 반복되는 부분. 보통 for나 while.
+For12345678for some_variable in range_of_values:    loop_bodyfor i in range(0, 100) :    print ifor i in range(10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codility">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/08/05/2016-08-05-common-codility/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="https://codility.com/programmers/lessons/
+
+Iterations프로그램 내에서 반복되는 부분. 보통 for나 while.
+For12345678for some_variable in range_of_values:    loop_bodyfor i in range(0, 100) :    print ifor i in range(10">
+<meta property="og:updated_time" content="2016-08-05T11:52:50.556Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codility">
+<meta name="twitter:description" content="https://codility.com/programmers/lessons/
+
+Iterations프로그램 내에서 반복되는 부분. 보통 for나 while.
+For12345678for some_variable in range_of_values:    loop_bodyfor i in range(0, 100) :    print ifor i in range(10">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Android/">Android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Common/">Common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Database/">Database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/ETC/">ETC</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Interview/">Interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Network/">Network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Pattern/">Pattern</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Docs/">Docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/HR/">HR</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Life/">Life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Works/">Works</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Works/Translate/">Translate</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Common/">Common</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-08-05-common-codility" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Codility
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/08/05/2016-08-05-common-codility/" class="article-date">
+    <time datetime="2016-08-04T23:02:50.000Z" itemprop="datePublished">2016-08-05</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/codility-interview/">codility, interview</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p><a href="https://codility.com/programmers/lessons/" target="_blank" rel="external">https://codility.com/programmers/lessons/</a></p>
+</blockquote>
+<h1 id="Iterations"><a href="#Iterations" class="headerlink" title="Iterations"></a>Iterations</h1><p>프로그램 내에서 반복되는 부분. 보통 <code>for</code>나 <code>while</code>.</p>
+<h2 id="For"><a href="#For" class="headerlink" title="For"></a>For</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> some_variable <span class="keyword">in</span> range_of_values:</div><div class="line">    loop_body</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">100</span>) :</div><div class="line">    <span class="keyword">print</span> i</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>) :</div><div class="line">    <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
+<h2 id="While"><a href="#While" class="headerlink" title="While"></a>While</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> some_condition:</div><div class="line">    loop_body</div><div class="line"></div><div class="line">result = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> n &gt; <span class="number">0</span>:</div><div class="line">    n = n // <span class="number">10</span></div><div class="line">    result += <span class="number">1</span></div><div class="line"></div><div class="line">a = <span class="number">0</span></div><div class="line">b = <span class="number">1</span></div><div class="line"><span class="keyword">while</span> a &lt;= n:</div><div class="line">    <span class="keyword">print</span> a</div><div class="line">    c = a + b</div><div class="line">    a = b</div><div class="line">    b = c</div></pre></td></tr></table></figure>
+<h2 id="Collection을-사용한-반복"><a href="#Collection을-사용한-반복" class="headerlink" title="Collection을 사용한 반복"></a>Collection을 사용한 반복</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">days = [<span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>, <span class="string">'Thursday'</span>, <span class="string">'Friday'</span>, <span class="string">'Saturday'</span>, <span class="string">'Sunday'</span>]</div><div class="line"><span class="keyword">for</span> day <span class="keyword">in</span> days:</div><div class="line">    <span class="keyword">print</span> day</div><div class="line"></div><div class="line">days = set([<span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>, <span class="string">'Thursday'</span>, <span class="string">'Friday'</span>, <span class="string">'Saturday'</span>, <span class="string">'Sunday'</span>])</div><div class="line"></div><div class="line"><span class="keyword">for</span> day <span class="keyword">in</span> days:</div><div class="line">    <span class="keyword">print</span> day</div><div class="line"></div><div class="line">// set을 사용할 경우 출력 순서가 set에서 지정한 순서대로 나오지는 않는다.</div><div class="line"><span class="string">'''</span></div><div class="line">    Monday</div><div class="line">    Tuesday</div><div class="line">    Friday</div><div class="line">    Wednesday</div><div class="line">    Thursday</div><div class="line">    Sunday</div><div class="line">    Saturday</div><div class="line">'''</div><div class="line"></div><div class="line">// key-value 구조로 사용할 수도 있다.</div><div class="line">days = &#123;<span class="string">'mon'</span>: <span class="string">'Monday'</span>, <span class="string">'tue'</span>: <span class="string">'Tuesday'</span>, <span class="string">'wed'</span>: <span class="string">'Wednesday'</span>, <span class="string">'thu'</span>: <span class="string">'Thursday'</span>, <span class="string">'fri'</span>: <span class="string">'Friday'</span>, <span class="string">'sat'</span>: <span class="string">'Saturday'</span>, <span class="string">'sun'</span>: <span class="string">'Sunday'</span>&#125;</div><div class="line"><span class="keyword">for</span> day <span class="keyword">in</span> days:</div><div class="line">    <span class="keyword">print</span> day, <span class="string">'stand for'</span>, days[day]</div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">wed stands for Wednesday</div><div class="line">sun stands for Sunday</div><div class="line">fri stands for Friday</div><div class="line">tue stands for Turesday</div><div class="line">mon stands for Monday</div><div class="line">thu stands for Thursday</div><div class="line">sat stands for Saturday</div><div class="line">'''</div></pre></td></tr></table></figure>
+<h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><h3 id="BinaryGap"><a href="#BinaryGap" class="headerlink" title="BinaryGap"></a>BinaryGap</h3><p>45점 ㅠㅠ</p>
+<h1 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h1><p>하나의 공간에 여러 아이템을 저장할 수 있는 자료구조.</p>
+<h2 id="Creation"><a href="#Creation" class="headerlink" title="Creation"></a>Creation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">shopping = [<span class="string">'bread'</span>, <span class="string">'butter'</span>, <span class="string">'cheese'</span>]</div><div class="line">shopping = []         <span class="comment"># empty list</span></div><div class="line">shopping = [<span class="number">0</span>] * <span class="number">365</span>  <span class="comment"># value가 0인 365개의 array</span></div></pre></td></tr></table></figure>
+<h2 id="Accesing-and-Modifying"><a href="#Accesing-and-Modifying" class="headerlink" title="Accesing and Modifying"></a>Accesing and Modifying</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">shopping[<span class="number">1</span>]</div><div class="line"></div><div class="line">temperatures[<span class="number">42</span>] = <span class="number">25</span></div><div class="line"></div><div class="line">shopping += [<span class="string">'eggs'</span>] <span class="comment"># 이런 식으로 array에 추가 가능.</span></div></pre></td></tr></table></figure>
+<h2 id="Iterating"><a href="#Iterating" class="headerlink" title="Iterating"></a>Iterating</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">negative</span><span class="params">(temperatures)</span>:</span></div><div class="line">    N = len(temperatures)</div><div class="line">    days = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(N):</div><div class="line">        <span class="keyword">if</span> temperatures[i] &lt; <span class="number">0</span>:</div><div class="line">            days += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> days</div></pre></td></tr></table></figure>
+<p>위의 코드를 아래처럼 간단히 할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">negative</span><span class="params">(temperatures)</span>:</span></div><div class="line">    days = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> temperatures:</div><div class="line">        <span class="keyword">if</span> t &lt; <span class="number">0</span>:</div><div class="line">            days += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> days</div></pre></td></tr></table></figure>
+<h2 id="Basic-array-operations"><a href="#Basic-array-operations" class="headerlink" title="Basic array operations"></a>Basic array operations</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">len([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) == <span class="number">3</span></div><div class="line"></div><div class="line">[<span class="string">'Hello'</span>] * <span class="number">3</span> == [<span class="string">'Hello'</span>, <span class="string">'Hello'</span>, <span class="string">'Hello'</span>]</div><div class="line"></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] + [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>] == [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line"></div><div class="line"><span class="string">'butter'</span> <span class="keyword">in</span> [<span class="string">'bread'</span>, <span class="string">'butter'</span>, <span class="string">'cheese'</span>] == <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h2 id="연습하기"><a href="#연습하기" class="headerlink" title="연습하기"></a>연습하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(A)</span>:</span></div><div class="line">    N = len(A)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(N // <span class="number">2</span>):</div><div class="line">        k = N - i - <span class="number">1</span></div><div class="line">        A[i], A[k] = A[k], A[i]</div><div class="line">    <span class="keyword">return</span> A</div><div class="line"></div><div class="line">A.reverse() <span class="comment"># python native</span></div></pre></td></tr></table></figure>
+<h2 id="문제-1"><a href="#문제-1" class="headerlink" title="문제"></a>문제</h2><h3 id="CyclicRotation"><a href="#CyclicRotation" class="headerlink" title="CyclicRotation"></a>CyclicRotation</h3><p>37점</p>
+<h3 id="OddOccurrencesInArray"><a href="#OddOccurrencesInArray" class="headerlink" title="OddOccurrencesInArray"></a>OddOccurrencesInArray</h3><p>100점 오예</p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/08/05/2016-08-05-common-codility/" data-id="cirhp2ymr0000mskxnt7cl1e6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/08/02/2016-08-02-works-translate-hexo-site/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Hexo 한국어 번역</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Common/">Common</a></p>
+                            <p class="item-title"><a href="/2016/08/05/2016-08-05-common-codility/" class="title">Codility</a></p>
+                            <p class="item-date"><time datetime="2016-08-04T23:02:50.000Z" itemprop="datePublished">2016-08-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Works/">Works</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Works/Translate/">Translate</a></p>
+                            <p class="item-title"><a href="/2016/08/02/2016-08-02-works-translate-hexo-site/" class="title">Hexo 한국어 번역</a></p>
+                            <p class="item-date"><time datetime="2016-08-02T10:02:50.000Z" itemprop="datePublished">2016-08-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/ETC/">ETC</a></p>
+                            <p class="item-title"><a href="/2016/07/24/2016-07-24-etc-git/" class="title">GIT command for me</a></p>
+                            <p class="item-date"><time datetime="2016-07-24T01:02:50.000Z" itemprop="datePublished">2016-07-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/ETC/">ETC</a></p>
+                            <p class="item-title"><a href="/2016/07/23/2016-07-23-etc-svg/" class="title">SVG (Scalable Vector Graphic)</a></p>
+                            <p class="item-date"><time datetime="2016-07-23T12:02:50.000Z" itemprop="datePublished">2016-07-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Interview/">Interview</a></p>
+                            <p class="item-title"><a href="/2016/07/19/2016-07-19-interview-android/" class="title">Android Interview</a></p>
+                            <p class="item-date"><time datetime="2016-07-19T10:00:00.000Z" itemprop="datePublished">2016-07-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm-data-structure-queue-java/" style="font-size: 10px;">algorithm, data structure, queue, java</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-intent/" style="font-size: 10px;">android, intent</a> <a href="/tags/android-permission/" style="font-size: 10px;">android, permission</a> <a href="/tags/codility-interview/" style="font-size: 10px;">codility, interview</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/database-sql/" style="font-size: 10px;">database, sql</a> <a href="/tags/docs-hire-fire-work/" style="font-size: 10px;">docs, hire, fire, work</a> <a href="/tags/docs-js-visualization-wysiwyg-editor-css/" style="font-size: 10px;">docs, js, visualization, wysiwyg editor, css</a> <a href="/tags/docs-ux/" style="font-size: 10px;">docs, ux</a> <a href="/tags/docs-video/" style="font-size: 10px;">docs, video</a> <a href="/tags/docs-web/" style="font-size: 10px;">docs, web</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo-translate-korean/" style="font-size: 10px;">hexo, translate, korean</a> <a href="/tags/hr-conference/" style="font-size: 10px;">hr, conference</a> <a href="/tags/hr-famours-saying/" style="font-size: 10px;">hr, famours saying</a> <a href="/tags/interview-android/" style="font-size: 10px;">interview, android</a> <a href="/tags/java-fileio/" style="font-size: 10px;">java, fileio</a> <a href="/tags/java-pattern-singleton/" style="font-size: 10px;">java, pattern, singleton</a> <a href="/tags/java-string-stringbuffer-stringbuilder/" style="font-size: 10px;">java, string, stringbuffer, stringbuilder</a> <a href="/tags/java-thread/" style="font-size: 10px;">java, thread</a> <a href="/tags/jekyll-disqus/" style="font-size: 10px;">jekyll, disqus</a> <a href="/tags/linux-command-apt-get-chown-df-ifconfig-link-screen/" style="font-size: 10px;">linux, command, apt-get, chown, df, ifconfig, link, screen</a> <a href="/tags/opensource-license/" style="font-size: 10px;">opensource, license</a> <a href="/tags/osi7-tcp-ip/" style="font-size: 10px;">osi7, tcp/ip</a> <a href="/tags/parser-javascript/" style="font-size: 10px;">parser, javascript</a> <a href="/tags/regex-regular-expression/" style="font-size: 10px;">regex, regular expression</a> <a href="/tags/ruby-on-rails-crud/" style="font-size: 10px;">ruby on rails, crud</a> <a href="/tags/ruby-on-rails-ruby/" style="font-size: 10px;">ruby on rails, ruby</a> <a href="/tags/ruby-on-rails-settings/" style="font-size: 10px;">ruby on rails, settings</a> <a href="/tags/svg-image-scalable-vector-graphic/" style="font-size: 10px;">svg, image, scalable, vector, graphic</a> <a href="/tags/ui-design-color/" style="font-size: 10px;">ui, design, color</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2016 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/08/05/2016-08-05-common-codility/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
