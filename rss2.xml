@@ -8,8 +8,36 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 05 Aug 2016 12:43:57 GMT</pubDate>
+    <pubDate>Fri, 05 Aug 2016 13:14:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Eclipse를 이용한 Python 사용</title>
+      <link>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-setting-python-into-eclipse/</link>
+      <guid>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-setting-python-into-eclipse/</guid>
+      <pubDate>Fri, 05 Aug 2016 13:00:50 GMT</pubDate>
+      <description>
+      
+        &lt;h3 id=&quot;PyDev-설치&quot;&gt;&lt;a href=&quot;#PyDev-설치&quot; class=&quot;headerlink&quot; title=&quot;PyDev 설치&quot;&gt;&lt;/a&gt;PyDev 설치&lt;/h3&gt;&lt;p&gt;Help &amp;gt; Install new software &amp;gt; Add &amp;gt; &lt;
+      
+      </description>
+      
+      <content:encoded>&lt;h3 id=&quot;PyDev-설치&quot;&gt;&lt;a href=&quot;#PyDev-설치&quot; class=&quot;headerlink&quot; title=&quot;PyDev 설치&quot;&gt;&lt;/a&gt;PyDev 설치&lt;/h3&gt;&lt;p&gt;Help &amp;gt; Install new software &amp;gt; Add &amp;gt; &lt;/p&gt;
+&lt;p&gt;Name: PyDev&lt;br&gt;Location: &lt;a href=&quot;http://pydev.org/updates&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pydev.org/updates&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;pyDev 체크 후 &amp;gt; Next &amp;gt; Next &amp;gt; I accept the … &amp;gt; Finish &amp;gt; Brainwy Software; pyDev; Brainwy 를 체크하여 certificate하고 &amp;gt; OK &amp;gt; restart OK&lt;/p&gt;
+&lt;p&gt;New Project 생성할 때 &lt;code&gt;PyDev Project&lt;/code&gt;를 선택할 수 있게 됨.&lt;/p&gt;
+&lt;p&gt;그냥 만들려고 하면 &lt;code&gt;Please configure an interpreter before procedding.&lt;/code&gt;이 뜸. 아래 설정 참조.&lt;/p&gt;
+&lt;h3 id=&quot;python-interpreter-설정&quot;&gt;&lt;a href=&quot;#python-interpreter-설정&quot; class=&quot;headerlink&quot; title=&quot;python interpreter 설정&quot;&gt;&lt;/a&gt;python interpreter 설정&lt;/h3&gt;&lt;p&gt;우선, &lt;a href=&quot;http://python.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.org/&lt;/a&gt; 에서 python을 PC에 설치하고.&lt;/p&gt;
+&lt;p&gt;Window &amp;gt; Preference &amp;gt; PyDev &amp;gt; Interpreters &amp;gt; Python Interpreter&lt;/p&gt;
+&lt;p&gt;우 상단의 Quick Auto-Config를 선택하면 python path를 알아서 찾아줌.&lt;/p&gt;
+&lt;p&gt;이후 Apply &amp;gt; OK&lt;/p&gt;
+&lt;p&gt;다시 New Project 생성으로 가서 생성한다.&lt;/p&gt;
+&lt;p&gt;Python Perspective 어쩌고 팝업 나오면 OK 해서 새 perspective를 추가한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;test.py&lt;/code&gt; 등으로 파일 생성하고, 코드 넣고, Ctrl + F11 로 빌드해서 아래쪽 콘솔에서 확인할 수 있다. 굳.&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-setting-python-into-eclipse/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>직장생활</title>
@@ -1831,170 +1859,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/06/29/2016-06-29-java-fileio/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Opensource License</title>
-      <link>http://lazyrodi.github.io/2016/06/28/2016-06-28-etc-opensource-license/</link>
-      <guid>http://lazyrodi.github.io/2016/06/28/2016-06-28-etc-opensource-license/</guid>
-      <pubDate>Tue, 28 Jun 2016 09:42:50 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;Software-지적재산권&quot;&gt;&lt;a href=&quot;#Software-지적재산권&quot; class=&quot;headerlink&quot; title=&quot;Software 지적재산권&quot;&gt;&lt;/a&gt;Software 지적재산권&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;저작권&lt;/li&gt;
-&lt;li&gt;특허권
-      
-      </description>
-      
-      <content:encoded>&lt;h2 id=&quot;Software-지적재산권&quot;&gt;&lt;a href=&quot;#Software-지적재산권&quot; class=&quot;headerlink&quot; title=&quot;Software 지적재산권&quot;&gt;&lt;/a&gt;Software 지적재산권&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;저작권&lt;/li&gt;
-&lt;li&gt;특허권&lt;/li&gt;
-&lt;li&gt;상표권&lt;/li&gt;
-&lt;li&gt;영업비밀&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;저작권-Copyright&quot;&gt;&lt;a href=&quot;#저작권-Copyright&quot; class=&quot;headerlink&quot; title=&quot;저작권 (Copyright)&quot;&gt;&lt;/a&gt;저작권 (Copyright)&lt;/h3&gt;&lt;p&gt;  창작물에 대해 창작자(저작자)가 취득하는 권리로 창작과 동시에 권리가 발생한다.&lt;/p&gt;
-&lt;p&gt;  소프트웨어도 작성 시 저작권이 발생하며 저각권은 개인 또는 소속 회사에 부여된다.&lt;/p&gt;
-&lt;p&gt;  저작권자의 허락 없이는 해당 저작물을 복제, 배포 수정할 수 없다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;특허권-Patent&quot;&gt;&lt;a href=&quot;#특허권-Patent&quot; class=&quot;headerlink&quot; title=&quot;특허권 (Patent)&quot;&gt;&lt;/a&gt;특허권 (Patent)&lt;/h3&gt;&lt;p&gt;  발명에 관하여 발명자(특허권자)가 갖는 독점배타권을 말한다.&lt;/p&gt;
-&lt;p&gt;  출원을 통해 등록되어야만 권리가 발생한다.&lt;/p&gt;
-&lt;p&gt;  언어와 관계 없이 방식이 동일하면 소프트웨어 특허에 걸린다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;상표권-Trademark&quot;&gt;&lt;a href=&quot;#상표권-Trademark&quot; class=&quot;headerlink&quot; title=&quot;상표권 (Trademark)&quot;&gt;&lt;/a&gt;상표권 (Trademark)&lt;/h3&gt;&lt;p&gt;  지정상품에 대해 등록상표를 사용할 독점적인 권리를 말한다. 특허와 마찬가지로 등록해야 한다.&lt;/p&gt;
-&lt;p&gt;  상표를 사용하기 위해서는 반드시 상표권자의 허락을 받아야 한다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;영업비밀&quot;&gt;&lt;a href=&quot;#영업비밀&quot; class=&quot;headerlink&quot; title=&quot;영업비밀&quot;&gt;&lt;/a&gt;영업비밀&lt;/h3&gt;&lt;p&gt;  비공개 소프트웨어어같은 경우가 해당한다. 영업비밀의 경우 공개되면 법적으로 보호받기 어렵다. &lt;/p&gt;
-&lt;hr&gt;
-&lt;table&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;저작권&lt;/th&gt;&lt;th&gt;특허권&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;권리발생&lt;/th&gt;&lt;td&gt;창작과 동시에 발생&lt;/td&gt;&lt;td&gt;특허출원, 심사, 등록&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;권리내용&lt;/th&gt;&lt;td&gt;인격권 (공표권, 성명표시권, 동일서유지권)&lt;/td&gt;&lt;td&gt;독점배타권 실시권&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;효력범위&lt;/th&gt;&lt;td&gt;표현(코드)의 실질적 유사성&lt;/td&gt;&lt;td&gt;아이디어 (알고리즘, 기능)의 동일성&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;hr&gt;
-&lt;h2 id=&quot;Software-License&quot;&gt;&lt;a href=&quot;#Software-License&quot; class=&quot;headerlink&quot; title=&quot;Software License&quot;&gt;&lt;/a&gt;Software License&lt;/h2&gt;&lt;p&gt;  오픈소스에도 지적재산권이 있다. 일반적으로 느슨한 License를 적용하여 수정, 복제, 배포에 별 제약을 두지 않지만 몇 가지 지켜야 할 사항이 있다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;개발자, 기여자, 저작권 정보 표시&lt;/li&gt;
-&lt;li&gt;코드를 수정한 경우 수정한 정보 표시&lt;ul&gt;
-&lt;li&gt;수정자,  수정일 등을 기입하여 원본과 구별한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;License 정보 제공&lt;ul&gt;
-&lt;li&gt;일반인이 해당 License를 잘 이해할 수 있도록 License 정보를 표시&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Copyleft&lt;/code&gt; (동일한 License로 재 배포)할 것&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;GPL&lt;/code&gt; 등이 대표적이며, 수정한 소스를 배포할 때에도 이전과 동일한 License를 사용해야 한다.&lt;/li&gt;
-&lt;li&gt;Copyleft License들은 소프트웨어 배포 시 소스코드까지 함께 배포할 것을 요구한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;BSD-Berkeley-Software-Distribution&quot;&gt;&lt;a href=&quot;#BSD-Berkeley-Software-Distribution&quot; class=&quot;headerlink&quot; title=&quot;BSD (Berkeley Software Distribution)&quot;&gt;&lt;/a&gt;BSD (Berkeley Software Distribution)&lt;/h3&gt;&lt;p&gt;  배포되는 프로젝트들이 미국 정부의 재원을 사용했기 때문에 소스코드를 공개하지 않아도 된다.&lt;/p&gt;
-&lt;p&gt;  다만 배포 시 저작권 표시, 보증 책임이 없음을 표시해야 한다. 이것만 지킨다면 상용 소프트웨어에도 무제한 사용이 가능하다.&lt;/p&gt;
-&lt;p&gt;아래 내용이 포함되어야 한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;The BSD License&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The following is a BSD license template. To generate your own license, change the values of OWNER, ORGANIZATION and YEAR from their original values as given here, and substitute your own. Also, you may optionally omit clause 3 and still be OSD conformant.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Note: On January 9th, 2008 the OSI Board approved the &lt;span class=&quot;string&quot;&gt;&quot;Simplified BSD License&quot;&lt;/span&gt; variant used by FreeBSD and others, &lt;span class=&quot;built_in&quot;&gt;which&lt;/span&gt; omits the final &lt;span class=&quot;string&quot;&gt;&quot;no-endorsement&quot;&lt;/span&gt; clause and is thus roughly equivalent to the MIT License.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Historical Note: The original license used on BSD Unix had four clauses. The advertising clause (the third of four clauses) required you to acknowledge use of U.C. Berkeley code &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; your advertising of any product using that code. It was officially rescinded by the Director of the Office of Technology Licensing of the University of California on July 22nd, 1999. He states that clause 3 is &lt;span class=&quot;string&quot;&gt;&quot;hereby deleted in its entirety.&quot;&lt;/span&gt; The four clause license has not been approved by OSI. The license below does not contain the advertising clause.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;This prelude is not part of the license.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;= Regents of the University of California&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;= University of California, Berkeley&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;= 1998&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;In the original BSD license, both occurrences of the phrase &lt;span class=&quot;string&quot;&gt;&quot;COPYRIGHT HOLDERS AND CONTRIBUTORS&quot;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; the disclaimer &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;REGENTS AND CONTRIBUTORS&quot;&lt;/span&gt;.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Here is the license template:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Copyright (c) , &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;All rights reserved.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Redistribution and use &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; and binary forms, with or without modification, are permitted provided that the following conditions are met:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;·         Redistributions of &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; code must retain the above copyright notice, this list of conditions and the following disclaimer.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;·         Redistributions &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; the documentation and/or other materials provided with the distribution.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;·         Neither the name of the nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &lt;span class=&quot;string&quot;&gt;&quot;AS IS&quot;&lt;/span&gt; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;Apache-License&quot;&gt;&lt;a href=&quot;#Apache-License&quot; class=&quot;headerlink&quot; title=&quot;Apache License&quot;&gt;&lt;/a&gt;Apache License&lt;/h3&gt;&lt;p&gt;  &lt;code&gt;아파치 재단 (ASF: Apache Software Foundation)&lt;/code&gt;의 모든 소프트웨어에 적용되는 License로 소스 공개 의무가 없다.&lt;/p&gt;
-&lt;p&gt;  단, &lt;code&gt;&amp;quot;Apache&amp;quot;&lt;/code&gt; 라는 이름에 대한 상표권을 침해하면 안되고 특허권에 대한 내용이 포함되어 있다.&lt;/p&gt;
-&lt;p&gt;  &lt;code&gt;Apache 2.0&lt;/code&gt;에 특허 관련 조항이 들어가서 &lt;code&gt;GPL 2.0&lt;/code&gt;과의 결합이 어려웠는데 &lt;code&gt;GPL 3.0&lt;/code&gt;에서는 이 문제가 해결되어 &lt;code&gt;Apache&lt;/code&gt; 코드와 &lt;code&gt;GPL 3.0&lt;/code&gt; 코드의 결합이 가능해졌다.&lt;/p&gt;
-&lt;p&gt;아래 내용이 포함되어야 한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Copyright [yyyy] [name of copyright owner]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Licensed under the Apache License, Version 2.0 (the &lt;span class=&quot;string&quot;&gt;&quot;License&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;you may not use this file except &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; compliance with the License.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;You may obtain a copy of the License at&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    http://www.apache.org/licenses/LICENSE-2.0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Unless required by applicable law or agreed to &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; writing, software&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;distributed under the License is distributed on an &lt;span class=&quot;string&quot;&gt;&quot;AS IS&quot;&lt;/span&gt; BASIS,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;See the License &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; the specific language governing permissions and&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;limitations under the License.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;GPL-2-0-General-Public-Lecense&quot;&gt;&lt;a href=&quot;#GPL-2-0-General-Public-Lecense&quot; class=&quot;headerlink&quot; title=&quot;GPL 2.0 (General Public Lecense)&quot;&gt;&lt;/a&gt;GPL 2.0 (General Public Lecense)&lt;/h3&gt;&lt;p&gt;  GPL 2.0이 적용된 코드를 사용할 경우 &lt;code&gt;&amp;quot;본 제품(SW)은 GPL 라이센스 하에 배포되는 SW인 ㅇㅇㅇ를 포함합니다.&amp;quot;&lt;/code&gt; 등의 문구를 매뉴얼 혹은 그에 준하는 매체에 포함시키고 GPL 전문을 첨부해야 한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;코드를 수정하거나 새로운 소프트웨어를 Link(Static, Dynamic 모두) 하는 경우 소스코드 제공 의무 가짐&lt;/li&gt;
-&lt;li&gt;Object code, Excutable form으로 배포하는 경우 소스코드 자체를 함께 배포하거나 제공받을 수 있는 방법을 기술&lt;/li&gt;
-&lt;li&gt;자신의 특허를 구현한 코드인 경우 특허 사용료를 받을 수 없음&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;타인의 특허를 구현한 코드인 경우 특허권자가 사용자에게 사용료를 받지 않겠다고 한 경우에만 배포 가능&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;예외케이스&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GNU Classpath Project와 Java Platform의 경우 소스코드를 공개하지 않고 배포 가능&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;GPL 2.0은 아래 문구들이 포함되어야 한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;One line to give the program&lt;span class=&quot;string&quot;&gt;&#39;s name and a brief idea of what it does.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Copyright (C) &amp;lt;year&amp;gt; &amp;lt;name of author&amp;gt;  &lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;추가로 아래 문구들이 더 필요하다.&lt;/p&gt;
-&lt;p&gt;파일 하나짜리 프로그램일 경우&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;This program is free software: you can redistribute it and/or modify&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;it under the terms of the GNU General Public License as published by&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;the Free Software Foundation, either version 3 of the License, or&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(at your option) any later version.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;This program is distributed &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; the hope that it will be useful,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;GNU General Public License &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; more details.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;You should have received a copy of the GNU General Public License&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;along with this program.  If not, see &amp;lt;http://www.gnu.org/licenses/&amp;gt;.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;파일이 프로그램의 일부일 때&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;This file is part of XXXXX.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Foobar is free software: you can redistribute it and/or modify&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;it under the terms of the GNU General Public License as published by&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;the Free Software Foundation, either version 3 of the License, or&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(at your option) any later version.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Foobar is distributed &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; the hope that it will be useful,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;GNU General Public License &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; more details.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;You should have received a copy of the GNU General Public License&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;along with Foobar.  If not, see &amp;lt;http://www.gnu.org/licenses/&amp;gt;.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;GPL-3-0&quot;&gt;&lt;a href=&quot;#GPL-3-0&quot; class=&quot;headerlink&quot; title=&quot;GPL 3.0&quot;&gt;&lt;/a&gt;GPL 3.0&lt;/h3&gt;&lt;p&gt;  &lt;code&gt;GPL 2.0&lt;/code&gt;에 비해 변경점은 다음과 같다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;GPL 3.0&lt;/code&gt; 소스코드를 특정 제품에 포함시키거나 함께 배포하는 경우, 해당 소스에 설치 정보를 함께 제공해야 한다. 다만, ROM에 설치되는 경우(그 누구도 수정코드를 제품에 설치할 수 없는 경우)에는 설치 정보를 제공하지 않아도 된다.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DRM (Digital Rights Management)&lt;/code&gt;과 관련된 각국 법률에 의해 보호되는 이익을 포기해야 한다.&lt;/li&gt;
-&lt;li&gt;특허와 관련하여 원 소스코드를 개선하여 배포한 기여자의 경우 자신이 기여한 부분에 대해서는 비차별적이고 특허 사용료가 없다는 내용의 License를 제공해야 한다.&lt;/li&gt;
-&lt;li&gt;특허와 관련하여 Licensee 등으로부터 특허 소송이 제기되는 경우 소송을 제기한 날에 특허소송을 제기한 Licensee의 Opensource software license는 종료된다.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Apache 2.0&lt;/code&gt; 및 &lt;code&gt;Affero GPL&lt;/code&gt;과 양립이 가능하다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;LGPL-2-1-Lesser-General-Public-License&quot;&gt;&lt;a href=&quot;#LGPL-2-1-Lesser-General-Public-License&quot; class=&quot;headerlink&quot; title=&quot;LGPL 2.1 (Lesser General Public License)&quot;&gt;&lt;/a&gt;LGPL 2.1 (Lesser General Public License)&lt;/h3&gt;&lt;p&gt;  일부 &lt;code&gt;Library&lt;/code&gt;에 대하여 &lt;code&gt;GPL&lt;/code&gt;보다 소스코드의 공개 정도를 완화된 형태로 사용할 수 있도록 만든 License이다. 상용 소프트웨어 개발자들이 코드 공개때문에 오픈 소스를 사용하지 않을까봐 조금 완화하였다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;소프트웨어 배포 시 저작권 표시, 보증책임 없음 표시, LGPL에 의해 배포된다는 사실을 명시&lt;/li&gt;
-&lt;li&gt;LGPL Library의 일부를 수정하는 경우 수정한 코드 공개&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;LGPL Library에 Link(Static, Dynamic)할 경우 해당 소스 공개 불필요. 단, 사용자가 Library 수정 후 동일한 실행 파일을 생성할 수 있도록 Static Linking시에는 Object code를 제공해야 함.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;GPL과 동일한 저작권 표시를 해야한다. 단, GPL에서의 &amp;#39;프로그램&amp;#39; 을 &amp;#39;라이브러리&amp;#39;로 한다. 라이브러리를 수정한 것이므로...&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;MIT-Massachusetts-Institute-of-Technology&quot;&gt;&lt;a href=&quot;#MIT-Massachusetts-Institute-of-Technology&quot; class=&quot;headerlink&quot; title=&quot;MIT (Massachusetts Institute of Technology)&quot;&gt;&lt;/a&gt;MIT (Massachusetts Institute of Technology)&lt;/h3&gt;&lt;p&gt;  미국 MIT에서 학생들을 돕기 위해 개발한 License로 MIT를 개조한 제품은 반드시 오픈 소스로 배포해야 한다는 규정이 없다.&lt;/p&gt;
-&lt;p&gt;  아래와 같은 저작권 문구를 포함해야 한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Copyright (c) &amp;lt;year&amp;gt; &amp;lt;copyright holders&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &lt;span class=&quot;string&quot;&gt;&quot;Software&quot;&lt;/span&gt;), to deal &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; so, subject to the following conditions:&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;p&gt;이 외에도 &lt;code&gt;MPL(Mozilla Public License)&lt;/code&gt;, &lt;code&gt;CDDL(Common Development and Distribution License)&lt;/code&gt;, &lt;code&gt;CPL(Common Public License)&lt;/code&gt;, &lt;code&gt;EPL(Eclipse Public License)&lt;/code&gt; 등 무진장 많아서 더는 못쓰겠다.&lt;/p&gt;
-&lt;p&gt;그때그때 찾아보자.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;아래 표는 &lt;a href=&quot;http://www.olis.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;한국저작권협회&lt;/a&gt;에서 제공하는 자료이다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-06-28-etc-opensource-license-1.jpg&quot; alt=&quot;Opensource License&quot;&gt;{:class=”img-responsive”}&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;정리&quot;&gt;&lt;a href=&quot;#정리&quot; class=&quot;headerlink&quot; title=&quot;정리&quot;&gt;&lt;/a&gt;정리&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;BSD (Berkeley Software Distribution)&lt;ul&gt;
-&lt;li&gt;저작권 표시 필요함&lt;/li&gt;
-&lt;li&gt;코드 공개 의무 없음&lt;/li&gt;
-&lt;li&gt;저자 및 기여자들의 이름을 홍보용으로 사용할 수 없음&lt;/li&gt;
-&lt;li&gt;상용으로 사용 가능&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Apache&lt;ul&gt;
-&lt;li&gt;저작권 표시 필요함&lt;/li&gt;
-&lt;li&gt;코드 공개 의무 없음&lt;/li&gt;
-&lt;li&gt;상용으로 사용 가능&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;GPL (General Public License)&lt;ul&gt;
-&lt;li&gt;저작권 표시 필요함&lt;/li&gt;
-&lt;li&gt;GPL 전문 포함해야 함&lt;/li&gt;
-&lt;li&gt;소스 코드 공개 필요함&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;LGPL (Lesser General Public License)&lt;ul&gt;
-&lt;li&gt;저작권 표시 필요함&lt;/li&gt;
-&lt;li&gt;LGPL Library를 수정한 경우 코드 공개해야 함&lt;/li&gt;
-&lt;li&gt;LGPL Library를 사용만 한 경우 코드 공개 의무 없음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;MIT&lt;ul&gt;
-&lt;li&gt;소스 공개 의무 없음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Licensing&lt;/code&gt;은 &lt;code&gt;Licensor&lt;/code&gt;가 &lt;code&gt;Licensee&lt;/code&gt;에게 대가를 받고 그 재산권을 사용할 수 있도록 상업적 권리를 부여하는 것이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;결론-상용에서는-GPL을-피하고-MIT-BSD-Apache를-사용하자&quot;&gt;&lt;a href=&quot;#결론-상용에서는-GPL을-피하고-MIT-BSD-Apache를-사용하자&quot; class=&quot;headerlink&quot; title=&quot;결론 : 상용에서는 GPL을 피하고 MIT, BSD, Apache를 사용하자.&quot;&gt;&lt;/a&gt;결론 : 상용에서는 GPL을 피하고 MIT, BSD, Apache를 사용하자.&lt;/h2&gt;&lt;hr&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;p&gt;아래의 글들을 교재삼아 작성하였습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;오픈소스 소프트웨어 라이선스 가이드 2.0 - 문화체육관광부, 한국저작권위원회&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;www.linuxfoundation.org/principlesofsoftwarecontracts&quot;&gt;Principles of Software Contracts - The LINUX Foundation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.olis.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;한국저작권협회&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.apache.org/licenses/LICENSE-2.0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;APACHE Software Foundation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.gnu.org/licenses/gpl-2.0.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GPL 2.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GPL 3.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/06/28/2016-06-28-etc-opensource-license/#disqus_thread</comments>
     </item>
     
   </channel>
