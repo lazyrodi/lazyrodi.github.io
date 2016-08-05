@@ -1587,6 +1587,10 @@ a.article-title:hover {
   -moz-background-size: 160px 40px;
   background-size: 160px 40px;
 }
+#footer #copyright-img {
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
 i.icon {
   display: inline-block;
   font-style: normal;
