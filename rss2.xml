@@ -8,8 +8,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 05 Aug 2016 12:39:44 GMT</pubDate>
+    <pubDate>Fri, 05 Aug 2016 12:43:57 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>직장생활</title>
+      <link>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-worklife/</link>
+      <guid>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-worklife/</guid>
+      <pubDate>Fri, 05 Aug 2016 10:47:50 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;입사&quot;&gt;&lt;a href=&quot;#입사&quot; class=&quot;headerlink&quot; title=&quot;입사&quot;&gt;&lt;/a&gt;입사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/82090&quot; target=&quot;_blank&quot; rel=&quot;external&quot;
+      
+      </description>
+      
+      <content:encoded>&lt;h1 id=&quot;입사&quot;&gt;&lt;a href=&quot;#입사&quot; class=&quot;headerlink&quot; title=&quot;입사&quot;&gt;&lt;/a&gt;입사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/82090&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ㅍㅍㅅㅅ - 새로운 입사자를 환영하는 방법, 웰컴키트&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;조직문화&quot;&gt;&lt;a href=&quot;#조직문화&quot; class=&quot;headerlink&quot; title=&quot;조직문화&quot;&gt;&lt;/a&gt;조직문화&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://m.media.daum.net/m/media/economic/newsview/20160601070102846&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“1분도 아까워” 현대차 직원들의 점심 레이스&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;업무&quot;&gt;&lt;a href=&quot;#업무&quot; class=&quot;headerlink&quot; title=&quot;업무&quot;&gt;&lt;/a&gt;업무&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@lovewant/49&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;직장에서 깨지며 배운 100% Real 보고서 스킬&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;퇴사&quot;&gt;&lt;a href=&quot;#퇴사&quot; class=&quot;headerlink&quot; title=&quot;퇴사&quot;&gt;&lt;/a&gt;퇴사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/87639&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ㅍㅍㅅㅅ - 두 번째 퇴사&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-worklife/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Codility</title>
@@ -1975,75 +1995,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/06/28/2016-06-28-etc-opensource-license/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>String-StringBuffer-StringBuilder</title>
-      <link>http://lazyrodi.github.io/2016/06/27/2016-06-27-java-string-stringbuffer-stringbuilder/</link>
-      <guid>http://lazyrodi.github.io/2016/06/27/2016-06-27-java-string-stringbuffer-stringbuilder/</guid>
-      <pubDate>Mon, 27 Jun 2016 11:42:50 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;살펴보고 돌아서서 5분 후면 까먹는 String, StringBuffer, StringBuilder에 대한 정리.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;String&quot;&gt;&lt;a href=&quot;#String&quot; class=&quot;headerlink&quot; title=&quot;Stri
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;살펴보고 돌아서서 5분 후면 까먹는 String, StringBuffer, StringBuilder에 대한 정리.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;String&quot;&gt;&lt;a href=&quot;#String&quot; class=&quot;headerlink&quot; title=&quot;String&quot;&gt;&lt;/a&gt;String&lt;/h2&gt;&lt;p&gt;&lt;code&gt;String&lt;/code&gt;은 &lt;code&gt;Immutable Class (불변 클래스)&lt;/code&gt;이다. 불변 클래스라 함은 아래 코드와 같이 str1에 str2를 더했을 때 원래의 객체가 변하는 것이 아니라 새로운 객체가 생성되는 것을 의미한다.&lt;/p&gt;
-&lt;p&gt;코드 1.&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;String str1 = &lt;span class=&quot;string&quot;&gt;&quot;Lazy&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String str2 = &lt;span class=&quot;string&quot;&gt;&quot;Rodi&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;         str1 =&amp;gt;          &quot;&lt;/span&gt; + str1 + &lt;span class=&quot;string&quot;&gt;&quot;: &quot;&lt;/span&gt; + str1.hashCode());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;         str2 =&amp;gt;     &quot;&lt;/span&gt; + str2 + &lt;span class=&quot;string&quot;&gt;&quot;: &quot;&lt;/span&gt; + str2.hashCode());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;str1 += str2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;str1 += str2; =&amp;gt; &quot;&lt;/span&gt; + str1 + &lt;span class=&quot;string&quot;&gt;&quot;: &quot;&lt;/span&gt; + str1.hashCode());&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;결과값 1. 주소가 바뀐 것을 확인할 수 있다.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;         str1 =&amp;gt;          Lazy: 2361236&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;         str2 =&amp;gt;     Rodriguez: 2552738&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;str1 += str2; =&amp;gt; LazyRodriguez: -1189801674&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;위의 예제에서 처음 &lt;code&gt;str1&lt;/code&gt;이 차지하고 있던 공간이 낭비된다는 것을 알 수 있다.&lt;/p&gt;
-&lt;p&gt;이 낭비를 막기 위해 &lt;code&gt;StringBuffer&lt;/code&gt;를 살펴보자.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;StringBuffer&quot;&gt;&lt;a href=&quot;#StringBuffer&quot; class=&quot;headerlink&quot; title=&quot;StringBuffer&quot;&gt;&lt;/a&gt;StringBuffer&lt;/h2&gt;&lt;p&gt;&lt;code&gt;StringBuffer&lt;/code&gt;는 &lt;code&gt;Immutable Class&lt;/code&gt;가 아니며, &lt;code&gt;append()&lt;/code&gt; 메소드를 제공하여 문자열 연산을 할 수 있게 도와준다.&lt;/p&gt;
-&lt;p&gt;코드 2.&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;StringBuffer strBuf = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StringBuffer();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String str1 = &lt;span class=&quot;string&quot;&gt;&quot;Lazy&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String str2 = &lt;span class=&quot;string&quot;&gt;&quot;Rodriguez&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;strBuf =&amp;gt; &quot;&lt;/span&gt; + strBuf + &lt;span class=&quot;string&quot;&gt;&quot;             : &quot;&lt;/span&gt; + strBuf.hashCode());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;strBuf.append(str1);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;strBuf =&amp;gt;          &quot;&lt;/span&gt; + strBuf + &lt;span class=&quot;string&quot;&gt;&quot;: &quot;&lt;/span&gt; + strBuf.hashCode());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;strBuf.append(str2);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;strBuf =&amp;gt; &quot;&lt;/span&gt; + strBuf + &lt;span class=&quot;string&quot;&gt;&quot;: &quot;&lt;/span&gt; + strBuf.hashCode());&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;결과값 2. 새로 생성되는 객체가 없다.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;strBuf =&amp;gt;              : 366712642&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;strBuf =&amp;gt;          Lazy: 366712642&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;strBuf =&amp;gt; LazyRodriguez: 366712642&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;별 차이 없는 것으로 볼 수도 있고, &lt;code&gt;StringBuffer&lt;/code&gt;를 생성할 때의 자원이 걱정될 수도 있겠지만, 문자의 &lt;code&gt;+&lt;/code&gt; 연산이 빈번하게 이루어진다면 메모리의 낭비가 커질 수 밖에 없고 이 때 &lt;code&gt;StringBuffer&lt;/code&gt;를 &lt;code&gt;String&lt;/code&gt;보다 효율적으로 사용할 수 있게 된다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;String&lt;/code&gt;과 &lt;code&gt;StringBuffer&lt;/code&gt; 모두 &lt;code&gt;char[]&lt;/code&gt; 이다. &lt;code&gt;String&lt;/code&gt;은 &lt;code&gt;+&lt;/code&gt; 연산 시 새로운 배열을 만들어내고 &lt;code&gt;StringBuffer&lt;/code&gt;은 미리 배열을 여유있게 잡아둔다.&lt;/p&gt;
-&lt;p&gt;이런 이유때문에 &lt;code&gt;StringBuffer&lt;/code&gt;의 배열이 꽉 차서 메모리를 더 잡아주는 지점에서 성능 저하가 살짝 나타난다.&lt;/p&gt;
-&lt;p&gt;보통 &lt;code&gt;StringBuffer&lt;/code&gt;가 &lt;code&gt;String&lt;/code&gt; 보다 성능이 뛰어나다. &lt;code&gt;String&lt;/code&gt;의 경우에도 Compiler가 &lt;code&gt;+&lt;/code&gt; 연산을 &lt;code&gt;StringBuffer&lt;/code&gt;로 자동 변환해주긴 하지만 모든 &lt;code&gt;+&lt;/code&gt; 연산을 커버하지는 않는다고 한다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;StringBuilder&quot;&gt;&lt;a href=&quot;#StringBuilder&quot; class=&quot;headerlink&quot; title=&quot;StringBuilder&quot;&gt;&lt;/a&gt;StringBuilder&lt;/h2&gt;&lt;p&gt;위에서 살펴본 &lt;code&gt;StringBuffer&lt;/code&gt;는 멀티 스레딩 환경에서 Thread-safe를 위해 &lt;code&gt;동기화(Synchronized)&lt;/code&gt;가 이루어진다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;StringBuilder&lt;/code&gt;는 &lt;code&gt;StringBuffer&lt;/code&gt;에서 동기화 기능을 제거한 것이다. 고로, 멀티 스레딩 환경이 아니라면 &lt;code&gt;StrigBuilder&lt;/code&gt;를 쓰는 것이 낫다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;성능시험&quot;&gt;&lt;a href=&quot;#성능시험&quot; class=&quot;headerlink&quot; title=&quot;성능시험&quot;&gt;&lt;/a&gt;성능시험&lt;/h2&gt;&lt;p&gt;간단한 코드로 속도를 비교해 보도록 하자. loop 단위가 작을 때에는 &lt;code&gt;currentTimeMillis()&lt;/code&gt; 대신 &lt;code&gt;nanoTime()&lt;/code&gt;을 사용하면 된다.&lt;/p&gt;
-&lt;p&gt;(사실 아래 코드가 측정에 적당한 코드인지 불안하긴 하다…)&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;String str1 = &lt;span class=&quot;string&quot;&gt;&quot;Lazy&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String str2 = &lt;span class=&quot;string&quot;&gt;&quot;Rodriguez&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;StringBuffer strBuffer = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StringBuffer();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;StringBuilder strBuilder = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; StringBuilder();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; max = &lt;span class=&quot;number&quot;&gt;50000&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; s, e;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;s = System.currentTimeMillis();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;StringBuffer&#39; start = &quot;&lt;/span&gt; + s);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; max; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    strBuffer.append(str2);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;e = System.currentTimeMillis();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;StringBuffer&#39; start = &quot;&lt;/span&gt; + e);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;StringBuffer&#39; spend time = &quot;&lt;/span&gt; + (e - s));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;s = System.currentTimeMillis();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;StringBuilder&#39; start = &quot;&lt;/span&gt; + s);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; max; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    strBuilder.append(str2);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;e = System.currentTimeMillis();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;StringBuilder&#39; start = &quot;&lt;/span&gt; + e);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;StringBuilder&#39; spend time = &quot;&lt;/span&gt; + (e - s));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;s = System.currentTimeMillis();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;+&#39; start = &quot;&lt;/span&gt; + s);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; max; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    str1 += str2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;e = System.currentTimeMillis();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;+&#39; start = &quot;&lt;/span&gt; + e);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;&#39;+&#39; spend time = &quot;&lt;/span&gt; + (e - s));&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;아래 결과는 3회 측정 후 평균 낸 값이다.&lt;/p&gt;
-&lt;p&gt;기초적인 환경에서는 &lt;code&gt;StringBuilder&lt;/code&gt; 성능이 제일 좋다는 것을 알 수 있다.&lt;/p&gt;
-&lt;table&gt;&lt;tr&gt;&lt;th&gt;종류 \ 수행&lt;/th&gt;&lt;th&gt;100회 (ns)&lt;/th&gt;&lt;th&gt;1000회 (ns)&lt;/th&gt;&lt;th&gt;10000회 (ms)&lt;/th&gt;&lt;th&gt;20000회 (ms)&lt;/th&gt;&lt;th&gt;30000회 (ms)&lt;/th&gt;&lt;th&gt;50000회 (ms)&lt;/th&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;td&gt;String&lt;/td&gt;&lt;td&gt;274526&lt;/td&gt;&lt;td&gt;9077829&lt;/td&gt;&lt;td&gt;539&lt;/td&gt;&lt;td&gt;1910&lt;/td&gt;&lt;td&gt;4208.667&lt;/td&gt;&lt;td&gt;10992.67&lt;/td&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;td&gt;StringBuffer&lt;/td&gt;&lt;td&gt;305514.7&lt;/td&gt;&lt;td&gt;583808.3&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;3.666667&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;6.333333&lt;/td&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;td&gt;StringBuilder&lt;/td&gt;&lt;td&gt;117393.7&lt;/td&gt;&lt;td&gt;202339.7&lt;/td&gt;&lt;td&gt;2.333333&lt;/td&gt;&lt;td&gt;2.333333&lt;/td&gt;&lt;td&gt;3.333333&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;hr&gt;
-&lt;h2 id=&quot;내-맘대로-정리&quot;&gt;&lt;a href=&quot;#내-맘대로-정리&quot; class=&quot;headerlink&quot; title=&quot;내 맘대로 정리&quot;&gt;&lt;/a&gt;내 맘대로 정리&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;String&lt;ul&gt;
-&lt;li&gt;단순한 코드, 문자열의 불변성이 유지되는 코드에서 사용&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;StringBuffer&lt;ul&gt;
-&lt;li&gt;Thread-safe 환경에서 사용&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;StringBuilder&lt;ul&gt;
-&lt;li&gt;Single thread 환경에서 문자열 결합에서는 가장 좋은 성능을 보임&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;p&gt;아래의 글들을 교재삼아 작성하였습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://cafe.naver.com/javachobostudy/2423&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cafe.naver.com/javachobostudy/2423&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://cafe.naver.com/javachobostudy/36860&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cafe.naver.com/javachobostudy/36860&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://cafe.naver.com/hitommy/543&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cafe.naver.com/hitommy/543&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;java-api&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/lang/String.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;String&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;StringBuilder&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;[StringBuffer&quot;&gt;StringBuffer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/06/27/2016-06-27-java-string-stringbuffer-stringbuilder/#disqus_thread</comments>
     </item>
     
   </channel>
