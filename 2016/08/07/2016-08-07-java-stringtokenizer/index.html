@@ -3,15 +3,27 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/5 | Lazy Rodriguez</title>
+    <title>StringTokenizer | Lazy Rodriguez</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Lazy Rodriguez">
-<meta property="og:url" content="http://lazyrodi.github.io/archives/2016/05/index.html">
+        <meta name="keywords" content="java, stringtokenizer" />
+    
+    <meta name="description" content="Algospot에서 이 문제 (https://algospot.com/judge/problem/read/ZEROONE) 를 풀려다 보니 IO가 느려서 시간 초과가 계속 떴다.
+리플들을 보니 StringTokenizer를 이용해 시간을 줄이려고 노력했다는 것을 보았는데 난 부끄럽게도 이 Class를 본 적이 없으므로 찾아보았다.
+근데 IO랑 뭔 상관인지는 잘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="StringTokenizer">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/08/07/2016-08-07-java-stringtokenizer/index.html">
 <meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Algospot에서 이 문제 (https://algospot.com/judge/problem/read/ZEROONE) 를 풀려다 보니 IO가 느려서 시간 초과가 계속 떴다.
+리플들을 보니 StringTokenizer를 이용해 시간을 줄이려고 노력했다는 것을 보았는데 난 부끄럽게도 이 Class를 본 적이 없으므로 찾아보았다.
+근데 IO랑 뭔 상관인지는 잘">
+<meta property="og:updated_time" content="2016-08-07T06:29:56.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lazy Rodriguez">
+<meta name="twitter:title" content="StringTokenizer">
+<meta name="twitter:description" content="Algospot에서 이 문제 (https://algospot.com/judge/problem/read/ZEROONE) 를 풀려다 보니 IO가 느려서 시간 초과가 계속 떴다.
+리플들을 보니 StringTokenizer를 이용해 시간을 줄이려고 노력했다는 것을 보았는데 난 부끄럽게도 이 Class를 본 적이 없으므로 찾아보았다.
+근데 IO랑 뭔 상관인지는 잘">
     
 
     
@@ -123,7 +135,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2016/5
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/java/">java</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -137,86 +149,147 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                            
+                            <article id="post-2016-08-07-java-stringtokenizer" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        StringTokenizer
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2016/08/07/2016-08-07-java-stringtokenizer/" class="article-date">
+    <time datetime="2016-08-07T04:01:50.000Z" itemprop="datePublished">2016-08-07</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-stringtokenizer/">java, stringtokenizer</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/hr/">hr</a>
-            </p>
-            <p class="date"><time datetime="2016-05-16T11:00:00.000Z" itemprop="datePublished">2016-05-16</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/05/16/2016-05-01-hr-famous-saying/">[조직문화] 명언, 격언</a>
-        </h1>
-    
+        <div class="article-entry" itemprop="articleBody">
+            <p>Algospot에서 이 문제 (<a href="https://algospot.com/judge/problem/read/ZEROONE" target="_blank" rel="external">https://algospot.com/judge/problem/read/ZEROONE</a>) 를 풀려다 보니 IO가 느려서 시간 초과가 계속 떴다.</p>
+<p>리플들을 보니 StringTokenizer를 이용해 시간을 줄이려고 노력했다는 것을 보았는데 난 부끄럽게도 이 Class를 본 적이 없으므로 찾아보았다.</p>
+<p>근데 IO랑 뭔 상관인지는 잘 모르겠다. 그냥 split보다 빠르게 하려고 StringTokenizer를 사용한 것 같다.</p>
+<p>아무튼 이 글과 관련 없이 함수 별 IO 속도 차이를 보기 위해서는 <a href="https://algospot.com/forum/read/2496/" target="_blank" rel="external">여기</a>를 참고하시라.</p>
+<h1 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h1><ul>
+<li>StringTokenizer: 형식이 정해진 문자열을 분리할 때 사용.</li>
+<li><p>String.split(): 형식이 정해지지 않은 문자열을 분리할 때 사용. JDK1.4에 추가되었음.</p>
+</li>
+<li><p>속도: StringTokenizer &gt; String.split()</p>
+<ul>
+<li>String.split()은 내부적으로 정규표현식을 사용하기 때문에 많은 처리가 필요할 경우 심하게 느려짐.</li>
+</ul>
+</li>
+<li><p>주의점</p>
+<ul>
+<li>StringTokenizer를 사용할 경우 parsing되는 데이터가 공백이라면 부적절하다. 데이터에 뭐라도 채워져 있어야 한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="예시로-보자"><a href="#예시로-보자" class="headerlink" title="예시로 보자"></a>예시로 보자</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.StringTokenizer;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    </div><div class="line">        String people[] = <span class="keyword">new</span> String[] &#123;</div><div class="line">                <span class="string">"Matthew, 01011111111, Male, Student"</span>,</div><div class="line">                <span class="string">"David, 01022222222, , Swimmer"</span>,</div><div class="line">                <span class="string">"Maria, 01033333333, Female, Student,  "</span>                </div><div class="line">        &#125;;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (String a : people) &#123;</div><div class="line">            StringTokenizer st = <span class="keyword">new</span> StringTokenizer(a, <span class="string">", "</span>);</div><div class="line">            String[] temp = a.split(<span class="string">", "</span>);</div><div class="line"></div><div class="line">            System.out.println(<span class="string">"----------"</span>);</div><div class="line">            System.out.println(<span class="string">"** StringTokenizer"</span>);</div><div class="line">            <span class="keyword">while</span> (st.hasMoreElements()) &#123;</div><div class="line">                System.out.println(st.nextToken());</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            System.out.println(<span class="string">"** String.split()"</span>);</div><div class="line">            <span class="keyword">for</span> (String b : temp) &#123;</div><div class="line">                System.out.println(b);</div><div class="line">            &#125;</div><div class="line">            System.out.println(<span class="string">"----------"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="결과는-이렇다"><a href="#결과는-이렇다" class="headerlink" title="결과는 이렇다"></a>결과는 이렇다</h2><p>David에 대한 데이터를 보면 성별 정보를 빈 칸으로 해놓으니 StringTokenizer에서는 이를 무시해버렸다.</p>
+<p>Mariad의 마지막 데이터도 마찬가지이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">----------</div><div class="line">** StringTokenizer</div><div class="line">Matthew</div><div class="line"><span class="number">01011111111</span></div><div class="line">Male</div><div class="line">Student</div><div class="line">** String.split()</div><div class="line">Matthew</div><div class="line"><span class="number">01011111111</span></div><div class="line">Male</div><div class="line">Student</div><div class="line">----------</div><div class="line">----------</div><div class="line">** StringTokenizer</div><div class="line">David</div><div class="line"><span class="number">01022222222</span></div><div class="line">Swimmer</div><div class="line">** String.split()</div><div class="line">David</div><div class="line"><span class="number">01022222222</span></div><div class="line"></div><div class="line">Swimmer</div><div class="line">----------</div><div class="line">----------</div><div class="line">** StringTokenizer</div><div class="line">Maria</div><div class="line"><span class="number">01033333333</span></div><div class="line">Female</div><div class="line">Student</div><div class="line">** String.split()</div><div class="line">Maria</div><div class="line"><span class="number">01033333333</span></div><div class="line">Female</div><div class="line">Student</div><div class="line"> </div><div class="line">----------</div></pre></td></tr></table></figure>
+<h1 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h1><ul>
+<li><a href="http://okky.kr/article/32363" target="_blank" rel="external">http://okky.kr/article/32363</a></li>
+<li><a href="http://stylekai.tistory.com/105" target="_blank" rel="external">http://stylekai.tistory.com/105</a></li>
+</ul>
 
-        <p class="article-excerpt">
-            직원들은 다른 회사에서 더 나은 직책이나 연봉을 제안받았을 때가 아니라 지금 회사에서 존중받지 못했을 때 이직한다.
-Tom MendozaNetApp Vice president
-단순함, 그것은 천재에게 주어진 재능이다.어떤 지적인 바보도 사물을 더 크고, 더 복잡하고, 더 격렬하게 만들 수 있다.하지만 그 반대편으로 나아가려면 약간의 천재성과 많은 용기가 필
-        </p>
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/08/07/2016-08-07-java-stringtokenizer/" data-id="cirk8c7040000h8kxicdcy8so" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/database/">database</a>
-            </p>
-            <p class="date"><time datetime="2016-05-13T04:00:00.000Z" itemprop="datePublished">2016-05-13</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/05/13/2016-04-13-db-sql-getting-started/">SQL 기초</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            SQL 명령어
-SELECT : database로부터 data를 추출한다.
-UPDATE : database내의 data를 갱신한다.
-DELETE : database로부터 data를 삭제한다.
-INSERT INTO : database로 새로운 data를 삽입한다.
-CREATE DATABASE : 새로운 database를 생성한다.
-ALTER DATABASE :
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
+
     
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -252,6 +325,19 @@ ALTER DATABASE :
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/08/05/2016-08-05-docthread-setting-python-into-eclipse/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Eclipse를 이용한 Python 사용</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -371,11 +457,13 @@ ALTER DATABASE :
     var disqus_shortname = 'lazyrodi';
     
     
+    var disqus_url = 'http://lazyrodi.github.io/2016/08/07/2016-08-07-java-stringtokenizer/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
