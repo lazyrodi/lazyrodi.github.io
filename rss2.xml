@@ -8,8 +8,52 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 07 Aug 2016 06:29:56 GMT</pubDate>
+    <pubDate>Mon, 08 Aug 2016 14:43:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Eclipse Setting</title>
+      <link>http://lazyrodi.github.io/2016/08/08/2016-08-08-docthread-setting-eclipse/</link>
+      <guid>http://lazyrodi.github.io/2016/08/08/2016-08-08-docthread-setting-eclipse/</guid>
+      <pubDate>Mon, 08 Aug 2016 13:00:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;지극히 개인적인 Eclipse setting 정리.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Window &amp;gt; Preferences &amp;gt; General &amp;gt; Show heap status 체크&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;하단에 heap memory 용
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;지극히 개인적인 Eclipse setting 정리.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Window &amp;gt; Preferences &amp;gt; General &amp;gt; Show heap status 체크&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;하단에 heap memory 용량을 표시해주고, 휴지통 버튼 누르면 바로 memory를 확보할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Window &amp;gt; Preferences &amp;gt; General &amp;gt; Appearance &amp;gt; Theme 번경&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;취향따라. Dark&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Window &amp;gt; Preference &amp;gt; General &amp;gt; Workspace&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Text file encoding을 Other로 선택한 후 &lt;code&gt;UTF-8&lt;/code&gt;로 변경&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Tab을 Space 바꾸기 (Indent 설정)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neon을 설치하니까 자동으로 Tab이 Space 4칸으로 조정이 되어있다. (안 그랬었던 것 같은데… 뭐 좋은게 좋은거니… 엣헴)&lt;/li&gt;
+&lt;li&gt;관련 설정은 Window &amp;gt; Preferences &amp;gt; General &amp;gt; Editors &amp;gt; Text Editors에 가면 &lt;code&gt;Displayed tab width&lt;/code&gt; 에서 칸 수를 설정하고 &lt;code&gt;Insert spaces for tabs&lt;/code&gt; 옵션의 체크를 통해 Tab으로 넣을 것인지 Space로 넣을 것인지 선택이 가능.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/08/2016-08-08-docthread-setting-eclipse/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>StringTokenizer</title>
@@ -96,7 +140,7 @@
       <content:encoded>&lt;h1 id=&quot;입사&quot;&gt;&lt;a href=&quot;#입사&quot; class=&quot;headerlink&quot; title=&quot;입사&quot;&gt;&lt;/a&gt;입사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/82090&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ㅍㅍㅅㅅ - 새로운 입사자를 환영하는 방법, 웰컴키트&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;조직문화&quot;&gt;&lt;a href=&quot;#조직문화&quot; class=&quot;headerlink&quot; title=&quot;조직문화&quot;&gt;&lt;/a&gt;조직문화&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://m.media.daum.net/m/media/economic/newsview/20160601070102846&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“1분도 아까워” 현대차 직원들의 점심 레이스&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;업무&quot;&gt;&lt;a href=&quot;#업무&quot; class=&quot;headerlink&quot; title=&quot;업무&quot;&gt;&lt;/a&gt;업무&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@lovewant/49&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;직장에서 깨지며 배운 100% Real 보고서 스킬&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;퇴사&quot;&gt;&lt;a href=&quot;#퇴사&quot; class=&quot;headerlink&quot; title=&quot;퇴사&quot;&gt;&lt;/a&gt;퇴사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/87639&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ㅍㅍㅅㅅ - 두 번째 퇴사&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;퇴사&quot;&gt;&lt;a href=&quot;#퇴사&quot; class=&quot;headerlink&quot; title=&quot;퇴사&quot;&gt;&lt;/a&gt;퇴사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/87490&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ㅍㅍㅅㅅ - 두 번째 퇴사&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-worklife/#disqus_thread</comments>
@@ -121,7 +165,7 @@
 &lt;h2 id=&quot;For&quot;&gt;&lt;a href=&quot;#For&quot; class=&quot;headerlink&quot; title=&quot;For&quot;&gt;&lt;/a&gt;For&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; some_variable &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range_of_values:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    loop_body&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;) :&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; i&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;) :&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; i&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;While&quot;&gt;&lt;a href=&quot;#While&quot; class=&quot;headerlink&quot; title=&quot;While&quot;&gt;&lt;/a&gt;While&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; some_condition:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    loop_body&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;result = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; n &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    n = n // &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    result += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;a = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; a &amp;lt;= n:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    c = a + b&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    a = b&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    b = c&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;Collection을-사용한-반복&quot;&gt;&lt;a href=&quot;#Collection을-사용한-반복&quot; class=&quot;headerlink&quot; title=&quot;Collection을 사용한 반복&quot;&gt;&lt;/a&gt;Collection을 사용한 반복&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;days = [&lt;span class=&quot;string&quot;&gt;&#39;Monday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Tuesday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Wednesday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Thursday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Friday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Saturday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Sunday&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; day &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; days:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; day&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;days = set([&lt;span class=&quot;string&quot;&gt;&#39;Monday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Tuesday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Wednesday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Thursday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Friday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Saturday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Sunday&#39;&lt;/span&gt;])&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; day &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; days:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; day&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// set을 사용할 경우 출력 순서가 set에서 지정한 순서대로 나오지는 않는다.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;&#39;&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Monday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Tuesday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Friday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Wednesday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Thursday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Sunday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Saturday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&#39;&#39;&#39;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// key-value 구조로 사용할 수도 있다.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;days = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;mon&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Monday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;tue&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Tuesday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;wed&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Wednesday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;thu&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Thursday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;fri&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Friday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sat&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Saturday&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sun&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Sunday&#39;&lt;/span&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; day &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; days:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; day, &lt;span class=&quot;string&quot;&gt;&#39;stand for&#39;&lt;/span&gt;, days[day]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;&#39;&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;wed stands for Wednesday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sun stands for Sunday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fri stands for Friday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tue stands for Turesday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mon stands for Monday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;thu stands for Thursday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sat stands for Saturday&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&#39;&#39;&#39;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;문제&quot;&gt;&lt;a href=&quot;#문제&quot; class=&quot;headerlink&quot; title=&quot;문제&quot;&gt;&lt;/a&gt;문제&lt;/h2&gt;&lt;h3 id=&quot;BinaryGap&quot;&gt;&lt;a href=&quot;#BinaryGap&quot; class=&quot;headerlink&quot; title=&quot;BinaryGap&quot;&gt;&lt;/a&gt;BinaryGap&lt;/h3&gt;&lt;p&gt;45점 ㅠㅠ&lt;/p&gt;
+&lt;h2 id=&quot;문제&quot;&gt;&lt;a href=&quot;#문제&quot; class=&quot;headerlink&quot; title=&quot;문제&quot;&gt;&lt;/a&gt;문제&lt;/h2&gt;&lt;h3 id=&quot;BinaryGap&quot;&gt;&lt;a href=&quot;#BinaryGap&quot; class=&quot;headerlink&quot; title=&quot;BinaryGap&quot;&gt;&lt;/a&gt;BinaryGap&lt;/h3&gt;&lt;p&gt;python&lt;br&gt;1차: 45점 (이 때는 잘 몰라서 링크 안 남겨둠)&lt;br&gt;2차: 100점 - &lt;a href=&quot;https://codility.com/demo/results/training8TW2WC-EH5/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/training8TW2WC-EH5/&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;Arrays&quot;&gt;&lt;a href=&quot;#Arrays&quot; class=&quot;headerlink&quot; title=&quot;Arrays&quot;&gt;&lt;/a&gt;Arrays&lt;/h1&gt;&lt;p&gt;하나의 공간에 여러 아이템을 저장할 수 있는 자료구조.&lt;/p&gt;
 &lt;h2 id=&quot;Creation&quot;&gt;&lt;a href=&quot;#Creation&quot; class=&quot;headerlink&quot; title=&quot;Creation&quot;&gt;&lt;/a&gt;Creation&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;shopping = [&lt;span class=&quot;string&quot;&gt;&#39;bread&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;butter&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;cheese&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;shopping = []         &lt;span class=&quot;comment&quot;&gt;# empty list&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;shopping = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] * &lt;span class=&quot;number&quot;&gt;365&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# value가 0인 365개의 array&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;Accesing-and-Modifying&quot;&gt;&lt;a href=&quot;#Accesing-and-Modifying&quot; class=&quot;headerlink&quot; title=&quot;Accesing and Modifying&quot;&gt;&lt;/a&gt;Accesing and Modifying&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;shopping[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;temperatures[&lt;span class=&quot;number&quot;&gt;42&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;25&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;shopping += [&lt;span class=&quot;string&quot;&gt;&#39;eggs&#39;&lt;/span&gt;] &lt;span class=&quot;comment&quot;&gt;# 이런 식으로 array에 추가 가능.&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -131,7 +175,7 @@
 &lt;h2 id=&quot;Basic-array-operations&quot;&gt;&lt;a href=&quot;#Basic-array-operations&quot; class=&quot;headerlink&quot; title=&quot;Basic array operations&quot;&gt;&lt;/a&gt;Basic array operations&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;len([&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;]) == &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[&lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;] * &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt; == [&lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;] + [&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;] == [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;butter&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; [&lt;span class=&quot;string&quot;&gt;&#39;bread&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;butter&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;cheese&#39;&lt;/span&gt;] == &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;연습하기&quot;&gt;&lt;a href=&quot;#연습하기&quot; class=&quot;headerlink&quot; title=&quot;연습하기&quot;&gt;&lt;/a&gt;연습하기&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(A)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    N = len(A)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(N // &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        k = N - i - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        A[i], A[k] = A[k], A[i]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; A&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;A.reverse() &lt;span class=&quot;comment&quot;&gt;# python native&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;문제-1&quot;&gt;&lt;a href=&quot;#문제-1&quot; class=&quot;headerlink&quot; title=&quot;문제&quot;&gt;&lt;/a&gt;문제&lt;/h2&gt;&lt;h3 id=&quot;CyclicRotation&quot;&gt;&lt;a href=&quot;#CyclicRotation&quot; class=&quot;headerlink&quot; title=&quot;CyclicRotation&quot;&gt;&lt;/a&gt;CyclicRotation&lt;/h3&gt;&lt;p&gt;37점&lt;/p&gt;
-&lt;h3 id=&quot;OddOccurrencesInArray&quot;&gt;&lt;a href=&quot;#OddOccurrencesInArray&quot; class=&quot;headerlink&quot; title=&quot;OddOccurrencesInArray&quot;&gt;&lt;/a&gt;OddOccurrencesInArray&lt;/h3&gt;&lt;p&gt;100점 오예&lt;/p&gt;
+&lt;h3 id=&quot;OddOccurrencesInArray&quot;&gt;&lt;a href=&quot;#OddOccurrencesInArray&quot; class=&quot;headerlink&quot; title=&quot;OddOccurrencesInArray&quot;&gt;&lt;/a&gt;OddOccurrencesInArray&lt;/h3&gt;&lt;p&gt;python: 100점 - &lt;a href=&quot;https://codility.com/demo/results/trainingR3ZUNQ-JXX/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/trainingR3ZUNQ-JXX/&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;Time-Complexity&quot;&gt;&lt;a href=&quot;#Time-Complexity&quot; class=&quot;headerlink&quot; title=&quot;Time Complexity&quot;&gt;&lt;/a&gt;Time Complexity&lt;/h1&gt;&lt;h3 id=&quot;TapeEquilibrium&quot;&gt;&lt;a href=&quot;#TapeEquilibrium&quot; class=&quot;headerlink&quot; title=&quot;TapeEquilibrium&quot;&gt;&lt;/a&gt;TapeEquilibrium&lt;/h3&gt;&lt;p&gt;python: 100점 - &lt;a href=&quot;https://codility.com/demo/results/trainingWJH42B-PFB/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/trainingWJH42B-PFB/&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
@@ -1556,285 +1600,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/07/01/2016-07-01-common-memory-management/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Fundamental of Database</title>
-      <link>http://lazyrodi.github.io/2016/06/30/2016-04-13-db-fundamental-of-database/</link>
-      <guid>http://lazyrodi.github.io/2016/06/30/2016-04-13-db-fundamental-of-database/</guid>
-      <pubDate>Thu, 30 Jun 2016 11:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Database는 간단히 &lt;code&gt;데이터들의 모임&lt;/code&gt; 이라고 보면 된다.&lt;/p&gt;
-&lt;p&gt;아래의 속성들을 충족해야 한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;의존성&lt;/li&gt;
-&lt;li&gt;일관성&lt;/li&gt;
-&lt;li&gt;보안성&lt;/li&gt;
-&lt;li&gt;경제성&lt;/li&gt;
-&lt;li&gt;
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;Database는 간단히 &lt;code&gt;데이터들의 모임&lt;/code&gt; 이라고 보면 된다.&lt;/p&gt;
-&lt;p&gt;아래의 속성들을 충족해야 한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;의존성&lt;/li&gt;
-&lt;li&gt;일관성&lt;/li&gt;
-&lt;li&gt;보안성&lt;/li&gt;
-&lt;li&gt;경제성&lt;/li&gt;
-&lt;li&gt;무결성&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;결론&quot;&gt;&lt;a href=&quot;#결론&quot; class=&quot;headerlink&quot; title=&quot;결론&quot;&gt;&lt;/a&gt;결론&lt;/h2&gt;&lt;p&gt;뜬금없이 두괄식 정리를 해본다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;table&gt;&lt;tr&gt;&lt;th&gt;Database&lt;/th&gt;&lt;th&gt;장점&lt;/th&gt;&lt;th&gt;단점&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;4&quot;&gt;HDB&lt;/td&gt;&lt;td&gt;구조가 간단하고 판독이 용이하다.&lt;/td&gt;&lt;td&gt;데이터 상호 간의 유연성이 부족하다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;구현, 수정, 검색이 용이하다.&lt;/td&gt;&lt;td&gt;검색 경로가 한정되어 있다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;데이터 액세스 속도가 빠르다.&lt;/td&gt;&lt;td&gt;삽입/삭제 연산이 매우 복잡하다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;데이터의 사용량을 쉽게 예측 가능하다.&lt;/td&gt;&lt;td&gt;다 대 다 관계를 처리하기 어렵다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;2&quot;&gt;NDB&lt;/td&gt;&lt;td&gt;상하 종속적인 관계를 쉽게 해결한다.&lt;/td&gt;&lt;td&gt;구성, 설계가 복잡하다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;데이터의 종속성을 해결하지 못한 시스템이다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;4&quot;&gt;RDB&lt;/td&gt;&lt;td&gt;데이터의 일관성을 보증할 수 있음. (Transaction)&lt;/td&gt;&lt;td&gt;대량 데이터 처리 시 성능 이슈.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;정규화를 전제로 하기 때문에 갱신 시의 비용이 적게 든다.&lt;/td&gt;&lt;td&gt;갱신이 발생한 Table의 인덱스 생성이나 스키마 변경에 대한 처리 이슈.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;JOIN 등 복잡한 검색 조건으로 검색이 가능함.&lt;/td&gt;&lt;td&gt;Column을 확실히 정의하기 어려운 경우에 대한 처리 이슈.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;간결하고, 보기 편하다.&lt;/td&gt;&lt;td&gt;단순히 빨리 결과를 조회하고자 할 때의 성능 이슈.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OODB&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;td&gt;NoSQL&lt;/td&gt;&lt;td&gt;대량의 Record 처리에 유리하다.&lt;/td&gt;&lt;td&gt;JOIN 연산이 불가능하다.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Database의 구성요소&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Database&lt;/li&gt;
-&lt;li&gt;Schema&lt;/li&gt;
-&lt;li&gt;DBMS (Database Management System)&lt;/li&gt;
-&lt;li&gt;Database Language&lt;/li&gt;
-&lt;li&gt;Database Storage&lt;/li&gt;
-&lt;li&gt;User&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Database의 종류&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;File System - File type&lt;/li&gt;
-&lt;li&gt;HDB (Hierachical Database, 계층형 데이터베이스) - Segment type&lt;/li&gt;
-&lt;li&gt;NDB (Network Database, 네트워크형 데이터베이스) - Record type&lt;/li&gt;
-&lt;li&gt;RDB (Relational Database, 관계형 데이터베이스) - Table type&lt;/li&gt;
-&lt;li&gt;OODB (Object-Oriented Database 객체지향형 데이터베이스) - Class type&lt;/li&gt;
-&lt;li&gt;NoSQL (Not only SQL)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Database의-종류&quot;&gt;&lt;a href=&quot;#Database의-종류&quot; class=&quot;headerlink&quot; title=&quot;Database의 종류&quot;&gt;&lt;/a&gt;Database의 종류&lt;/h2&gt;&lt;h3 id=&quot;File-System&quot;&gt;&lt;a href=&quot;#File-System&quot; class=&quot;headerlink&quot; title=&quot;File System&quot;&gt;&lt;/a&gt;File System&lt;/h3&gt;&lt;p&gt;말 그대로 파일시스템을 의미한다.&lt;/p&gt;
-&lt;h3 id=&quot;HDB-Hierachical-Database&quot;&gt;&lt;a href=&quot;#HDB-Hierachical-Database&quot; class=&quot;headerlink&quot; title=&quot;HDB (Hierachical Database)&quot;&gt;&lt;/a&gt;HDB (Hierachical Database)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;트리구조를 기반으로 하는 계층형 데이터 모델을 사용한다.&lt;/li&gt;
-&lt;li&gt;데이터는 트리 형태로 구성되며 각 데이터 요소(Entity)들은 상하 관계를 나타내는 Link로 구성된다.&lt;/li&gt;
-&lt;li&gt;제품&lt;ul&gt;
-&lt;li&gt;Adabas&lt;/li&gt;
-&lt;li&gt;GT.M&lt;/li&gt;
-&lt;li&gt;IMS&lt;/li&gt;
-&lt;li&gt;MUMPS&lt;/li&gt;
-&lt;li&gt;Cache&lt;/li&gt;
-&lt;li&gt;Metakit&lt;/li&gt;
-&lt;li&gt;Multidimensional hierachical toolkit&lt;/li&gt;
-&lt;li&gt;Mumps compiler&lt;/li&gt;
-&lt;li&gt;DMSII&lt;/li&gt;
-&lt;li&gt;FOCUS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;NDB-Network-Database&quot;&gt;&lt;a href=&quot;#NDB-Network-Database&quot; class=&quot;headerlink&quot; title=&quot;NDB (Network Database)&quot;&gt;&lt;/a&gt;NDB (Network Database)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;그래프 구조를 기반으로 하는 네트워크형 데이터 모델을 사용한다. 이는 Entity와 Entity 간의 Relationship을 그래프로 연결한다.&lt;/li&gt;
-&lt;li&gt;HDB와 비슷하지만 부모(상위 Entity)를 여러 개 가질 수 있다.&lt;/li&gt;
-&lt;li&gt;제품&lt;ul&gt;
-&lt;li&gt;IDS&lt;/li&gt;
-&lt;li&gt;IDMS&lt;/li&gt;
-&lt;li&gt;RDM Embedded&lt;/li&gt;
-&lt;li&gt;RDM Server&lt;/li&gt;
-&lt;li&gt;터보이미지&lt;/li&gt;
-&lt;li&gt;유니박 DMS-1100&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;RDB-Relational-Database&quot;&gt;&lt;a href=&quot;#RDB-Relational-Database&quot; class=&quot;headerlink&quot; title=&quot;RDB (Relational Database)&quot;&gt;&lt;/a&gt;RDB (Relational Database)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;현재까지 가장 안정적이고 효율적인 Database로 알려져있다.&lt;/li&gt;
-&lt;li&gt;Entity를 Table로 사용하고 Entity 간의 공동 Attribute를 이용하여 서로 연결하는 독립된 형태의 데이터 모델이다.&lt;/li&gt;
-&lt;li&gt;SQL을 사용한다.&lt;/li&gt;
-&lt;li&gt;제품&lt;ul&gt;
-&lt;li&gt;Oracle (Oracle)&lt;/li&gt;
-&lt;li&gt;MS-SQL Serve (Microsoft)&lt;/li&gt;
-&lt;li&gt;MySQL (Oracle -SunMicroSystems-)&lt;/li&gt;
-&lt;li&gt;DB2 (IBM)&lt;/li&gt;
-&lt;li&gt;Infomix (IBM)&lt;/li&gt;
-&lt;li&gt;Sybase (Sybase)&lt;/li&gt;
-&lt;li&gt;Derby (Apache)&lt;/li&gt;
-&lt;li&gt;SQLite (Opensource)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;OODB-Object-Oriented-Database&quot;&gt;&lt;a href=&quot;#OODB-Object-Oriented-Database&quot; class=&quot;headerlink&quot; title=&quot;OODB (Object-Oriented Database)&quot;&gt;&lt;/a&gt;OODB (Object-Oriented Database)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Class, Object, Attribute, Method, Instance, Capsulation, Inheritance 등을 기반으로 데이터를 구조화하는 데이터 모델이다.&lt;/li&gt;
-&lt;li&gt;비지니스형 데이터 타입만 처리되는 RDBMS의 기본적인 제한점을 극복하기 위해 고안되었다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;NoSQL-Not-only-SQL&quot;&gt;&lt;a href=&quot;#NoSQL-Not-only-SQL&quot; class=&quot;headerlink&quot; title=&quot;NoSQL (Not only SQL)&quot;&gt;&lt;/a&gt;NoSQL (Not only SQL)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;SQL을 사용하지 않는다는 뜻이다.&lt;/li&gt;
-&lt;li&gt;Schema가 없다.&lt;/li&gt;
-&lt;li&gt;대용량 데이터 처리에 유리하고 분산 처리가 가능하여 Cloud computing에 유리하다.&lt;/li&gt;
-&lt;li&gt;종류&lt;ul&gt;
-&lt;li&gt;Key/Value type&lt;ul&gt;
-&lt;li&gt;Memchached&lt;/li&gt;
-&lt;li&gt;Tokyo Tyrant&lt;/li&gt;
-&lt;li&gt;Flare&lt;/li&gt;
-&lt;li&gt;Roma&lt;/li&gt;
-&lt;li&gt;Redis&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Document type: 여러가지 형태의 값들을 모아둔 논리적 구조.&lt;ul&gt;
-&lt;li&gt;MongoDB&lt;/li&gt;
-&lt;li&gt;CouchDB&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Big Table (Column) type: RDB는 Row 단위로 데이터를 관리하지만 Colume type은 Column 단위로 데이터를 관리한다.&lt;ul&gt;
-&lt;li&gt;HBase&lt;/li&gt;
-&lt;li&gt;Casandra&lt;/li&gt;
-&lt;li&gt;Hypertable&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Schema-Meta-Data&quot;&gt;&lt;a href=&quot;#Schema-Meta-Data&quot; class=&quot;headerlink&quot; title=&quot;Schema (Meta-Data)&quot;&gt;&lt;/a&gt;Schema (Meta-Data)&lt;/h2&gt;&lt;p&gt;Database의 구조 및 제약 조건에 대해 전반적으로 기술한 것을 &lt;code&gt;Schema&lt;/code&gt;라고 한다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Entity(Table)&lt;/code&gt;, &lt;code&gt;Attribute(Field)&lt;/code&gt;, &lt;code&gt;Relationship&lt;/code&gt; 및 데이터 조작 시 데이터 값들이 갖는 제약 조건 등에 대해 정의한다.&lt;/p&gt;
-&lt;p&gt;Schema는 Data Dictionary에 저장된다.&lt;/p&gt;
-&lt;p&gt;쉽게 말해 Data structure가 어떻게 생겼는지 정의하며, RDB에서는 아래 코드처럼 생겼다.&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Player (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  name    CHAR(20),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  number  INTEGER(4)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Status (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  number    INTEGER(4),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  point     INTEGER(4),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  trophy    CHAR(20)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;DBMS&quot;&gt;&lt;a href=&quot;#DBMS&quot; class=&quot;headerlink&quot; title=&quot;DBMS&quot;&gt;&lt;/a&gt;DBMS&lt;/h2&gt;&lt;p&gt;기존 파일 시스템이 갖는 데이터 종속성과 중복성 문제를 해결하기 위해 제안된 시스템으로 모든 Application들이 Database를 공용으로 사용할 수 있도록 관리한다.&lt;/p&gt;
-&lt;p&gt;DBMS의 궁극적 목표는 &lt;code&gt;데이터의 독립성&lt;/code&gt;이다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;논리적 독립성&lt;/code&gt;: &lt;code&gt;Application&lt;/code&gt;과 &lt;code&gt;Database&lt;/code&gt;를 독립시켜 Data에 변경이 발생하여도 Application은 변경되지 않는다.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;물리적 독립성&lt;/code&gt;: &lt;code&gt;Application&lt;/code&gt;과 &lt;code&gt;Storage&lt;/code&gt;를 독립시켜 디스크에 변경이 발생하여도 Application은 변경되지 않는다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;DBMS의-필수-기능&quot;&gt;&lt;a href=&quot;#DBMS의-필수-기능&quot; class=&quot;headerlink&quot; title=&quot;DBMS의 필수 기능&quot;&gt;&lt;/a&gt;DBMS의 필수 기능&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;정의 (Definition)&lt;/code&gt;: Type 및 Structure에 대한 정의, 이용 방식, 제약 조건을 정의한다.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;조작 (Manipulation)&lt;/code&gt;: 데이터의 검색, 갱신, 삽입, 삭제 등의 처리를 위해 User와 Database 사이의 Interface를 제공하는 것을 의미한다.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;제어 (Control)&lt;/code&gt;: 데이터의 정확성, 무결성, 보안 및 권한 검사, 병행수행 제어 등의 기능을 정한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Releationship-관계&quot;&gt;&lt;a href=&quot;#Releationship-관계&quot; class=&quot;headerlink&quot; title=&quot;Releationship (관계)&quot;&gt;&lt;/a&gt;Releationship (관계)&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;일 대 일&lt;/li&gt;
-&lt;li&gt;일 대 다&lt;/li&gt;
-&lt;li&gt;다 대 다&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Key&quot;&gt;&lt;a href=&quot;#Key&quot; class=&quot;headerlink&quot; title=&quot;Key&quot;&gt;&lt;/a&gt;Key&lt;/h2&gt;&lt;p&gt;조건을 만족하는 Tuple을 찾거나 순서대로 정렬할 때 Tuple들을 구분할 수 있는 기준이 되는 Attribute를 의미한다.&lt;/p&gt;
-&lt;h3 id=&quot;Candidate-Key-후보키&quot;&gt;&lt;a href=&quot;#Candidate-Key-후보키&quot; class=&quot;headerlink&quot; title=&quot;Candidate Key (후보키)&quot;&gt;&lt;/a&gt;Candidate Key (후보키)&lt;/h3&gt;&lt;p&gt;Relation을 구성하는 Attribute들 중에서 &lt;code&gt;Tuple을 식별하기 위해 사용하는 Attribute들의 부분 집합&lt;/code&gt;을 의미한다. &lt;code&gt;Primary Key로 사용할 수 있는 Attribute&lt;/code&gt;이다.&lt;/p&gt;
-&lt;p&gt;ex) &lt;code&gt;주민&lt;/code&gt; Relation에서의 &lt;code&gt;주민등록번호&lt;/code&gt; 또는 &lt;code&gt;지문&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;유일성 (Unique): 하나의 Key 값으로 하나의 Tuple만을 식별할 수 있어야 한다.&lt;/li&gt;
-&lt;li&gt;최소성 (Minimality): 모든 Record들을 유일하게 식별하는데 꼭 필요한 Attribute들로만 이루어져야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Primary-Key-기본키&quot;&gt;&lt;a href=&quot;#Primary-Key-기본키&quot; class=&quot;headerlink&quot; title=&quot;Primary Key (기본키)&quot;&gt;&lt;/a&gt;Primary Key (기본키)&lt;/h3&gt;&lt;p&gt;Candidate Key 중 선택한 Main Key를 의미하며 NULL 이 될 수 없다.&lt;/p&gt;
-&lt;h3 id=&quot;Alternate-Key-대체키&quot;&gt;&lt;a href=&quot;#Alternate-Key-대체키&quot; class=&quot;headerlink&quot; title=&quot;Alternate Key (대체키)&quot;&gt;&lt;/a&gt;Alternate Key (대체키)&lt;/h3&gt;&lt;p&gt;Candidate Key가 두 개 이상일 때 Primary Key를 제외한 나머지 Candidate Key들을 의미하며 보조키라고도 부른다.&lt;/p&gt;
-&lt;h3 id=&quot;Super-Key-슈퍼키&quot;&gt;&lt;a href=&quot;#Super-Key-슈퍼키&quot; class=&quot;headerlink&quot; title=&quot;Super Key (슈퍼키)&quot;&gt;&lt;/a&gt;Super Key (슈퍼키)&lt;/h3&gt;&lt;p&gt;하나의 Table 내에 있는 Attribute들의 집합으로 구성된 Key를 말한다. Table을 구성하는 모든 Tuple 중 Super Key로 구성된 Attribute의 집합과 동일한 값은 나타나지 않는다.&lt;/p&gt;
-&lt;p&gt;Super Key는 Table을 구성하는 모든 Tuple에 대해 &lt;code&gt;유일성&lt;/code&gt;은 만족시키지만 &lt;code&gt;최소성&lt;/code&gt;은 만족시키지 못한다.&lt;/p&gt;
-&lt;h3 id=&quot;Foreign-Key-외래키&quot;&gt;&lt;a href=&quot;#Foreign-Key-외래키&quot; class=&quot;headerlink&quot; title=&quot;Foreign Key (외래키)&quot;&gt;&lt;/a&gt;Foreign Key (외래키)&lt;/h3&gt;&lt;p&gt;두 개의 Table이 Relationship을 맺고있을 때 A의 Primary Key와 같은 B의 Attribute 를 Foreign Key 라 부른다.&lt;/p&gt;
-&lt;p&gt;즉, 아래 그림에서 A가 B를 참조한다고 하면 B의 &lt;code&gt;주민등록번호&lt;/code&gt;는 Primary Key가 되고 A의 &lt;code&gt;주민등록번호&lt;/code&gt;는 Foreign Key가 된다.&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;Field가 적어서 예시가 적절하지 않은 것도 같고…&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-06-30-db-fundamental-of-database-001.jpg&quot; alt=&quot;Foreign Key&quot;&gt;{:class=”img-responsive”}&lt;/p&gt;
-&lt;p&gt;Foreign Key를 사용하면 실수로 Data를 삭제하는 것을 막을 수 있다. 다른 Table의 Foreign Key로 참조하고 있는 Row는 Table에서 삭제할 수 없기 때문이다. 이를 &lt;code&gt;참조 무결성(Reference Integrity)&lt;/code&gt;이라고 부른다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Integrity (무결성)&lt;/code&gt; 이란 데이터를 보호하고 항상 정상인 상태를 유지하는 것을 말한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;개체 무결성&lt;ul&gt;
-&lt;li&gt;Table에서 Primary Key를 구성하는 Attribute는 NULL이나 중복값을 가져서는 안 된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;참조 무결성&lt;ul&gt;
-&lt;li&gt;Foreign Key의 값은 NULL이나 참조 Table의 Primary Key값과 동일해야 한다. 즉, Table은 참조할 수 없는 Foreign Key의 값을 가질 수 없다. (실수로 삭제하는 것을 예방할 수 있는 이유이다.)&lt;/li&gt;
-&lt;li&gt;Foreign Key와 참조하려는 Table의 Primary Key는 Domain과 Attribute의 개수가 같아야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Transaction&quot;&gt;&lt;a href=&quot;#Transaction&quot; class=&quot;headerlink&quot; title=&quot;Transaction&quot;&gt;&lt;/a&gt;Transaction&lt;/h2&gt;&lt;p&gt;한 단위를 이루는 일련의 연관된 데이터베이스 조작.&lt;/p&gt;
-&lt;p&gt;하나의 Transaction에 속하는 작업 중 하나라도 실패하면 Transaction 전체가 실패한 것으로 간주하여 변경한 내용을 모두 원래대로 되돌려 놓는다. 이를 &lt;code&gt;Rollback&lt;/code&gt;이라 한다.&lt;/p&gt;
-&lt;p&gt;모든 작업이 성공적으로 처리되면 모든 변경 내용을 한꺼번에 반영하고 이를 &lt;code&gt;Commit&lt;/code&gt;이라 한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Transaction의 특성 (ACID)&lt;ul&gt;
-&lt;li&gt;Atomicity (원자성)&lt;ul&gt;
-&lt;li&gt;Transaction에 포함된 모든 작업이 성공적으로 처리되지 않으면 어떠한 작업도 처리되지 않아야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Consistency (일관성)&lt;ul&gt;
-&lt;li&gt;Transaction의 시작 전과 종료 후의 Database가 일관된 상태를 유지해야 한다. 참조 무결성이 깨져서는 안된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Isolation (고립성)&lt;ul&gt;
-&lt;li&gt;하나의 Transaction에서 Database를 변경한 내용은 Transaction이 Commit될 때까지 다른 어떤 Query나 Transaction과도 고립되어야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Durability (영속성)&lt;ul&gt;
-&lt;li&gt;Commit이 이루어지면 Transaction에 의해 변경된 내용은 영구적으로 유지되어야 한다. DBMS는 Database의 현재 상태가 유실되지 않도록 시스템 충돌 등의 문제로부터 복구할 수 있는 방안을 갖춰야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;용어&quot;&gt;&lt;a href=&quot;#용어&quot; class=&quot;headerlink&quot; title=&quot;용어&quot;&gt;&lt;/a&gt;용어&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Table&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Relation(관계)&lt;/code&gt; 또는 &lt;code&gt;Entity(개체)&lt;/code&gt;라 부른다. &lt;code&gt;Column&lt;/code&gt;(열, ↕) 과 &lt;code&gt;Row&lt;/code&gt;(행, ↔) 으로 구성된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Field&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Attribute(속성)&lt;/code&gt;이라고도 한다. &lt;code&gt;Table&lt;/code&gt;의 &lt;code&gt;Column&lt;/code&gt;을 의미한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Degree(차수)&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Attribute&lt;/code&gt;의 수를 뜻한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Record&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Tuple&lt;/code&gt; 이라고도 하며 &lt;code&gt;Table&lt;/code&gt;의 &lt;code&gt;Row&lt;/code&gt;를 의미한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Cardinality&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;하나의 &lt;code&gt;Relation&lt;/code&gt;을 구성하는 &lt;code&gt;Tuple(Record)&lt;/code&gt;의 수를 의미한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Domain&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;하나의 &lt;code&gt;Attribute&lt;/code&gt;가 가질 수 있는 &lt;code&gt;같은 type의 Atomic(원자) 집합&lt;/code&gt; 을 의미한다.&lt;ul&gt;
-&lt;li&gt;예) &lt;code&gt;학생&lt;/code&gt; relation에서 &lt;code&gt;학년&lt;/code&gt;의 &lt;code&gt;domain&lt;/code&gt;은 &lt;code&gt;1 ~ 6&lt;/code&gt; 이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DBMS (Database Management System)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DDL (Data Definition Language)&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;테이블을 생성하고 삭제하는 언어를 뜻한다.&lt;/li&gt;
-&lt;li&gt;CREATE, ALTER, DROP&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DML (Data Manipulation Language) = 서브 언어&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;User가 데이터를 처리할 수 있게 도와주는 도구.&lt;/li&gt;
-&lt;li&gt;SELECT, INSERT, UPDATE, DELETE&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;DCL (Data Control Language)&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;데이터의 보호, 관리를 위해 사용된다.&lt;/li&gt;
-&lt;li&gt;COMMIT, ROLLBACK, GRANT, REVOKE&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Scale up&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;사용 중인 서버를 고성능으로 바꿔 처리 능력을 향상시키는 방법으로 비용이 발생하지만 소스에 대한 변경이 없다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Scale down&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;저가의 여러 장비를 사용하여 능력을 향상시키는 방법으로 소스에 대한 수정이 필요하다. 주로 NoSQL에서 제공하는 방식이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;p&gt;아래의 글들을 교재삼아 작성하였습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dreamzelkova.tistory.com/393&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dreamzelkova.tistory.com/393&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.naver.com/bobojisu/220561467061&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.naver.com/bobojisu/220561467061&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ourcstory.tistory.com/30&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ourcstory.tistory.com/30&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://cafe.naver.com/junes81/5895&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cafe.naver.com/junes81/5895&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EB%AA%A8%EB%8D%B8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EB%AA%A8%EB%8D%B8&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/06/30/2016-04-13-db-fundamental-of-database/#disqus_thread</comments>
     </item>
     
   </channel>
