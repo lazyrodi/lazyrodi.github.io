@@ -8,8 +8,174 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 08 Aug 2016 14:43:31 GMT</pubDate>
+    <pubDate>Tue, 09 Aug 2016 13:00:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Big O Complexity</title>
+      <link>http://lazyrodi.github.io/2016/08/09/2016-08-09-common-bigo/</link>
+      <guid>http://lazyrodi.github.io/2016/08/09/2016-08-09-common-bigo/</guid>
+      <pubDate>Tue, 09 Aug 2016 11:02:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;TBD&lt;/p&gt;
+
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;TBD&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/09/2016-08-09-common-bigo/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Linux Troubleshooting</title>
+      <link>http://lazyrodi.github.io/2016/08/09/2016-08-09-troubleshooting-linux/</link>
+      <guid>http://lazyrodi.github.io/2016/08/09/2016-08-09-troubleshooting-linux/</guid>
+      <pubDate>Tue, 09 Aug 2016 01:00:50 GMT</pubDate>
+      <description>
+      
+        &lt;h3 id=&quot;노트북-절전모드-진입-시-네트워크가-끊어지는-문제&quot;&gt;&lt;a href=&quot;#노트북-절전모드-진입-시-네트워크가-끊어지는-문제&quot; class=&quot;headerlink&quot; title=&quot;노트북 절전모드 진입 시 네트워크가 끊어지는 문제&quot;&gt;&lt;/a&gt;노트북 절
+      
+      </description>
+      
+      <content:encoded>&lt;h3 id=&quot;노트북-절전모드-진입-시-네트워크가-끊어지는-문제&quot;&gt;&lt;a href=&quot;#노트북-절전모드-진입-시-네트워크가-끊어지는-문제&quot; class=&quot;headerlink&quot; title=&quot;노트북 절전모드 진입 시 네트워크가 끊어지는 문제&quot;&gt;&lt;/a&gt;노트북 절전모드 진입 시 네트워크가 끊어지는 문제&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;관리자 권한으로 /etc/systemd/logind.conf 파일에 &lt;code&gt;HandleLidSwitch=ignore&lt;/code&gt; 를 추가한다.&lt;/li&gt;
+&lt;li&gt;Login daemon을 재 시작한다. &lt;code&gt;sudo restart systemd-logind&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;참조: &lt;a href=&quot;http://askubuntu.com/questions/360615/ubuntu-server-13-10-now-goes-to-sleep-when-closing-laptop-lid/361087#361087&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://askubuntu.com/questions/360615/ubuntu-server-13-10-now-goes-to-sleep-when-closing-laptop-lid/361087#361087&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;한글-깨짐-현상&quot;&gt;&lt;a href=&quot;#한글-깨짐-현상&quot; class=&quot;headerlink&quot; title=&quot;한글 깨짐 현상&quot;&gt;&lt;/a&gt;한글 깨짐 현상&lt;/h3&gt;&lt;p&gt;이 문제에 대한 해결책은 여기저기 다 다른 것 같지만…&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Language pack install&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install language-pack-ko&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install language-pack-ko-base&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Home 디렉토리(&lt;code&gt;cd ~&lt;/code&gt;)의 &lt;code&gt;.bashrc&lt;/code&gt; 또는 &lt;code&gt;.bash_profile&lt;/code&gt;에 &lt;code&gt;export LANG=ko_KR.UTF-8&lt;/code&gt; 추가&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;시스템 재시작&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;Putty-문제인-경우&quot;&gt;&lt;a href=&quot;#Putty-문제인-경우&quot; class=&quot;headerlink&quot; title=&quot;Putty 문제인 경우!!&quot;&gt;&lt;/a&gt;Putty 문제인 경우!!&lt;/h4&gt;&lt;p&gt;putty로 접속했을 때 깨지는 문제는 Ubuntu의 문제와 다를 수 있음.&lt;/p&gt;
+&lt;p&gt;putty 실행 &amp;gt; Window &amp;gt; Translation &amp;gt; Remote character set에서 &lt;code&gt;UTF-8&lt;/code&gt;을 선택하면 문제 해결.&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/09/2016-08-09-troubleshooting-linux/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Ubuntu server installation</title>
+      <link>http://lazyrodi.github.io/2016/08/09/2016-08-09-docthread-install-ubuntu/</link>
+      <guid>http://lazyrodi.github.io/2016/08/09/2016-08-09-docthread-install-ubuntu/</guid>
+      <pubDate>Mon, 08 Aug 2016 23:00:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;ssh 접속해서 딴 짓 하려고 서버를 설치할래다가 기존에 그냥 Desktop용을 사용하던 것이 있어서 거기에 &lt;code&gt;openssh-server&lt;/code&gt;를 설치하기로 했습니다.&lt;/p&gt;
+&lt;p&gt;그 전의 과정까지는 그래도 스스로를 위해 남겨두려…
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;ssh 접속해서 딴 짓 하려고 서버를 설치할래다가 기존에 그냥 Desktop용을 사용하던 것이 있어서 거기에 &lt;code&gt;openssh-server&lt;/code&gt;를 설치하기로 했습니다.&lt;/p&gt;
+&lt;p&gt;그 전의 과정까지는 그래도 스스로를 위해 남겨두려…&lt;/p&gt;
+&lt;h1 id=&quot;Download&quot;&gt;&lt;a href=&quot;#Download&quot; class=&quot;headerlink&quot; title=&quot;Download&quot;&gt;&lt;/a&gt;Download&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.ubuntu.com/server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ubuntu 공식 사이트&lt;/a&gt;에서 Server 버전을 다운로드 받습니다.&lt;/p&gt;
+&lt;p&gt;ISO 파일이 다운로드 됩니다.&lt;/p&gt;
+&lt;h1 id=&quot;Installing&quot;&gt;&lt;a href=&quot;#Installing&quot; class=&quot;headerlink&quot; title=&quot;Installing&quot;&gt;&lt;/a&gt;Installing&lt;/h1&gt;&lt;p&gt;전체적인 과정은 &lt;a href=&quot;http://www.ubuntu.com/download/server/install-ubuntu-server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Installing Ubuntu Server for general user&lt;/a&gt;페이지를 참조하세요.&lt;/p&gt;
+&lt;h2 id=&quot;USB-만들기&quot;&gt;&lt;a href=&quot;#USB-만들기&quot; class=&quot;headerlink&quot; title=&quot;USB 만들기&quot;&gt;&lt;/a&gt;USB 만들기&lt;/h2&gt;&lt;h3 id=&quot;Rufus-다운로드&quot;&gt;&lt;a href=&quot;#Rufus-다운로드&quot; class=&quot;headerlink&quot; title=&quot;Rufus 다운로드&quot;&gt;&lt;/a&gt;Rufus 다운로드&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://rufus.akeo.ie/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://rufus.akeo.ie/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;부팅-가능한-USB-만들기&quot;&gt;&lt;a href=&quot;#부팅-가능한-USB-만들기&quot; class=&quot;headerlink&quot; title=&quot;부팅 가능한 USB 만들기&quot;&gt;&lt;/a&gt;부팅 가능한 USB 만들기&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How to create a bootable USB stick on Windows&lt;/a&gt;에 잘 설명되어 있습니다.&lt;/p&gt;
+&lt;h2 id=&quot;설치하기&quot;&gt;&lt;a href=&quot;#설치하기&quot; class=&quot;headerlink&quot; title=&quot;설치하기&quot;&gt;&lt;/a&gt;설치하기&lt;/h2&gt;&lt;p&gt;설치하려는 PC에 USB꼽고 부팅해서 쭉쭉 설치. 요새는 뭐 왠만한 것들은 알아서 다 해줘서 혼자 공부하기 위한 설치라면 쭉쭉 진행 가능합니다.&lt;/p&gt;
+&lt;h3 id=&quot;리눅스-파티션&quot;&gt;&lt;a href=&quot;#리눅스-파티션&quot; class=&quot;headerlink&quot; title=&quot;리눅스 파티션&quot;&gt;&lt;/a&gt;리눅스 파티션&lt;/h3&gt;&lt;p&gt;리눅스와 유닉스 계열의 OS들은 Windows의 폴더 및 드라이브 개념이 없습니다.&lt;/p&gt;
+&lt;p&gt;루트 디렉토리를 기준으로 파일 및 디렉토리들이 위치하며, &lt;code&gt;mount&lt;/code&gt; 명령을 통해 디렉토리와 HDD 등의 저장소를 연결하여 사용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;리눅스의 파티션은 각각 아래의 용도로 사용됩니다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;파티션&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;/&lt;/td&gt;
+&lt;td&gt;루트 디렉토리.&lt;br&gt;최상위 디렉토리이며 &lt;code&gt;cd /&lt;/code&gt; 명령어를 통해 접근할 수 있습니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/bin&lt;/td&gt;
+&lt;td&gt;명령어들이 들어있으며 여기에 있는 명령어들은 모든 사용자들이 사용 가능합니다.&lt;br&gt;필수적인 명령어들 및 시스템 부팅과 관련된 파일들이 모여있습니다.&lt;br&gt;커널 이미지인 &lt;code&gt;vmlinuz&lt;/code&gt;가 여기에 위치해 있습니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/dev&lt;/td&gt;
+&lt;td&gt;디바이스 파일들.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/etc&lt;/td&gt;
+&lt;td&gt;여러가지의 시스템 설정 파일들.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/home&lt;/td&gt;
+&lt;td&gt;일반 사용자의 home 디렉토리.&lt;br&gt;hong이라는 사용자의 home 디렉토리는 일반적으로 &lt;code&gt;/home/hong&lt;/code&gt;이 됩니다. 이 경로는 설정을 통해 변경 가능합니다.&lt;br&gt;&lt;code&gt;cd ~&lt;/code&gt;를 통해 접근할 수 있습니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/lib&lt;/td&gt;
+&lt;td&gt;공유 라이브러리&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/mnt&lt;/td&gt;
+&lt;td&gt;다른 파티션을 mount 할 때 이곳으로 합니다.&lt;br&gt;일반적으로 cdrom 사용 시 &lt;code&gt;/mnt/cdrom&lt;/code&gt;에 mount시켜서 사용합니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/proc&lt;/td&gt;
+&lt;td&gt;프로세스 정보를 담고 있는 파일들.&lt;br&gt;프로세스 정보는 &lt;code&gt;ps&lt;/code&gt; 명령어로도 확인할 수 있습니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/root&lt;/td&gt;
+&lt;td&gt;Super user(root)의 home 디렉토리.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/sbin&lt;/td&gt;
+&lt;td&gt;Super user가 시스템을 운영하는데 필수적인 실행 파일들.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/tmp&lt;/td&gt;
+&lt;td&gt;Temporary 디렉토리. 임시 저장 파일들이 거쳐갑니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/usr&lt;/td&gt;
+&lt;td&gt;사용자들을 위한 여러가지 프로그램 및 설정 파일들.&lt;br&gt;리눅스/유닉스 디렉토리 구조 중 가장 크고 복잡하며 루트(/)와 비슷한 구조를 가집니다.&lt;br&gt;&lt;code&gt;/usr/bin&lt;/code&gt;, &lt;code&gt;/usr/lib&lt;/code&gt;, &lt;code&gt;usr/sbin&lt;/code&gt; 등 루트(/)에 들어있는 것들이 여기에 비슷하게 다 들어있으며, 패키지 등을 설치할 때 일반적으로 이쪽으로 저장됩니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/var&lt;/td&gt;
+&lt;td&gt;로그 파일 및 시스템 관리와 관련된 파일들을 여기에 저장합니다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;Install-후-기본-설치하는-것들-개인-취향&quot;&gt;&lt;a href=&quot;#Install-후-기본-설치하는-것들-개인-취향&quot; class=&quot;headerlink&quot; title=&quot;Install 후 기본 설치하는 것들 (개인 취향)&quot;&gt;&lt;/a&gt;Install 후 기본 설치하는 것들 (개인 취향)&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get update           # 업데이트 저장소에서 업데이트 패키지 목록을 갱신&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get upgrade          # 패키지 목록과 보유한 목록을 비교하여 실제 패키지 업데이트를 수행&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install vim&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install curl&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install samba    # Windows와의 파일 공유를 위해, https://help.ubuntu.com/lts/serverguide/samba.html&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install screen   # 터미널 하나로 multi processing을 하기 위해.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;Openssh-설치&quot;&gt;&lt;a href=&quot;#Openssh-설치&quot; class=&quot;headerlink&quot; title=&quot;Openssh 설치&quot;&gt;&lt;/a&gt;Openssh 설치&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ apt-get install openssh-server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;ssh-port-변경&quot;&gt;&lt;a href=&quot;#ssh-port-변경&quot; class=&quot;headerlink&quot; title=&quot;ssh port 변경&quot;&gt;&lt;/a&gt;ssh port 변경&lt;/h2&gt;&lt;p&gt;기본은 22번 port를 사용하지만 보안을 위해 맘에 드는 port를 정해서 변경하세요. &lt;del&gt;딱히 중요한 정보가 안 들어가고 공부용이면 대충 쓰세요. 문제 생기면 밀어버리면 되니까요.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;관련해서 실무를 해본적이 없어서 보안 관리자들이 사용하는 절차에 대해서는 잘 모릅니다만 일반적으로(그럼 보안이 왜 필요한건지…)는 +10000 해서 10022번 port를 사용한다고 합니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;/etc/services&lt;/code&gt; 파일에서 &lt;code&gt;ssh    22/tcp&lt;/code&gt; 및 &lt;code&gt;ssh    22/udp&lt;/code&gt; 의 port 번호를 변경합니다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; 파일에서 아래 부분을 변경합니다.&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# What ports, IPs and protocols we listen for&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  Port 22&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;  &lt;/li&gt;
+&lt;li&gt;변경 후에는 &lt;code&gt;service ssh restart&lt;/code&gt; 명령을 통해 재시작합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;사용자-추가&quot;&gt;&lt;a href=&quot;#사용자-추가&quot; class=&quot;headerlink&quot; title=&quot;사용자 추가&quot;&gt;&lt;/a&gt;사용자 추가&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ adduser gildonghong&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;SAMBA-설정&quot;&gt;&lt;a href=&quot;#SAMBA-설정&quot; class=&quot;headerlink&quot; title=&quot;SAMBA 설정&quot;&gt;&lt;/a&gt;SAMBA 설정&lt;/h1&gt;&lt;h2 id=&quot;SAMBA-사용자-추가&quot;&gt;&lt;a href=&quot;#SAMBA-사용자-추가&quot; class=&quot;headerlink&quot; title=&quot;SAMBA 사용자 추가&quot;&gt;&lt;/a&gt;SAMBA 사용자 추가&lt;/h2&gt;&lt;p&gt;  &lt;code&gt;smbpasswd -a &amp;#39;username&amp;#39;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;SAMBA-설정-1&quot;&gt;&lt;a href=&quot;#SAMBA-설정-1&quot; class=&quot;headerlink&quot; title=&quot;SAMBA 설정&quot;&gt;&lt;/a&gt;SAMBA 설정&lt;/h2&gt;&lt;p&gt;  &lt;code&gt;/etc/samba/smb.conf&lt;/code&gt; 를 열고 [homes] 부분을 다음과 같이 수정합니다. 더 자세한 설정 방법은 &lt;a href=&quot;https://help.ubuntu.com/lts/serverguide/samba.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ubuntu - samba&lt;/a&gt; 페이지를 참조하세요.&lt;br&gt;    &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[Homes]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    comment = Home Directories&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    browseable = yes            # no -&amp;gt; yes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    path = /home/$S             # 각 사용자가 자신의 home으로 접속되도록 변경&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    read only = no              # yes -&amp;gt; no&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;설정이 끝났다면 &lt;code&gt;service smbd restart&lt;/code&gt; 를 실행하여 samba daemon을 재시작합니다.&lt;/p&gt;
+&lt;p&gt;Windows에서 시작 &amp;gt; 실행 &amp;gt;  &lt;code&gt;\\서버주소\아이디&lt;/code&gt; 로 접근할 수 있습니다.&lt;/p&gt;
+&lt;h1 id=&quot;절전모드-시-네트워크가-끊기는-문제&quot;&gt;&lt;a href=&quot;#절전모드-시-네트워크가-끊기는-문제&quot; class=&quot;headerlink&quot; title=&quot;절전모드 시 네트워크가 끊기는 문제&quot;&gt;&lt;/a&gt;절전모드 시 네트워크가 끊기는 문제&lt;/h1&gt;&lt;p&gt;노트북 등이 절전모드(suspend 상태)로 전환되면 네트워크가 끊겨버립니다.&lt;/p&gt;
+&lt;p&gt;이에 대한 해결은 &lt;a href=&quot;../2016-08-09-troubleshooting-linux#노트북-절전모드-진입-시-네트워크가-끊어지는-문제&quot; target=&quot;_blank&quot;&gt;노트북 절전모드 진입 시 네트워크가 끊어지는 문제&lt;/a&gt;에서 확인하실 수 있습니다.&lt;/p&gt;
+&lt;h1 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://wp.smartdisk.org/?p=179&amp;amp;lang=ko&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://wp.smartdisk.org/?p=179&amp;amp;lang=ko&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.linux.co.kr/home2/board/subbs/board.php?bo_table=lecture&amp;amp;wr_id=1342&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.linux.co.kr/home2/board/subbs/board.php?bo_table=lecture&amp;amp;wr_id=1342&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://kjvvv.kr/2764&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://kjvvv.kr/2764&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://storycompiler.tistory.com/31&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://storycompiler.tistory.com/31&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.linux.co.kr/home/lecture/?leccode=10644&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.linux.co.kr/home/lecture/?leccode=10644&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/09/2016-08-09-docthread-install-ubuntu/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Eclipse Setting</title>
@@ -174,9 +340,19 @@
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;negative&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(temperatures)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    days = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; t &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; temperatures:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; t &amp;lt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            days += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; days&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;Basic-array-operations&quot;&gt;&lt;a href=&quot;#Basic-array-operations&quot; class=&quot;headerlink&quot; title=&quot;Basic array operations&quot;&gt;&lt;/a&gt;Basic array operations&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;len([&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;]) == &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[&lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;] * &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt; == [&lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;] + [&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;] == [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;butter&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; [&lt;span class=&quot;string&quot;&gt;&#39;bread&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;butter&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;cheese&#39;&lt;/span&gt;] == &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;연습하기&quot;&gt;&lt;a href=&quot;#연습하기&quot; class=&quot;headerlink&quot; title=&quot;연습하기&quot;&gt;&lt;/a&gt;연습하기&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(A)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    N = len(A)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(N // &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        k = N - i - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        A[i], A[k] = A[k], A[i]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; A&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;A.reverse() &lt;span class=&quot;comment&quot;&gt;# python native&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;문제-1&quot;&gt;&lt;a href=&quot;#문제-1&quot; class=&quot;headerlink&quot; title=&quot;문제&quot;&gt;&lt;/a&gt;문제&lt;/h2&gt;&lt;h3 id=&quot;CyclicRotation&quot;&gt;&lt;a href=&quot;#CyclicRotation&quot; class=&quot;headerlink&quot; title=&quot;CyclicRotation&quot;&gt;&lt;/a&gt;CyclicRotation&lt;/h3&gt;&lt;p&gt;37점&lt;/p&gt;
+&lt;h2 id=&quot;문제-1&quot;&gt;&lt;a href=&quot;#문제-1&quot; class=&quot;headerlink&quot; title=&quot;문제&quot;&gt;&lt;/a&gt;문제&lt;/h2&gt;&lt;h3 id=&quot;CyclicRotation&quot;&gt;&lt;a href=&quot;#CyclicRotation&quot; class=&quot;headerlink&quot; title=&quot;CyclicRotation&quot;&gt;&lt;/a&gt;CyclicRotation&lt;/h3&gt;&lt;p&gt;python&lt;br&gt;1차: 37점 (이 때는 잘 몰라서 링크 안 남겨둠)&lt;br&gt;2차: 100점 - &lt;a href=&quot;https://codility.com/demo/results/training35CKZE-B4V/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/training35CKZE-B4V/&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;OddOccurrencesInArray&quot;&gt;&lt;a href=&quot;#OddOccurrencesInArray&quot; class=&quot;headerlink&quot; title=&quot;OddOccurrencesInArray&quot;&gt;&lt;/a&gt;OddOccurrencesInArray&lt;/h3&gt;&lt;p&gt;python: 100점 - &lt;a href=&quot;https://codility.com/demo/results/trainingR3ZUNQ-JXX/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/trainingR3ZUNQ-JXX/&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Time-Complexity&quot;&gt;&lt;a href=&quot;#Time-Complexity&quot; class=&quot;headerlink&quot; title=&quot;Time Complexity&quot;&gt;&lt;/a&gt;Time Complexity&lt;/h1&gt;&lt;h3 id=&quot;TapeEquilibrium&quot;&gt;&lt;a href=&quot;#TapeEquilibrium&quot; class=&quot;headerlink&quot; title=&quot;TapeEquilibrium&quot;&gt;&lt;/a&gt;TapeEquilibrium&lt;/h3&gt;&lt;p&gt;python: 100점 - &lt;a href=&quot;https://codility.com/demo/results/trainingWJH42B-PFB/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/trainingWJH42B-PFB/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Time-Complexity&quot;&gt;&lt;a href=&quot;#Time-Complexity&quot; class=&quot;headerlink&quot; title=&quot;Time Complexity&quot;&gt;&lt;/a&gt;Time Complexity&lt;/h1&gt;&lt;a href=&quot;/2016/08/09/2016-08-09-common-bigo/&quot; title=&quot;BIG O Complexity&quot;&gt;BIG O Complexity&lt;/a&gt;에 따로 정리.&lt;br&gt;&lt;br&gt;### TapeEquilibrium&lt;br&gt;&lt;br&gt;python: 100점 - &lt;a href=&quot;https://codility.com/demo/results/trainingWJH42B-PFB/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/trainingWJH42B-PFB/&lt;/a&gt;&lt;br&gt;&lt;br&gt;### FrogJmp&lt;br&gt;&lt;br&gt;python: 100점 - &lt;a href=&quot;https://codility.com/demo/results/training8A2TYQ-AAP/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/training8A2TYQ-AAP/&lt;/a&gt;&lt;br&gt;&lt;br&gt;### PermMissingElem&lt;br&gt;&lt;br&gt;python: 100점 - &lt;a href=&quot;https://codility.com/demo/results/trainingZDKEVT-JMK/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/demo/results/trainingZDKEVT-JMK/&lt;/a&gt;&lt;br&gt;&lt;br&gt;# Counting Elements&lt;br&gt;&lt;br&gt;O(n + m) 복잡도의 counting 알고리즘.&lt;br&gt;&lt;br&gt;배열 A에 들어있는 각 integer값이 몇 번이나 나오는지 count 배열에 카운팅한다.&lt;br&gt;&lt;br&gt;A = [1, 2, 3, 1, 3, 5] 라면, count = [0, 2, 1, 2, 0, 1] 이 된다.&lt;br&gt;&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;counting&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(A, m)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    n = len(A)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    count = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] * (m + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        count[A[k]] += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; count&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;다음과 같은 문제가 있다.&lt;/p&gt;
+&lt;p&gt;A, B 두 개의 배열과 integer m이 주어지고, 각 원소 n은 0 &amp;lt;= n &amp;lt;= m 의 크기를 갖는다.&lt;/p&gt;
+&lt;p&gt;배열 A, B 에서 각각 하나의 원소를 swap하여 배열 A, B 각각의 합이 같은지 확인하고 아니면 다른 원소를 swap해보는 동작을 구현한다고 하자.&lt;/p&gt;
+&lt;p&gt;가장 간단한 방법은 모든 쌍을 swap하여 계속 비교하는 것이다. 이 경우 O(n^3)의 복잡도를 갖는다.&lt;/p&gt;
+&lt;p&gt;이보다 조금 나은 방법으로 처음에 전체의 합을 구한 뒤 swap 시 전체 합이 어떻게 변할지에 대해 체크하는 방법(아래 코드, O(n^2))이 있다. (실제로 swap이 발생하진 않는다.)&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;slow_solution&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(A, B, m)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    n = len(A)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sum_a = sum(A)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sum_b = sum(B)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; j &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            change = B[j] - A[i]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            sum_a += change&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            sum_b -= change&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; sum_a == sum_b:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            sum_a -= change&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            sum_b += change&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;위의 방법보다 더 좋은 방법은 배열 A 원소의 수를 세고 배열 A와 B 요소들의 합의 차 d를 계산하는 방법이다.&lt;/p&gt;
+&lt;p&gt;두 배열의 합의 차이인 d는 우리가 배열 A에서 어떤 값을 swap해야 하는지 알려준다. 왜냐하면 하나의 값을 swap할 때 두 개의 합이 동일해지기 때문이다.&lt;/p&gt;
+&lt;p&gt;배열을 카운팅 한 후 이 값을 구하는 동작은 상수 시간 내에 가능하다.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;fast_solution&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(A, B, m)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    n = len(A)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sum_a = sum(A)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sum_b = sum(B)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    d = sum_b - sum_a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; d % &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    d //= &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    count = counting(A, m)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &amp;lt;= B[i] - d &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; B[i] - d &amp;lt;= m &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; count[B[i] - d] &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/08/05/2016-08-05-common-codility/#disqus_thread</comments>
@@ -311,28 +487,11 @@
       <pubDate>Tue, 19 Jul 2016 10:00:00 GMT</pubDate>
       <description>
       
-        &lt;ol&gt;
-&lt;li&gt;Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.&lt;/li&gt;
-&lt;li&gt;다음 AndroidManifest.xml 파일을 설명하라.&lt;/li&gt;
-&lt;li&gt;Activity에 대해 간단히 설명하라.&lt;/li&gt;
-&lt;li&gt;An
+        &lt;h2 id=&quot;Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라&quot;&gt;&lt;a href=&quot;#Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라&quot; class=&quot;headerlink&quot; title=&quot;Andr
       
       </description>
       
-      <content:encoded>&lt;ol&gt;
-&lt;li&gt;Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.&lt;/li&gt;
-&lt;li&gt;다음 AndroidManifest.xml 파일을 설명하라.&lt;/li&gt;
-&lt;li&gt;Activity에 대해 간단히 설명하라.&lt;/li&gt;
-&lt;li&gt;Android Architecture의 key component는 무엇인가?&lt;/li&gt;
-&lt;li&gt;Intent에 대해 설명하라.&lt;/li&gt;
-&lt;li&gt;Android에서 SMS를 발신하기 위해서는 어떻게 해야 하는지 설명하라.&lt;/li&gt;
-&lt;li&gt;SMSManager class에 대해 설명하라.&lt;/li&gt;
-&lt;li&gt;당신의 application에서 어떻게 Messaging application을 사용할 수 있겠는가?&lt;/li&gt;
-&lt;li&gt;Android에서 사용할 수 있는 Data storage에는 어떤 것들이 있는가?&lt;/li&gt;
-&lt;li&gt;SharedPreference에 대해 예시와 함께 설명하라.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라&quot;&gt;&lt;a href=&quot;#Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라&quot; class=&quot;headerlink&quot; title=&quot;Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.&quot;&gt;&lt;/a&gt;Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.&lt;/h2&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Value&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;src&lt;/td&gt;&lt;td&gt;.java파일을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;gen&lt;/td&gt;&lt;td&gt;Compiler가 자동으로 생성하는 Resource파일인 R.java 파일을 가지고 있다. 이 파일은 수정해서는 아니된다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;library&lt;/td&gt;&lt;td&gt;android.jar 파일을 포함한다. 해당 Android application에 대한 library들이다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;assets&lt;/td&gt;&lt;td&gt;HTML, text, database등의 파일을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bin&lt;/td&gt;&lt;td&gt;빌드 후 생성되는 .apk 파일을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;res&lt;/td&gt;&lt;td&gt;Application에서 사용하는 리소스 파일들을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+      <content:encoded>&lt;h2 id=&quot;Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라&quot;&gt;&lt;a href=&quot;#Android-application을-생성할-때-중요한-폴더-및-파일을-설명하라&quot; class=&quot;headerlink&quot; title=&quot;Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.&quot;&gt;&lt;/a&gt;Android application을 생성할 때 중요한 폴더 및 파일을 설명하라.&lt;/h2&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Value&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;src&lt;/td&gt;&lt;td&gt;.java파일을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;gen&lt;/td&gt;&lt;td&gt;Compiler가 자동으로 생성하는 Resource파일인 R.java 파일을 가지고 있다. 이 파일은 수정해서는 아니된다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;library&lt;/td&gt;&lt;td&gt;android.jar 파일을 포함한다. 해당 Android application에 대한 library들이다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;assets&lt;/td&gt;&lt;td&gt;HTML, text, database등의 파일을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bin&lt;/td&gt;&lt;td&gt;빌드 후 생성되는 .apk 파일을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;res&lt;/td&gt;&lt;td&gt;Application에서 사용하는 리소스 파일들을 포함한다.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;hr&gt;
 &lt;h2 id=&quot;다음-AndroidManifest-xml-파일을-설명하라&quot;&gt;&lt;a href=&quot;#다음-AndroidManifest-xml-파일을-설명하라&quot; class=&quot;headerlink&quot; title=&quot;다음 AndroidManifest.xml 파일을 설명하라.&quot;&gt;&lt;/a&gt;다음 AndroidManifest.xml 파일을 설명하라.&lt;/h2&gt;&lt;ul&gt;
@@ -1284,322 +1443,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/07/04/2016-07-04-etc-disqus/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[Java] Queue</title>
-      <link>http://lazyrodi.github.io/2016/07/03/2016-07-03-java-queue/</link>
-      <guid>http://lazyrodi.github.io/2016/07/03/2016-07-03-java-queue/</guid>
-      <pubDate>Sun, 03 Jul 2016 04:47:50 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;Queue의-종류&quot;&gt;&lt;a href=&quot;#Queue의-종류&quot; class=&quot;headerlink&quot; title=&quot;Queue의 종류&quot;&gt;&lt;/a&gt;Queue의 종류&lt;/h2&gt;&lt;p&gt;Queue는 공통적으로 &lt;code&gt;Front&lt;/code&gt;, &lt;code&gt;Rea
-      
-      </description>
-      
-      <content:encoded>&lt;h2 id=&quot;Queue의-종류&quot;&gt;&lt;a href=&quot;#Queue의-종류&quot; class=&quot;headerlink&quot; title=&quot;Queue의 종류&quot;&gt;&lt;/a&gt;Queue의 종류&lt;/h2&gt;&lt;p&gt;Queue는 공통적으로 &lt;code&gt;Front&lt;/code&gt;, &lt;code&gt;Rear&lt;/code&gt; 두 개의 pointer를 갖는다.&lt;/p&gt;
-&lt;p&gt;Queue는 &lt;code&gt;Array&lt;/code&gt;나 &lt;code&gt;Linked List&lt;/code&gt;를 사용하여 구현한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Simple or linear Queue&lt;ul&gt;
-&lt;li&gt;일반적으로 &lt;code&gt;Linked-list&lt;/code&gt;로 구현된다. &lt;code&gt;FIFO(First In First Out)&lt;/code&gt;의 기본을 기킨다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Circular Queue&lt;ul&gt;
-&lt;li&gt;말 그대로 &lt;code&gt;head&lt;/code&gt;와 &lt;code&gt;rear&lt;/code&gt;가 이어져있는 구조.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Priority Queue&lt;ul&gt;
-&lt;li&gt;각 개체(node, item, etc.)가 &lt;code&gt;Priority&lt;/code&gt;를 가지고 있어서 First in은 성립하지만 &lt;code&gt;Priority&lt;/code&gt;가 높은 녀석이 먼저 나오게 된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Dequeue&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Double-Ended Queue&lt;/code&gt;를 의미하며 front (head) 쪽과 back (tail) 쪽 모두에서 추가/삭제될 수 있는 구조를 말한다.&lt;br&gt;&lt;code&gt;Head-tail linked list&lt;/code&gt; 라고도 불리운다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;java-util-Queue&quot;&gt;&lt;a href=&quot;#java-util-Queue&quot; class=&quot;headerlink&quot; title=&quot;java.util.Queue&quot;&gt;&lt;/a&gt;java.util.Queue&lt;/h2&gt;&lt;p&gt;Java에서는 기본적으로 &lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Queue&lt;/a&gt;를 지원한다. (실제로 이걸 사용한 코드는 적어도 회사에서는 본 적 없다.)&lt;/p&gt;
-&lt;p&gt;이 Queue는 &lt;a href=&quot;http://docs.oracle.com/javase/7/docs/technotes/guides/collections/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Java Collections Framework&lt;/a&gt;에 속한 interface로 세부 내용들은 구현 해주어야 한다.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/technotes/guides/collections/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Java Collections Framework&lt;/a&gt;에 속한 interface들은 다음과 같은 것들이 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;java.util.Collection에 속한 것들&lt;ul&gt;
-&lt;li&gt;java.util.Set&lt;/li&gt;
-&lt;li&gt;java.util.SortedSet&lt;/li&gt;
-&lt;li&gt;java.util.NavigableSet&lt;/li&gt;
-&lt;li&gt;java.util.Queue&lt;/li&gt;
-&lt;li&gt;java.util.concurrent.BlockingQueue&lt;/li&gt;
-&lt;li&gt;java.util.concurrent.TransferQueue&lt;/li&gt;
-&lt;li&gt;java.util.Degue&lt;/li&gt;
-&lt;li&gt;java.util.concurrent.BlockingDegue&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;java.util.Map에 속한 것들&lt;ul&gt;
-&lt;li&gt;java.util.SortedMap&lt;/li&gt;
-&lt;li&gt;java.util.NavigableMap&lt;/li&gt;
-&lt;li&gt;java.util.concurrent.ConcurrentMap&lt;/li&gt;
-&lt;li&gt;java.util.concurrent.ConcurrentNavigableMap&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;이걸 바로 사용하기 위해서는 아래와 같은 방식으로 사용 용도에 맞게 초기화 해주어야 한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Queue&amp;lt;Integer&amp;gt; aQueue = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; LinkedList&amp;lt;Integer&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Queue&amp;lt;Integer&amp;gt; bQueue = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; PriorityQueue&amp;lt;Integer&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Queue&amp;lt;Integer&amp;gt; cQueue = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; LinkedBlockingQueue&amp;lt;Integer&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Queue&amp;lt;Integer&amp;gt; dQueue = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayBlockingQueue(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Queue&amp;lt;Integer&amp;gt; eQueue = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; PriorityBlockingQueue&amp;lt;Integer&amp;gt;();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;해보자&quot;&gt;&lt;a href=&quot;#해보자&quot; class=&quot;headerlink&quot; title=&quot;해보자&quot;&gt;&lt;/a&gt;해보자&lt;/h2&gt;&lt;p&gt;기본적인 &lt;code&gt;add&lt;/code&gt; (혹은 push)와 &lt;code&gt;poll&lt;/code&gt; (혹은 pop)을 Linked List로 구현해보자.&lt;/p&gt;
-&lt;h3 id=&quot;Node&quot;&gt;&lt;a href=&quot;#Node&quot; class=&quot;headerlink&quot; title=&quot;Node&quot;&gt;&lt;/a&gt;Node&lt;/h3&gt;&lt;p&gt;사용할 Node를 만든다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Node&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;&amp;gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; T item;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Node&amp;lt;T&amp;gt; next;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Node(T item) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.item = item;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; T &lt;span class=&quot;title&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; item;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Queue&quot;&gt;&lt;a href=&quot;#Queue&quot; class=&quot;headerlink&quot; title=&quot;Queue&quot;&gt;&lt;/a&gt;Queue&lt;/h3&gt;&lt;p&gt;Node를 이용한 Queue를 생성한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MyQueue&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;&amp;gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Node&amp;lt;T&amp;gt; head;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Node&amp;lt;T&amp;gt; rear;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    MyQueue() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        head = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        rear = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(T item)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (head == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            head = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Node&amp;lt;T&amp;gt;(item);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            rear = head;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            Node&amp;lt;T&amp;gt; newNode = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Node&amp;lt;T&amp;gt;(item);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            rear.next = newNode;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            rear = newNode;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; T &lt;span class=&quot;title&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Node&amp;lt;T&amp;gt; tmp = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        T ret = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ret = (head != &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) ? head.getItem() : &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (head == rear) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            head = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            tmp = head;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            head = head.next;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            tmp = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; ret;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Use&quot;&gt;&lt;a href=&quot;#Use&quot; class=&quot;headerlink&quot; title=&quot;Use&quot;&gt;&lt;/a&gt;Use&lt;/h3&gt;&lt;p&gt;그리고 사용하자. 아래 예시에서는 3개를 넣고 4개를 빼기 때문에 &lt;code&gt;NullPointerException&lt;/code&gt;이 발생한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Main&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        MyQueue&amp;lt;Integer&amp;gt; mQueue = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MyQueue&amp;lt;Integer&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        mQueue.add(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        mQueue.add(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        mQueue.add(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(mQueue.poll());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(mQueue.poll());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(mQueue.poll());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(mQueue.poll());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (NullPointerException e) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;null&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;p&gt;아래의 글들을 교재삼아 작성하였습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://krishneshsingh.blogspot.kr/p/what-is-queue-explain-types-of-queue.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://krishneshsingh.blogspot.kr/p/what-is-queue-explain-types-of-queue.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javadoc-queue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/technotes/guides/collections/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javadoc-collection&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/07/03/2016-07-03-java-queue/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Regular Expression (정규표현식)</title>
-      <link>http://lazyrodi.github.io/2016/07/02/2016-07-02-etc-regular-expression/</link>
-      <guid>http://lazyrodi.github.io/2016/07/02/2016-07-02-etc-regular-expression/</guid>
-      <pubDate>Sat, 02 Jul 2016 14:02:50 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Regular Expression(정규 표현식)은 줄여서 &lt;code&gt;REGEX(레젝스)&lt;/code&gt; 라고 부르기도 한다.&lt;/p&gt;
-&lt;p&gt;특정한 패턴의 문자열을 &lt;code&gt;검색&lt;/code&gt;하고 필요하면 &lt;code&gt;편집&lt;/code&gt;하기 위해 사용한다.
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;Regular Expression(정규 표현식)은 줄여서 &lt;code&gt;REGEX(레젝스)&lt;/code&gt; 라고 부르기도 한다.&lt;/p&gt;
-&lt;p&gt;특정한 패턴의 문자열을 &lt;code&gt;검색&lt;/code&gt;하고 필요하면 &lt;code&gt;편집&lt;/code&gt;하기 위해 사용한다.&lt;/p&gt;
-&lt;p&gt;정규 표현식은 다음과 같이 분류할 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;POSIX Regular Expression (UNIX 계열 표준 정규 표현식)&lt;ul&gt;
-&lt;li&gt;BRE (Basic Regular Expression)&lt;/li&gt;
-&lt;li&gt;ERE (Extended Regular Expression)&lt;ul&gt;
-&lt;li&gt;BRE에 추가적인 메타 문자 등을 제공&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;PCRE (Perl Compatible Regular Expression)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;?&lt;/code&gt;, &lt;code&gt;+&lt;/code&gt;, &lt;code&gt;{}&lt;/code&gt; 등의 메타 문자는 &lt;code&gt;ERE&lt;/code&gt;에서만 사용 가능하다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Meta-character-메타-문자-a-k-a-Wild-card-character&quot;&gt;&lt;a href=&quot;#Meta-character-메타-문자-a-k-a-Wild-card-character&quot; class=&quot;headerlink&quot; title=&quot;Meta character (메타 문자) a.k.a Wild card character&quot;&gt;&lt;/a&gt;Meta character (메타 문자) a.k.a Wild card character&lt;/h2&gt;&lt;p&gt;IT용어사전에서 정의하고 있는 메타 문자의 사전적인 의미는 다음과 같다.&lt;/p&gt;
-&lt;p&gt;정규 표현식에서의 메타 문자는 &lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;다른 문자의 정보를 운반하기 위해 프로그램 소스나 데이터에 끼워 넣는 문자.&lt;/p&gt;
-&lt;p&gt;예를 들면 C언어 프로그램에 사용된 백슬레시가 그 예인데, 이 문자 다음에 오는 문장은 확장 문자열(escape sequence)에 속하는 부분으로서 주변 장치와 프로그램에 대해서 어떤 명령을 수행하도록 하는 제어 문자로 사용된다.&lt;br&gt;[네이버 지식백과]&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;table&gt;&lt;tr&gt;&lt;th&gt;메타 문자&lt;/th&gt;&lt;th&gt;설  명&lt;/th&gt;&lt;th&gt;비  고&lt;/th&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;.&lt;/td&gt;&lt;td&gt;모든 문자&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;|&lt;/td&gt;&lt;td&gt;왼쪽 또는 오른쪽과 일치&lt;/td&gt;&lt;td&gt;cat|dog&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;문자 집합 중 하나와 일치&lt;/td&gt;&lt;td&gt;[a-z]면 a-z 중 하나&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;[^]&lt;/td&gt;&lt;td&gt;문자 집합을 제외하고 일치&lt;/td&gt;&lt;td&gt;[^a-z]면 a-z가 아닌 것 중 하나&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;문자가 0개 이상 반복될 때&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;+&lt;/td&gt;&lt;td&gt;문자가 1개 이상 반복될 때&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;{n}&lt;/td&gt;&lt;td&gt;문자가 n번 반복될 때&lt;/td&gt;&lt;td&gt;a{3}&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;{m, n}&lt;/td&gt;&lt;td&gt;문자가 m번 이상 n번 이하 반복될 때&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;{n,}&lt;/td&gt;&lt;td&gt;문자가 n번 이상 반복될 때&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\&lt;/td&gt;&lt;td&gt;Escape&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;[\b]&lt;/td&gt;&lt;td&gt;Back space&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\f&lt;/td&gt;&lt;td&gt;Form Feed&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\n&lt;/td&gt;&lt;td&gt;Line Feed&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\r&lt;/td&gt;&lt;td&gt;Carrige Return&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\t&lt;/td&gt;&lt;td&gt;Tab&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\v&lt;/td&gt;&lt;td&gt;Vertical Tab&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\d&lt;/td&gt;&lt;td&gt;0~9 사이의 숫자 하나&lt;/td&gt;&lt;td&gt;[0-9]&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\D&lt;/td&gt;&lt;td&gt;숫자를 제외한 문자 하나&lt;/td&gt;&lt;td&gt;[^0-9]&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\w&lt;/td&gt;&lt;td&gt;대소문자와 밑줄을 포함하는 모든 영숫자&lt;/td&gt;&lt;td&gt;[a-zA-Z0-9&lt;em&gt;]&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\W&lt;/td&gt;&lt;td&gt;영숫자가 아니거나 밑줄이 아닌 모든 문자&lt;/td&gt;&lt;td&gt;[^a-zA-Z0-9]&lt;/td&gt;&lt;/tr&gt;  &lt;tr&gt;&lt;td&gt;\s&lt;/td&gt;&lt;td&gt;모든 공백 문자&lt;/td&gt;&lt;td&gt;[\f\n\r\t\v]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\S&lt;/td&gt;&lt;td&gt;공백 문자가 아닌 모든 문자&lt;/td&gt;&lt;td&gt;[^\f\n\r\t\v]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\x&lt;/td&gt;&lt;td&gt;16진수 표현&lt;/td&gt;&lt;td&gt;\x0A  (=ascii 10 == \n)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\0&lt;/td&gt;&lt;td&gt;8진수 표현&lt;/td&gt;&lt;td&gt;\011  (=ascii 9 == \t)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\c&lt;/td&gt;&lt;td&gt;제어문자&lt;/td&gt;&lt;td&gt;\cZ   (Ctrl+Z)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;^, \A&lt;/td&gt;&lt;td&gt;문자열의 시작 ([] 밖에 있을 때)       &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$, \Z&lt;/td&gt;&lt;td&gt;문자열의 끝                           &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\&amp;lt;  &lt;/td&gt;&lt;td&gt;단어의 시작과 일치                    &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\&amp;gt;  &lt;/td&gt;&lt;td&gt;단어의 끝과 일치                      &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\b   &lt;/td&gt;&lt;td&gt;단어 경계와 일치                      &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\B   &lt;/td&gt;&lt;td&gt;단어 경계가 아닐 때 일치              &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;()   &lt;/td&gt;&lt;td&gt;group 또는 back reference를 정의한다. &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;?=   &lt;/td&gt;&lt;td&gt;전방탐색                              &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;?&amp;lt;=  &lt;/td&gt;&lt;td&gt;후방탐색                              &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;?!   &lt;/td&gt;&lt;td&gt;부정형 전방탐색                       &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;?&amp;lt;! &lt;/td&gt;&lt;td&gt;부정형 후방탐색                       &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\l   &lt;/td&gt;&lt;td&gt;다음에 오는 글자를 소문자로 변환      &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\L   &lt;/td&gt;&lt;td&gt;\E를 만날 때까지 모든 문자를 소문자로 변환&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\u   &lt;/td&gt;&lt;td&gt;다음에 오는 글자를 대문자로 변환      &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\U   &lt;/td&gt;&lt;td&gt;\E를 만날 때까지 모든 문자를 대문자로 변환&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;\E   &lt;/td&gt;&lt;td&gt;\L 또는 \U 의 End point               &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;줄 바꿈&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Windows: \r\n&lt;/li&gt;
-&lt;li&gt;UNIX, LINUX: \n&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;읽는 법&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;!: Exclamation point&lt;/li&gt;
-&lt;li&gt;“: Quotation mark&lt;/li&gt;
-&lt;li&gt;‘: Apostrophe&lt;/li&gt;
-&lt;li&gt;`: Grave&lt;/li&gt;
-&lt;li&gt;.: Period&lt;/li&gt;
-&lt;li&gt;^: Caret&lt;/li&gt;
-&lt;li&gt;*: Asterisk&lt;/li&gt;
-&lt;li&gt;-: Hyphen&lt;/li&gt;
-&lt;li&gt;_: Underscore&lt;/li&gt;
-&lt;li&gt;~: Tilde&lt;/li&gt;
-&lt;li&gt;&amp;amp;: Ampersand&lt;/li&gt;
-&lt;li&gt;(): Parenthesis&lt;/li&gt;
-&lt;li&gt;{}: Brace&lt;/li&gt;
-&lt;li&gt;[]: Bracket&lt;/li&gt;
-&lt;li&gt;&amp;lt;&amp;gt;: Chevron&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Back-reference&quot;&gt;&lt;a href=&quot;#Back-reference&quot; class=&quot;headerlink&quot; title=&quot;Back reference&quot;&gt;&lt;/a&gt;Back reference&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;매칭된 결과를 다시 사용하는 패턴&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;()&lt;/code&gt;로 묶인 패턴 매칭을 &lt;code&gt;\#&lt;/code&gt; 형태로 재사용할 수 있다. &lt;code&gt;#&lt;/code&gt;은 숫자.&lt;ul&gt;
-&lt;li&gt;\1, \2, \3 …&lt;/li&gt;
-&lt;li&gt;ex. &lt;code&gt;(a) = \1&lt;/code&gt; 의 매칭 결과는 &lt;code&gt;a = a&lt;/code&gt; 가 된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;HTML Tag를 parsing할 때 굉장히 효율적이다.&lt;ul&gt;
-&lt;li&gt;ex. &lt;code&gt;&amp;lt;(table)&amp;gt;[.]*&amp;lt;\/\1&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;REGEX-in-JAVA&quot;&gt;&lt;a href=&quot;#REGEX-in-JAVA&quot; class=&quot;headerlink&quot; title=&quot;REGEX in JAVA&quot;&gt;&lt;/a&gt;REGEX in JAVA&lt;/h2&gt;&lt;p&gt;JAVA에서 정규 표현식을 사용하여 Pattern을 찾기 위해서는 아래와 같이 코드를 사용한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.regex.Matcher;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.regex.Pattern;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Main&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        String data = &lt;span class=&quot;string&quot;&gt;&quot;dog, cat and wolfwolfwolfwolfwolf&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Pattern p = Pattern.compile(&lt;span class=&quot;string&quot;&gt;&quot;^(dog), (cat) and (wolf)&amp;#123;3&amp;#125;&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Matcher m = p.matcher(data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (m.find()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(m.group(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// 매칭된 full string&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(m.group(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// 매칭된 full string 내의 첫 번째 group&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(m.group(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(m.group(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println(m.group(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// 이 예제에서 4번째 group은 없으므로 exception 발생&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;위 코드의 수행 결과는 다음과 같다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;dog, cat and wolfwolfwolf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dog&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cat&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;wolf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Exception &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; thread &lt;span class=&quot;string&quot;&gt;&quot;main&quot;&lt;/span&gt; java.lang.IndexOutOfBoundsException: No group 4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at java.util.regex.Matcher.group(Unknown Source)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    at com.lazyrodi.Main.main(Main.java:19)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;위 코드에서 일치하는 다음 문장을 찾기 위해서는 &lt;code&gt;m.find()&lt;/code&gt; 를 한 번 더 수행하면 다음 매칭되는 문장을 찾는다.&lt;/p&gt;
-&lt;p&gt;Pattern Class 및 Matcher Class에 대한 자세한 정보는 JavaDoc (&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pattern&lt;/a&gt;, &lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Matcher&lt;/a&gt;)을 참조하자.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Tip&quot;&gt;&lt;a href=&quot;#Tip&quot; class=&quot;headerlink&quot; title=&quot;Tip&quot;&gt;&lt;/a&gt;Tip&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://regexper.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://regexper.com&lt;/a&gt; 라는 웹사이트에서 정규 표현식을 시각적으로 확인할 수 있게 도와주고 있다. 개인적으로 짱짱맨 사이트라고 생각한다.&lt;/p&gt;
-&lt;p&gt;JavaScript에 대한 정규표현식 사용은 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/%EC%A0%95%EA%B7%9C%EC%8B%9D&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mozilla 사이트&lt;/a&gt;에서 잘 설명하고 있다.&lt;/p&gt;
-&lt;p&gt;예시 1&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;^(dog), (cat) and (cat)&amp;#123;3&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;Regexper 결과 1&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-07-02-etc-regular-expression-001.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;p&gt;아래의 글들을 교재삼아 작성하였습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/%EC%A0%95%EA%B7%9C%EC%8B%9D&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Regular Expression - Mozilla&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pattern Class - JavaDoc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Matcher Class - JavaDoc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/07/02/2016-07-02-etc-regular-expression/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Memory management</title>
-      <link>http://lazyrodi.github.io/2016/07/01/2016-07-01-common-memory-management/</link>
-      <guid>http://lazyrodi.github.io/2016/07/01/2016-07-01-common-memory-management/</guid>
-      <pubDate>Fri, 01 Jul 2016 11:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;CPU가 접근 가능한 저장소는 CPU 내부의 &lt;code&gt;Register&lt;/code&gt;그리고 &lt;code&gt;Main memory&lt;/code&gt;이다.&lt;/p&gt;
-&lt;p&gt;CPU는 여기에서 &lt;code&gt;command&lt;/code&gt;를 &lt;code&gt;load&lt;/code&gt;하여 
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;CPU가 접근 가능한 저장소는 CPU 내부의 &lt;code&gt;Register&lt;/code&gt;그리고 &lt;code&gt;Main memory&lt;/code&gt;이다.&lt;/p&gt;
-&lt;p&gt;CPU는 여기에서 &lt;code&gt;command&lt;/code&gt;를 &lt;code&gt;load&lt;/code&gt;하여 &lt;code&gt;processing&lt;/code&gt; 한다.&lt;/p&gt;
-&lt;p&gt;보통 CPU는 &lt;code&gt;register&lt;/code&gt;에 &lt;code&gt;1 clock cycle&lt;/code&gt; 내에 접근이 가능하다.&lt;/p&gt;
-&lt;p&gt;하지만 만약 &lt;code&gt;command&lt;/code&gt;가 &lt;code&gt;Main memory&lt;/code&gt;에 있을 경우 &lt;code&gt;1 clock&lt;/code&gt;이상의 시간이 소요되어 &lt;code&gt;stall(지연)&lt;/code&gt;된다. 이러면 낭비가 심해지기 때문에 &lt;code&gt;CPU&lt;/code&gt;와 &lt;code&gt;Main memory&lt;/code&gt; 사이에 &lt;code&gt;Cache&lt;/code&gt;를 두어 문제를 해결한다.&lt;/p&gt;
-&lt;p&gt;Program은 &lt;code&gt;Binary execution file&lt;/code&gt; 형태로 디스크에 저장되어 있으며 실행되기 위해서는 &lt;code&gt;Main memory&lt;/code&gt;로 올라와서 &lt;code&gt;Process&lt;/code&gt;가 되어야 한다.&lt;/p&gt;
-&lt;p&gt;Process는 효율적인 실행을 위해 디스크와 Main memory 사이를 왔다갔다 하는데 이 때 Main memory에 올라오기 위해 대기하고 있는 &lt;code&gt;Process들의 집합&lt;/code&gt;을 &lt;code&gt;Input Queue&lt;/code&gt;라 부른다.&lt;/p&gt;
-&lt;p&gt;코드에서 사용하는 &lt;code&gt;symbol 형태&lt;/code&gt;(ex. pointer, *a)는 &lt;code&gt;Compiler&lt;/code&gt;에 의해 &lt;code&gt;Relocatable address(재배치 가능 주소)&lt;/code&gt;로 &lt;code&gt;binding&lt;/code&gt;되고 이는 &lt;code&gt;linkage editor&lt;/code&gt; 또는 &lt;code&gt;loader&lt;/code&gt;에 의해 &lt;code&gt;Absolute address(절대 주소, 물리 주소)&lt;/code&gt;로 &lt;code&gt;binding&lt;/code&gt;된다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Binding&lt;/code&gt;은 시점에 따라 세 가지로 나눌 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Compile time binding&lt;ul&gt;
-&lt;li&gt;Compile time에 Memory 내의 위치를 직접 알 수 있으면(process가 R번지부터 시작한다는 사실) Compiler는 &lt;code&gt;Absolute code(절대 코드)&lt;/code&gt;를 생성할 수 있다. 하지만 이 위치가 변경되어야 한다면 이 코드는 다시 compile되어야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Load time binding&lt;ul&gt;
-&lt;li&gt;Compile time에 적재 장소를 알 수 없다면 &lt;code&gt;Compiler&lt;/code&gt;는 &lt;code&gt;Binary code&lt;/code&gt;를 &lt;code&gt;Relocatable code&lt;/code&gt;로 만들어야 한다. &lt;code&gt;Relocatable code&lt;/code&gt;는 시작 주소가 변경되더라도 사용자 코드를 다시 reload만 하면 된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Excution binding&lt;ul&gt;
-&lt;li&gt;Process가 실행되는 중간에 memory 내의 한 segment에서 다른 segment로 옮겨질 수 있을 때 “바인딩이 실행 시간까지 허용되었다” 라고 이야기 하며, 이것이 가능하려면 특별한 Hardware를 이용해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;CPU가 생성하는 주소를 &lt;code&gt;Logical address(논리 주소)&lt;/code&gt;라 하며, Memory가 다루는 주소를 &lt;code&gt;Physical address(물리 주소)&lt;/code&gt;라 한다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Compile time binding&lt;/code&gt;, &lt;code&gt;Load time binding&lt;/code&gt;에서는 &lt;code&gt;Logical address&lt;/code&gt;와 &lt;code&gt;Physical address&lt;/code&gt;가 같지만 &lt;code&gt;Excution binding&lt;/code&gt;에서는 서로 다르다. 이 때 사용하는 Logical address를 &lt;code&gt;Virtual address&lt;/code&gt;라고 부른다.&lt;/p&gt;
-&lt;h4 id=&quot;Virtual-address&quot;&gt;&lt;a href=&quot;#Virtual-address&quot; class=&quot;headerlink&quot; title=&quot;Virtual address&quot;&gt;&lt;/a&gt;Virtual address&lt;/h4&gt;&lt;p&gt;  프로그램 실행 중 &lt;code&gt;Physical address&lt;/code&gt;로 바뀌어야 하는데 이 바꾸는 작업을 &lt;code&gt;Mapping&lt;/code&gt;이라 하며 &lt;code&gt;MMU (Memory Management Unit)&lt;/code&gt;에서 작업이 이루어진다.&lt;/p&gt;
-&lt;h4 id=&quot;Dynamic-Loading-동적-적재&quot;&gt;&lt;a href=&quot;#Dynamic-Loading-동적-적재&quot; class=&quot;headerlink&quot; title=&quot;Dynamic Loading(동적 적재)&quot;&gt;&lt;/a&gt;Dynamic Loading(동적 적재)&lt;/h4&gt;&lt;p&gt;  Physical memory 크기의 제한때문에 큰 program의 경우 미리 memory에 모두 올라와있지 못한다. 이를 해결하지 위해 &lt;code&gt;Dynamic Loading&lt;/code&gt;이 사용된다.&lt;/p&gt;
-&lt;p&gt;  각 routine은 실제 호출되기 전까지는 memory에 올라오지 않고 relocatable 상태로 disk에 대기하고 있다가 Main program이 memory에 올라와 실행되고 이 routine이 다른 routine을 호출하게 되면 호출된 routine이 이미 memory에 laoding되어 있는지 확인한다. 없으면 &lt;code&gt;Relocatable linking loader&lt;/code&gt;가 호출되어 요구된 routine을 memory로 가져오고 이러한 변화를 테이블에 기록해 둔다. 그 후 CPU 제어는 중단되었던 routine으로 보내진다.&lt;/p&gt;
-&lt;h4 id=&quot;Swapping&quot;&gt;&lt;a href=&quot;#Swapping&quot; class=&quot;headerlink&quot; title=&quot;Swapping&quot;&gt;&lt;/a&gt;Swapping&lt;/h4&gt;&lt;p&gt;  Process가 실행되기 위해서는 memory에 있어야 하지만 항상 점유하고 있을 수는 없다. 따라서 실행되는 도중에 임시로 Sub memory로 보내졌다가 다시 Main memory로 돌아올 수 있다.&lt;/p&gt;
-&lt;p&gt;  Swapping을 변형하여 우선순위를 두어 처리하는 것을 &lt;code&gt;Roll-in, Roll-out&lt;/code&gt; 이라고도 부른다.&lt;/p&gt;
-&lt;p&gt;  Swapping system은 Context-switching time이 상당히 오래 걸린다.&lt;/p&gt;
-&lt;h4 id=&quot;Fragmentation&quot;&gt;&lt;a href=&quot;#Fragmentation&quot; class=&quot;headerlink&quot; title=&quot;Fragmentation&quot;&gt;&lt;/a&gt;Fragmentation&lt;/h4&gt;&lt;p&gt;  memory의 이곳 저곳을 점유하다보면 크기에 따라 중간중간 비는 공간이 나타나게 되고 이를 &lt;code&gt;Fragmentation&lt;/code&gt;이라 부른다.&lt;/p&gt;
-&lt;p&gt;  &lt;code&gt;Fragmentation&lt;/code&gt; 문제를 해결하기 위해 두 가지 기법을 사용할 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Paging&lt;/li&gt;
-&lt;li&gt;Segmentation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Paging&quot;&gt;&lt;a href=&quot;#Paging&quot; class=&quot;headerlink&quot; title=&quot;Paging&quot;&gt;&lt;/a&gt;Paging&lt;/h4&gt;&lt;p&gt;  Physical memory는 &lt;code&gt;frame&lt;/code&gt;이라는 같은 크기의 block들로 나누어져 있고 Logical memory는 &lt;code&gt;page&lt;/code&gt;라는 같은 크기의 block들로 나누어져 있다.&lt;/p&gt;
-&lt;p&gt;  CPU에서 나오는 모든 주소는 &lt;code&gt;Page number(p)&lt;/code&gt;와 &lt;code&gt;Offset(d)&lt;/code&gt;로 구성된다. &lt;code&gt;Page number&lt;/code&gt;는 &lt;code&gt;Page table&lt;/code&gt;에 access할 때 사용되며 &lt;code&gt;Page table&lt;/code&gt;은 Main memory에서 각 page가 점유하는 주소를 가지고 있다. 이 주소에 &lt;code&gt;Offset&lt;/code&gt;을 더하면 원하는 &lt;code&gt;Physical address&lt;/code&gt;가 된다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-07-01-common-memory-management-001.jpg&quot; alt=&quot;paging hardware&quot;&gt;{:class=”img-responsive”}&lt;/p&gt;
-&lt;p&gt;  Frame 및 Page의 크기는 Hardware에 의해 정의되며 &lt;code&gt;Page의 크기는 일반적으로 512 byte ~ 16 MB 사이이며 2의 제곱으로 증가한다.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;  Logical address의 크기가 2^m 이고 page가 2^n의 크기를 갖는다면 Logical address의 상위 m-n 비트는 page number를 나타내고, 하위 n 비트는 page offset을 나타낸다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-07-01-common-memory-management-002.jpg&quot; alt=&quot;paging model&quot;&gt;{:class=”img-responsive”}&lt;/p&gt;
-&lt;h4 id=&quot;Segmentation&quot;&gt;&lt;a href=&quot;#Segmentation&quot; class=&quot;headerlink&quot; title=&quot;Segmentation&quot;&gt;&lt;/a&gt;Segmentation&lt;/h4&gt;&lt;p&gt;  사용자는 하나의 Program을 &lt;code&gt;subroutine&lt;/code&gt;, &lt;code&gt;procedure&lt;/code&gt;, &lt;code&gt;function 또는 module&lt;/code&gt;들을 가지고 있는 것으로 생각하고, &lt;code&gt;Table&lt;/code&gt;, &lt;code&gt;Array&lt;/code&gt;, &lt;code&gt;Stack&lt;/code&gt; 등의 다양한 변수를 사용한다. &lt;/p&gt;
-&lt;p&gt;  이러한 사용자가 바라보는 Memory의 관점을 그대로 지원하는 Memory Management 기법이다.&lt;/p&gt;
-&lt;p&gt;  쉬운 구현을 위해 Segment name 대신 Segment number가 System에 의해 매겨지고 Segment는 number로 불리운다. 때문에 Logical address는 &lt;code&gt;&amp;lt;segment-number, offset&amp;gt;&lt;/code&gt;으로 구성된다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-07-01-common-memory-management-003.jpg&quot; alt=&quot;segment example&quot;&gt;{:class=”img-responsive”}&lt;/p&gt;
-&lt;h2 id=&quot;Virtual-Memory&quot;&gt;&lt;a href=&quot;#Virtual-Memory&quot; class=&quot;headerlink&quot; title=&quot;Virtual Memory&quot;&gt;&lt;/a&gt;Virtual Memory&lt;/h2&gt;&lt;p&gt;  Process 전체가 Memory에 올라오지 않더라도 실행이 가능하게 하는 기법이다. Physical memory로부터 사용자 관점의 Logical memory를 분리시켜 Main memory를 균일한 크기의 저장 공간으로 구성된 엄청나게 큰 배열로 추상화시켜 준다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;장점&lt;ul&gt;
-&lt;li&gt;(Physical) Memory size의 제약으로부터 자유로워진다.&lt;/li&gt;
-&lt;li&gt;File의 공유를 쉽게 해주고 Shared memory 구현을 가능케 한다.&lt;/li&gt;
-&lt;li&gt;Process 생성을 효율적으로 처리할 수 있는 Mechanism을 제공한다.&lt;/li&gt;
-&lt;li&gt;많은 program을 동시에 수행 가능하고 이에 따라 응답 시간(response time, turnaround time)은 늘어나지 않으면서도 CPU 이용률(utilization)과 처리율(throughput)이 높아진다.&lt;/li&gt;
-&lt;li&gt;swap하는데 필요한 입/출력 횟수가 줄어들어 program들이 상대적으로 빠르게 실행된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;단점&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;구현하기 어렵다.&lt;/li&gt;
-&lt;li&gt;잘못 사용하면 성능이 크게 저하된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;앞에서 본 Memory management 기법 중 Dynamic loading은 process 전체를 memory에 올려야 한다는 제약을 어느정도 막아주긴 하지만 프로그래머가 추가적인 작업을 해야한다.&lt;/p&gt;
-&lt;p&gt;앞서 본 것처럼 &lt;code&gt;page frame&lt;/code&gt;들로 인해 Physical memory는 연속적인 공간이 아닐 수 있다. MMU(Memory Management Unit)는 Physical memory를 Logical memory로 mapping한다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Virtual Memory&lt;/code&gt;의 각 &lt;code&gt;area&lt;/code&gt;는 다음과 같이 사용된다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Stack&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;main() 함수, Callback 함수의 주소, 지역변수, 파라미터, return value가 저장되는 영역이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Sparse&lt;ul&gt;
-&lt;li&gt;빈 공간을 포함한 Stack과 Heap 사이의 영역이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Heap&lt;ul&gt;
-&lt;li&gt;동적 메모리 할당 영역이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Data&lt;ul&gt;
-&lt;li&gt;전역변수, 정적변수(static), 배열, 구조체, 상수가 저장되는 영역이다.&lt;/li&gt;
-&lt;li&gt;Data 영역은 두 가지 영역으로 구분할 수 있다.&lt;ul&gt;
-&lt;li&gt;Data&lt;ul&gt;
-&lt;li&gt;초기값이 있는 경우&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;BSS (Block Started by Symbol)&lt;ul&gt;
-&lt;li&gt;초기값이 없는 경우우&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Code&lt;ul&gt;
-&lt;li&gt;작성한 Code가 저장되는 영역이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-07-01-common-memory-management-004.jpg&quot; alt=&quot;virtual memory&quot;&gt;{:class=”img-responsive”}&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Code, Data, Stack 영역은 Compiler가 Memory의 크기를 결정한다.&lt;/li&gt;
-&lt;li&gt;Heap 영역의 크기는 개발자에 의해 프로그램 동작 시 결정된다.&lt;/li&gt;
-&lt;li&gt;Stack의 지역변수는 사용 후 소멸하므로 데이터 용량이 불확실하다. 따라서 밑에서부터 올라가면서 값이 채워진다.&lt;/li&gt;
-&lt;li&gt;Heap overflow&lt;ul&gt;
-&lt;li&gt;Heap 영역이 Stack 영역을 침범한 경우&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Stack overflow&lt;ul&gt;
-&lt;li&gt;Stack 영역이 Heap 영역을 침범한 경우&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;아래 그림은 wikipedia에서 설명하고 있는 동적 할당에 대한 그림이다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/ko/2/22/C_MemMap_Exam_VS.png&quot; alt=&quot;Memory map&quot;&gt;{:class=”img-responsive”}&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;p&gt;아래의 글들을 교재삼아 작성하였습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.naver.com/k5248/220724196178&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.naver.com/k5248/220724196178&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%8F%99%EC%A0%81_%EB%A9%94%EB%AA%A8%EB%A6%AC_%ED%95%A0%EB%8B%B9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ko.wikipedia.org/wiki/%EB%8F%99%EC%A0%81_%EB%A9%94%EB%AA%A8%EB%A6%AC_%ED%95%A0%EB%8B%B9&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Operating System Concepts (공룡책)&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/07/01/2016-07-01-common-memory-management/#disqus_thread</comments>
     </item>
     
   </channel>

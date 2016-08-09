@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Ubuntu server installation | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="docthread,ubuntu" />
+    
+    <meta name="description" content="ssh 접속해서 딴 짓 하려고 서버를 설치할래다가 기존에 그냥 Desktop용을 사용하던 것이 있어서 거기에 openssh-server를 설치하기로 했습니다.
+그 전의 과정까지는 그래도 스스로를 위해 남겨두려…
+DownloadUbuntu 공식 사이트에서 Server 버전을 다운로드 받습니다.
+ISO 파일이 다운로드 됩니다.
+Installing전체적인 과정은">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu server installation">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/08/09/2016-08-09-docthread-install-ubuntu/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="ssh 접속해서 딴 짓 하려고 서버를 설치할래다가 기존에 그냥 Desktop용을 사용하던 것이 있어서 거기에 openssh-server를 설치하기로 했습니다.
+그 전의 과정까지는 그래도 스스로를 위해 남겨두려…
+DownloadUbuntu 공식 사이트에서 Server 버전을 다운로드 받습니다.
+ISO 파일이 다운로드 됩니다.
+Installing전체적인 과정은">
+<meta property="og:updated_time" content="2016-08-09T10:38:46.819Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu server installation">
+<meta name="twitter:description" content="ssh 접속해서 딴 짓 하려고 서버를 설치할래다가 기존에 그냥 Desktop용을 사용하던 것이 있어서 거기에 openssh-server를 설치하기로 했습니다.
+그 전의 과정까지는 그래도 스스로를 위해 남겨두려…
+DownloadUbuntu 공식 사이트에서 Server 버전을 다운로드 받습니다.
+ISO 파일이 다운로드 됩니다.
+Installing전체적인 과정은">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/docs/">docs</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-08-09-docthread-install-ubuntu" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Ubuntu server installation
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/08/09/2016-08-09-docthread-install-ubuntu/" class="article-date">
+    <time datetime="2016-08-08T23:00:50.000Z" itemprop="datePublished">2016-08-09</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docthread/">docthread</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Download"><span class="toc-number">1.</span> <span class="toc-text">Download</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Installing"><span class="toc-number">2.</span> <span class="toc-text">Installing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#USB-만들기"><span class="toc-number">2.1.</span> <span class="toc-text">USB 만들기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rufus-다운로드"><span class="toc-number">2.1.1.</span> <span class="toc-text">Rufus 다운로드</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#부팅-가능한-USB-만들기"><span class="toc-number">2.1.2.</span> <span class="toc-text">부팅 가능한 USB 만들기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#설치하기"><span class="toc-number">2.2.</span> <span class="toc-text">설치하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#리눅스-파티션"><span class="toc-number">2.2.1.</span> <span class="toc-text">리눅스 파티션</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-후-기본-설치하는-것들-개인-취향"><span class="toc-number">3.</span> <span class="toc-text">Install 후 기본 설치하는 것들 (개인 취향)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Openssh-설치"><span class="toc-number">4.</span> <span class="toc-text">Openssh 설치</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-port-변경"><span class="toc-number">4.1.</span> <span class="toc-text">ssh port 변경</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#사용자-추가"><span class="toc-number">5.</span> <span class="toc-text">사용자 추가</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SAMBA-설정"><span class="toc-number">6.</span> <span class="toc-text">SAMBA 설정</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SAMBA-사용자-추가"><span class="toc-number">6.1.</span> <span class="toc-text">SAMBA 사용자 추가</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SAMBA-설정-1"><span class="toc-number">6.2.</span> <span class="toc-text">SAMBA 설정</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#절전모드-시-네트워크가-끊기는-문제"><span class="toc-number">7.</span> <span class="toc-text">절전모드 시 네트워크가 끊기는 문제</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#참조"><span class="toc-number">8.</span> <span class="toc-text">참조</span></a></li></ol>
+                
+            </div>
+            <p>ssh 접속해서 딴 짓 하려고 서버를 설치할래다가 기존에 그냥 Desktop용을 사용하던 것이 있어서 거기에 <code>openssh-server</code>를 설치하기로 했습니다.</p>
+<p>그 전의 과정까지는 그래도 스스로를 위해 남겨두려…</p>
+<h1 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h1><p><a href="http://www.ubuntu.com/server" target="_blank" rel="external">Ubuntu 공식 사이트</a>에서 Server 버전을 다운로드 받습니다.</p>
+<p>ISO 파일이 다운로드 됩니다.</p>
+<h1 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h1><p>전체적인 과정은 <a href="http://www.ubuntu.com/download/server/install-ubuntu-server" target="_blank" rel="external">Installing Ubuntu Server for general user</a>페이지를 참조하세요.</p>
+<h2 id="USB-만들기"><a href="#USB-만들기" class="headerlink" title="USB 만들기"></a>USB 만들기</h2><h3 id="Rufus-다운로드"><a href="#Rufus-다운로드" class="headerlink" title="Rufus 다운로드"></a>Rufus 다운로드</h3><p><a href="https://rufus.akeo.ie/" target="_blank" rel="external">https://rufus.akeo.ie/</a></p>
+<h3 id="부팅-가능한-USB-만들기"><a href="#부팅-가능한-USB-만들기" class="headerlink" title="부팅 가능한 USB 만들기"></a>부팅 가능한 USB 만들기</h3><p><a href="http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows" target="_blank" rel="external">How to create a bootable USB stick on Windows</a>에 잘 설명되어 있습니다.</p>
+<h2 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h2><p>설치하려는 PC에 USB꼽고 부팅해서 쭉쭉 설치. 요새는 뭐 왠만한 것들은 알아서 다 해줘서 혼자 공부하기 위한 설치라면 쭉쭉 진행 가능합니다.</p>
+<h3 id="리눅스-파티션"><a href="#리눅스-파티션" class="headerlink" title="리눅스 파티션"></a>리눅스 파티션</h3><p>리눅스와 유닉스 계열의 OS들은 Windows의 폴더 및 드라이브 개념이 없습니다.</p>
+<p>루트 디렉토리를 기준으로 파일 및 디렉토리들이 위치하며, <code>mount</code> 명령을 통해 디렉토리와 HDD 등의 저장소를 연결하여 사용할 수 있습니다.</p>
+<p>리눅스의 파티션은 각각 아래의 용도로 사용됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>파티션</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>루트 디렉토리.<br>최상위 디렉토리이며 <code>cd /</code> 명령어를 통해 접근할 수 있습니다.</td>
+</tr>
+<tr>
+<td>/bin</td>
+<td>명령어들이 들어있으며 여기에 있는 명령어들은 모든 사용자들이 사용 가능합니다.<br>필수적인 명령어들 및 시스템 부팅과 관련된 파일들이 모여있습니다.<br>커널 이미지인 <code>vmlinuz</code>가 여기에 위치해 있습니다.</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>디바이스 파일들.</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>여러가지의 시스템 설정 파일들.</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>일반 사용자의 home 디렉토리.<br>hong이라는 사용자의 home 디렉토리는 일반적으로 <code>/home/hong</code>이 됩니다. 이 경로는 설정을 통해 변경 가능합니다.<br><code>cd ~</code>를 통해 접근할 수 있습니다.</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>공유 라이브러리</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>다른 파티션을 mount 할 때 이곳으로 합니다.<br>일반적으로 cdrom 사용 시 <code>/mnt/cdrom</code>에 mount시켜서 사용합니다.</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td>프로세스 정보를 담고 있는 파일들.<br>프로세스 정보는 <code>ps</code> 명령어로도 확인할 수 있습니다.</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>Super user(root)의 home 디렉토리.</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>Super user가 시스템을 운영하는데 필수적인 실행 파일들.</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>Temporary 디렉토리. 임시 저장 파일들이 거쳐갑니다.</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>사용자들을 위한 여러가지 프로그램 및 설정 파일들.<br>리눅스/유닉스 디렉토리 구조 중 가장 크고 복잡하며 루트(/)와 비슷한 구조를 가집니다.<br><code>/usr/bin</code>, <code>/usr/lib</code>, <code>usr/sbin</code> 등 루트(/)에 들어있는 것들이 여기에 비슷하게 다 들어있으며, 패키지 등을 설치할 때 일반적으로 이쪽으로 저장됩니다.</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>로그 파일 및 시스템 관리와 관련된 파일들을 여기에 저장합니다.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Install-후-기본-설치하는-것들-개인-취향"><a href="#Install-후-기본-설치하는-것들-개인-취향" class="headerlink" title="Install 후 기본 설치하는 것들 (개인 취향)"></a>Install 후 기본 설치하는 것들 (개인 취향)</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ apt-get update           # 업데이트 저장소에서 업데이트 패키지 목록을 갱신</div><div class="line">$ apt-get upgrade          # 패키지 목록과 보유한 목록을 비교하여 실제 패키지 업데이트를 수행</div><div class="line">$ apt-get install vim</div><div class="line">$ apt-get install curl</div><div class="line">$ apt-get install git</div><div class="line">$ apt-get install samba    # Windows와의 파일 공유를 위해, https://help.ubuntu.com/lts/serverguide/samba.html</div><div class="line">$ apt-get install screen   # 터미널 하나로 multi processing을 하기 위해.</div></pre></td></tr></table></figure>
+<h1 id="Openssh-설치"><a href="#Openssh-설치" class="headerlink" title="Openssh 설치"></a>Openssh 설치</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ apt-get install openssh-server</div></pre></td></tr></table></figure>
+<h2 id="ssh-port-변경"><a href="#ssh-port-변경" class="headerlink" title="ssh port 변경"></a>ssh port 변경</h2><p>기본은 22번 port를 사용하지만 보안을 위해 맘에 드는 port를 정해서 변경하세요. <del>딱히 중요한 정보가 안 들어가고 공부용이면 대충 쓰세요. 문제 생기면 밀어버리면 되니까요.</del></p>
+<p>관련해서 실무를 해본적이 없어서 보안 관리자들이 사용하는 절차에 대해서는 잘 모릅니다만 일반적으로(그럼 보안이 왜 필요한건지…)는 +10000 해서 10022번 port를 사용한다고 합니다.</p>
+<ol>
+<li><code>/etc/services</code> 파일에서 <code>ssh    22/tcp</code> 및 <code>ssh    22/udp</code> 의 port 번호를 변경합니다.</li>
+<li><code>/etc/ssh/sshd_config</code> 파일에서 아래 부분을 변경합니다.<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># What ports, IPs and protocols we listen for</div><div class="line">  Port 22</div></pre></td></tr></table></figure>  </li>
+<li>변경 후에는 <code>service ssh restart</code> 명령을 통해 재시작합니다.</li>
+</ol>
+<h1 id="사용자-추가"><a href="#사용자-추가" class="headerlink" title="사용자 추가"></a>사용자 추가</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ adduser gildonghong</div></pre></td></tr></table></figure>
+<h1 id="SAMBA-설정"><a href="#SAMBA-설정" class="headerlink" title="SAMBA 설정"></a>SAMBA 설정</h1><h2 id="SAMBA-사용자-추가"><a href="#SAMBA-사용자-추가" class="headerlink" title="SAMBA 사용자 추가"></a>SAMBA 사용자 추가</h2><p>  <code>smbpasswd -a &#39;username&#39;</code></p>
+<h2 id="SAMBA-설정-1"><a href="#SAMBA-설정-1" class="headerlink" title="SAMBA 설정"></a>SAMBA 설정</h2><p>  <code>/etc/samba/smb.conf</code> 를 열고 [homes] 부분을 다음과 같이 수정합니다. 더 자세한 설정 방법은 <a href="https://help.ubuntu.com/lts/serverguide/samba.html" target="_blank" rel="external">ubuntu - samba</a> 페이지를 참조하세요.<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Homes]</div><div class="line">    comment = Home Directories</div><div class="line">    browseable = yes            # no -&gt; yes</div><div class="line">    path = /home/$S             # 각 사용자가 자신의 home으로 접속되도록 변경</div><div class="line">    read only = no              # yes -&gt; no</div></pre></td></tr></table></figure></p>
+<p>설정이 끝났다면 <code>service smbd restart</code> 를 실행하여 samba daemon을 재시작합니다.</p>
+<p>Windows에서 시작 &gt; 실행 &gt;  <code>\\서버주소\아이디</code> 로 접근할 수 있습니다.</p>
+<h1 id="절전모드-시-네트워크가-끊기는-문제"><a href="#절전모드-시-네트워크가-끊기는-문제" class="headerlink" title="절전모드 시 네트워크가 끊기는 문제"></a>절전모드 시 네트워크가 끊기는 문제</h1><p>노트북 등이 절전모드(suspend 상태)로 전환되면 네트워크가 끊겨버립니다.</p>
+<p>이에 대한 해결은 <a href="../2016-08-09-troubleshooting-linux#노트북-절전모드-진입-시-네트워크가-끊어지는-문제" target="_blank">노트북 절전모드 진입 시 네트워크가 끊어지는 문제</a>에서 확인하실 수 있습니다.</p>
+<h1 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h1><ul>
+<li><a href="http://wp.smartdisk.org/?p=179&amp;lang=ko" target="_blank" rel="external">http://wp.smartdisk.org/?p=179&amp;lang=ko</a></li>
+<li><a href="https://www.linux.co.kr/home2/board/subbs/board.php?bo_table=lecture&amp;wr_id=1342" target="_blank" rel="external">https://www.linux.co.kr/home2/board/subbs/board.php?bo_table=lecture&amp;wr_id=1342</a></li>
+<li><a href="https://kjvvv.kr/2764" target="_blank" rel="external">https://kjvvv.kr/2764</a></li>
+<li><a href="http://storycompiler.tistory.com/31" target="_blank" rel="external">http://storycompiler.tistory.com/31</a></li>
+<li><a href="https://www.linux.co.kr/home/lecture/?leccode=10644" target="_blank" rel="external">https://www.linux.co.kr/home/lecture/?leccode=10644</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/08/09/2016-08-09-docthread-install-ubuntu/" data-id="cirm7jjec000534kxytlbwit6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/08/09/2016-08-09-troubleshooting-linux/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Linux Troubleshooting
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/08/08/2016-08-08-docthread-setting-eclipse/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Eclipse Setting</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/common/">common</a></p>
+                            <p class="item-title"><a href="/2016/08/09/2016-08-09-common-bigo/" class="title">Big O Complexity</a></p>
+                            <p class="item-date"><time datetime="2016-08-09T11:02:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2016/08/09/2016-08-09-troubleshooting-linux/" class="title">Linux Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-09T01:00:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/docs/">docs</a></p>
+                            <p class="item-title"><a href="/2016/08/09/2016-08-09-docthread-install-ubuntu/" class="title">Ubuntu server installation</a></p>
+                            <p class="item-date"><time datetime="2016-08-08T23:00:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/docs/">docs</a></p>
+                            <p class="item-title"><a href="/2016/08/08/2016-08-08-docthread-setting-eclipse/" class="title">Eclipse Setting</a></p>
+                            <p class="item-date"><time datetime="2016-08-08T13:00:50.000Z" itemprop="datePublished">2016-08-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/java/">java</a></p>
+                            <p class="item-title"><a href="/2016/08/07/2016-08-07-java-stringtokenizer/" class="title">StringTokenizer</a></p>
+                            <p class="item-date"><time datetime="2016-08-07T04:01:50.000Z" itemprop="datePublished">2016-08-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 12px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 10px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 10px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2016 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/08/09/2016-08-09-docthread-install-ubuntu/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
