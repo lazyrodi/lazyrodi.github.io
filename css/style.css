@@ -1411,6 +1411,14 @@ a.article-title:hover {
   max-width: 100%;
   margin: 0 auto;
 }
+.lazyrodi-toc {
+  background-color: #f0f0f0;
+  padding: 0px 10px 0px 10px;
+  font-size: 11pt;
+}
+.lazyrodi-toc ol li {
+  list-style-type: none;
+}
 #comments {
   padding: 30px 30px 20px;
 }
