@@ -8,22 +8,60 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 09 Aug 2016 13:00:44 GMT</pubDate>
+    <pubDate>Wed, 10 Aug 2016 15:59:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>Big O Complexity</title>
+      <title>Big-O Complexity</title>
       <link>http://lazyrodi.github.io/2016/08/09/2016-08-09-common-bigo/</link>
       <guid>http://lazyrodi.github.io/2016/08/09/2016-08-09-common-bigo/</guid>
       <pubDate>Tue, 09 Aug 2016 11:02:50 GMT</pubDate>
       <description>
       
-        &lt;p&gt;TBD&lt;/p&gt;
-
+        &lt;h2 id=&quot;Big-O-분석법-Big-O-analysis&quot;&gt;&lt;a href=&quot;#Big-O-분석법-Big-O-analysis&quot; class=&quot;headerlink&quot; title=&quot;Big-O 분석법 (Big-O analysis)&quot;&gt;&lt;/a&gt;Big-O 분석법 (B
       
       </description>
       
-      <content:encoded>&lt;p&gt;TBD&lt;/p&gt;
+      <content:encoded>&lt;h2 id=&quot;Big-O-분석법-Big-O-analysis&quot;&gt;&lt;a href=&quot;#Big-O-분석법-Big-O-analysis&quot; class=&quot;headerlink&quot; title=&quot;Big-O 분석법 (Big-O analysis)&quot;&gt;&lt;/a&gt;Big-O 분석법 (Big-O analysis)&lt;/h2&gt;&lt;p&gt;입력 값의 개수에 따라 알고리즘이 수행되는데 걸리는 시간을 바탕으로 알고리즘의 효율성을 평가하는 실행 시간 분석법.&lt;/p&gt;
+&lt;h2 id=&quot;Big-O-분석의-적용&quot;&gt;&lt;a href=&quot;#Big-O-분석의-적용&quot; class=&quot;headerlink&quot; title=&quot;Big-O 분석의 적용&quot;&gt;&lt;/a&gt;Big-O 분석의 적용&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;입력 값이 무엇인지 확인하고 어떤 것을 n으로 놓아야 할지 결정한다.&lt;/li&gt;
+&lt;li&gt;알고리즘에서 수행해야 할 연산 횟수를 n의 식으로 표현한다.&lt;/li&gt;
+&lt;li&gt;차수가 제일 높은 항만 남긴다.&lt;/li&gt;
+&lt;li&gt;모든 상수 인수를 없앤다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Big-O-알고리즘의-종류&quot;&gt;&lt;a href=&quot;#Big-O-알고리즘의-종류&quot; class=&quot;headerlink&quot; title=&quot;Big-O 알고리즘의 종류&quot;&gt;&lt;/a&gt;Big-O 알고리즘의 종류&lt;/h2&gt;&lt;h4 id=&quot;O-1&quot;&gt;&lt;a href=&quot;#O-1&quot; class=&quot;headerlink&quot; title=&quot;O(1)&quot;&gt;&lt;/a&gt;O(1)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;상수 실행 시간(constant running time)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;가장 빠른 알고리즘이며 이 경우는 거의 없다.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(n)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    result = n * n&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;O-log-n&quot;&gt;&lt;a href=&quot;#O-log-n&quot; class=&quot;headerlink&quot; title=&quot;O(log n)&quot;&gt;&lt;/a&gt;O(log n)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;로그 알고리즘(logarithmic algorithm)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;실행 시간이 입력 크기의 log에 비례해서 늘어나는 알고리즘.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;logarithmatic&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(n)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    result = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; n &amp;gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        n //= &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        result += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;O-n&quot;&gt;&lt;a href=&quot;#O-n&quot; class=&quot;headerlink&quot; title=&quot;O(n)&quot;&gt;&lt;/a&gt;O(n)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;선형 알고리즘(linear algorithm)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;실행 시간이 입력크기에 비례하는 알고리즘.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;O(n)&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(n, A)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; A[i] == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;O(n + m)&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(n, m)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    result = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        result += i&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; j &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(m):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        result += j&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;O-n-log-n&quot;&gt;&lt;a href=&quot;#O-n-log-n&quot; class=&quot;headerlink&quot; title=&quot;O(n log n)&quot;&gt;&lt;/a&gt;O(n log n)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;초선형 알고리즘(superlinear algorithm)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;속도가 선형 알고리즘과 다항식 알고리즘의 중간쯤이다.&lt;/p&gt;
+&lt;h4 id=&quot;O-n-2&quot;&gt;&lt;a href=&quot;#O-n-2&quot; class=&quot;headerlink&quot; title=&quot;O(n^2)&quot;&gt;&lt;/a&gt;O(n^2)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;이차 알고리즘(quadratic algorithm)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;입력 크기의 제곱으로 시간이 늘어난다.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;quadratic&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(n)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    result = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; j &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(i, n):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            result += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;O-n-c&quot;&gt;&lt;a href=&quot;#O-n-c&quot; class=&quot;headerlink&quot; title=&quot;O(n^c)&quot;&gt;&lt;/a&gt;O(n^c)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;다항식 알고리즘(polynomial algorithm)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;입력 크기가 늘어나면 실행 시간이 빠르게 늘어난다.&lt;/p&gt;
+&lt;h4 id=&quot;O-c-n&quot;&gt;&lt;a href=&quot;#O-c-n&quot; class=&quot;headerlink&quot; title=&quot;O(c^n)&quot;&gt;&lt;/a&gt;O(c^n)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;지수 알고리즘(exponential algorithm)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;다항식 알고리즘보다 실행 속도가 빠르게 늘어난다.&lt;/p&gt;
+&lt;h4 id=&quot;O-n-1&quot;&gt;&lt;a href=&quot;#O-n-1&quot; class=&quot;headerlink&quot; title=&quot;O(n!)&quot;&gt;&lt;/a&gt;O(n!)&lt;/h4&gt;&lt;p&gt;&lt;code&gt;팩토리얼 알고리즘(factorial algorithm)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;가장 느린 알고리즘으로 n의 값이 작다고 해도 사용이 힘든 수준으로 느려진다.&lt;/p&gt;
+&lt;h1 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;프로그래밍 면접 이렇게 준비한다 - 한빛미디어&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%A0%90%EA%B7%BC_%ED%91%9C%EA%B8%B0%EB%B2%95&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ko.wikipedia.org/wiki/%EC%A0%90%EA%B7%BC_%ED%91%9C%EA%B8%B0%EB%B2%95&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://codility.com/programmers/lessons/1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://codility.com/programmers/lessons/1/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Time_complexity&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://en.wikipedia.org/wiki/Time_complexity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/08/09/2016-08-09-common-bigo/#disqus_thread</comments>
@@ -303,10 +341,10 @@
       
       </description>
       
-      <content:encoded>&lt;h1 id=&quot;입사&quot;&gt;&lt;a href=&quot;#입사&quot; class=&quot;headerlink&quot; title=&quot;입사&quot;&gt;&lt;/a&gt;입사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/82090&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ㅍㅍㅅㅅ - 새로운 입사자를 환영하는 방법, 웰컴키트&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;조직문화&quot;&gt;&lt;a href=&quot;#조직문화&quot; class=&quot;headerlink&quot; title=&quot;조직문화&quot;&gt;&lt;/a&gt;조직문화&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://m.media.daum.net/m/media/economic/newsview/20160601070102846&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“1분도 아까워” 현대차 직원들의 점심 레이스&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;업무&quot;&gt;&lt;a href=&quot;#업무&quot; class=&quot;headerlink&quot; title=&quot;업무&quot;&gt;&lt;/a&gt;업무&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@lovewant/49&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;직장에서 깨지며 배운 100% Real 보고서 스킬&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;퇴사&quot;&gt;&lt;a href=&quot;#퇴사&quot; class=&quot;headerlink&quot; title=&quot;퇴사&quot;&gt;&lt;/a&gt;퇴사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/87490&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ㅍㅍㅅㅅ - 두 번째 퇴사&lt;/a&gt;&lt;/p&gt;
+      <content:encoded>&lt;h1 id=&quot;입사&quot;&gt;&lt;a href=&quot;#입사&quot; class=&quot;headerlink&quot; title=&quot;입사&quot;&gt;&lt;/a&gt;입사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/82090&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;새로운 입사자를 환영하는 방법, 웰컴키트&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;조직문화&quot;&gt;&lt;a href=&quot;#조직문화&quot; class=&quot;headerlink&quot; title=&quot;조직문화&quot;&gt;&lt;/a&gt;조직문화&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://m.media.daum.net/m/media/economic/newsview/20160601070102846&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“1분도 아까워” 현대차 직원들의 점심 레이스&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.zdnet.co.kr/column/column_view.asp?artice_id=20160809121254&amp;amp;from=Mobile&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zdnet - 문제 직원은 없고, 문제상사만 있습니다&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;업무&quot;&gt;&lt;a href=&quot;#업무&quot; class=&quot;headerlink&quot; title=&quot;업무&quot;&gt;&lt;/a&gt;업무&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://brunch.co.kr/@lovewant/49&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;직장에서 깨지며 배운 100% Real 보고서 스킬&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://insight.co.kr/newsRead.php?ArtNo=71185&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;세계적인 기업 이끄는 CEO들의 사무실 10&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;퇴사&quot;&gt;&lt;a href=&quot;#퇴사&quot; class=&quot;headerlink&quot; title=&quot;퇴사&quot;&gt;&lt;/a&gt;퇴사&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://ppss.kr/archives/87490&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;두 번째 퇴사&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-worklife/#disqus_thread</comments>
