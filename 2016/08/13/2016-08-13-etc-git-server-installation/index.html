@@ -3,15 +3,33 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: regular expression | Lazy Rodriguez</title>
+    <title>GIT server installation | Lazy Rodriguez</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Lazy Rodriguez">
-<meta property="og:url" content="http://lazyrodi.github.io/tags/regular-expression/index.html">
+        <meta name="keywords" content="git" />
+    
+    <meta name="description" content="Ubuntu에서 GIT server를 구축해 보았다.
+Server sidegit 설치$ apt-get install git
+.git 저장소 생성보통 /opt 에 생성하는 듯하여 따라해본다.
+$ cd /opt$ sudo mkdir proj-a$ cd proj-a$ sudo git init --bare --shared
+--bare: 빈 저장소(bare repo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GIT server installation">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/08/13/2016-08-13-etc-git-server-installation/index.html">
 <meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Ubuntu에서 GIT server를 구축해 보았다.
+Server sidegit 설치$ apt-get install git
+.git 저장소 생성보통 /opt 에 생성하는 듯하여 따라해본다.
+$ cd /opt$ sudo mkdir proj-a$ cd proj-a$ sudo git init --bare --shared
+--bare: 빈 저장소(bare repo">
+<meta property="og:updated_time" content="2016-08-13T15:13:13.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lazy Rodriguez">
+<meta name="twitter:title" content="GIT server installation">
+<meta name="twitter:description" content="Ubuntu에서 GIT server를 구축해 보았다.
+Server sidegit 설치$ apt-get install git
+.git 저장소 생성보통 /opt 에 생성하는 듯하여 따라해본다.
+$ cd /opt$ sudo mkdir proj-a$ cd proj-a$ sudo git init --bare --shared
+--bare: 빈 저장소(bare repo">
     
 
     
@@ -127,7 +145,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>regular expression</em>
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/etc/">etc</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -141,57 +159,154 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                            
-
-    
-    
+                            <article id="post-2016-08-13-etc-git-server-installation" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/common/">common</a>
-            </p>
-            <p class="date"><time datetime="2016-07-02T14:02:50.000Z" itemprop="datePublished">2016-07-02</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/07/02/2016-07-02-etc-regular-expression/">Regular Expression (정규표현식)</a>
+        GIT server installation
         </h1>
     
 
-        <p class="article-excerpt">
-            Regular Expression(정규 표현식)은 줄여서 REGEX(레젝스) 라고 부르기도 한다.
-특정한 패턴의 문자열을 검색하고 필요하면 편집하기 위해 사용한다.
-정규 표현식은 다음과 같이 분류할 수 있다.
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/08/13/2016-08-13-etc-git-server-installation/" class="article-date">
+    <time datetime="2016-08-13T03:02:50.000Z" itemprop="datePublished">2016-08-13</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 
-POSIX Regular Expression (UNIX 계열 표준 정규 표현식)
-BRE (Basic Regular Expression)
-ERE (E
-        </p>
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Server-side"><span class="toc-number">1.</span> <span class="toc-text">Server side</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-설치"><span class="toc-number">1.1.</span> <span class="toc-text">git 설치</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-저장소-생성"><span class="toc-number">1.2.</span> <span class="toc-text">.git 저장소 생성</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Client-side"><span class="toc-number">2.</span> <span class="toc-text">Client side</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#서버로부터-git-clone하기"><span class="toc-number">2.1.</span> <span class="toc-text">서버로부터 git clone하기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#환경설정"><span class="toc-number">2.2.</span> <span class="toc-text">환경설정</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#파일-만들어서-push-하기"><span class="toc-number">2.3.</span> <span class="toc-text">파일 만들어서 push 하기</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#다시-Server-side"><span class="toc-number">3.</span> <span class="toc-text">다시 Server side</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#group-추가-및-permission-부여"><span class="toc-number">3.1.</span> <span class="toc-text">group 추가 및 permission 부여</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#그리고-다시-Client-side"><span class="toc-number">4.</span> <span class="toc-text">그리고 다시 Client side</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#참조"><span class="toc-number">5.</span> <span class="toc-text">참조</span></a></li></ol>
+                
+            </div>
+            <p>Ubuntu에서 GIT server를 구축해 보았다.</p>
+<h1 id="Server-side"><a href="#Server-side" class="headerlink" title="Server side"></a>Server side</h1><h2 id="git-설치"><a href="#git-설치" class="headerlink" title="git 설치"></a>git 설치</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ apt-get install git</div></pre></td></tr></table></figure>
+<h2 id="git-저장소-생성"><a href="#git-저장소-생성" class="headerlink" title=".git 저장소 생성"></a>.git 저장소 생성</h2><p>보통 <code>/opt</code> 에 생성하는 듯하여 따라해본다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /opt</div><div class="line">$ sudo mkdir proj<span class="_">-a</span></div><div class="line">$ <span class="built_in">cd</span> proj<span class="_">-a</span></div><div class="line">$ sudo git init --bare --shared</div></pre></td></tr></table></figure>
+<p><code>--bare</code>: 빈 저장소(bare repository)를 생성한다. config 파일의 <code>bare</code> 속성이 <code>true</code>로 변경된다. bare 설정이 되어있어야 제대로 사용이 가능하다. <code>GIT_DIR</code> 환경설정이 따로 되어있는 경우가 아니라면 현재의 디렉토리를 빈 저장소로 설정한다.<br><code>--shared</code>: GIT 저장소의 push 권한을 설정한다. 이 옵션을 사용할 경우 <code>core.sharedRepository</code> 속성이 <code>1</code>로 설정된다. 이 옵션의 하위 속성으로는 <code>false</code>, <code>true</code>, <code>umask</code>, <code>group</code>, <code>all</code>, <code>world</code>, <code>everybody</code>, <code>0xxx</code>가 있다.</p>
+<p>GIT server의 생성이 끝났다.</p>
+<h1 id="Client-side"><a href="#Client-side" class="headerlink" title="Client side"></a>Client side</h1><h2 id="서버로부터-git-clone하기"><a href="#서버로부터-git-clone하기" class="headerlink" title="서버로부터 git clone하기"></a>서버로부터 git clone하기</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> User2@127.0.0.1:/opt/proj<span class="_">-a</span></div></pre></td></tr></table></figure>
+<h2 id="환경설정"><a href="#환경설정" class="headerlink" title="환경설정"></a>환경설정</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ git config --global user.email <span class="string">"User2@gmail.com"</span></div><div class="line">$ git config --global user.name <span class="string">"User2"</span></div><div class="line">$ git config push.default simple</div></pre></td></tr></table></figure>
+<p><code>push.default</code>: <code>simple</code>과 <code>matching</code> 두 가지 값을 사용할 수 있으며, 각각의 의미는 다음과 같다.</p>
+<ul>
+<li><code>simple</code>: 현재 작업 중인 branch에만 push</li>
+<li><code>matching</code>: 모든 branch에 대해 push</li>
+</ul>
+<p>설정값들은 <code>git config --global --list</code>를 통해 확인할 수 있으며, 기본 설정을 건드리지 않았다면 <code>/home/계정/.gitconfig</code>에 내용이 저장되어 있다.</p>
+<p><code>push.default</code>를 설정하지 않아도 크게 상관은 없지만, <code>git push</code> 시 다음과 같은 경고가 발생하기 때문에 미리 설정하는 것이 좋다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">warning: push.default is <span class="built_in">unset</span>; its implicit value is changing <span class="keyword">in</span></div><div class="line">Git 2.0 from <span class="string">'matching'</span> to <span class="string">'simple'</span>. To squelch this message</div><div class="line">and maintain the current behavior after the default changes, use:</div><div class="line"></div><div class="line">  git config --global push.default matching</div><div class="line"></div><div class="line">To squelch this message and adopt the new behavior now, use:</div><div class="line"></div><div class="line">  git config --global push.default simple</div><div class="line"></div><div class="line">When push.default is <span class="built_in">set</span> to <span class="string">'matching'</span>, git will push <span class="built_in">local</span> branches</div><div class="line">to the remote branches that already exist with the same name.</div><div class="line"></div><div class="line">In Git 2.0, Git will default to the more conservative <span class="string">'simple'</span></div><div class="line">behavior, <span class="built_in">which</span> only pushes the current branch to the corresponding</div><div class="line">remote branch that <span class="string">'git pull'</span> uses to update the current branch.</div><div class="line"></div><div class="line">See <span class="string">'git help config'</span> and search <span class="keyword">for</span> <span class="string">'push.default'</span> <span class="keyword">for</span> further information.</div><div class="line">(the <span class="string">'simple'</span> mode was introduced <span class="keyword">in</span> Git 1.7.11. Use the similar mode</div><div class="line"><span class="string">'current'</span> instead of <span class="string">'simple'</span> <span class="keyword">if</span> you sometimes use older versions of Git)</div></pre></td></tr></table></figure>
+<h2 id="파일-만들어서-push-하기"><a href="#파일-만들어서-push-하기" class="headerlink" title="파일 만들어서 push 하기"></a>파일 만들어서 push 하기</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ touch a</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">"[temp] make file 'a'."</span></div><div class="line">$ git push</div></pre></td></tr></table></figure>
+<p>하면, 에러가 난다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">Counting objects: 3, done.</div><div class="line">Writing objects: 100% (3/3), 193 bytes | 0 bytes/s, done.</div><div class="line">Total 3 (delta 0), reused 0 (delta 0)</div><div class="line">remote: error: insufficient permission <span class="keyword">for</span> adding an object to repository database ./objects</div><div class="line">remote: fatal: failed to write object</div><div class="line">error: unpack failed: unpack-objects abnormal <span class="built_in">exit</span></div><div class="line">To User2@127.0.0.1:/opt/proj<span class="_">-a</span></div><div class="line"> ! [remote rejected] master -&gt; master (unpacker error)</div><div class="line">error: 레퍼런스를 <span class="string">'User2@127.0.0.1:/opt/proj-a'</span>에 푸시하는데 실패했습니다</div></pre></td></tr></table></figure>
+<p>GIT 저장소인 /opt/proj-a에 <code>User2</code> 사용자의 write 권한이 없어서 문제가 발생한 것이다.</p>
+<h1 id="다시-Server-side"><a href="#다시-Server-side" class="headerlink" title="다시 Server side"></a>다시 Server side</h1><h2 id="group-추가-및-permission-부여"><a href="#group-추가-및-permission-부여" class="headerlink" title="group 추가 및 permission 부여"></a>group 추가 및 permission 부여</h2><p>해당 프로젝트 사용자들을 위해 <code>proj-a</code>라는 그룹을 만들고 사용자를 추가하자.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ sudo addgroup proj<span class="_">-a</span></div><div class="line">$ sudo usermod -G proj<span class="_">-a</span> User2</div></pre></td></tr></table></figure>
+<p>그리고 저장소에 대한 권한을 <code>proj-a</code> 그룹에 준다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ sudo chown -R root:proj<span class="_">-a</span> proj<span class="_">-a</span>    <span class="comment"># 뒤의 proj-a는 디렉토리</span></div></pre></td></tr></table></figure>
+<h1 id="그리고-다시-Client-side"><a href="#그리고-다시-Client-side" class="headerlink" title="그리고 다시 Client side"></a>그리고 다시 Client side</h1><p>다시 <code>git push</code>를 시도한다. 그리고 성공한다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">Counting objects: 3, done.</div><div class="line">Writing objects: 100% (3/3), 193 bytes | 0 bytes/s, done.</div><div class="line">Total 3 (delta 0), reused 0 (delta 0)</div><div class="line">To User2@127.0.0.1:/opt/proj<span class="_">-a</span></div><div class="line"> * [new branch]      master -&gt; master</div></pre></td></tr></table></figure>
+<h1 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h1><ul>
+<li><a href="https://git-scm.com/book/ko/v2" target="_blank" rel="external">https://git-scm.com/book/ko/v2</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/08/13/2016-08-13-etc-git-server-installation/" data-id="cirtbowlz0035k8kx67npfbhz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -227,6 +342,19 @@ ERE (E
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/08/09/2016-08-09-common-bigo/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Big-O Complexity</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -346,11 +474,13 @@ ERE (E
     var disqus_shortname = 'lazyrodi';
     
     
+    var disqus_url = 'http://lazyrodi.github.io/2016/08/13/2016-08-13-etc-git-server-installation/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
