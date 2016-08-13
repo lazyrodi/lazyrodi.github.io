@@ -8,8 +8,37 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 13 Aug 2016 15:13:13 GMT</pubDate>
+    <pubDate>Sat, 13 Aug 2016 15:45:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Gitweb 사용</title>
+      <link>http://lazyrodi.github.io/2016/08/13/2016-08-13-etc-use-gitweb/</link>
+      <guid>http://lazyrodi.github.io/2016/08/13/2016-08-13-etc-use-gitweb/</guid>
+      <pubDate>Sat, 13 Aug 2016 14:02:50 GMT</pubDate>
+      <description>
+      
+        &lt;a href=&quot;/2016/08/13/2016-08-13-etc-git-server-installation/&quot; title=&quot;GIT Server Installation&quot;&gt;GIT Server Installation&lt;/a&gt;에서 설치한 내용을 GitWeb 을
+      
+      </description>
+      
+      <content:encoded>&lt;a href=&quot;/2016/08/13/2016-08-13-etc-git-server-installation/&quot; title=&quot;GIT Server Installation&quot;&gt;GIT Server Installation&lt;/a&gt;에서 설치한 내용을 GitWeb 을 통해 보는 방법이다.&lt;br&gt;&lt;br&gt;&lt;blockquote&gt;&lt;p&gt;GitWeb은 말 그대로 GIT의 변경사항을 Web에서 편하게 볼 수 있게 도와주는 툴이다. 예시로는 &lt;a href=&quot;https://android.googlesource.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://android.googlesource.com/&lt;/a&gt; 를 보는 것이 적절할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GIT에서 기본적으로 지원해주는 내용이라 한 번에 써둘까 했는데, 그냥 포스트를 하나 더 작성하였다.&lt;/p&gt;
+&lt;p&gt;아래 명령을 수행하면 GitWeb이 실행되어 브라우저에서 확인할 수 있다.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ sudo git instaweb&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Gitweb은 &lt;code&gt;lighttpd&lt;/code&gt;에 의존성이 있어서 내 PC에서는 에러가 발생하였다.&lt;/p&gt;
+&lt;p&gt;설치한다. 리눅스 버전에 따라 기본적으로 설치되어 있는 것도 있다고 한다.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ sudo apt-get install lighttpd&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;이후 다시 &lt;code&gt;sudo git instaweb&lt;/code&gt;을 수행한 후 브라우저에서 &lt;code&gt;127.0.0.1:1234&lt;/code&gt; 를 입력하면 Gitweb을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;GitWeb의 &lt;code&gt;Description&lt;/code&gt; 설정은 GIT 저장소의 &lt;code&gt;description&lt;/code&gt;파일을 수정하면 바뀐다.&lt;/p&gt;
+&lt;h1 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://git-scm.com/book/ko/v2/Git-%EC%84%9C%EB%B2%84-GitWeb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://git-scm.com/book/ko/v2/Git-%EC%84%9C%EB%B2%84-GitWeb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/13/2016-08-13-etc-use-gitweb/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>GIT server installation</title>
@@ -1342,129 +1371,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/07/10/2016-07-10-android-permission/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>OSI 7 layer and TCP/IP model</title>
-      <link>http://lazyrodi.github.io/2016/07/04/2016-07-04-osi7-and-tcpip/</link>
-      <guid>http://lazyrodi.github.io/2016/07/04/2016-07-04-osi7-and-tcpip/</guid>
-      <pubDate>Mon, 04 Jul 2016 06:47:50 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;&lt;del&gt;10년이 넘도록 외워지지 않는 Network 기초…&lt;/del&gt;&lt;/p&gt;
-&lt;h2 id=&quot;OSI-7-layer&quot;&gt;&lt;a href=&quot;#OSI-7-layer&quot; class=&quot;headerlink&quot; title=&quot;OSI 7 layer&quot;&gt;&lt;/a&gt;OSI 7 
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;&lt;del&gt;10년이 넘도록 외워지지 않는 Network 기초…&lt;/del&gt;&lt;/p&gt;
-&lt;h2 id=&quot;OSI-7-layer&quot;&gt;&lt;a href=&quot;#OSI-7-layer&quot; class=&quot;headerlink&quot; title=&quot;OSI 7 layer&quot;&gt;&lt;/a&gt;OSI 7 layer&lt;/h2&gt;&lt;p&gt;OSI (Open System Interconnection) 7 Layer 는&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Network Communication 시 발생하는 충돌들을 완화하기 위해 ISO에서 표준화된 Network 구조로 제시한 기본 모델이다.&lt;/li&gt;
-&lt;li&gt;ISO/IEC 7498 Spec.&lt;ul&gt;
-&lt;li&gt;ISO/IEC 7498-1: The Basic Model&lt;/li&gt;
-&lt;li&gt;ISO 7498-2: Security Architecture&lt;/li&gt;
-&lt;li&gt;ISO/IEC 7498-3: Naming and addressing&lt;/li&gt;
-&lt;li&gt;ISO/IEC 7498-4: Management framework&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;[7] 응용 계층 (Application)&lt;ul&gt;
-&lt;li&gt;Application Software에 API 제공&lt;/li&gt;
-&lt;li&gt;Data type: Message&lt;/li&gt;
-&lt;li&gt;Equipment: L7 ~ L5 Switch, Gateway (IP + TCP / UDP + Packet)&lt;/li&gt;
-&lt;li&gt;Protocol: DNS, SNMP&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;[6] 표현 계층 (Presentation)&lt;ul&gt;
-&lt;li&gt;Network Security (번역기 역할)&lt;/li&gt;
-&lt;li&gt;암호화, 압축, 변환&lt;/li&gt;
-&lt;li&gt;Data type: Message&lt;/li&gt;
-&lt;li&gt;Equipment: L7 ~ L5 Switch, Gateway (IP + TCP / UDP + Packet)&lt;/li&gt;
-&lt;li&gt;Protocol: MPEG, JPG, MIME&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;[5] 세션 계층 (Session)&lt;ul&gt;
-&lt;li&gt;Socket Program&lt;/li&gt;
-&lt;li&gt;동기화, 통신 선로 구축 및 유지&lt;/li&gt;
-&lt;li&gt;Session 연결, 관리, 종료&lt;/li&gt;
-&lt;li&gt;Data type: Message&lt;/li&gt;
-&lt;li&gt;Equipment: L7 ~ L5 Switch, Gateway (IP + TCP/UDP + Packet)&lt;/li&gt;
-&lt;li&gt;Protocol: 전송 모드 결정 (반이중, 전이중, 직렬, 병렬, 동기, 비동기) RTP (Real-time Transport Protocol)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;[4] 전송 계층 (Transport)&lt;ul&gt;
-&lt;li&gt;데이터 전송 보장&lt;/li&gt;
-&lt;li&gt;흐름 제어 (정지 대기, 슬라이드)&lt;/li&gt;
-&lt;li&gt;QoS (Quality of Service)&lt;/li&gt;
-&lt;li&gt;Data type: Segment&lt;/li&gt;
-&lt;li&gt;Equipment: L4 Switch (IP+TCP/UDP, Load balancing)&lt;/li&gt;
-&lt;li&gt;Protocol: TCP, UDP&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;[3] 네트워크 계층 (Network)&lt;ul&gt;
-&lt;li&gt;통신 경로 설정 (Routing): 중계 기능 담당, 교환&lt;/li&gt;
-&lt;li&gt;혼잡 제어&lt;/li&gt;
-&lt;li&gt;IPv4, IPv6&lt;/li&gt;
-&lt;li&gt;Data type: Packet&lt;/li&gt;
-&lt;li&gt;Equipment: L3 Switch (IP 주소 참조), Router (유선, 무선)&lt;/li&gt;
-&lt;li&gt;Protocol: IP, ARP, RARP, 회선 교환, 패킷 교환&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;[2] 데이터 링크 계층 (Datalink)&lt;ul&gt;
-&lt;li&gt;오류 제어, Frame 형식 정의 및 생성, MAC 제어&lt;/li&gt;
-&lt;li&gt;에러 검출 및 정정, 흐름 제어&lt;/li&gt;
-&lt;li&gt;Data type: Frame&lt;/li&gt;
-&lt;li&gt;Equipment: L2 Switch&lt;ul&gt;
-&lt;li&gt;MAC 주소 참조&lt;/li&gt;
-&lt;li&gt;Bridge (segment)&lt;/li&gt;
-&lt;li&gt;Switch (frame)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Protocol: FEC, ARQ, H-ARG, 해밍코드&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;[1] 물리 계층 (Physical)&lt;ul&gt;
-&lt;li&gt;물리적 연결 설정, 해제&lt;/li&gt;
-&lt;li&gt;Data 코딩, 변조 방식 (AM, FM, PM)&lt;/li&gt;
-&lt;li&gt;Data 부호화 방식 (ASK, FSK, PSK)&lt;/li&gt;
-&lt;li&gt;Multiplexing (TDM, FDM)&lt;/li&gt;
-&lt;li&gt;Data 전송 속도 (bps, Baud)&lt;/li&gt;
-&lt;li&gt;Data type: Bit stream&lt;/li&gt;
-&lt;li&gt;Equipment: Repeater/Hub&lt;/li&gt;
-&lt;li&gt;Protocol: 전기적 신호, 절차적 규격, 맨체스터 코드&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;OSI 7 Layer가 적용된 Protocol들에는 다음과 같은 것들이 있음.&lt;ul&gt;
-&lt;li&gt;Bluetooth&lt;/li&gt;
-&lt;li&gt;USB&lt;/li&gt;
-&lt;li&gt;SATA&lt;/li&gt;
-&lt;li&gt;PCI-E&lt;/li&gt;
-&lt;li&gt;Zigbee&lt;/li&gt;
-&lt;li&gt;Thunderbolt&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;인터넷에 떠다니는 그림인데 원래 출처를 모르겠습니다. 문제가 되면 삭제하겠습니다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2016-07-04-network-osi7-and-tcpip-001.jpg&quot; alt=&quot;osi7layer&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;TCP-IP&quot;&gt;&lt;a href=&quot;#TCP-IP&quot; class=&quot;headerlink&quot; title=&quot;TCP/IP&quot;&gt;&lt;/a&gt;TCP/IP&lt;/h2&gt;&lt;p&gt;위 그림에서 보듯 TCP/IP는 OSI 7 Layer 대신 4개의 Layer로 정의해 둔 것이다.&lt;/p&gt;
-&lt;p&gt;Network를 상호 연결시켜 정보를 전송하는 기능을 가진 여러 개의 Protocol을 집합으로 묶어둔 것이 특징이다.&lt;/p&gt;
-&lt;p&gt;TCP/IP 각각의 Protocol이 하는 기능은 다음과 같다.&lt;/p&gt;
-&lt;table&gt;&lt;tr&gt;&lt;th&gt;구분&lt;/th&gt;&lt;th&gt;기능&lt;/th&gt;&lt;th&gt;Protocol&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;10&quot;&gt;응용계층&lt;/td&gt;&lt;td rowspan=&quot;2&quot;&gt;FTP&lt;/td&gt;&lt;td&gt;FTP&lt;/td&gt;&lt;td&gt;파일 전송 프로토콜&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TFTP&lt;/td&gt;&lt;td&gt;소형 파일 전송 Protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;3&quot;&gt;E-mail&lt;/td&gt;&lt;td&gt;SMTP&lt;/td&gt;&lt;td&gt;메일 서버 간의 메일 송수신&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;POP3&lt;/td&gt;&lt;td&gt;메일 클라이언트와 메일 서버 간의 메일 송수신&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IMAP4&lt;/td&gt;&lt;td&gt;POP3의 단점을 보완함 (원격 서버의 계층 구조를 유지한다.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Telnet&lt;/td&gt;&lt;td&gt;Telnet&lt;/td&gt;&lt;td&gt;다른 시스템으로 로그인하는 기능&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;4&quot;&gt;인터넷&lt;/td&gt;&lt;td&gt;HTTP&lt;/td&gt;&lt;td&gt;Web service protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SNMP&lt;/td&gt;&lt;td&gt;데이터 흐름 정보 (네트워크 및 Host 상태 모니터링)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DNS&lt;/td&gt;&lt;td&gt;Host 이름에 대한 IP 주소 통보기능&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;NFS&lt;/td&gt;&lt;td&gt;SUN에서 개발한 분산형 파일 시스템&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;3&quot;&gt;전송계층&lt;/td&gt;&lt;td rowspan=&quot;3&quot;&gt;End-to-End Data 전송&lt;/td&gt;&lt;td&gt;TCP  &lt;/td&gt;&lt;td&gt;연결 지향 Protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;UDP&lt;/td&gt;&lt;td&gt;비연결 지향 Protocol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SCTP&lt;/td&gt;&lt;td&gt;신뢰성 제공 (UDP+TCP), 4Way handshaking 사용&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;8&quot;&gt;인터넷계층&lt;/td&gt;&lt;td&gt;OSI의 Network 계층&lt;/td&gt;&lt;td&gt;IP&lt;/td&gt;&lt;td&gt;목적지까지 패킷 전달 (IPv4, IPv6)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Routing (경로 설정)&lt;/td&gt;&lt;td&gt;IPx&lt;/td&gt;&lt;td&gt;PC용 Network, 경로 선택, 패킷 처리&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;6&quot;&gt;Gateway (Network 간 Data 연결)&lt;/td&gt;&lt;td&gt;ARP&lt;/td&gt;&lt;td&gt;논리 주소 IP로 물리 주소 IP(MAC)를 탐색&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RARP&lt;/td&gt;&lt;td&gt;물리 주소 IP로 논리 주소 IP를 탐색&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;BOOTB&lt;/td&gt;&lt;td&gt;디스크 없는 시스템 부팅 시 사용&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DHCP&lt;/td&gt;&lt;td&gt;임시 IP 주소 할당 기술&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ICMP&lt;/td&gt;&lt;td&gt;IP 계층 이용 Message 교환 (ping)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IGMP&lt;/td&gt;&lt;td&gt;인터넷 그룹 관리, Multicast 그룹을 router에게 통보&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan=&quot;2&quot;&gt;링크계층&lt;/td&gt;&lt;td rowspan=&quot;2&quot;&gt;기존 표준 기술 지원&lt;/td&gt;&lt;td&gt;Etehrenet&lt;/td&gt;&lt;td&gt;기존의 모든 표준 Protocol과 기술적 호환성 유지&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;X.25 &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-
-&lt;hr&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Open_Systems_Interconnection&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OSI&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/OSI_model&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OSI model&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;정보관리기술사 &amp;amp; 컴퓨터시스템응용기술사 - 성안당&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/07/04/2016-07-04-osi7-and-tcpip/#disqus_thread</comments>
     </item>
     
   </channel>
