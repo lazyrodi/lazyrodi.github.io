@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Gerrit 사용 | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="git,gerrit" />
+    
+    <meta name="description" content="다른 포스트에서 이어집니다.
+
+GIT Server Installation
+Gitweb 사용
+Gerrit 설치
+
+
+프로젝트의 추가프로젝트를 추가하는 방법에는 기본적으로 세 가지가 있다고 한다.
+
+https://gerrit-documentation.storage.googleapis.com/Documentation/2.12.3/project-configurati">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gerrit 사용">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/08/14/2016-08-14-etc-use-gerrit/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="다른 포스트에서 이어집니다.
+
+GIT Server Installation
+Gitweb 사용
+Gerrit 설치
+
+
+프로젝트의 추가프로젝트를 추가하는 방법에는 기본적으로 세 가지가 있다고 한다.
+
+https://gerrit-documentation.storage.googleapis.com/Documentation/2.12.3/project-configurati">
+<meta property="og:image" content="http://lazyrodi.github.io/images/2016-08-15-etc-use-gerrit-001.jpg">
+<meta property="og:updated_time" content="2016-08-14T16:58:40.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gerrit 사용">
+<meta name="twitter:description" content="다른 포스트에서 이어집니다.
+
+GIT Server Installation
+Gitweb 사용
+Gerrit 설치
+
+
+프로젝트의 추가프로젝트를 추가하는 방법에는 기본적으로 세 가지가 있다고 한다.
+
+https://gerrit-documentation.storage.googleapis.com/Documentation/2.12.3/project-configurati">
+<meta name="twitter:image" content="http://lazyrodi.github.io/images/2016-08-15-etc-use-gerrit-001.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/etc/">etc</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-08-14-etc-use-gerrit" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Gerrit 사용
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/08/14/2016-08-14-etc-use-gerrit/" class="article-date">
+    <time datetime="2016-08-14T06:02:50.000Z" itemprop="datePublished">2016-08-14</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gerrit/">gerrit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#프로젝트의-추가"><span class="toc-number">1.</span> <span class="toc-text">프로젝트의 추가</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gerrit-Web-page를-통해-프로젝트-생성"><span class="toc-number">1.1.</span> <span class="toc-text">Gerrit Web page를 통해 프로젝트 생성</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#사용자-추가-Server-side"><span class="toc-number">2.</span> <span class="toc-text">사용자 추가 (Server side)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-public-key-생성-Client-side"><span class="toc-number">2.1.</span> <span class="toc-text">SSH public key 생성 (Client side)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Project-clone-Client-side"><span class="toc-number">3.</span> <span class="toc-text">Project clone (Client side)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#push-1차-실패"><span class="toc-number">3.1.</span> <span class="toc-text">push 1차 실패</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push-2차-실패"><span class="toc-number">3.2.</span> <span class="toc-text">push 2차 실패</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gerrit에서-확인하기"><span class="toc-number">4.</span> <span class="toc-text">Gerrit에서 확인하기</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#참조"><span class="toc-number"></span> <span class="toc-text">참조</span></a>
+                
+            </div>
+            <p>다른 포스트에서 이어집니다.</p>
+<ul>
+<li><a href="/2016/08/13/2016-08-13-etc-git-server-installation/" title="GIT Server Installation">GIT Server Installation</a></li>
+<li><a href="/2016/08/13/2016-08-13-etc-use-gitweb/" title="Gitweb 사용">Gitweb 사용</a></li>
+<li><a href="/2016/08/14/2016-08-14-etc-gerrit-installation/" title="Gerrit 설치">Gerrit 설치</a>
+</li>
+</ul>
+<h2 id="프로젝트의-추가"><a href="#프로젝트의-추가" class="headerlink" title="프로젝트의 추가"></a>프로젝트의 추가</h2><p>프로젝트를 추가하는 방법에는 기본적으로 세 가지가 있다고 한다.</p>
+<ul>
+<li><p><a href="https://gerrit-documentation.storage.googleapis.com/Documentation/2.12.3/project-configuration.html" target="_blank" rel="external">https://gerrit-documentation.storage.googleapis.com/Documentation/2.12.3/project-configuration.html</a></p>
+</li>
+<li><p>Gerrit web page 상에서 <code>Projects &gt; Create Project</code>를 통해 생성하는 방법</p>
+</li>
+<li>REST endpoint를 통해 생성하는 방법</li>
+<li>SSH 명령어를 통해 생성하는 방법</li>
+</ul>
+<p>나는 web page를 통해 생성을 시도해본다.</p>
+<h3 id="Gerrit-Web-page를-통해-프로젝트-생성"><a href="#Gerrit-Web-page를-통해-프로젝트-생성" class="headerlink" title="Gerrit Web page를 통해 프로젝트 생성"></a>Gerrit Web page를 통해 프로젝트 생성</h3><p>Projects &gt; Create New Project 로 가서 Project Name에 <code>temp</code>를 입력하고 생성해본다.</p>
+<p>이러면 원래 지정해두었던 <code>~/repository</code> 디렉토리 안에 새로운 <code>temp.git</code> 이라는 저장소가 생성된다.</p>
+<h2 id="사용자-추가-Server-side"><a href="#사용자-추가-Server-side" class="headerlink" title="사용자 추가 (Server side)"></a>사용자 추가 (Server side)</h2><p>사용자의 추가는 <code>gerrit</code> 사용자 계정에서 아래 명령을 통해 추가한다. 이전에 admin을 추가했었다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ htpasswd ~/opt/gerrit/etc/passwords user</div></pre></td></tr></table></figure>
+<p>해당 사용자로 처음 로그인을 시도하면 이름, 이메일 및 SSH public key를 넣으라고 나온다.</p>
+<p>이름과 이메일을 넣고, SSH public key는 다음과 같이 생성하여 넣으면 된다.</p>
+<p>만약, 이전에 smtp 설정을 하지 않았다면 새 사용자의 email 인증은 진행할 수 없다.</p>
+<h3 id="SSH-public-key-생성-Client-side"><a href="#SSH-public-key-생성-Client-side" class="headerlink" title="SSH public key 생성 (Client side)"></a>SSH public key 생성 (Client side)</h3><p>아래와 같이 생성된 key의 내용을 복사하여 gerrit에 넣고 Add를 눌러 추가한다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~</div><div class="line">$ mkdir .ssh</div><div class="line">$ <span class="built_in">cd</span> .ssh</div><div class="line">$ ssh-keygen       <span class="comment"># 전부 그냥 엔터</span></div><div class="line">$ cat id_rsa.pub   <span class="comment"># 여기 나오는 내용이 SSH public key이다.</span></div></pre></td></tr></table></figure>
+<h2 id="Project-clone-Client-side"><a href="#Project-clone-Client-side" class="headerlink" title="Project clone (Client side)"></a>Project clone (Client side)</h2><p>새로 추가한 <code>user</code> 계정에서 gerrit 접속 후 <code>projects &gt; List &gt; temp</code>로 가면 현재 프로젝트를 clone할 수 있는 주소를 알 수 있다.</p>
+<p>http와 ssh로 나뉘어 제공되며, 나는 ssh로 clone 해본다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">git <span class="built_in">clone</span> ssh://user@192.168.0.99:29418/temp</div></pre></td></tr></table></figure>
+<h3 id="push-1차-실패"><a href="#push-1차-실패" class="headerlink" title="push 1차 실패"></a>push 1차 실패</h3><p>파일 생성 후 push를 시도해본다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ touch b</div><div class="line">$ git add -A</div><div class="line">$ git commit -m <span class="string">"[temp] touch b"</span></div><div class="line">$ git push</div><div class="line"></div><div class="line">Counting objects: 4, done.</div><div class="line">Delta compression using up to 2 threads.</div><div class="line">Compressing objects: 100% (2/2), done.</div><div class="line">Writing objects: 100% (2/2), 231 bytes | 0 bytes/s, done.</div><div class="line">Total 2 (delta 0), reused 0 (delta 0)</div><div class="line">remote: Branch refs/heads/master:</div><div class="line">remote: You are not allowed to perform this operation.</div><div class="line">remote: To push into this reference you need <span class="string">'Push'</span> rights.</div><div class="line">remote: User: user</div><div class="line">remote: Please <span class="built_in">read</span> the documentation and contact an administrator</div><div class="line">remote: <span class="keyword">if</span> you feel the configuration is incorrect</div><div class="line">remote: Processing changes: refs: 1, <span class="keyword">done</span></div><div class="line">To ssh://user@192.168.0.99:29418/temp</div><div class="line"> ! [remote rejected] master -&gt; master (prohibited by Gerrit)</div><div class="line">error: 레퍼런스를 <span class="string">'ssh://user@192.168.0.99:29418/temp'</span>에 푸시하는데 실패했습니다</div></pre></td></tr></table></figure>
+<p>직접 push할 수 있는 권한이 없다.</p>
+<p>검색을 해보면 이전에는 git review라는 명령어가 있었던 것 같은데 지금은 존재하지 않는다.</p>
+<p><code>$ git remote -v</code> 해서 temp 저장소에 대한 정보를 보면 master의 merge가 refs/heads/master로 되어있는 것을 확인할 수 있다.</p>
+<p><a href="https://gerrit-documentation.storage.googleapis.com/Documentation/2.12.3/intro-user.html#upload-change" target="_blank" rel="external">하지만 gerrit을 통해 code review를 받기 위해서는  refs/for/master 로 push를 해야한다고 한다.</a></p>
+<blockquote><p>The refs/for/ prefix is used to map the Gerrit concept of “Pushing for Review” to the git protocol. </p>
+</blockquote>
+<p>시키는대로 한다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ git push origin HEAD:refs/<span class="keyword">for</span>/refs/heads/master</div></pre></td></tr></table></figure>
+<h3 id="push-2차-실패"><a href="#push-2차-실패" class="headerlink" title="push 2차 실패"></a>push 2차 실패</h3><p>또 실패했다. 다행인 것은 에러가 다르다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">Counting objects: 4, done.</div><div class="line">Delta compression using up to 2 threads.</div><div class="line">Compressing objects: 100% (2/2), done.</div><div class="line">Writing objects: 100% (2/2), 231 bytes | 0 bytes/s, done.</div><div class="line">Total 2 (delta 0), reused 0 (delta 0)</div><div class="line">remote: Processing changes: refs: 1, <span class="keyword">done</span></div><div class="line">remote: ERROR: missing Change-Id <span class="keyword">in</span> commit message footer</div><div class="line">remote:</div><div class="line">remote: Hint: To automatically insert Change-Id, install the hook:</div><div class="line">remote:   gitdir=$(git rev-parse --git-dir); scp -p -P 29418 user@192.168.0.99:hooks/commit-msg <span class="variable">$&#123;gitdir&#125;</span>/hooks/</div><div class="line">remote: And <span class="keyword">then</span> amend the commit:</div><div class="line">remote:   git commit --amend</div><div class="line">remote:</div><div class="line">To ssh://user@192.168.0.99:29418/temp</div><div class="line"> ! [remote rejected] HEAD -&gt; refs/<span class="keyword">for</span>/refs/heads/master (missing Change-Id <span class="keyword">in</span> commit message footer)</div><div class="line">error: 레퍼런스를 <span class="string">'ssh://user@192.168.0.99:29418/temp'</span>에 푸시하는데 실패했습니다</div></pre></td></tr></table></figure>
+<p>Change-Id가 없단다. 추적을 위해 반드시 필요한 부분이니 또 시키는대로 해본다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ scp -p -P 29418 user@192.168.0.99:hooks/commit-msg .git/hooks/</div><div class="line">$ git commit --amend <span class="comment">#그냥 저장만 하고 나오자.</span></div></pre></td></tr></table></figure>
+<p><code>git log</code>를 쳐보면 Change-Id가 생성된 것을 확인할 수 있다. 기쁜 마음으로 <code>git push origin HEAD:refs/for/refs/heads/master</code> 해보자.</p>
+<p>드디어 성공했다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">Counting objects: 4, done.</div><div class="line">Delta compression using up to 2 threads.</div><div class="line">Compressing objects: 100% (2/2), done.</div><div class="line">Writing objects: 100% (2/2), 278 bytes | 0 bytes/s, done.</div><div class="line">Total 2 (delta 0), reused 0 (delta 0)</div><div class="line">remote: Processing changes: new: 1, refs: 1, <span class="keyword">done</span></div><div class="line">remote:</div><div class="line">remote: New Changes:</div><div class="line">remote:   http://192.168.0.99:80/1 [temp] touch b</div><div class="line">remote:</div><div class="line">To ssh://user@192.168.0.99:29418/temp</div><div class="line"> * [new branch]      HEAD -&gt; refs/<span class="keyword">for</span>/refs/heads/master</div></pre></td></tr></table></figure>
+<h2 id="Gerrit에서-확인하기"><a href="#Gerrit에서-확인하기" class="headerlink" title="Gerrit에서 확인하기"></a>Gerrit에서 확인하기</h2><p>브라우저로 가서 gerrit에 들어가본다.</p>
+<p><code>My &gt; Changes</code> 로 가면 방금 push한 commit을 확인할 수 있다.</p>
+<p>administrator 또는 reviewer group에 속한 사람의 계정으로 접속하면 코드를 확인 및 점수를 줄 수 있고 commit을 submit (merge)할 수 있다.</p>
+<p>자신의 commit에 변경사항이 발생하면 email로도 알려준다. 좋은 세상이다.</p>
+<p><img src="/images/2016-08-15-etc-use-gerrit-001.jpg" alt=""></p>
+<h1 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h1><ul>
+<li><a href="http://mytory.net/archives/12632" target="_blank" rel="external">http://mytory.net/archives/12632</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/08/14/2016-08-14-etc-use-gerrit/" data-id="ciruuypiq0005ukkx46t35jva" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/08/15/2016-08-15-troubleshooting-git/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            GIT Troubleshooting
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/08/14/2016-08-14-troubleshooting-mysql/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">MySQL Troubleshooting</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2016/08/15/2016-08-15-troubleshooting-git/" class="title">GIT Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T15:10:50.000Z" itemprop="datePublished">2016-08-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-etc-use-gerrit/" class="title">Gerrit 사용</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T06:02:50.000Z" itemprop="datePublished">2016-08-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-troubleshooting-mysql/" class="title">MySQL Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T01:10:50.000Z" itemprop="datePublished">2016-08-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-etc-gerrit-installation/" class="title">Gerrit 설치</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T01:02:50.000Z" itemprop="datePublished">2016-08-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/13/2016-08-13-etc-use-gitweb/" class="title">Gitweb 사용</a></p>
+                            <p class="item-date"><time datetime="2016-08-13T14:02:50.000Z" itemprop="datePublished">2016-08-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 12px;">gerrit</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 12px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 14px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 10px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2016 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/08/14/2016-08-14-etc-use-gerrit/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -8,22 +8,58 @@
     
         <meta name="keywords" content="git" />
     
-    <meta name="description" content="간단한 GIT command 정리.
-회사에서는 형상관리팀이 존재하고, repo와 gerrit을 사용하여 편하게 소스 관리를 하고있다.
-CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 이름을 설정한다.git config --global user.email &amp;lt;email&amp;gt;사용자 이메일을">
+    <meta name="description" content="간단한 GIT command 정리.회사에서는 형상관리팀이 존재하고, repo와 gerrit을 사용하여 편하게 소스 관리를 하고있다.
+
+
+
+Command
+Description
+
+
+
+
+git config --global user.name &amp;lt;name&amp;gt;
+사용자 이름을 설정한다.
+
+
+git config --global user.email &amp;lt;email">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT command for me">
 <meta property="og:url" content="http://lazyrodi.github.io/2016/07/24/2016-07-24-etc-git/index.html">
 <meta property="og:site_name" content="Lazy Rodriguez">
-<meta property="og:description" content="간단한 GIT command 정리.
-회사에서는 형상관리팀이 존재하고, repo와 gerrit을 사용하여 편하게 소스 관리를 하고있다.
-CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 이름을 설정한다.git config --global user.email &amp;lt;email&amp;gt;사용자 이메일을">
-<meta property="og:updated_time" content="2016-08-05T12:39:57.546Z">
+<meta property="og:description" content="간단한 GIT command 정리.회사에서는 형상관리팀이 존재하고, repo와 gerrit을 사용하여 편하게 소스 관리를 하고있다.
+
+
+
+Command
+Description
+
+
+
+
+git config --global user.name &amp;lt;name&amp;gt;
+사용자 이름을 설정한다.
+
+
+git config --global user.email &amp;lt;email">
+<meta property="og:updated_time" content="2016-08-14T03:01:28.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT command for me">
-<meta name="twitter:description" content="간단한 GIT command 정리.
-회사에서는 형상관리팀이 존재하고, repo와 gerrit을 사용하여 편하게 소스 관리를 하고있다.
-CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 이름을 설정한다.git config --global user.email &amp;lt;email&amp;gt;사용자 이메일을">
+<meta name="twitter:description" content="간단한 GIT command 정리.회사에서는 형상관리팀이 존재하고, repo와 gerrit을 사용하여 편하게 소스 관리를 하고있다.
+
+
+
+Command
+Description
+
+
+
+
+git config --global user.name &amp;lt;name&amp;gt;
+사용자 이름을 설정한다.
+
+
+git config --global user.email &amp;lt;email">
     
 
     
@@ -180,12 +216,117 @@ CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 �
             <div class="lazyrodi-toc">
                 
             </div>
-            <p>간단한 GIT command 정리.</p>
-<p>회사에서는 형상관리팀이 존재하고, <a href="https://source.android.com/source/using-repo.html" target="_blank" rel="external">repo</a>와 <a href="https://www.gerritcodereview.com/" target="_blank" rel="external">gerrit</a>을 사용하여 편하게 소스 관리를 하고있다.</p>
-<table><tr><th>Command</th><th>Description</th></tr><tr><td>git config --global user.name &lt;name&gt;</td><td>사용자 이름을 설정한다.</td></tr><tr><td>git config --global user.email &lt;email&gt;</td><td>사용자 이메일을 설정한다.</td></tr><tr><td>git clone &lt;url&gt;</td><td>저장소(remote)로부터 소스를 가져온다.</td></tr><tr><td>git branch &lt;new-branch&gt;</td><td>Local에 새로운 branch를 만든다.</td></tr><tr><td>git branch</td><td>Local에 있는 branch들을 확인할 수 있다.</td></tr><tr><td>git checkout &lt;branch&gt; | &lt;filename&gt;</td><td>&lt;branch&gt;를 사용할 경우 branch를 변경하고, &lt;filename&gt;인 경우 add를 통해 stage에 올린 file을 내릴 수 있다.</td></tr><tr><td>git push origin &lt;branch name&gt;</td><td>Local에서 생성한 branch를 저장소에 push한다.</td></tr><tr><td>git diff</td><td>현재 수정사항이 무엇을 변경한 것인지 확인할 수 있다.</td></tr><tr><td>git status</td><td>수정한 파일들의 현재 상태를 나타낸다.</td></tr><tr><td>git add -A</td><td>수정한 소스들을 stage area에 올린다.</td></tr><tr><td>git commit [-m “description”]</td><td>새 commit을 생성한다. <code>-m</code> 옵션을 사용하면 한 줄 짜리 commit 내용을 만들 수 있다.</td></tr><tr><td>git commit --amend</td><td>한 번 commit 작성 후 다른 commit을 생성하고 싶지 않을 때, 수정하고 <code>git add -A</code>하고 <code>git commit --amend</code>를 하면 commit id를 새로 생성하지 않아도 된다.</td></tr><tr><td>git push</td><td>작성한 commit(들)을 저장소로 업로드한다.</td></tr><tr><td>git revert &lt;commit id&gt;</td><td>push한 commit을 제거한다.</td></tr><tr><td>git log [–author &lt;username&gt;]</td><td>&lt;username&gt;이 반영한 commit들을 볼 수 있다.</td></tr><tr><td>git blame &lt;filename&gt;</td><td>&lt;filename&gt; line 별로 누가 반영한 것인지 확인할 수 있다.</td></tr><tr><td>git merge &lt;source branch&gt;</td><td>&lt;source branch&gt;의 내용을 현재 branch에 merge한다.</td></tr><tr><td>git reset [–hard HEAD^]</td><td>강제로 HEAD^ 상태로 돌린다. HEAD^ 에는 commit id를 넣어도 된다.</td></tr></table>
-
-<hr>
-<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+            <h2 id="간단한-GIT-command-정리"><a href="#간단한-GIT-command-정리" class="headerlink" title="간단한 GIT command 정리."></a>간단한 GIT command 정리.</h2><p>회사에서는 형상관리팀이 존재하고, <a href="https://source.android.com/source/using-repo.html" target="_blank" rel="external">repo</a>와 <a href="https://www.gerritcodereview.com/" target="_blank" rel="external">gerrit</a>을 사용하여 편하게 소스 관리를 하고있다.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git config --global user.name &lt;name&gt;</td>
+<td>사용자 이름을 설정한다.</td>
+</tr>
+<tr>
+<td>git config --global user.email &lt;email&gt;</td>
+<td>사용자 이메일을 설정한다.</td>
+</tr>
+<tr>
+<td>git clone &lt;url&gt;</td>
+<td>저장소(remote)로부터 소스를 가져온다.</td>
+</tr>
+<tr>
+<td>git branch &lt;new-branch&gt;</td>
+<td>Local에 새로운 branch를 만든다.</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>Local에 있는 branch들을 확인할 수 있다.</td>
+</tr>
+<tr>
+<td>git checkout &lt;branch&gt; 또는 &lt;filename&gt;</td>
+<td>&lt;branch&gt;를 사용할 경우 branch를 변경하고, &lt;filename&gt;인 경우 add를 통해 stage에 올린 file을 내릴 수 있다.</td>
+</tr>
+<tr>
+<td>git push origin &lt;branch name&gt;</td>
+<td>Local에서 생성한 branch를 저장소에 push한다.</td>
+</tr>
+<tr>
+<td>git diff</td>
+<td>현재 수정사항이 무엇을 변경한 것인지 확인할 수 있다.</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>수정한 파일들의 현재 상태를 나타낸다.</td>
+</tr>
+<tr>
+<td>git add -A</td>
+<td>수정한 소스들을 stage area에 올린다.</td>
+</tr>
+<tr>
+<td>git commit [-m “description”]</td>
+<td>새 commit을 생성한다. <code>-m</code> 옵션을 사용하면 한 줄 짜리 commit 내용을 만들 수 있다.</td>
+</tr>
+<tr>
+<td>git commit --amend</td>
+<td>한 번 commit 작성 후 다른 commit을 생성하고 싶지 않을 때, 수정하고 <code>git add -A</code>하고 <code>git commit --amend</code>를 하면 commit id를 새로 생성하지 않아도 된다.</td>
+</tr>
+<tr>
+<td>git push</td>
+<td>작성한 commit(들)을 저장소로 업로드한다.</td>
+</tr>
+<tr>
+<td>git revert &lt;commit id&gt;</td>
+<td>push한 commit을 제거한다.</td>
+</tr>
+<tr>
+<td>git log [–author &lt;username&gt;]</td>
+<td>&lt;username&gt;이 반영한 commit들을 볼 수 있다.</td>
+</tr>
+<tr>
+<td>git blame &lt;filename&gt;</td>
+<td>&lt;filename&gt; line 별로 누가 반영한 것인지 확인할 수 있다.</td>
+</tr>
+<tr>
+<td>git merge &lt;source branch&gt;</td>
+<td>&lt;source branch&gt;의 내용을 현재 branch에 merge한다.</td>
+</tr>
+<tr>
+<td>git reset [–hard HEAD^]</td>
+<td>강제로 HEAD^ 상태로 돌린다. HEAD^ 에는 commit id를 넣어도 된다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="그리고-아래는-Github를-사용하면서-배운-내용이다"><a href="#그리고-아래는-Github를-사용하면서-배운-내용이다" class="headerlink" title="그리고 아래는 Github를 사용하면서 배운 내용이다."></a>그리고 아래는 Github를 사용하면서 배운 내용이다.</h2><h3 id="원본-프로젝트를-fork해온-후-원본-프로젝트의-변경-사항을-merge하는-방법"><a href="#원본-프로젝트를-fork해온-후-원본-프로젝트의-변경-사항을-merge하는-방법" class="headerlink" title="원본 프로젝트를 fork해온 후 원본 프로젝트의 변경 사항을 merge하는 방법"></a>원본 프로젝트를 fork해온 후 원본 프로젝트의 변경 사항을 merge하는 방법</h3><p>순차적으로 수행하면 된다.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git remote add –track master upstream 원본저장소.git</td>
+<td>git remote는 새로운 원격 저장소를 추가하는 명령어이다. 원본 저장소를 upstream으로 등록한다.</td>
+</tr>
+<tr>
+<td>git fetch upstream</td>
+<td>upstream(원본 저장소)으로부터 data를 받아온다.</td>
+</tr>
+<tr>
+<td>git merge upstream/master</td>
+<td></td>
+</tr>
+<tr>
+<td>git push</td>
+<td>별도의 옵션을 붙이지 않으면 내 저장소로 변경 사항(merge)을 push한다.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h1><ul>
 <li><a href="https://source.android.com/source/using-repo.html" target="_blank" rel="external">repo</a></li>
 <li><a href="https://www.gerritcodereview.com/" target="_blank" rel="external">gerrit</a></li>
 <li><a href="https://www.google.co.kr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=9&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwj-_sOOpYvOAhVLnZQKHccRBHQQFgg9MAg&amp;url=https%3A%2F%2Fwww.atlassian.com%2Fdms%2Fwac%2Fimages%2Flanding%2Fgit%2Fatlassian_git_cheatsheet.pdf&amp;usg=AFQjCNGqtOA5UPshK3MhDPRsKd3Cz0ytZQ&amp;sig2=fJAYtlly_ZTG7Cd2mIY5bw&amp;bvm=bv.127984354,d.dGo" target="_blank" rel="external">Atlassian GIT Cheatsheet</a></li>
@@ -355,9 +496,9 @@ CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 �
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
-                            <p class="item-title"><a href="/2016/08/13/2016-08-13-etc-use-gitweb/" class="title">Gitweb 사용</a></p>
-                            <p class="item-date"><time datetime="2016-08-13T14:02:50.000Z" itemprop="datePublished">2016-08-13</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2016/08/15/2016-08-15-troubleshooting-git/" class="title">GIT Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T15:10:50.000Z" itemprop="datePublished">2016-08-15</time></p>
                         </div>
                     </li>
                 
@@ -365,17 +506,8 @@ CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 �
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
-                            <p class="item-title"><a href="/2016/08/13/2016-08-13-etc-git-server-installation/" class="title">GIT server installation</a></p>
-                            <p class="item-date"><time datetime="2016-08-13T03:02:50.000Z" itemprop="datePublished">2016-08-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/common/">common</a></p>
-                            <p class="item-title"><a href="/2016/08/09/2016-08-09-common-bigo/" class="title">Big-O Complexity</a></p>
-                            <p class="item-date"><time datetime="2016-08-09T11:02:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-etc-use-gerrit/" class="title">Gerrit 사용</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T06:02:50.000Z" itemprop="datePublished">2016-08-14</time></p>
                         </div>
                     </li>
                 
@@ -383,17 +515,26 @@ CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 �
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
-                            <p class="item-title"><a href="/2016/08/09/2016-08-09-troubleshooting-linux/" class="title">Linux Troubleshooting</a></p>
-                            <p class="item-date"><time datetime="2016-08-09T01:00:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-troubleshooting-mysql/" class="title">MySQL Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T01:10:50.000Z" itemprop="datePublished">2016-08-14</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/docs/">docs</a></p>
-                            <p class="item-title"><a href="/2016/08/09/2016-08-09-docthread-install-ubuntu/" class="title">Ubuntu server installation</a></p>
-                            <p class="item-date"><time datetime="2016-08-08T23:00:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-etc-gerrit-installation/" class="title">Gerrit 설치</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T01:02:50.000Z" itemprop="datePublished">2016-08-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/13/2016-08-13-etc-use-gitweb/" class="title">Gitweb 사용</a></p>
+                            <p class="item-date"><time datetime="2016-08-13T14:02:50.000Z" itemprop="datePublished">2016-08-13</time></p>
                         </div>
                     </li>
                 
@@ -406,7 +547,7 @@ CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 �
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -416,7 +557,7 @@ CommandDescriptiongit config --global user.name &amp;lt;name&amp;gt;사용자 �
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 12px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 10px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 10px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 12px;">gerrit</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 12px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 14px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 10px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
         </div>
     </div>
 

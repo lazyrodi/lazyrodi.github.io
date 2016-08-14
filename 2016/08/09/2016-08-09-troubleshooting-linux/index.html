@@ -8,31 +8,37 @@
     
         <meta name="keywords" content="linux,troubleshooting" />
     
-    <meta name="description" content="노트북 절전모드 진입 시 네트워크가 끊어지는 문제
+    <meta name="description" content="아래 글들은 Ubuntu에 대한 내용입니다.
+
+노트북 절전모드 진입 시 네트워크가 끊어지는 문제
 관리자 권한으로 /etc/systemd/logind.conf 파일에 HandleLidSwitch=ignore 를 추가한다.
 Login daemon을 재 시작한다. sudo restart systemd-logind
 
 
-참조: http://askubuntu.com/questions/360615/ubuntu-se">
+참조: http://askubuntu.com/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Troubleshooting">
 <meta property="og:url" content="http://lazyrodi.github.io/2016/08/09/2016-08-09-troubleshooting-linux/index.html">
 <meta property="og:site_name" content="Lazy Rodriguez">
-<meta property="og:description" content="노트북 절전모드 진입 시 네트워크가 끊어지는 문제
+<meta property="og:description" content="아래 글들은 Ubuntu에 대한 내용입니다.
+
+노트북 절전모드 진입 시 네트워크가 끊어지는 문제
 관리자 권한으로 /etc/systemd/logind.conf 파일에 HandleLidSwitch=ignore 를 추가한다.
 Login daemon을 재 시작한다. sudo restart systemd-logind
 
 
-참조: http://askubuntu.com/questions/360615/ubuntu-se">
-<meta property="og:updated_time" content="2016-08-09T08:36:21.103Z">
+참조: http://askubuntu.com/">
+<meta property="og:updated_time" content="2016-08-14T04:03:42.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Troubleshooting">
-<meta name="twitter:description" content="노트북 절전모드 진입 시 네트워크가 끊어지는 문제
+<meta name="twitter:description" content="아래 글들은 Ubuntu에 대한 내용입니다.
+
+노트북 절전모드 진입 시 네트워크가 끊어지는 문제
 관리자 권한으로 /etc/systemd/logind.conf 파일에 HandleLidSwitch=ignore 를 추가한다.
 Login daemon을 재 시작한다. sudo restart systemd-logind
 
 
-참조: http://askubuntu.com/questions/360615/ubuntu-se">
+참조: http://askubuntu.com/">
     
 
     
@@ -188,10 +194,12 @@ Login daemon을 재 시작한다. sudo restart systemd-logind
         <div class="article-entry" itemprop="articleBody">
             <div class="lazyrodi-toc">
                 
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#노트북-절전모드-진입-시-네트워크가-끊어지는-문제"><span class="toc-number">1.</span> <span class="toc-text">노트북 절전모드 진입 시 네트워크가 끊어지는 문제</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#한글-깨짐-현상"><span class="toc-number">2.</span> <span class="toc-text">한글 깨짐 현상</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Putty-문제인-경우"><span class="toc-number">2.1.</span> <span class="toc-text">Putty 문제인 경우!!</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#노트북-절전모드-진입-시-네트워크가-끊어지는-문제"><span class="toc-number">1.</span> <span class="toc-text">노트북 절전모드 진입 시 네트워크가 끊어지는 문제</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#한글-깨짐-현상"><span class="toc-number">2.</span> <span class="toc-text">한글 깨짐 현상</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Putty-문제인-경우"><span class="toc-number">2.1.</span> <span class="toc-text">Putty 문제인 경우!!</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sudo-권한-또는-root-비밀번호-분실-시"><span class="toc-number">3.</span> <span class="toc-text">sudo 권한 또는 root 비밀번호 분실 시</span></a></li></ol>
                 
             </div>
-            <h3 id="노트북-절전모드-진입-시-네트워크가-끊어지는-문제"><a href="#노트북-절전모드-진입-시-네트워크가-끊어지는-문제" class="headerlink" title="노트북 절전모드 진입 시 네트워크가 끊어지는 문제"></a>노트북 절전모드 진입 시 네트워크가 끊어지는 문제</h3><ol>
+            <blockquote><p>아래 글들은 Ubuntu에 대한 내용입니다.</p>
+</blockquote>
+<h3 id="노트북-절전모드-진입-시-네트워크가-끊어지는-문제"><a href="#노트북-절전모드-진입-시-네트워크가-끊어지는-문제" class="headerlink" title="노트북 절전모드 진입 시 네트워크가 끊어지는 문제"></a>노트북 절전모드 진입 시 네트워크가 끊어지는 문제</h3><ol>
 <li>관리자 권한으로 /etc/systemd/logind.conf 파일에 <code>HandleLidSwitch=ignore</code> 를 추가한다.</li>
 <li>Login daemon을 재 시작한다. <code>sudo restart systemd-logind</code></li>
 </ol>
@@ -210,6 +218,21 @@ Login daemon을 재 시작한다. sudo restart systemd-logind
 </ol>
 <h4 id="Putty-문제인-경우"><a href="#Putty-문제인-경우" class="headerlink" title="Putty 문제인 경우!!"></a>Putty 문제인 경우!!</h4><p>putty로 접속했을 때 깨지는 문제는 Ubuntu의 문제와 다를 수 있음.</p>
 <p>putty 실행 &gt; Window &gt; Translation &gt; Remote character set에서 <code>UTF-8</code>을 선택하면 문제 해결.</p>
+<h3 id="sudo-권한-또는-root-비밀번호-분실-시"><a href="#sudo-권한-또는-root-비밀번호-분실-시" class="headerlink" title="sudo 권한 또는 root 비밀번호 분실 시"></a>sudo 권한 또는 root 비밀번호 분실 시</h3><p>그룹을 잘못 지정해서 sudo 권한을 상실해서 난감했었다. 아래와 같이 Recovery mode로 진입하여 해결할 수 있다.</p>
+<ol>
+<li>Recovery mode 진입<ul>
+<li>부팅 시 좌측 Shift 키를 누르고 있으면 진입이 가능하다.</li>
+<li>한성 노트북에서는 이게 잘 되지 않아서 F2로 CMOS 진입하니 부팅 순서에 ubuntu가 두 개가 있어서 다른 것으로 진입하니 grub mode로 진입이 되었다.</li>
+</ul>
+</li>
+<li>(recovery mode)로 되어있는 것을 선택하여 진입하고, 선택 메뉴가 나오면 <code>root        Drop to root shell prompt</code> 를 선택한다.</li>
+<li>파티션의 write 권한 부여를 위해 remount한다.<ul>
+<li><code>$ mount -rw -o remount /</code></li>
+</ul>
+</li>
+<li>만약 root 비밀번호를 잃어버린 거라면 <code>passwd</code>를 입력하여 비밀번호를 변경한다.</li>
+<li>나의 경우는 sudo 권한을 가진 계정이 모두 없어져서 곤란한 상황이었기 때문에 <code>$ visudo</code> 를 수행하여 다음과 같이 root 아래 sudo권한을 원하는 계정을 추가하고 저장 후 <code>reboot</code> 하면 끝.<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># User privilege specification</span></div><div class="line"></div><div class="line">root ALL=(ALL:ALL) ALL</div><div class="line">계정 ALL=(ALL:ALL) ALL</div></pre></td></tr></table></figure></li>
+</ol>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -371,9 +394,9 @@ Login daemon을 재 시작한다. sudo restart systemd-logind
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
-                            <p class="item-title"><a href="/2016/08/13/2016-08-13-etc-use-gitweb/" class="title">Gitweb 사용</a></p>
-                            <p class="item-date"><time datetime="2016-08-13T14:02:50.000Z" itemprop="datePublished">2016-08-13</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2016/08/15/2016-08-15-troubleshooting-git/" class="title">GIT Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T15:10:50.000Z" itemprop="datePublished">2016-08-15</time></p>
                         </div>
                     </li>
                 
@@ -381,17 +404,8 @@ Login daemon을 재 시작한다. sudo restart systemd-logind
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
-                            <p class="item-title"><a href="/2016/08/13/2016-08-13-etc-git-server-installation/" class="title">GIT server installation</a></p>
-                            <p class="item-date"><time datetime="2016-08-13T03:02:50.000Z" itemprop="datePublished">2016-08-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/common/">common</a></p>
-                            <p class="item-title"><a href="/2016/08/09/2016-08-09-common-bigo/" class="title">Big-O Complexity</a></p>
-                            <p class="item-date"><time datetime="2016-08-09T11:02:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-etc-use-gerrit/" class="title">Gerrit 사용</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T06:02:50.000Z" itemprop="datePublished">2016-08-14</time></p>
                         </div>
                     </li>
                 
@@ -399,17 +413,26 @@ Login daemon을 재 시작한다. sudo restart systemd-logind
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
-                            <p class="item-title"><a href="/2016/08/09/2016-08-09-troubleshooting-linux/" class="title">Linux Troubleshooting</a></p>
-                            <p class="item-date"><time datetime="2016-08-09T01:00:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-troubleshooting-mysql/" class="title">MySQL Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T01:10:50.000Z" itemprop="datePublished">2016-08-14</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/docs/">docs</a></p>
-                            <p class="item-title"><a href="/2016/08/09/2016-08-09-docthread-install-ubuntu/" class="title">Ubuntu server installation</a></p>
-                            <p class="item-date"><time datetime="2016-08-08T23:00:50.000Z" itemprop="datePublished">2016-08-09</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-etc-gerrit-installation/" class="title">Gerrit 설치</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T01:02:50.000Z" itemprop="datePublished">2016-08-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/13/2016-08-13-etc-use-gitweb/" class="title">Gitweb 사용</a></p>
+                            <p class="item-date"><time datetime="2016-08-13T14:02:50.000Z" itemprop="datePublished">2016-08-13</time></p>
                         </div>
                     </li>
                 
@@ -422,7 +445,7 @@ Login daemon을 재 시작한다. sudo restart systemd-logind
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -432,7 +455,7 @@ Login daemon을 재 시작한다. sudo restart systemd-logind
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 12px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 10px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 10px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 12px;">gerrit</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 12px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 14px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 10px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
         </div>
     </div>
 
