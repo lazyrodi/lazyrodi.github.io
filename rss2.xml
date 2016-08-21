@@ -8,8 +8,70 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 14 Aug 2016 15:28:29 GMT</pubDate>
+    <pubDate>Sun, 21 Aug 2016 14:54:37 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[JavaScript] Uh... Converter</title>
+      <link>http://lazyrodi.github.io/2016/08/21/2016-08-21-works-uh-converter/</link>
+      <guid>http://lazyrodi.github.io/2016/08/21/2016-08-21-works-uh-converter/</guid>
+      <pubDate>Sun, 21 Aug 2016 11:20:00 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;Document-Word-Parser&quot;&gt;&lt;a href=&quot;#Document-Word-Parser&quot; class=&quot;headerlink&quot; title=&quot;Document Word Parser&quot;&gt;&lt;/a&gt;Document Word Parser&lt;/h2&gt;&lt;
+      
+      </description>
+      
+      <content:encoded>&lt;h2 id=&quot;Document-Word-Parser&quot;&gt;&lt;a href=&quot;#Document-Word-Parser&quot; class=&quot;headerlink&quot; title=&quot;Document Word Parser&quot;&gt;&lt;/a&gt;Document Word Parser&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Use : &lt;a href=&quot;http://lazyrodi.github.io/misc/UhConverter.html&quot;&gt;http://lazyrodi.github.io/misc/UhConverter.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Repository : &lt;a href=&quot;https://github.com/lazyrodi/misc/tree/master/UhConverter&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/lazyrodi/misc/tree/master/UhConverter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Select Input Data Type.&lt;/li&gt;
+&lt;li&gt;Input code. You can input single data or array.&lt;br&gt;i.e. array format is {1, 2, 3, 4, 5}. MUST input ‘{‘, ‘}’ and seperator ‘,’&lt;/li&gt;
+&lt;li&gt;Run&lt;/li&gt;
+&lt;li&gt;You can see converted results.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Example&lt;/th&gt;
+&lt;th&gt;Single&lt;/th&gt;
+&lt;th&gt;Array&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Binary&lt;/td&gt;
+&lt;td&gt;100011&lt;/td&gt;
+&lt;td&gt;{100011, 100100, 111010}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Decimal&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;{35, 36, 58}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Octal&lt;/td&gt;
+&lt;td&gt;43&lt;/td&gt;
+&lt;td&gt;{43, 44, 72}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hexadecimal&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;{23, 24, 3a}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ASCII&lt;/td&gt;
+&lt;td&gt;#&lt;/td&gt;
+&lt;td&gt;&amp;#123;#, $, :}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2016/08/21/2016-08-21-works-uh-converter/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>GIT Troubleshooting</title>
@@ -1253,58 +1315,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/07/17/2016-07-17-android-intent/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Singleton</title>
-      <link>http://lazyrodi.github.io/2016/07/16/2016-07-16-pattern-singleton/</link>
-      <guid>http://lazyrodi.github.io/2016/07/16/2016-07-16-pattern-singleton/</guid>
-      <pubDate>Sat, 16 Jul 2016 09:42:50 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Singleton은 유일한 Instance를 만들어 사용하는 방법이다.&lt;/p&gt;
-&lt;p&gt;생성자를 private으로 하여 다른 곳에서 Instance를 직접 생성할 수 없으며, public &lt;code&gt;getInstance()&lt;/code&gt;를 통해서만 i
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;Singleton은 유일한 Instance를 만들어 사용하는 방법이다.&lt;/p&gt;
-&lt;p&gt;생성자를 private으로 하여 다른 곳에서 Instance를 직접 생성할 수 없으며, public &lt;code&gt;getInstance()&lt;/code&gt;를 통해서만 instance를 가져가서 사용할 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;객체 = Object = Compile된 각각의 .class file&lt;/li&gt;
-&lt;li&gt;개체 = Instance = Compile된 .class file을 new 연산자를 사용하여 Memory에 Loading한 상태&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;기본적으로는 이런 느낌이다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Iamsingle mInstance;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Iamsingle &lt;span class=&quot;title&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (mInstance == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      mInstance = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Iamsingle(); &lt;span class=&quot;comment&quot;&gt;// 누군가가 만들어둔 Instance가 없다면 만들어서 돌려줍시다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mInstance;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;필요성&quot;&gt;&lt;a href=&quot;#필요성&quot; class=&quot;headerlink&quot; title=&quot;필요성&quot;&gt;&lt;/a&gt;필요성&lt;/h2&gt;&lt;p&gt;설정 파일 등 여러 개가 있으면 혼란스러울 수 있는 경우 Singleton을 통해 하나의 자원만 사용할 수 있게 한다.&lt;/p&gt;
-&lt;p&gt;전역적으로 접근이 가능해야 하지만 단 하나만 있어야 한다.&lt;/p&gt;
-&lt;p&gt;전역 변수는 여러 개가 생성될 수 있기 때문에 Singleton을 사용하는 것이다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;싱글턴 패턴은 해당 클래스의 인스턴스가 하나만 만들어지고, 어디서든지 그 인스턴스에 접근할 수 있도록 하기 위한 패턴입니다. - Head First Design Patterns&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;또한, Global Class는 어플리케이션이 시작될 때 항상 로딩되지만 Singleton Class는 시작되는 지점을 개발자가 지정할 수 있다.&lt;/p&gt;
-&lt;h2 id=&quot;Trouble-shooting&quot;&gt;&lt;a href=&quot;#Trouble-shooting&quot; class=&quot;headerlink&quot; title=&quot;Trouble shooting&quot;&gt;&lt;/a&gt;Trouble shooting&lt;/h2&gt;&lt;h3 id=&quot;MultiThreading-문제-해결&quot;&gt;&lt;a href=&quot;#MultiThreading-문제-해결&quot; class=&quot;headerlink&quot; title=&quot;MultiThreading 문제 해결&quot;&gt;&lt;/a&gt;MultiThreading 문제 해결&lt;/h3&gt;&lt;p&gt;위쪽에서 표현한 코드는 &lt;code&gt;MultiThread 환경&lt;/code&gt;에서 &lt;code&gt;추가적인 Instance의 생성&lt;/code&gt;을 완전히 방어할 수 없다.&lt;/p&gt;
-&lt;p&gt;고로, Thread 사용 시 기본적인 방어 방법인 &lt;code&gt;Syncronized&lt;/code&gt;를 붙여보기로 한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Iamsingle mInstance;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;synchronized&lt;/span&gt; Iamsingle &lt;span class=&quot;title&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (mInstance == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      mInstance = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Iamsingle(); &lt;span class=&quot;comment&quot;&gt;// 누군가가 만들어둔 Instance가 없다면 만들어서 돌려줍시다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mInstance;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Synchronized로-인한-성능-문제-해결&quot;&gt;&lt;a href=&quot;#Synchronized로-인한-성능-문제-해결&quot; class=&quot;headerlink&quot; title=&quot;Synchronized로 인한 성능 문제 해결&quot;&gt;&lt;/a&gt;Synchronized로 인한 성능 문제 해결&lt;/h3&gt;&lt;p&gt;Synchronized로 인한 MultiThreading 시의 성능은 엄청나게 떨어진다.&lt;/p&gt;
-&lt;p&gt;고로, &lt;code&gt;Instance를 미리 생성&lt;/code&gt;해 보도록 한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Iamsingle mInstance = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Iamsingle();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;synchronized&lt;/span&gt; Iamsingle &lt;span class=&quot;title&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mInstance;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;문제를-해결하는-또-다른-방법&quot;&gt;&lt;a href=&quot;#문제를-해결하는-또-다른-방법&quot; class=&quot;headerlink&quot; title=&quot;문제를 해결하는 또 다른 방법&quot;&gt;&lt;/a&gt;문제를 해결하는 또 다른 방법&lt;/h3&gt;&lt;p&gt;DCL (Double-Checking Locking) 이라는 방법으로 Instance가 생성되었으면 그냥 넘기고, 없는 경우에만 synchronized 를 걸어주어 Instance를 요청하는 Thread들에 부담을 덜어주는 방법이다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;volatile&lt;/code&gt; keyword는 Java 코드의 &lt;code&gt;변수(Variable)를 메모리에 저장(Store)&lt;/code&gt; 하라는 의미이다. &lt;code&gt;volatile 변수&lt;/code&gt;는 CPU cache를 사용하지 않고 Main memory에 직접 read/write 한다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;volatile&lt;/code&gt;에 대한 자세한 내용은 &lt;a href=&quot;http://noesse.tistory.com/28&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;여기&lt;/a&gt;를 참조해 보자.&lt;/p&gt;
-&lt;p&gt;결론적으로 여기서는 CPU Cache를 통할 때 변수의 무결성을 보장할 수 없으므로 &lt;code&gt;volatile&lt;/code&gt;을 통해 Main memory에 직접 접근하겠다는 뜻이다.&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;volatile&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Iamsingle mInstance;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Iamsingle&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Iamsingle &lt;span class=&quot;title&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (mInstance == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// 여기까지는 MultiThread 방어가 되지 않은 상태.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;synchronized&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (mInstance == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123; &lt;span class=&quot;comment&quot;&gt;// 위의 첫 번째 null check를 통과한 thread가 대기하고 있다가 들어왔을 확률이 있기 때문에 한 번 더 check.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          mInstance = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Iamsingle();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mInstance;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;마무리&quot;&gt;&lt;a href=&quot;#마무리&quot; class=&quot;headerlink&quot; title=&quot;마무리&quot;&gt;&lt;/a&gt;마무리&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;무분별하게 리팩토링 하겠다고 Singleton 남발하지 말 것.&lt;/li&gt;
-&lt;li&gt;전역 설정이 필요할 때 등 꼭 필요할 때만 사용할 것.&lt;/li&gt;
-&lt;li&gt;위에서 나열한 방법들 중 해당 어플리케이션에 적절한 것을 사용할 것. 단일 Thread를 사용하는 프로그램에서 굳이 synchronized로 성능 저하를 시킬 필요는 없다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;출처&quot;&gt;&lt;a href=&quot;#출처&quot; class=&quot;headerlink&quot; title=&quot;출처&quot;&gt;&lt;/a&gt;출처&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://noesse.tistory.com/28&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://noesse.tistory.com/28&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Head First Design Patterns - 한빛미디어, O’Reilly.&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/07/16/2016-07-16-pattern-singleton/#disqus_thread</comments>
     </item>
     
   </channel>
