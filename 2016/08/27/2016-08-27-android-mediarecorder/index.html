@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>MediaRecorder | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="android,mediarecorder" />
+    
+    <meta name="description" content="https://developer.android.com/guide/topics/media/audio-capture.html 의 내용입니다.
+
+Audio CaptureAndroid multimedia framework은 다양한 오디오 형식의 획득(capture) 및 인코딩을 지원하여 application 작성 시 쉽게 사용할 수 있다. 이 때 MediaReco">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MediaRecorder">
+<meta property="og:url" content="http://lazyrodi.github.io/2016/08/27/2016-08-27-android-mediarecorder/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="https://developer.android.com/guide/topics/media/audio-capture.html 의 내용입니다.
+
+Audio CaptureAndroid multimedia framework은 다양한 오디오 형식의 획득(capture) 및 인코딩을 지원하여 application 작성 시 쉽게 사용할 수 있다. 이 때 MediaReco">
+<meta property="og:image" content="https://developer.android.com/images/mediarecorder_state_diagram.gif">
+<meta property="og:updated_time" content="2016-08-28T07:29:12.133Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MediaRecorder">
+<meta name="twitter:description" content="https://developer.android.com/guide/topics/media/audio-capture.html 의 내용입니다.
+
+Audio CaptureAndroid multimedia framework은 다양한 오디오 형식의 획득(capture) 및 인코딩을 지원하여 application 작성 시 쉽게 사용할 수 있다. 이 때 MediaReco">
+<meta name="twitter:image" content="https://developer.android.com/images/mediarecorder_state_diagram.gif">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/android/">android</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2016-08-27-android-mediarecorder" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        MediaRecorder
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/08/27/2016-08-27-android-mediarecorder/" class="article-date">
+    <time datetime="2016-08-27T13:47:50.000Z" itemprop="datePublished">2016-08-27</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mediarecorder/">mediarecorder</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Audio-Capture"><span class="toc-number">1.</span> <span class="toc-text">Audio Capture</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Performing-Audio-Capture"><span class="toc-number">1.1.</span> <span class="toc-text">Performing Audio Capture</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Statement-diagram"><span class="toc-number">1.2.</span> <span class="toc-text">Statement diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#예제-코드"><span class="toc-number">1.3.</span> <span class="toc-text">예제 코드</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Capturing-videos"><span class="toc-number">2.</span> <span class="toc-text">Capturing videos</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-MediaRecorder"><span class="toc-number">2.1.</span> <span class="toc-text">Configure MediaRecorder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Starting-and-stopping-MediaRecorder"><span class="toc-number">2.2.</span> <span class="toc-text">Starting and stopping MediaRecorder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Releasing-the-camera"><span class="toc-number">2.3.</span> <span class="toc-text">Releasing the camera</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Saving-Media-Files"><span class="toc-number">3.</span> <span class="toc-text">Saving Media Files</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#참조"><span class="toc-number">4.</span> <span class="toc-text">참조</span></a></li></ol>
+                
+            </div>
+            <blockquote><p><a href="https://developer.android.com/guide/topics/media/audio-capture.html" target="_blank" rel="external">https://developer.android.com/guide/topics/media/audio-capture.html</a> 의 내용입니다.</p>
+</blockquote>
+<h1 id="Audio-Capture"><a href="#Audio-Capture" class="headerlink" title="Audio Capture"></a>Audio Capture</h1><p>Android multimedia framework은 다양한 오디오 형식의 획득(capture) 및 인코딩을 지원하여 application 작성 시 쉽게 사용할 수 있다. 이 때 <a href="https://developer.android.com/reference/android/media/MediaRecorder.html" target="_blank" rel="external">MediaRecorder</a> API를 사용하면 하드웨어 자원을 사용할 수 있다.</p>
+<h2 id="Performing-Audio-Capture"><a href="#Performing-Audio-Capture" class="headerlink" title="Performing Audio Capture"></a>Performing Audio Capture</h2><p>Audio capture 기능을 사용하기 위해서는 다음과 같은 과정들이 필요하다.</p>
+<ol>
+<li>android.media.MediaRecorder의 새 개체(instance)를 생성.</li>
+<li>MediaRecorder.setAudioSource() 로 사용할 audio source를 설정. 보통 MediaRecorder.AudioSource.MIC가 된다.</li>
+<li>MediaRecorder.setOutputFormat() 으로 출력 파일의 형식을 설정.</li>
+<li>MediaRecorder.setOutputFile() 로 출력 파일의 이름을 설정.</li>
+<li>MediaRecorder.setAudioEncoder() 로 audio encoder를 설정.</li>
+<li>MediaRecorder.prepare() 를 호출.</li>
+<li>MediaRecorder.start() 로 녹음 시작.</li>
+<li>MediaRecorder.stop() 으로 녹음 종료.</li>
+<li>사용이 끝나면 MediaRecorder.release()를 호출.</li>
+</ol>
+<h2 id="Statement-diagram"><a href="#Statement-diagram" class="headerlink" title="Statement diagram"></a>Statement diagram</h2><p>MediaRecorder는 아래와 같은 state machine으로 동작한다.</p>
+<p>위의 1~9 번 과정이 이루어져야 하는 이유이다.</p>
+<p><img src="https://developer.android.com/images/mediarecorder_state_diagram.gif" alt="https://developer.android.com/images/mediarecorder_state_diagram.gif"></p>
+<h2 id="예제-코드"><a href="#예제-코드" class="headerlink" title="예제 코드"></a>예제 코드</h2><p><a href="https://developer.android.com/guide/topics/media/audio-capture.html" target="_blank" rel="external">https://developer.android.com/guide/topics/media/audio-capture.html</a> 제공</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * The application needs to have the permission to write to external storage</div><div class="line"> * if the output file is written to the external storage, and also the</div><div class="line"> * permission to record audio. These permissions must be set in the</div><div class="line"> * application's AndroidManifest.xml file, with something like:</div><div class="line"> *</div><div class="line"> * &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;</div><div class="line"> * &lt;uses-permission android:name="android.permission.RECORD_AUDIO" /&gt;</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">package</span> com.android.audiorecordtest;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.app.Activity;</div><div class="line"><span class="keyword">import</span> android.widget.LinearLayout;</div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.os.Environment;</div><div class="line"><span class="keyword">import</span> android.view.ViewGroup;</div><div class="line"><span class="keyword">import</span> android.widget.Button;</div><div class="line"><span class="keyword">import</span> android.view.View;</div><div class="line"><span class="keyword">import</span> android.view.View.OnClickListener;</div><div class="line"><span class="keyword">import</span> android.content.Context;</div><div class="line"><span class="keyword">import</span> android.util.Log;</div><div class="line"><span class="keyword">import</span> android.media.MediaRecorder;</div><div class="line"><span class="keyword">import</span> android.media.MediaPlayer;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AudioRecordTest</span> <span class="keyword">extends</span> <span class="title">Activity</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOG_TAG = <span class="string">"AudioRecordTest"</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String mFileName = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> RecordButton mRecordButton = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span> MediaRecorder mRecorder = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> PlayButton   mPlayButton = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span> MediaPlayer   mPlayer = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">onRecord</span><span class="params">(<span class="keyword">boolean</span> start)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (start) &#123;</div><div class="line">            startRecording();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            stopRecording();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">onPlay</span><span class="params">(<span class="keyword">boolean</span> start)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (start) &#123;</div><div class="line">            startPlaying();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            stopPlaying();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startPlaying</span><span class="params">()</span> </span>&#123;</div><div class="line">        mPlayer = <span class="keyword">new</span> MediaPlayer();</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            mPlayer.setDataSource(mFileName);</div><div class="line">            mPlayer.prepare();</div><div class="line">            mPlayer.start();</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"prepare() failed"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">stopPlaying</span><span class="params">()</span> </span>&#123;</div><div class="line">        mPlayer.release();</div><div class="line">        mPlayer = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startRecording</span><span class="params">()</span> </span>&#123;</div><div class="line">        mRecorder = <span class="keyword">new</span> MediaRecorder();</div><div class="line">        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);</div><div class="line">        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);</div><div class="line">        mRecorder.setOutputFile(mFileName);</div><div class="line">        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            mRecorder.prepare();</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"prepare() failed"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        mRecorder.start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">stopRecording</span><span class="params">()</span> </span>&#123;</div><div class="line">        mRecorder.stop();</div><div class="line">        mRecorder.release();</div><div class="line">        mRecorder = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">RecordButton</span> <span class="keyword">extends</span> <span class="title">Button</span> </span>&#123;</div><div class="line">        <span class="keyword">boolean</span> mStartRecording = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        OnClickListener clicker = <span class="keyword">new</span> OnClickListener() &#123;</div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                onRecord(mStartRecording);</div><div class="line">                <span class="keyword">if</span> (mStartRecording) &#123;</div><div class="line">                    setText(<span class="string">"Stop recording"</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    setText(<span class="string">"Start recording"</span>);</div><div class="line">                &#125;</div><div class="line">                mStartRecording = !mStartRecording;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">RecordButton</span><span class="params">(Context ctx)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>(ctx);</div><div class="line">            setText(<span class="string">"Start recording"</span>);</div><div class="line">            setOnClickListener(clicker);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">PlayButton</span> <span class="keyword">extends</span> <span class="title">Button</span> </span>&#123;</div><div class="line">        <span class="keyword">boolean</span> mStartPlaying = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        OnClickListener clicker = <span class="keyword">new</span> OnClickListener() &#123;</div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                onPlay(mStartPlaying);</div><div class="line">                <span class="keyword">if</span> (mStartPlaying) &#123;</div><div class="line">                    setText(<span class="string">"Stop playing"</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    setText(<span class="string">"Start playing"</span>);</div><div class="line">                &#125;</div><div class="line">                mStartPlaying = !mStartPlaying;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">PlayButton</span><span class="params">(Context ctx)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>(ctx);</div><div class="line">            setText(<span class="string">"Start playing"</span>);</div><div class="line">            setOnClickListener(clicker);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AudioRecordTest</span><span class="params">()</span> </span>&#123;</div><div class="line">        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();</div><div class="line">        mFileName += <span class="string">"/audiorecordtest.3gp"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle icicle)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(icicle);</div><div class="line"></div><div class="line">        LinearLayout ll = <span class="keyword">new</span> LinearLayout(<span class="keyword">this</span>);</div><div class="line">        mRecordButton = <span class="keyword">new</span> RecordButton(<span class="keyword">this</span>);</div><div class="line">        ll.addView(mRecordButton,</div><div class="line">            <span class="keyword">new</span> LinearLayout.LayoutParams(</div><div class="line">                ViewGroup.LayoutParams.WRAP_CONTENT,</div><div class="line">                ViewGroup.LayoutParams.WRAP_CONTENT,</div><div class="line">                <span class="number">0</span>));</div><div class="line">        mPlayButton = <span class="keyword">new</span> PlayButton(<span class="keyword">this</span>);</div><div class="line">        ll.addView(mPlayButton,</div><div class="line">            <span class="keyword">new</span> LinearLayout.LayoutParams(</div><div class="line">                ViewGroup.LayoutParams.WRAP_CONTENT,</div><div class="line">                ViewGroup.LayoutParams.WRAP_CONTENT,</div><div class="line">                <span class="number">0</span>));</div><div class="line">        setContentView(ll);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPause();</div><div class="line">        <span class="keyword">if</span> (mRecorder != <span class="keyword">null</span>) &#123;</div><div class="line">            mRecorder.release();</div><div class="line">            mRecorder = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (mPlayer != <span class="keyword">null</span>) &#123;</div><div class="line">            mPlayer.release();</div><div class="line">            mPlayer = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Capturing-videos"><a href="#Capturing-videos" class="headerlink" title="Capturing videos"></a>Capturing videos</h1><p>Camera 객체는 API 21에서 변경이 있었다.</p>
+<ul>
+<li>이전: <a href="https://developer.android.com/reference/android/hardware/Camera.html" target="_blank" rel="external">Camera</a></li>
+<li>이후: <a href="https://developer.android.com/reference/android/hardware/camera2/package-summary.html" target="_blank" rel="external">android.hardware.camera2</a></li>
+</ul>
+<p>아무튼, <code>MediaRecorder</code>와 함께 <code>Camera</code>를 제어할 수 있다. Camera 녹화를 시작할 때에는 반드시 <code>Camera.lock()</code>, <code>Camera.unlock()</code>을 통해 MediaRecorder가 camera 하드웨어에 접근할 수 있게 하고 <code>Camera.open()</code>, <code>Camera.release()</code>를 호출할 수 있다.</p>
+<p>Android 4.0 (API 14)부터 Camera.lock()과 Camera.unlock()은 자동으로 제어된다.</p>
+<p>사진을 찍는 것과는 달리 Video 녹화는 호출 순서가 세분화되어있다. 아래의 순서를 반드시 따라야 한다.</p>
+<ol>
+<li>Camera.open() 을 통해 Camera 객체를 가져온다.</li>
+<li>Camera.setPreviewDisplay() 를 통해 SurfaceView에 접근하고 liver camera image를 준비한다.</li>
+<li>Camera.startPreview() 를 호출하여 liver camera image를 보여준다.</li>
+<li>Camera.unlock() 한다.</li>
+<li>MediaRecorder.setCamera() 로 사용할 camera를 선택한다.</li>
+<li>MediaRecorder.setAudioSource() 로 audio source를 선택한다. MediaRecorder.AudioSource.CAMCORDER 를 사용한다.</li>
+<li>MediaRecorder.setVideoSource() 로 video source를 선택한다. MediaRecorder.VideoSource.CAMERA 를 사용한다.</li>
+<li>출력 파일 및 인코딩을 설정한다.<br>8.1. Android 2.2까지<ul>
+<li>setOutputFormat(): Default는 MediaRecorder.OutputFormat.MPEG_4</li>
+<li>setAudioEncoder(): Default는 MediaRecorder.AudioEncoder.AMR_NB</li>
+<li>setVideoEncoder(): Default는 MediaRecorder.VideoEncoder.MPEG_4_SP<br>8.2. Android 2.2 (API 8) 이상</li>
+<li>MediaRecorder.setProfile 메소드를 사용하며, CamcorderProfile.get() 으로 프로필 개체를 가져온다.</li>
+</ul>
+</li>
+<li>setOutputFile() 로 출력 파일을 설정한다. getOutputMediaFile(MEDIA_TYPE_VIDEO).toString() 을 사용하며, <a href="https://developer.android.com/guide/topics/media/camera.html#saving-media" target="_blank" rel="external">Saving Media Files</a>에서 예제를 확인할 수 있다.</li>
+<li>setPreviewDisplay() 를 통해 preview를 확인할 수 있다.</li>
+<li>MediaRecorder.prepare()를 호출하여 설정사항을 준비한다.</li>
+<li>MediaRecorder.start() 로 시작한다.</li>
+<li>MediaRecorder.stop() 으로 중지한다.</li>
+<li>MediaRecorder.reset() 으로 설정사항을 제거한다. 이 과정은 선택 사항이다.</li>
+<li>MediaRecorder.release() 로 MediaRecorder를 release한다.</li>
+<li>Camera.lock() 으로 잠근다. Android 4.0(API 14)부터는 MediaRecorder.prepare()의 호출이 실패하지 않는다면 이 작업은 필요없다.</li>
+<li>Camera.stopPreview() 로 preview를 중지한다.</li>
+<li>Camera.release() 로 Camera를 release한다.</li>
+</ol>
+<blockquote><p>MediaRecorder를 이용하여 Camera preview를 생성하지 않고 몇 개의 단계를 건너뛸 수 있지만 일반적으로는 그렇게 하지 않기 때문에 여기서 다루지는 않는다.</p>
+</blockquote>
+<blockquote><p>Application에서 Video 녹화를 빈번하게 사용한다면 setRecordingHint(boolean)을 사용하여 시간을 아낄 수 있다.</p>
+</blockquote>
+<h2 id="Configure-MediaRecorder"><a href="#Configure-MediaRecorder" class="headerlink" title="Configure MediaRecorder"></a>Configure MediaRecorder</h2><p>MediaRecorder를 사용하여 Video 녹화를 할 때, 설정사항을 체크하고 구현하기 위해 MediaRecorder.prepare()를 호출해야만 한다. 아래의 예제는 그 과정을 나타낸 좋은 예제이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">prepareVideoRecorder</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    mCamera = getCameraInstance();</div><div class="line">    mMediaRecorder = <span class="keyword">new</span> MediaRecorder();</div><div class="line"></div><div class="line">    <span class="comment">// Step 1: Unlock and set camera to MediaRecorder</span></div><div class="line">    mCamera.unlock();</div><div class="line">    mMediaRecorder.setCamera(mCamera);</div><div class="line"></div><div class="line">    <span class="comment">// Step 2: Set sources</span></div><div class="line">    mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);</div><div class="line">    mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);</div><div class="line"></div><div class="line">    <span class="comment">// Step 3: Set a CamcorderProfile (requires API Level 8 or higher)</span></div><div class="line">    mMediaRecorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH));</div><div class="line"></div><div class="line">    <span class="comment">// Step 4: Set output file</span></div><div class="line">    mMediaRecorder.setOutputFile(getOutputMediaFile(MEDIA_TYPE_VIDEO).toString());</div><div class="line"></div><div class="line">    <span class="comment">// Step 5: Set the preview output</span></div><div class="line">    mMediaRecorder.setPreviewDisplay(mPreview.getHolder().getSurface());</div><div class="line"></div><div class="line">    <span class="comment">// Step 6: Prepare configured MediaRecorder</span></div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        mMediaRecorder.prepare();</div><div class="line">    &#125; <span class="keyword">catch</span> (IllegalStateException e) &#123;</div><div class="line">        Log.d(TAG, <span class="string">"IllegalStateException preparing MediaRecorder: "</span> + e.getMessage());</div><div class="line">        releaseMediaRecorder();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        Log.d(TAG, <span class="string">"IOException preparing MediaRecorder: "</span> + e.getMessage());</div><div class="line">        releaseMediaRecorder();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Android 2.2(API 8)까지는 출력 형식 및 인코딩 형식에 대해 CamcorderProfile를 사용하지 않고 아래 코드처럼 직접 설정했어야 했다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Step 3: Set output format and encoding (for versions prior to API Level 8)</span></div><div class="line">mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);</div><div class="line">mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);</div><div class="line">mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.DEFAULT);</div></pre></td></tr></table></figure>
+<p>아래의 설정값들은 MediaRecorder에 의해 기본으로 설정되지만 원하는대로 변경할 수 있다.</p>
+<ul>
+<li>setViedeoEncodingBitRate()</li>
+<li>setVideoSize()</li>
+<li>setVideoFrameRate()</li>
+<li>setAudioEncodingBitRate()</li>
+<li>setAudioChannels()</li>
+<li>setAudioSamplingRate()</li>
+</ul>
+<h2 id="Starting-and-stopping-MediaRecorder"><a href="#Starting-and-stopping-MediaRecorder" class="headerlink" title="Starting and stopping MediaRecorder"></a>Starting and stopping MediaRecorder</h2><p>MediaRecorder를 사용하여 video 녹화를 시작/중지할 때에는 반드시 아래의 순서를 따라야 한다.</p>
+<ol>
+<li>Camera.unlock()</li>
+<li>아래 예시 코드처럼 MediaRecorder를 설정한다.</li>
+<li>MediaRecorder.start() 로 녹화 시작</li>
+<li>녹화</li>
+<li>MediaRecorder.stop() 으로 녹화 중지</li>
+<li>MediaRecorder.release()</li>
+<li>Camera.lock()</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">boolean</span> isRecording = <span class="keyword">false</span>;</div><div class="line"></div><div class="line"><span class="comment">// Add a listener to the Capture button</span></div><div class="line">Button captureButton = (Button) findViewById(id.button_capture);</div><div class="line">captureButton.setOnClickListener(</div><div class="line">    <span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (isRecording) &#123;</div><div class="line">                <span class="comment">// stop recording and release camera</span></div><div class="line">                mMediaRecorder.stop();  <span class="comment">// stop the recording</span></div><div class="line">                releaseMediaRecorder(); <span class="comment">// release the MediaRecorder object</span></div><div class="line">                mCamera.lock();         <span class="comment">// take camera access back from MediaRecorder</span></div><div class="line"></div><div class="line">                <span class="comment">// inform the user that recording has stopped</span></div><div class="line">                setCaptureButtonText(<span class="string">"Capture"</span>);</div><div class="line">                isRecording = <span class="keyword">false</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="comment">// initialize video camera</span></div><div class="line">                <span class="keyword">if</span> (prepareVideoRecorder()) &#123;</div><div class="line">                    <span class="comment">// Camera is available and unlocked, MediaRecorder is prepared,</span></div><div class="line">                    <span class="comment">// now you can start recording</span></div><div class="line">                    mMediaRecorder.start();</div><div class="line"></div><div class="line">                    <span class="comment">// inform the user that recording has started</span></div><div class="line">                    setCaptureButtonText(<span class="string">"Stop"</span>);</div><div class="line">                    isRecording = <span class="keyword">true</span>;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="comment">// prepare didn't work, release the camera</span></div><div class="line">                    releaseMediaRecorder();</div><div class="line">                    <span class="comment">// inform user</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<h2 id="Releasing-the-camera"><a href="#Releasing-the-camera" class="headerlink" title="Releasing the camera"></a>Releasing the camera</h2><p>Camera는 shared resource이기 때문에 개체를 얻어와서 사용하고 사용이 끝나면 release해줘야 한다. Activity.onPause() 상태가 되어도 release해줘야 한다. Application에서 camera를 적절히 release해주지 않는다면 application이 종료될 때까지 다른 곳에서 접근할 수 없다.</p>
+<p>Camera 개체를 release하기 위해 Camera.release()를 사용하면 된다. 아래 예시를 보자.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CameraActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Camera mCamera;</div><div class="line">    <span class="keyword">private</span> SurfaceView mPreview;</div><div class="line">    <span class="keyword">private</span> MediaRecorder mMediaRecorder;</div><div class="line"></div><div class="line">    ...</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPause();</div><div class="line">        releaseMediaRecorder();       <span class="comment">// if you are using MediaRecorder, release it first</span></div><div class="line">        releaseCamera();              <span class="comment">// release the camera immediately on pause event</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">releaseMediaRecorder</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (mMediaRecorder != <span class="keyword">null</span>) &#123;</div><div class="line">            mMediaRecorder.reset();   <span class="comment">// clear recorder configuration</span></div><div class="line">            mMediaRecorder.release(); <span class="comment">// release the recorder object</span></div><div class="line">            mMediaRecorder = <span class="keyword">null</span>;</div><div class="line">            mCamera.lock();           <span class="comment">// lock camera for later use</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">releaseCamera</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (mCamera != <span class="keyword">null</span>)&#123;</div><div class="line">            mCamera.release();        <span class="comment">// release the camera for other applications</span></div><div class="line">            mCamera = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Saving-Media-Files"><a href="#Saving-Media-Files" class="headerlink" title="Saving Media Files"></a>Saving Media Files</h1><p>사진, 비디오 등의 Media 파일들은 장치의 외부 저장소 (SD Card)에 저장되어야 한다. 그래야 사용자가 접근할 수 있고 System 공간을 보존할 수 있다. 아무 디렉토리에나 저장이 가능하긴 하지만 다음과 같은 두 개의 표준 저장소를 제공한다.</p>
+<ul>
+<li>Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)<ul>
+<li>사진 및 비디오를 저장하기 위해 추천되는 저장소이다. 이 공간은 public이기 때문에 쉽게 검색, 읽기, 쓰기, 삭제를 할 수 있다. Application을 삭제하더라도 여기에 남아있는 자료는 삭제되지 않는다. 사용자가 원래 사용하던 파일들과의 간섭을 피하기 위해 하위 디렉토리를 생성해서 사용하자(아래 예시에 나와있다). 이 메소드는 Android 2.2 (API 8)부터 사용 가능하다. 이전 버전에서는 <a href="https://developer.android.com/guide/topics/data/data-storage.html#SavingSharedFiles" target="_blank" rel="external">Saving Shard Files</a>를 확인하자.</li>
+</ul>
+</li>
+<li>Context.getExternalFilesDir(Environment.DIRECTORY_PICTURE)<ul>
+<li>이 메소드는 해당 application에 속한 디렉토리를 반환한다. Application이 삭제될 때 여기에 있는 파일들이 같이 삭제된다. 이 파일들에대해 보안규칙이 적용되지 않기 떄문에 다름 application들도 이 파일들을 읽기/수정/삭제 할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<p>아래 예제는 Media 파일을 위한 File 또는 Uri 저장소를 어떻게 생성하고 Camera application이 Intent를 통해 사용하는 방법을 나타낸다.</p>
+<p>더 자세한 정보는 <a href="https://developer.android.com/guide/topics/data/data-storage.html" target="_blank" rel="external">Data Storage</a> 에서 확인할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MEDIA_TYPE_IMAGE = <span class="number">1</span>;</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MEDIA_TYPE_VIDEO = <span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="comment">/** Create a file Uri for saving an image or video */</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Uri <span class="title">getOutputMediaFileUri</span><span class="params">(<span class="keyword">int</span> type)</span></span>&#123;</div><div class="line">      <span class="keyword">return</span> Uri.fromFile(getOutputMediaFile(type));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/** Create a File for saving an image or video */</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> File <span class="title">getOutputMediaFile</span><span class="params">(<span class="keyword">int</span> type)</span></span>&#123;</div><div class="line">    <span class="comment">// To be safe, you should check that the SDCard is mounted</span></div><div class="line">    <span class="comment">// using Environment.getExternalStorageState() before doing this.</span></div><div class="line"></div><div class="line">    File mediaStorageDir = <span class="keyword">new</span> File(Environment.getExternalStoragePublicDirectory(</div><div class="line">              Environment.DIRECTORY_PICTURES), <span class="string">"MyCameraApp"</span>);</div><div class="line">    <span class="comment">// This location works best if you want the created images to be shared</span></div><div class="line">    <span class="comment">// between applications and persist after your app has been uninstalled.</span></div><div class="line"></div><div class="line">    <span class="comment">// Create the storage directory if it does not exist</span></div><div class="line">    <span class="keyword">if</span> (! mediaStorageDir.exists())&#123;</div><div class="line">        <span class="keyword">if</span> (! mediaStorageDir.mkdirs())&#123;</div><div class="line">            Log.d(<span class="string">"MyCameraApp"</span>, <span class="string">"failed to create directory"</span>);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Create a media file name</span></div><div class="line">    String timeStamp = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyyMMdd_HHmmss"</span>).format(<span class="keyword">new</span> Date());</div><div class="line">    File mediaFile;</div><div class="line">    <span class="keyword">if</span> (type == MEDIA_TYPE_IMAGE)&#123;</div><div class="line">        mediaFile = <span class="keyword">new</span> File(mediaStorageDir.getPath() + File.separator +</div><div class="line">        <span class="string">"IMG_"</span>+ timeStamp + <span class="string">".jpg"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(type == MEDIA_TYPE_VIDEO) &#123;</div><div class="line">        mediaFile = <span class="keyword">new</span> File(mediaStorageDir.getPath() + File.separator +</div><div class="line">        <span class="string">"VID_"</span>+ timeStamp + <span class="string">".mp4"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> mediaFile;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h1><ul>
+<li><a href="https://developer.android.com/guide/topics/media/audio-capture.html" target="_blank" rel="external">https://developer.android.com/guide/topics/media/audio-capture.html</a></li>
+<li><a href="https://developer.android.com/reference/android/media/MediaRecorder.html" target="_blank" rel="external">https://developer.android.com/reference/android/media/MediaRecorder.html</a></li>
+<li><a href="https://developer.android.com/guide/topics/media/camera.html#capture-video" target="_blank" rel="external">https://developer.android.com/guide/topics/media/camera.html#capture-video</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2016/08/27/2016-08-27-android-mediarecorder/" data-id="cisea0kot000068kxev9tpeto" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/08/28/2016-08-28-android-vector-image/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Android Vector Image
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/08/21/2016-08-21-works-uh-converter/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[JavaScript] Uh... Converter</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/08/28/2016-08-28-android-vector-image/" class="title">Android Vector Image</a></p>
+                            <p class="item-date"><time datetime="2016-08-28T05:47:50.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2016/08/27/2016-08-27-android-mediarecorder/" class="title">MediaRecorder</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T13:47:50.000Z" itemprop="datePublished">2016-08-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/works/">works</a></p>
+                            <p class="item-title"><a href="/2016/08/21/2016-08-21-works-uh-converter/" class="title">[JavaScript] Uh... Converter</a></p>
+                            <p class="item-date"><time datetime="2016-08-21T11:20:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2016/08/15/2016-08-15-troubleshooting-git/" class="title">GIT Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T15:10:50.000Z" itemprop="datePublished">2016-08-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2016/08/14/2016-08-14-etc-use-gerrit/" class="title">Gerrit 사용</a></p>
+                            <p class="item-date"><time datetime="2016-08-14T06:02:50.000Z" itemprop="datePublished">2016-08-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12.5px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 17.5px;">docs</a> <a href="/tags/docthread/" style="font-size: 15px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12.5px;">eclipse</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 12.5px;">gerrit</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12.5px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 12.5px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12.5px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 15px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 12.5px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 15px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 12.5px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2016 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2016/08/27/2016-08-27-android-mediarecorder/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
