@@ -8,8 +8,70 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 27 Aug 2017 13:44:21 GMT</pubDate>
+    <pubDate>Thu, 31 Aug 2017 14:27:06 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[Sprint] MySQL Workbench에서 DB 생성</title>
+      <link>http://lazyrodi.github.io/2017/08/31/2017-08-31-spring-mysql/</link>
+      <guid>http://lazyrodi.github.io/2017/08/31/2017-08-31-spring-mysql/</guid>
+      <pubDate>Thu, 31 Aug 2017 12:30:00 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;Schema-생성&quot;&gt;&lt;a href=&quot;#Schema-생성&quot; class=&quot;headerlink&quot; title=&quot;Schema 생성&quot;&gt;&lt;/a&gt;Schema 생성&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Schema&lt;/code&gt;란 &lt;a href=&quot;https://ko.w
+      
+      </description>
+      
+      <content:encoded>&lt;h2 id=&quot;Schema-생성&quot;&gt;&lt;a href=&quot;#Schema-생성&quot; class=&quot;headerlink&quot; title=&quot;Schema 생성&quot;&gt;&lt;/a&gt;Schema 생성&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Schema&lt;/code&gt;란 &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%8A%A4%ED%82%A4%EB%A7%88&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;위키피디아&lt;/a&gt;에서 아래와 같이 정의하고 있다.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;컴퓨터 과학에서 데이터베이스 스키마(database schema)는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료 간의 관계를 형식 언어로 정의한 구조이다. 데이터베이스 관리 시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를 저장, 조회, 삭제, 변경할 때 DBMS는 자신이 생성한 데이터베이스 스키마를 참조하여 명령을 수행한다.&lt;/p&gt;
+&lt;p&gt;스키마는 3층 구조로 되어있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;외부 스키마(External Schema) : 프로그래머나 사용자의 입장에서 데이터베이스의 모습으로 조직의 일부분을 정의한 것&lt;/li&gt;
+&lt;li&gt;개념 스키마(Conceptual Schema) : 모든 응용 시스템과 사용자들이 필요로하는 데이터를 통합한 조직 전체의 데이터베이스 구조를 논리적으로 정의한 것&lt;/li&gt;
+&lt;li&gt;내부 스키마(Internal Schema) : 전체 데이터베이스의 물리적 저장 형태를 기술하는 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;MySQL Workbench 실행&lt;/li&gt;
+&lt;li&gt;홈의 &lt;code&gt;Local instance MySQL57&lt;/code&gt; 을 선택하여 root로 Login&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Server Status&lt;/code&gt; 를 눌러보고 &lt;code&gt;Stop&lt;/code&gt; 상태라면 &lt;code&gt;Startup/Shutdown&lt;/code&gt; 메뉴에서 &lt;code&gt;Start server&lt;/code&gt;를 선택하여 Server 구동&lt;/li&gt;
+&lt;li&gt;상단의 좌측에서 네 번째 아이콘 &lt;code&gt;create a new schema in the connected server&lt;/code&gt;을 클릭&lt;/li&gt;
+&lt;li&gt;마음에 드는 Schema name을 넣고 &lt;code&gt;Collation&lt;/code&gt;은 &lt;code&gt;utf8 - default collation&lt;/code&gt;을 선택 후 apply&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;사용자-생성&quot;&gt;&lt;a href=&quot;#사용자-생성&quot; class=&quot;headerlink&quot; title=&quot;사용자 생성&quot;&gt;&lt;/a&gt;사용자 생성&lt;/h2&gt;&lt;p&gt;!! 사용자 생성은 반드시 DB 생성 후 진행할 것 !!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;좌측의 Users and Privileges 선택&lt;/li&gt;
+&lt;li&gt;Add Account&lt;/li&gt;
+&lt;li&gt;Login Name 설정&lt;/li&gt;
+&lt;li&gt;Authentication type: &lt;code&gt;standard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Limit to Hosts Matching: &lt;code&gt;%&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Apply&lt;/li&gt;
+&lt;li&gt;Schema Privileges 탭 &amp;gt; Add Entry… &amp;gt; Selected schema에서 아까 생성한 schema를 선택 &amp;gt; OK&lt;/li&gt;
+&lt;li&gt;아래쪽의 Object rights를 모두 선택 (SELECT, INSERT, UPDATE, DELETE, EXECUTE, SHOW VIEW)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;!! 보통은 사용자가 DB를 날려먹을 위험이 있으므로 DELETE는 주지 않는다고 한다. !!&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Limit to Hosts Matching의 의미&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;% : 모든 IP에서 이 계정으로 접속 가능&lt;/li&gt;
+&lt;li&gt;localhost : localhost에서만 접속 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Database와-계정-연결&quot;&gt;&lt;a href=&quot;#Database와-계정-연결&quot; class=&quot;headerlink&quot; title=&quot;Database와 계정 연결&quot;&gt;&lt;/a&gt;Database와 계정 연결&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;MySQL WorkBench의 홈 화면으로 간 후 + 버튼을 누른다.&lt;/li&gt;
+&lt;li&gt;Connection Name 설정&lt;/li&gt;
+&lt;li&gt;Username 넣기&lt;/li&gt;
+&lt;li&gt;Default Schema에 생성한 Schema명 넣기&lt;/li&gt;
+&lt;li&gt;Test Connection &amp;gt; “Succesfully made the MySQL connection” 성공 &amp;gt; OK &amp;gt; OK&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://diaryofgreen.tistory.com/132&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://diaryofgreen.tistory.com/132&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://aristatait.tistory.com/60&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://aristatait.tistory.com/60&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.naver.com/taehun3718/140156156867&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.naver.com/taehun3718/140156156867&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+      
+      <comments>http://lazyrodi.github.io/2017/08/31/2017-08-31-spring-mysql/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>[Sprint] Setting</title>
@@ -1094,34 +1156,6 @@
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2016/08/07/2016-08-07-java-stringtokenizer/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Eclipse를 이용한 Python 사용</title>
-      <link>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-setting-python-into-eclipse/</link>
-      <guid>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-setting-python-into-eclipse/</guid>
-      <pubDate>Fri, 05 Aug 2016 13:00:50 GMT</pubDate>
-      <description>
-      
-        &lt;h3 id=&quot;PyDev-설치&quot;&gt;&lt;a href=&quot;#PyDev-설치&quot; class=&quot;headerlink&quot; title=&quot;PyDev 설치&quot;&gt;&lt;/a&gt;PyDev 설치&lt;/h3&gt;&lt;p&gt;Help &amp;gt; Install new software &amp;gt; Add &amp;gt; &lt;
-      
-      </description>
-      
-      <content:encoded>&lt;h3 id=&quot;PyDev-설치&quot;&gt;&lt;a href=&quot;#PyDev-설치&quot; class=&quot;headerlink&quot; title=&quot;PyDev 설치&quot;&gt;&lt;/a&gt;PyDev 설치&lt;/h3&gt;&lt;p&gt;Help &amp;gt; Install new software &amp;gt; Add &amp;gt; &lt;/p&gt;
-&lt;p&gt;Name: PyDev&lt;br&gt;Location: &lt;a href=&quot;http://pydev.org/updates&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pydev.org/updates&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;pyDev 체크 후 &amp;gt; Next &amp;gt; Next &amp;gt; I accept the … &amp;gt; Finish &amp;gt; Brainwy Software; pyDev; Brainwy 를 체크하여 certificate하고 &amp;gt; OK &amp;gt; restart OK&lt;/p&gt;
-&lt;p&gt;New Project 생성할 때 &lt;code&gt;PyDev Project&lt;/code&gt;를 선택할 수 있게 됨.&lt;/p&gt;
-&lt;p&gt;그냥 만들려고 하면 &lt;code&gt;Please configure an interpreter before procedding.&lt;/code&gt;이 뜸. 아래 설정 참조.&lt;/p&gt;
-&lt;h3 id=&quot;python-interpreter-설정&quot;&gt;&lt;a href=&quot;#python-interpreter-설정&quot; class=&quot;headerlink&quot; title=&quot;python interpreter 설정&quot;&gt;&lt;/a&gt;python interpreter 설정&lt;/h3&gt;&lt;p&gt;우선, &lt;a href=&quot;http://python.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://python.org/&lt;/a&gt; 에서 python을 PC에 설치하고.&lt;/p&gt;
-&lt;p&gt;Window &amp;gt; Preference &amp;gt; PyDev &amp;gt; Interpreters &amp;gt; Python Interpreter&lt;/p&gt;
-&lt;p&gt;우 상단의 Quick Auto-Config를 선택하면 python path를 알아서 찾아줌.&lt;/p&gt;
-&lt;p&gt;이후 Apply &amp;gt; OK&lt;/p&gt;
-&lt;p&gt;다시 New Project 생성으로 가서 생성한다.&lt;/p&gt;
-&lt;p&gt;Python Perspective 어쩌고 팝업 나오면 OK 해서 새 perspective를 추가한다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;test.py&lt;/code&gt; 등으로 파일 생성하고, 코드 넣고, Ctrl + F11 로 빌드해서 아래쪽 콘솔에서 확인할 수 있다. 굳.&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://lazyrodi.github.io/2016/08/05/2016-08-05-docthread-setting-python-into-eclipse/#disqus_thread</comments>
     </item>
     
   </channel>

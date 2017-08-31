@@ -3,30 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Hexo로 변경 | Lazy Rodriguez</title>
+    <title>[Sprint] MySQL Workbench에서 DB 생성 | Lazy Rodriguez</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo" />
+        <meta name="keywords" content="setting,spring,mysql" />
     
-    <meta name="description" content="원래 사용하던 Jekyll에서 Hexo로 변경하였다.
-이 테마(hueman)가 상당히 완성도가 높아보여서 따라하느라 변경하였는데 Jekyll보다 지원하는 기능이 화려하다. (혹은 내가 Jekyll도 제대로 못 썼겠지.)
-맘에 든다. 설명도 꽤 간단하고 알아먹기 쉽게 제공되어서 좋다.
-Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
+    <meta name="description" content="Schema 생성Schema란 위키피디아에서 아래와 같이 정의하고 있다.
+컴퓨터 과학에서 데이터베이스 스키마(database schema)는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료 간의 관계를 형식 언어로 정의한 구조이다. 데이터베이스 관리 시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo로 변경">
-<meta property="og:url" content="http://lazyrodi.github.io/2016/07/11/2016-07-11-life-change-to-hexo/index.html">
+<meta property="og:title" content="[Sprint] MySQL Workbench에서 DB 생성">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/08/31/2017-08-31-spring-mysql/index.html">
 <meta property="og:site_name" content="Lazy Rodriguez">
-<meta property="og:description" content="원래 사용하던 Jekyll에서 Hexo로 변경하였다.
-이 테마(hueman)가 상당히 완성도가 높아보여서 따라하느라 변경하였는데 Jekyll보다 지원하는 기능이 화려하다. (혹은 내가 Jekyll도 제대로 못 썼겠지.)
-맘에 든다. 설명도 꽤 간단하고 알아먹기 쉽게 제공되어서 좋다.
-Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
-<meta property="og:updated_time" content="2016-08-05T12:40:20.619Z">
+<meta property="og:description" content="Schema 생성Schema란 위키피디아에서 아래와 같이 정의하고 있다.
+컴퓨터 과학에서 데이터베이스 스키마(database schema)는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료 간의 관계를 형식 언어로 정의한 구조이다. 데이터베이스 관리 시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를">
+<meta property="og:updated_time" content="2017-08-31T14:27:06.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo로 변경">
-<meta name="twitter:description" content="원래 사용하던 Jekyll에서 Hexo로 변경하였다.
-이 테마(hueman)가 상당히 완성도가 높아보여서 따라하느라 변경하였는데 Jekyll보다 지원하는 기능이 화려하다. (혹은 내가 Jekyll도 제대로 못 썼겠지.)
-맘에 든다. 설명도 꽤 간단하고 알아먹기 쉽게 제공되어서 좋다.
-Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
+<meta name="twitter:title" content="[Sprint] MySQL Workbench에서 DB 생성">
+<meta name="twitter:description" content="Schema 생성Schema란 위키피디아에서 아래와 같이 정의하고 있다.
+컴퓨터 과학에서 데이터베이스 스키마(database schema)는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료 간의 관계를 형식 언어로 정의한 구조이다. 데이터베이스 관리 시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를">
     
 
     
@@ -142,7 +136,7 @@ Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/life/">life</a>
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Spring/">Spring</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -156,14 +150,14 @@ Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                            <article id="post-2016-07-11-life-change-to-hexo" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-2017-08-31-spring-mysql" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Hexo로 변경
+        [Sprint] MySQL Workbench에서 DB 생성
         </h1>
     
 
@@ -171,22 +165,66 @@ Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
         
         
             <div class="article-subtitle">
-                <a href="/2016/07/11/2016-07-11-life-change-to-hexo/" class="article-date">
-    <time datetime="2016-07-11T13:00:00.000Z" itemprop="datePublished">2016-07-11</time>
+                <a href="/2017/08/31/2017-08-31-spring-mysql/" class="article-date">
+    <time datetime="2017-08-31T12:30:00.000Z" itemprop="datePublished">2017-08-31</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setting/">setting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
 
             </div>
         
         <div class="article-entry" itemprop="articleBody">
             <div class="lazyrodi-toc">
                 
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Schema-생성"><span class="toc-number">1.</span> <span class="toc-text">Schema 생성</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#사용자-생성"><span class="toc-number">2.</span> <span class="toc-text">사용자 생성</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Database와-계정-연결"><span class="toc-number">3.</span> <span class="toc-text">Database와 계정 연결</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참조"><span class="toc-number">4.</span> <span class="toc-text">참조</span></a></li></ol>
+                
             </div>
-            <p>원래 사용하던 <a href="https://github.com/jekyll/jekyll" target="_blank" rel="external">Jekyll</a>에서 <a href="https://hexo.io" target="_blank" rel="external">Hexo</a>로 변경하였다.</p>
-<p>이 테마(<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="external">hueman</a>)가 상당히 완성도가 높아보여서 따라하느라 변경하였는데 <code>Jekyll</code>보다 지원하는 기능이 화려하다. (혹은 내가 Jekyll도 제대로 못 썼겠지.)</p>
-<p>맘에 든다. <a href="https://hexo.io/docs" target="_blank" rel="external">설명</a>도 꽤 간단하고 알아먹기 쉽게 제공되어서 좋다.</p>
-<p><code>Jekyll</code>에서 가져온 글들이 <code>markdown</code>간 호환이 100% 되지는 않아서 테이블과 그림 작업이 더 필요하지만… 그래도 뭐 굳.</p>
+            <h2 id="Schema-생성"><a href="#Schema-생성" class="headerlink" title="Schema 생성"></a>Schema 생성</h2><p><code>Schema</code>란 <a href="https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EC%8A%A4%ED%82%A4%EB%A7%88" target="_blank" rel="external">위키피디아</a>에서 아래와 같이 정의하고 있다.</p>
+<blockquote><p>컴퓨터 과학에서 데이터베이스 스키마(database schema)는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료 간의 관계를 형식 언어로 정의한 구조이다. 데이터베이스 관리 시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를 저장, 조회, 삭제, 변경할 때 DBMS는 자신이 생성한 데이터베이스 스키마를 참조하여 명령을 수행한다.</p>
+<p>스키마는 3층 구조로 되어있다.</p>
+<ul>
+<li>외부 스키마(External Schema) : 프로그래머나 사용자의 입장에서 데이터베이스의 모습으로 조직의 일부분을 정의한 것</li>
+<li>개념 스키마(Conceptual Schema) : 모든 응용 시스템과 사용자들이 필요로하는 데이터를 통합한 조직 전체의 데이터베이스 구조를 논리적으로 정의한 것</li>
+<li>내부 스키마(Internal Schema) : 전체 데이터베이스의 물리적 저장 형태를 기술하는 것</li>
+</ul>
+</blockquote>
+<ol>
+<li>MySQL Workbench 실행</li>
+<li>홈의 <code>Local instance MySQL57</code> 을 선택하여 root로 Login</li>
+<li><code>Server Status</code> 를 눌러보고 <code>Stop</code> 상태라면 <code>Startup/Shutdown</code> 메뉴에서 <code>Start server</code>를 선택하여 Server 구동</li>
+<li>상단의 좌측에서 네 번째 아이콘 <code>create a new schema in the connected server</code>을 클릭</li>
+<li>마음에 드는 Schema name을 넣고 <code>Collation</code>은 <code>utf8 - default collation</code>을 선택 후 apply</li>
+</ol>
+<h2 id="사용자-생성"><a href="#사용자-생성" class="headerlink" title="사용자 생성"></a>사용자 생성</h2><p>!! 사용자 생성은 반드시 DB 생성 후 진행할 것 !!</p>
+<ol>
+<li>좌측의 Users and Privileges 선택</li>
+<li>Add Account</li>
+<li>Login Name 설정</li>
+<li>Authentication type: <code>standard</code></li>
+<li>Limit to Hosts Matching: <code>%</code></li>
+<li>Apply</li>
+<li>Schema Privileges 탭 &gt; Add Entry… &gt; Selected schema에서 아까 생성한 schema를 선택 &gt; OK</li>
+<li>아래쪽의 Object rights를 모두 선택 (SELECT, INSERT, UPDATE, DELETE, EXECUTE, SHOW VIEW)</li>
+</ol>
+<p>!! 보통은 사용자가 DB를 날려먹을 위험이 있으므로 DELETE는 주지 않는다고 한다. !!</p>
+<blockquote><p>Limit to Hosts Matching의 의미</p>
+<ul>
+<li>% : 모든 IP에서 이 계정으로 접속 가능</li>
+<li>localhost : localhost에서만 접속 가능</li>
+</ul>
+</blockquote>
+<h2 id="Database와-계정-연결"><a href="#Database와-계정-연결" class="headerlink" title="Database와 계정 연결"></a>Database와 계정 연결</h2><ol>
+<li>MySQL WorkBench의 홈 화면으로 간 후 + 버튼을 누른다.</li>
+<li>Connection Name 설정</li>
+<li>Username 넣기</li>
+<li>Default Schema에 생성한 Schema명 넣기</li>
+<li>Test Connection &gt; “Succesfully made the MySQL connection” 성공 &gt; OK &gt; OK</li>
+</ol>
+<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+<li><a href="http://diaryofgreen.tistory.com/132" target="_blank" rel="external">http://diaryofgreen.tistory.com/132</a></li>
+<li><a href="http://aristatait.tistory.com/60" target="_blank" rel="external">http://aristatait.tistory.com/60</a></li>
+<li><a href="http://blog.naver.com/taehun3718/140156156867" target="_blank" rel="external">http://blog.naver.com/taehun3718/140156156867</a></li>
+</ul>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -204,7 +242,7 @@ Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
 
 
 
-    <a data-url="http://lazyrodi.github.io/2016/07/11/2016-07-11-life-change-to-hexo/" data-id="cj70eta08001l7jw6uh5vjoh1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://lazyrodi.github.io/2017/08/31/2017-08-31-spring-mysql/" data-id="cj70f256f00c97jw6of6genjy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -316,20 +354,10 @@ Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
         
 <nav id="article-nav">
     
-        <a href="/2016/07/13/2016-07-13-java-thread/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Java Thread
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2016/07/10/2016-07-10-android-permission/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/08/27/2017-08-27-spring-setting/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Android permission</p>
+        <p class="article-nav-title">[Sprint] Setting</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -454,7 +482,7 @@ Jekyll에서 가져온 글들이 markdown간 호환이 100% 되지는 않">
     var disqus_shortname = 'lazyrodi';
     
     
-    var disqus_url = 'http://lazyrodi.github.io/2016/07/11/2016-07-11-life-change-to-hexo/';
+    var disqus_url = 'http://lazyrodi.github.io/2017/08/31/2017-08-31-spring-mysql/';
     
     (function() {
     var dsq = document.createElement('script');
