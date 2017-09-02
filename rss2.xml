@@ -101,10 +101,22 @@
 &lt;li&gt;Default Schema에 생성한 Schema명 넣기&lt;/li&gt;
 &lt;li&gt;Test Connection &amp;gt; “Succesfully made the MySQL connection” 성공 &amp;gt; OK &amp;gt; OK&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&quot;Table-생성&quot;&gt;&lt;a href=&quot;#Table-생성&quot; class=&quot;headerlink&quot; title=&quot;Table 생성&quot;&gt;&lt;/a&gt;Table 생성&lt;/h2&gt;&lt;p&gt;MySQL Workbench를 사용하여 Table을 생성해본다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;툴바의 좌측에서 다섯번째 버튼 &lt;code&gt;Create a new table in the active schema in connected server&lt;/code&gt; 를 누른다.&lt;/li&gt;
+&lt;li&gt;Table Name 입력&lt;/li&gt;
+&lt;li&gt;Column Name 및 Datatype 추가&lt;/li&gt;
+&lt;li&gt;정보를 넣고 Apply를 누르면 그에 해당하는 query문이 생성되며, 여기서 Apply를 누르면 Table이 생성된다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;참 좋은 세상이다… 평소에 query문을 쓸 일이 없는 나로서는 굉장히 마음에 든다. 리눅스에 세팅하려면 결국 query를 날려야 하겠지만…&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;PK: Primary Key&lt;br&gt;NN: Not Null&lt;br&gt;UQ: Create/remove Unique Key&lt;br&gt;B : Binary (값을 Binary string으로 저장한다. sorting, comparing을 할 수 없음.)&lt;br&gt;UN: Unsigned (원래의 범위가 -500~500 이라면 체크 후 0~1000 사용 가능)&lt;br&gt;ZF: Zero-Filled (INT(5)의 경우 12=00012, 400=00400 이 된다.)&lt;br&gt;AI: Auto Increment&lt;br&gt;G : Generated column (다른 column들의 조합에 의해 생성되는 값)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://diaryofgreen.tistory.com/132&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://diaryofgreen.tistory.com/132&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://aristatait.tistory.com/60&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://aristatait.tistory.com/60&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://blog.naver.com/taehun3718/140156156867&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.naver.com/taehun3718/140156156867&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=93immm&amp;amp;logNo=220790625969&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://m.blog.naver.com/PostView.nhn?blogId=93immm&amp;amp;logNo=220790625969&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/3663952/what-do-column-flags-mean-in-mysql-workbench&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://stackoverflow.com/questions/3663952/what-do-column-flags-mean-in-mysql-workbench&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
       
@@ -234,14 +246,28 @@
       <pubDate>Sat, 26 Aug 2017 00:30:00 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;bash-접속-시도-시-0x80070005-에러-발생&quot;&gt;&lt;a href=&quot;#bash-접속-시도-시-0x80070005-에러-발생&quot; class=&quot;headerlink&quot; title=&quot;bash 접속 시도 시 0x80070005 에러 발생.&quot;&gt;&lt;/
+        &lt;h3 id=&quot;bash-접속-시도-시-0x80070005-에러-발생&quot;&gt;&lt;a href=&quot;#bash-접속-시도-시-0x80070005-에러-발생&quot; class=&quot;headerlink&quot; title=&quot;bash 접속 시도 시 0x80070005 에러 발생.&quot;&gt;&lt;/
       
       </description>
       
-      <content:encoded>&lt;h2 id=&quot;bash-접속-시도-시-0x80070005-에러-발생&quot;&gt;&lt;a href=&quot;#bash-접속-시도-시-0x80070005-에러-발생&quot; class=&quot;headerlink&quot; title=&quot;bash 접속 시도 시 0x80070005 에러 발생.&quot;&gt;&lt;/a&gt;&lt;code&gt;bash&lt;/code&gt; 접속 시도 시 &lt;code&gt;0x80070005&lt;/code&gt; 에러 발생.&lt;/h2&gt;&lt;p&gt;구글링 해보니 여러가지 해결책이 있었고, 해결이 안 된 사람도 많아보였다.&lt;/p&gt;
+      <content:encoded>&lt;h3 id=&quot;bash-접속-시도-시-0x80070005-에러-발생&quot;&gt;&lt;a href=&quot;#bash-접속-시도-시-0x80070005-에러-발생&quot; class=&quot;headerlink&quot; title=&quot;bash 접속 시도 시 0x80070005 에러 발생.&quot;&gt;&lt;/a&gt;&lt;code&gt;bash&lt;/code&gt; 접속 시도 시 &lt;code&gt;0x80070005&lt;/code&gt; 에러 발생.&lt;/h3&gt;&lt;p&gt;구글링 해보니 여러가지 해결책이 있었고, 해결이 안 된 사람도 많아보였다.&lt;/p&gt;
 &lt;p&gt;일단 내 해결책은 temp 디렉토리를 삭제하는 것이었는데… 이유는 모르겠다.&lt;/p&gt;
 &lt;p&gt;아직 불안정한듯 보인다…&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;C:\Users\사용자명\AppData\Local\lxss\temp&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;apt-get-update-시도-시-Hash-Sum-mismatch-에러-발생&quot;&gt;&lt;a href=&quot;#apt-get-update-시도-시-Hash-Sum-mismatch-에러-발생&quot; class=&quot;headerlink&quot; title=&quot;apt-get update 시도 시 Hash Sum mismatch 에러 발생.&quot;&gt;&lt;/a&gt;&lt;code&gt;apt-get update&lt;/code&gt; 시도 시 &lt;code&gt;Hash Sum mismatch&lt;/code&gt; 에러 발생.&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;/var/lib/apt/lists&lt;/code&gt; 디렉토리를 삭제한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# sudo rm -rf /var/lib/apt/lists/*&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# sudo apt-get update&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;내 경우는 해결되지 않았다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;다음은 미러링 사이트의 변경&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;아래의 명령으로 &lt;code&gt;/etc/apt/sources.list&lt;/code&gt; 파일의 &lt;code&gt;archive.ubuntu.com&lt;/code&gt; 을 &lt;code&gt;ftp.daum.net&lt;/code&gt; 으로 변경하는 것이다.&lt;/p&gt;
+&lt;p&gt;해결 완료!&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# sudo sed -i &#39;s/archive.ubuntu.com/ftp.daum.net/g&#39; /etc/apt/sources.list&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ccambo.blogspot.kr/2015/02/ubuntu-apt-get-update-hash-sum-mismatch.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ccambo.blogspot.kr/2015/02/ubuntu-apt-get-update-hash-sum-mismatch.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
       
       <comments>http://lazyrodi.github.io/2017/08/26/2017-08-26-troubleshooting-windows10-bash/#disqus_thread</comments>
@@ -716,6 +742,9 @@
       
       <content:encoded>&lt;h3 id=&quot;ERROR-1045-28000-Access-Denied-for-user-‘root’-’localhost’-using-password-NO&quot;&gt;&lt;a href=&quot;#ERROR-1045-28000-Access-Denied-for-user-‘root’-’localhost’-using-password-NO&quot; class=&quot;headerlink&quot; title=&quot;ERROR 1045 (28000): Access Denied for user ‘root’@’localhost’ (using password: NO)&quot;&gt;&lt;/a&gt;ERROR 1045 (28000): Access Denied for user ‘root’@’localhost’ (using password: NO)&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;$ sudo mysql -p&lt;/code&gt; 명령으로 비밀번호를 따로 입력하면 OK.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;could-not-connect-to-mysql-can’t-connect-to-mysql-server-on-‘127-0-0-1’-10061-code-2003&quot;&gt;&lt;a href=&quot;#could-not-connect-to-mysql-can’t-connect-to-mysql-server-on-‘127-0-0-1’-10061-code-2003&quot; class=&quot;headerlink&quot; title=&quot;could not connect to mysql can’t connect to mysql server on ‘127.0.0.1’ (10061) (code 2003)&quot;&gt;&lt;/a&gt;could not connect to mysql can’t connect to mysql server on ‘127.0.0.1’ (10061) (code 2003)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Windows 키 &amp;gt; 컴퓨터 관리 &amp;gt; 서비스 및 응용 프로그램 &amp;gt; 서비스 &amp;gt; MySQL57 이 실행 중인지 확인.&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
       

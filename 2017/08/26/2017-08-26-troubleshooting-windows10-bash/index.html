@@ -11,7 +11,8 @@
     <meta name="description" content="bash 접속 시도 시 0x80070005 에러 발생.구글링 해보니 여러가지 해결책이 있었고, 해결이 안 된 사람도 많아보였다.
 일단 내 해결책은 temp 디렉토리를 삭제하는 것이었는데… 이유는 모르겠다.
 아직 불안정한듯 보인다…
-C:\Users\사용자명\AppData\Local\lxss\temp">
+C:\Users\사용자명\AppData\Local\lxss\temp
+apt-get update 시도 시 Hash Sum mism">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 10 Bash Troubleshooting">
 <meta property="og:url" content="http://lazyrodi.github.io/2017/08/26/2017-08-26-troubleshooting-windows10-bash/index.html">
@@ -19,14 +20,16 @@ C:\Users\사용자명\AppData\Local\lxss\temp">
 <meta property="og:description" content="bash 접속 시도 시 0x80070005 에러 발생.구글링 해보니 여러가지 해결책이 있었고, 해결이 안 된 사람도 많아보였다.
 일단 내 해결책은 temp 디렉토리를 삭제하는 것이었는데… 이유는 모르겠다.
 아직 불안정한듯 보인다…
-C:\Users\사용자명\AppData\Local\lxss\temp">
-<meta property="og:updated_time" content="2017-08-27T13:44:19.547Z">
+C:\Users\사용자명\AppData\Local\lxss\temp
+apt-get update 시도 시 Hash Sum mism">
+<meta property="og:updated_time" content="2017-09-02T13:59:06.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows 10 Bash Troubleshooting">
 <meta name="twitter:description" content="bash 접속 시도 시 0x80070005 에러 발생.구글링 해보니 여러가지 해결책이 있었고, 해결이 안 된 사람도 많아보였다.
 일단 내 해결책은 temp 디렉토리를 삭제하는 것이었는데… 이유는 모르겠다.
 아직 불안정한듯 보인다…
-C:\Users\사용자명\AppData\Local\lxss\temp">
+C:\Users\사용자명\AppData\Local\lxss\temp
+apt-get update 시도 시 Hash Sum mism">
     
 
     
@@ -182,13 +185,27 @@ C:\Users\사용자명\AppData\Local\lxss\temp">
         <div class="article-entry" itemprop="articleBody">
             <div class="lazyrodi-toc">
                 
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#bash-접속-시도-시-0x80070005-에러-발생"><span class="toc-number">1.</span> <span class="toc-text">bash 접속 시도 시 0x80070005 에러 발생.</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#bash-접속-시도-시-0x80070005-에러-발생"><span class="toc-number">1.</span> <span class="toc-text">bash 접속 시도 시 0x80070005 에러 발생.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apt-get-update-시도-시-Hash-Sum-mismatch-에러-발생"><span class="toc-number">2.</span> <span class="toc-text">apt-get update 시도 시 Hash Sum mismatch 에러 발생.</span></a></li></ol>
                 
             </div>
-            <h2 id="bash-접속-시도-시-0x80070005-에러-발생"><a href="#bash-접속-시도-시-0x80070005-에러-발생" class="headerlink" title="bash 접속 시도 시 0x80070005 에러 발생."></a><code>bash</code> 접속 시도 시 <code>0x80070005</code> 에러 발생.</h2><p>구글링 해보니 여러가지 해결책이 있었고, 해결이 안 된 사람도 많아보였다.</p>
+            <h3 id="bash-접속-시도-시-0x80070005-에러-발생"><a href="#bash-접속-시도-시-0x80070005-에러-발생" class="headerlink" title="bash 접속 시도 시 0x80070005 에러 발생."></a><code>bash</code> 접속 시도 시 <code>0x80070005</code> 에러 발생.</h3><p>구글링 해보니 여러가지 해결책이 있었고, 해결이 안 된 사람도 많아보였다.</p>
 <p>일단 내 해결책은 temp 디렉토리를 삭제하는 것이었는데… 이유는 모르겠다.</p>
 <p>아직 불안정한듯 보인다…</p>
 <p><code>C:\Users\사용자명\AppData\Local\lxss\temp</code></p>
+<h3 id="apt-get-update-시도-시-Hash-Sum-mismatch-에러-발생"><a href="#apt-get-update-시도-시-Hash-Sum-mismatch-에러-발생" class="headerlink" title="apt-get update 시도 시 Hash Sum mismatch 에러 발생."></a><code>apt-get update</code> 시도 시 <code>Hash Sum mismatch</code> 에러 발생.</h3><ol>
+<li><code>/var/lib/apt/lists</code> 디렉토리를 삭제한다.</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># sudo rm -rf /var/lib/apt/lists/*</div><div class="line"># sudo apt-get update</div></pre></td></tr></table></figure>
+<p>내 경우는 해결되지 않았다.</p>
+<ol>
+<li>다음은 미러링 사이트의 변경</li>
+</ol>
+<p>아래의 명령으로 <code>/etc/apt/sources.list</code> 파일의 <code>archive.ubuntu.com</code> 을 <code>ftp.daum.net</code> 으로 변경하는 것이다.</p>
+<p>해결 완료!</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># sudo sed -i 's/archive.ubuntu.com/ftp.daum.net/g' /etc/apt/sources.list</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://ccambo.blogspot.kr/2015/02/ubuntu-apt-get-update-hash-sum-mismatch.html" target="_blank" rel="external">http://ccambo.blogspot.kr/2015/02/ubuntu-apt-get-update-hash-sum-mismatch.html</a></li>
+</ul>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -206,7 +223,7 @@ C:\Users\사용자명\AppData\Local\lxss\temp">
 
 
 
-    <a data-url="http://lazyrodi.github.io/2017/08/26/2017-08-26-troubleshooting-windows10-bash/" data-id="cj737j5vs005dhkw6nig47gl8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://lazyrodi.github.io/2017/08/26/2017-08-26-troubleshooting-windows10-bash/" data-id="cj73d5ty1007q7hw62p8zw3fs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
