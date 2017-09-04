@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Spring] 기본 프로젝트 파일 구조 | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="spring,structure" />
+    
+    <meta name="description" content="작성 중….STS로 새 프로젝트를 생성하면 아래와 같은 기본 구조를 확인할 수 있다.
+
+src/main/java
+Java source 디렉토리
+
+Java 파일들은 모두 이 디렉토리에 생성한다.
+
+
+HomeController.java
+
+Web client로부터의 요청을 해당 비즈니스 로직으로 분기 및 수행 결과를 응답하는 역할.
+
+123456789101112">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Spring] 기본 프로젝트 파일 구조">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/09/03/2017-09-03-spring-structure/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="작성 중….STS로 새 프로젝트를 생성하면 아래와 같은 기본 구조를 확인할 수 있다.
+
+src/main/java
+Java source 디렉토리
+
+Java 파일들은 모두 이 디렉토리에 생성한다.
+
+
+HomeController.java
+
+Web client로부터의 요청을 해당 비즈니스 로직으로 분기 및 수행 결과를 응답하는 역할.
+
+123456789101112">
+<meta property="og:image" content="http://lazyrodi.github.io/images/2017-09-03-spring-structure-001.jpg">
+<meta property="og:updated_time" content="2017-09-04T12:53:54.225Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Spring] 기본 프로젝트 파일 구조">
+<meta name="twitter:description" content="작성 중….STS로 새 프로젝트를 생성하면 아래와 같은 기본 구조를 확인할 수 있다.
+
+src/main/java
+Java source 디렉토리
+
+Java 파일들은 모두 이 디렉토리에 생성한다.
+
+
+HomeController.java
+
+Web client로부터의 요청을 해당 비즈니스 로직으로 분기 및 수행 결과를 응답하는 역할.
+
+123456789101112">
+<meta name="twitter:image" content="http://lazyrodi.github.io/images/2017-09-03-spring-structure-001.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Spring/">Spring</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-09-03-spring-structure" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Spring] 기본 프로젝트 파일 구조
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/09/03/2017-09-03-spring-structure/" class="article-date">
+    <time datetime="2017-09-03T02:20:00.000Z" itemprop="datePublished">2017-09-03</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/structure/">structure</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#작성-중…"><span class="toc-number">1.</span> <span class="toc-text">작성 중….</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#src-main-java"><span class="toc-number">1.1.</span> <span class="toc-text">src/main/java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-main-resources"><span class="toc-number">1.2.</span> <span class="toc-text">src/main/resources</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-Dependencies"><span class="toc-number">1.3.</span> <span class="toc-text">Maven Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apache-Tomcat-v7-0-Apache-Tomcat-v7-0"><span class="toc-number">1.4.</span> <span class="toc-text">Apache Tomcat v7.0 [Apache Tomcat v7.0]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JRE-System-Library"><span class="toc-number">1.5.</span> <span class="toc-text">JRE System Library</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-main-webapp"><span class="toc-number">1.6.</span> <span class="toc-text">src/main/webapp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#resources"><span class="toc-number">1.6.1.</span> <span class="toc-text">resources</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEB-INF"><span class="toc-number">1.6.2.</span> <span class="toc-text">WEB-INF</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#classes"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">classes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#spring"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">spring</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#appServlet"><span class="toc-number">1.6.2.2.1.</span> <span class="toc-text">appServlet</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#views"><span class="toc-number">1.6.2.3.</span> <span class="toc-text">views</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web-xml"><span class="toc-number">1.6.2.4.</span> <span class="toc-text">web.xml</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#target"><span class="toc-number">1.7.</span> <span class="toc-text">target</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pom-xml"><span class="toc-number">1.8.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참조"><span class="toc-number">1.9.</span> <span class="toc-text">참조</span></a></li></ol></li></ol>
+                
+            </div>
+            <h1 id="작성-중…"><a href="#작성-중…" class="headerlink" title="작성 중…."></a>작성 중….</h1><p>STS로 새 프로젝트를 생성하면 아래와 같은 기본 구조를 확인할 수 있다.</p>
+<p><img src="/images/2017-09-03-spring-structure-001.jpg" alt="spring_files_by_sts"></p>
+<h2 id="src-main-java"><a href="#src-main-java" class="headerlink" title="src/main/java"></a>src/main/java</h2><ul>
+<li><p>Java source 디렉토리</p>
+<ul>
+<li>Java 파일들은 모두 이 디렉토리에 생성한다.</li>
+</ul>
+</li>
+<li><p>HomeController.java</p>
+<ul>
+<li>Web client로부터의 요청을 해당 비즈니스 로직으로 분기 및 수행 결과를 응답하는 역할.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">// @RequestMapping이 jsp로부터 들어온 요청에 해당하는 비즈니스 로직을 찾아주는 역할</span></div><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/"</span>, method = RequestMethod.GET)</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">home</span><span class="params">(Locale locale, Model model)</span> </span>&#123;</div><div class="line">	logger.info(<span class="string">"Welcome home! The client locale is &#123;&#125;."</span>, locale);</div><div class="line">	</div><div class="line">	Date date = <span class="keyword">new</span> Date();</div><div class="line">	DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);</div><div class="line">	</div><div class="line">	String formattedDate = dateFormat.format(date);</div><div class="line">	</div><div class="line">	<span class="comment">// formattedDate 를 "serverTime"이라는 이름으로 알려준다.</span></div><div class="line">	model.addAttribute(<span class="string">"serverTime"</span>, formattedDate );</div><div class="line">	</div><div class="line">	<span class="comment">// 수행 결과의 응답을 home.jsp 로 보낸다는 의미</span></div><div class="line">	<span class="keyword">return</span> <span class="string">"home"</span>;</div><div class="line">&#125;</div><div class="line">	</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="src-main-resources"><a href="#src-main-resources" class="headerlink" title="src/main/resources"></a>src/main/resources</h2><ul>
+<li></li>
+<li>log4j.xml<ul>
+<li>Logging 설정 파일</li>
+</ul>
+</li>
+</ul>
+<h2 id="Maven-Dependencies"><a href="#Maven-Dependencies" class="headerlink" title="Maven Dependencies"></a>Maven Dependencies</h2><h2 id="Apache-Tomcat-v7-0-Apache-Tomcat-v7-0"><a href="#Apache-Tomcat-v7-0-Apache-Tomcat-v7-0" class="headerlink" title="Apache Tomcat v7.0 [Apache Tomcat v7.0]"></a>Apache Tomcat v7.0 [Apache Tomcat v7.0]</h2><h2 id="JRE-System-Library"><a href="#JRE-System-Library" class="headerlink" title="JRE System Library"></a>JRE System Library</h2><h2 id="src-main-webapp"><a href="#src-main-webapp" class="headerlink" title="src/main/webapp"></a>src/main/webapp</h2><ul>
+<li>Maven의 기본 폴더.</li>
+<li>이 아래 모든 jsp 및 js 파일이 포함.</li>
+</ul>
+<h3 id="resources"><a href="#resources" class="headerlink" title="resources"></a>resources</h3><h3 id="WEB-INF"><a href="#WEB-INF" class="headerlink" title="WEB-INF"></a>WEB-INF</h3><h4 id="classes"><a href="#classes" class="headerlink" title="classes"></a>classes</h4><h4 id="spring"><a href="#spring" class="headerlink" title="spring"></a>spring</h4><ul>
+<li>root-context.xml</li>
+</ul>
+<h5 id="appServlet"><a href="#appServlet" class="headerlink" title="appServlet"></a>appServlet</h5><ul>
+<li>Servlet 설정 파일</li>
+<li>servlet-context.xml</li>
+</ul>
+<h4 id="views"><a href="#views" class="headerlink" title="views"></a>views</h4><ul>
+<li>JSP 디렉토리</li>
+<li>home.jsp<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> <span class="attr">prefix</span>=<span class="string">"c"</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">session</span>=<span class="string">"false"</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span>%&gt;</span>  </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></div><div class="line">	Hello world!  </div><div class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- HomeController.java에서 넘겨준 "serverTime"을 여기에서 출력한다. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">P</span>&gt;</span>  The time on the server is $&#123;serverTime&#125;. <span class="tag">&lt;/<span class="name">P</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"> </div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h4><ul>
+<li>서블릿 배포 기술자 (설정 파일)</li>
+<li>WAS (Web Application Server) 즉, TOMCAT이 구동될 때, WEB-INF 디렉토리에 존재하는 web.xml를 읽어와서 Web application 설정을 구성한다.</li>
+</ul>
+<h2 id="target"><a href="#target" class="headerlink" title="target"></a>target</h2><ul>
+<li>빌드 결과가 출력되는 디렉토리</li>
+</ul>
+<h2 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
+<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+<li><a href="http://addio3305.tistory.com/37" target="_blank" rel="external">http://addio3305.tistory.com/37</a></li>
+<li><a href="http://holy1017.tistory.com/32" target="_blank" rel="external">http://holy1017.tistory.com/32</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/09/03/2017-09-03-spring-structure/" data-id="cj746yn9h00617tw6v83usn8z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/09/04/2017-09-04-algorithm-data_structure/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            [Data Structure] Linked-list
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/09/02/2017-09-02-algorithm-quicksort/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Algorithm] Quick sort</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/04/2017-09-04-algorithm-data_structure/" class="title">[Data Structure] Linked-list</a></p>
+                            <p class="item-date"><time datetime="2017-09-04T12:20:00.000Z" itemprop="datePublished">2017-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/03/2017-09-03-spring-structure/" class="title">[Spring] 기본 프로젝트 파일 구조</a></p>
+                            <p class="item-date"><time datetime="2017-09-03T02:20:00.000Z" itemprop="datePublished">2017-09-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/02/2017-09-02-algorithm-quicksort/" class="title">[Algorithm] Quick sort</a></p>
+                            <p class="item-date"><time datetime="2017-09-02T01:20:00.000Z" itemprop="datePublished">2017-09-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/08/31/2017-08-31-spring-mysql/" class="title">[Spring] MySQL Workbench에서 DB 생성</a></p>
+                            <p class="item-date"><time datetime="2017-08-31T12:30:00.000Z" itemprop="datePublished">2017-08-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/08/27/2017-08-27-spring-setting/" class="title">[Spring] Setting</a></p>
+                            <p class="item-date"><time datetime="2017-08-27T02:30:00.000Z" itemprop="datePublished">2017-08-27</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 18px;">algorithm</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/bash/" style="font-size: 12px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/datastructure/" style="font-size: 10px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 12px;">gerrit</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 12px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 12px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 16px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 14px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 14px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 12px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 12px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/09/03/2017-09-03-spring-structure/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Data Structure] Linked-list | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="algorithm,datastructure,array" />
+    
+    <meta name="description" content="Linked List는 각 Data들을 Pointer로 연결하여 관리하는 구조이다.
+첫 번째 Node인 Head pointer가 다음 Node를 가리키고 그 Node는 다음 Node를 가리킨다.
+맨 마지막 Node에는 더 이상 다음 Node를 가리키는 Pointer가 없는데 이를 Tail Node라 한다.
+단순 Linked list (Singly Linke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Data Structure] Linked-list">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/09/04/2017-09-04-algorithm-data_structure/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Linked List는 각 Data들을 Pointer로 연결하여 관리하는 구조이다.
+첫 번째 Node인 Head pointer가 다음 Node를 가리키고 그 Node는 다음 Node를 가리킨다.
+맨 마지막 Node에는 더 이상 다음 Node를 가리키는 Pointer가 없는데 이를 Tail Node라 한다.
+단순 Linked list (Singly Linke">
+<meta property="og:updated_time" content="2017-09-04T14:56:26.294Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Data Structure] Linked-list">
+<meta name="twitter:description" content="Linked List는 각 Data들을 Pointer로 연결하여 관리하는 구조이다.
+첫 번째 Node인 Head pointer가 다음 Node를 가리키고 그 Node는 다음 Node를 가리킨다.
+맨 마지막 Node에는 더 이상 다음 Node를 가리키는 Pointer가 없는데 이를 Tail Node라 한다.
+단순 Linked list (Singly Linke">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Algorithm/">Algorithm</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-09-04-algorithm-data_structure" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Data Structure] Linked-list
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/09/04/2017-09-04-algorithm-data_structure/" class="article-date">
+    <time datetime="2017-09-04T12:20:00.000Z" itemprop="datePublished">2017-09-04</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array/">array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datastructure/">datastructure</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#단순-Linked-list-Singly-Linked-List"><span class="toc-number">1.</span> <span class="toc-text">단순 Linked list (Singly Linked List)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#원형-Linked-list-Circular-Linked-List"><span class="toc-number">2.</span> <span class="toc-text">원형 Linked list (Circular Linked List)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#이중-Linked-list-Doubly-Linked-List"><span class="toc-number">3.</span> <span class="toc-text">이중 Linked list (Doubly Linked List)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참조"><span class="toc-number">4.</span> <span class="toc-text">참조</span></a></li></ol>
+                
+            </div>
+            <p><code>Linked List</code>는 각 <code>Data</code>들을 <code>Pointer</code>로 연결하여 관리하는 구조이다.</p>
+<p>첫 번째 <code>Node</code>인 <code>Head pointer</code>가 다음 <code>Node</code>를 가리키고 그 <code>Node</code>는 다음 <code>Node</code>를 가리킨다.</p>
+<p>맨 마지막 <code>Node</code>에는 더 이상 다음 <code>Node</code>를 가리키는 <code>Pointer</code>가 없는데 이를 <code>Tail Node</code>라 한다.</p>
+<h2 id="단순-Linked-list-Singly-Linked-List"><a href="#단순-Linked-list-Singly-Linked-List" class="headerlink" title="단순 Linked list (Singly Linked List)"></a>단순 Linked list (Singly Linked List)</h2><ul>
+<li>단순히 <code>Head</code>부터 <code>Tail</code>까지 이어져 있는 구조.</li>
+</ul>
+<p>우선 Node를 아래와 같이 구성하고.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line">	Node mNext;</div><div class="line">	Node mPrev;</div><div class="line">	</div><div class="line">	<span class="keyword">int</span> mData;</div><div class="line">	</div><div class="line">	Node(<span class="keyword">int</span> data) &#123;</div><div class="line">		mData = data;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrevious</span><span class="params">(Node prev)</span> </span>&#123;</div><div class="line">		mPrev = prev;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNext</span><span class="params">(Node next)</span> </span>&#123;</div><div class="line">		mNext = next;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</div><div class="line">		mData = data;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">getPrev</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mPrev;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">getNext</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mNext;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mData;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>단일 Linked List는 아래와 같이 구성한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SinglyLinkedList</span> </span>&#123;</div><div class="line">	Node mHead;</div><div class="line">	Node mTail;</div><div class="line">	</div><div class="line">	SinglyLinkedList(Node newNode) &#123;</div><div class="line">		mHead = newNode;</div><div class="line">		mTail = newNode;</div><div class="line">		mHead.setNext(mTail);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNode</span><span class="params">(Node newNode)</span> </span>&#123;</div><div class="line">		mTail.setNext(newNode);</div><div class="line">		mTail = newNode;</div><div class="line">	&#125;</div><div class="line">		</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertNode</span><span class="params">(Node newNode, <span class="keyword">int</span> offset)</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; offset; i++) &#123;</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		newNode.setNext(temp.getNext());</div><div class="line">		temp.setNext(newNode);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(<span class="keyword">int</span> offset)</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		Node delNode;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; offset - <span class="number">1</span>; i++) &#123;</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		delNode = temp.getNext();</div><div class="line">		temp.setNext(delNode.getNext());</div><div class="line">		delNode = <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printNodes</span><span class="params">()</span> </span>&#123;</div><div class="line">		Node temp = mHead;;</div><div class="line">		</div><div class="line">		<span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</div><div class="line">			System.out.print(temp.getData() + <span class="string">" "</span>);</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main에서 아래와 같이 확인해보면</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		SinglyLinkedList sll = <span class="keyword">new</span> SinglyLinkedList(<span class="keyword">new</span> Node(<span class="number">1</span>));</div><div class="line">		</div><div class="line">		sll.addNode(<span class="keyword">new</span> Node(<span class="number">2</span>));</div><div class="line">		sll.addNode(<span class="keyword">new</span> Node(<span class="number">3</span>));</div><div class="line">		sll.addNode(<span class="keyword">new</span> Node(<span class="number">4</span>));</div><div class="line">		sll.addNode(<span class="keyword">new</span> Node(<span class="number">5</span>));</div><div class="line">		sll.printNodes();</div><div class="line">		</div><div class="line">		sll.insertNode(<span class="keyword">new</span> Node(<span class="number">8</span>), <span class="number">3</span>);</div><div class="line">		sll.printNodes();</div><div class="line">		</div><div class="line">		sll.deleteNode(<span class="number">2</span>);</div><div class="line">		sll.printNodes();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>아래와 같은 결과를 얻을 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">1 2 3 4 5 </div><div class="line">1 2 3 8 4 5 </div><div class="line">1 3 8 4 5 </div></pre></td></tr></table></figure>
+<h2 id="원형-Linked-list-Circular-Linked-List"><a href="#원형-Linked-list-Circular-Linked-List" class="headerlink" title="원형 Linked list (Circular Linked List)"></a>원형 Linked list (Circular Linked List)</h2><ul>
+<li><code>Tail</code>이 <code>Head</code>를 가리키는 원형 구조.</li>
+</ul>
+<p><code>Node</code>는 위에 구성했던 것을 재사용한다.</p>
+<p>Circular Linked List는 아래와 같이 구성한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CircularLinkedList</span> </span>&#123;</div><div class="line">	Node mHead;</div><div class="line">	Node mTail;</div><div class="line">	</div><div class="line">	<span class="keyword">int</span> mCount = <span class="number">0</span>;</div><div class="line">	</div><div class="line">	CircularLinkedList(Node newNode) &#123;</div><div class="line">		mHead = newNode;</div><div class="line">		mTail = newNode;</div><div class="line">		mHead.setNext(mTail);</div><div class="line">		mTail.setNext(mHead);</div><div class="line">		</div><div class="line">		mCount++;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNode</span><span class="params">(Node newNode)</span> </span>&#123;</div><div class="line">		mTail.setNext(newNode);</div><div class="line">		mTail = newNode;</div><div class="line">		mTail.setNext(mHead);</div><div class="line">		</div><div class="line">		mCount++;</div><div class="line">	&#125;</div><div class="line">		</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertNode</span><span class="params">(Node newNode, <span class="keyword">int</span> offset)</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; offset; i++) &#123;</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		newNode.setNext(temp.getNext());</div><div class="line">		temp.setNext(newNode);</div><div class="line">		</div><div class="line">		mCount++;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(<span class="keyword">int</span> offset)</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		Node delNode;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; offset - <span class="number">1</span>; i++) &#123;</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		delNode = temp.getNext();</div><div class="line">		temp.setNext(delNode.getNext());</div><div class="line">		delNode = <span class="keyword">null</span>;</div><div class="line">		</div><div class="line">		mCount--;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * cycle : circular linked list를 몇 번 반복하여 출력할지 나타냄</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printNodes</span><span class="params">(<span class="keyword">int</span> cycle)</span> </span>&#123;</div><div class="line">		Node temp = mHead;;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mCount * cycle; i++) &#123;</div><div class="line">			System.out.print(temp.getData() + <span class="string">" "</span>);</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main을 아래와 같이 구성할 경우, 결과는 아래와 같다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		CircularLinkedList cll = <span class="keyword">new</span> CircularLinkedList(<span class="keyword">new</span> Node(<span class="number">1</span>));</div><div class="line">		</div><div class="line">		cll.addNode(<span class="keyword">new</span> Node(<span class="number">2</span>));</div><div class="line">		cll.addNode(<span class="keyword">new</span> Node(<span class="number">3</span>));</div><div class="line">		cll.addNode(<span class="keyword">new</span> Node(<span class="number">4</span>));</div><div class="line">		cll.addNode(<span class="keyword">new</span> Node(<span class="number">5</span>));</div><div class="line">		cll.printNodes(<span class="number">1</span>);</div><div class="line">		cll.printNodes(<span class="number">2</span>);</div><div class="line">		</div><div class="line">		cll.insertNode(<span class="keyword">new</span> Node(<span class="number">8</span>), <span class="number">3</span>);</div><div class="line">		cll.printNodes(<span class="number">1</span>);</div><div class="line">		cll.printNodes(<span class="number">2</span>);</div><div class="line">		</div><div class="line">		cll.deleteNode(<span class="number">2</span>);</div><div class="line">		cll.printNodes(<span class="number">1</span>);</div><div class="line">		cll.printNodes(<span class="number">2</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">1 2 3 4 5 </div><div class="line">1 2 3 4 5 1 2 3 4 5 </div><div class="line">1 2 3 8 4 5 </div><div class="line">1 2 3 8 4 5 1 2 3 8 4 5 </div><div class="line">1 3 8 4 5 </div><div class="line">1 3 8 4 5 1 3 8 4 5 </div></pre></td></tr></table></figure>
+<h2 id="이중-Linked-list-Doubly-Linked-List"><a href="#이중-Linked-list-Doubly-Linked-List" class="headerlink" title="이중 Linked list (Doubly Linked List)"></a>이중 Linked list (Doubly Linked List)</h2><ul>
+<li><code>앞 Node</code>와 <code>뒷 Node</code>가 서로 바라보는 구조.</li>
+</ul>
+<p>위에서 봤던 Linked list들과는 다르게 <code>Previous Node</code>도 설정한다.</p>
+<p>역방향으로 출력하기 위해 print문을 하나 추가한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoublyLinkedList</span> </span>&#123;</div><div class="line">	Node mHead;</div><div class="line">	Node mTail;</div><div class="line">	</div><div class="line">	<span class="keyword">int</span> mCount = <span class="number">0</span>;</div><div class="line">	</div><div class="line">	DoublyLinkedList(Node newNode) &#123;</div><div class="line">		mHead = newNode;</div><div class="line">		mTail = newNode;</div><div class="line">		mHead.setNext(mTail);</div><div class="line">		mTail.setPrevious(mHead);</div><div class="line">		</div><div class="line">		<span class="comment">// for circular</span></div><div class="line">		mHead.setPrevious(mTail);</div><div class="line">		mTail.setNext(mHead);</div><div class="line">		</div><div class="line">		mCount++;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNode</span><span class="params">(Node newNode)</span> </span>&#123;</div><div class="line">		mTail.setNext(newNode);</div><div class="line">		newNode.setPrevious(mTail);</div><div class="line">		mTail = newNode;</div><div class="line">		</div><div class="line">		<span class="comment">// for circular</span></div><div class="line">		newNode.setNext(mHead);</div><div class="line">		mHead.setPrevious(newNode);</div><div class="line">		</div><div class="line">		mCount++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertNode</span><span class="params">(Node newNode, <span class="keyword">int</span> offset)</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; offset; i++) &#123;</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		newNode.setNext(temp.getNext());</div><div class="line">		newNode.setPrevious(temp);</div><div class="line">		</div><div class="line">		temp.getNext().setPrevious(newNode);</div><div class="line">		temp.setNext(newNode);</div><div class="line">		</div><div class="line">		mCount++;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(<span class="keyword">int</span> offset)</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		Node delNode;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; offset - <span class="number">1</span>; i++) &#123;</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		delNode = temp.getNext();</div><div class="line">		temp.setNext(delNode.getNext());</div><div class="line">		</div><div class="line">		delNode.getNext().setPrevious(temp);</div><div class="line">		</div><div class="line">		delNode = <span class="keyword">null</span>;</div><div class="line">		</div><div class="line">		mCount--;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printNodesFront</span><span class="params">()</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mCount; i++) &#123;</div><div class="line">			System.out.print(temp.getData() + <span class="string">" "</span>);</div><div class="line">			temp = temp.getNext();</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printNodesBack</span><span class="params">()</span> </span>&#123;</div><div class="line">		Node temp = mHead;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mCount; i++) &#123;</div><div class="line">			System.out.print(temp.getData() + <span class="string">" "</span>);</div><div class="line">			temp = temp.getPrev();</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main은 아래와 같이 구성한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		DoublyLinkedList dll = <span class="keyword">new</span> DoublyLinkedList(<span class="keyword">new</span> Node(<span class="number">1</span>));</div><div class="line">		</div><div class="line">		dll.addNode(<span class="keyword">new</span> Node(<span class="number">2</span>));</div><div class="line">		dll.addNode(<span class="keyword">new</span> Node(<span class="number">3</span>));</div><div class="line">		dll.addNode(<span class="keyword">new</span> Node(<span class="number">4</span>));</div><div class="line">		dll.addNode(<span class="keyword">new</span> Node(<span class="number">5</span>));</div><div class="line">		dll.printNodesFront();</div><div class="line">		dll.printNodesBack();</div><div class="line">		</div><div class="line">		dll.insertNode(<span class="keyword">new</span> Node(<span class="number">8</span>), <span class="number">3</span>);</div><div class="line">		dll.printNodesFront();</div><div class="line">		dll.printNodesBack();</div><div class="line">		</div><div class="line">		dll.deleteNode(<span class="number">2</span>);</div><div class="line">		dll.printNodesFront();</div><div class="line">		dll.printNodesBack();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>결과는 아래와 같다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">1 2 3 4 5 </div><div class="line">1 5 4 3 2 </div><div class="line">1 2 3 8 4 5 </div><div class="line">1 5 4 8 3 2 </div><div class="line">1 3 8 4 5 </div><div class="line">1 5 4 8 3 </div></pre></td></tr></table></figure>
+<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+<li><a href="http://terms.naver.com/entry.nhn?docId=2270421&amp;cid=51173&amp;categoryId=51173&amp;expCategoryId=51173" target="_blank" rel="external">http://terms.naver.com/entry.nhn?docId=2270421&amp;cid=51173&amp;categoryId=51173&amp;expCategoryId=51173</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/09/04/2017-09-04-algorithm-data_structure/" data-id="cj7660du900007rw6xme7zu8u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/09/03/2017-09-03-spring-structure/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Spring] 기본 프로젝트 파일 구조</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/04/2017-09-04-algorithm-data_structure/" class="title">[Data Structure] Linked-list</a></p>
+                            <p class="item-date"><time datetime="2017-09-04T12:20:00.000Z" itemprop="datePublished">2017-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/03/2017-09-03-spring-structure/" class="title">[Spring] 기본 프로젝트 파일 구조</a></p>
+                            <p class="item-date"><time datetime="2017-09-03T02:20:00.000Z" itemprop="datePublished">2017-09-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/02/2017-09-02-algorithm-quicksort/" class="title">[Algorithm] Quick sort</a></p>
+                            <p class="item-date"><time datetime="2017-09-02T01:20:00.000Z" itemprop="datePublished">2017-09-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/08/31/2017-08-31-spring-mysql/" class="title">[Spring] MySQL Workbench에서 DB 생성</a></p>
+                            <p class="item-date"><time datetime="2017-08-31T12:30:00.000Z" itemprop="datePublished">2017-08-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/08/27/2017-08-27-spring-setting/" class="title">[Spring] Setting</a></p>
+                            <p class="item-date"><time datetime="2017-08-27T02:30:00.000Z" itemprop="datePublished">2017-08-27</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 18px;">algorithm</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/bash/" style="font-size: 12px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 12px;">database</a> <a href="/tags/datastructure/" style="font-size: 10px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 18px;">docs</a> <a href="/tags/docthread/" style="font-size: 14px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 12px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 12px;">gerrit</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 12px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 12px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 12px;">interview</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 12px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 14px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 16px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 14px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/troubleshooting/" style="font-size: 14px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 12px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 12px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/09/04/2017-09-04-algorithm-data_structure/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
