@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Data Structure] Binary Search Tree | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="algorithm,datastructure,tree,binarysearchtree" />
+    
+    <meta name="description" content="이진 탐색 Tree (Binary Search Tree)이진 탐색 Tree는 데이터의 삽입, 삭제, 탐색 등이 자주 발생하는 경우에 효율적인 구조이다.
+같은 값을 갖는 Node가 없어야 한다. 왼쪽 Sub Tree에 있는 모든 데이터는 현재 Node의 값보다 작고,
+오른쪽 Sub Tree에 있는 모든 Node의 데이터는 현재 Node의 값보다 크다.
+데이터">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Data Structure] Binary Search Tree">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/09/11/2017-09-08-algorithm-data_structure-binary_search_tree/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="이진 탐색 Tree (Binary Search Tree)이진 탐색 Tree는 데이터의 삽입, 삭제, 탐색 등이 자주 발생하는 경우에 효율적인 구조이다.
+같은 값을 갖는 Node가 없어야 한다. 왼쪽 Sub Tree에 있는 모든 데이터는 현재 Node의 값보다 작고,
+오른쪽 Sub Tree에 있는 모든 Node의 데이터는 현재 Node의 값보다 크다.
+데이터">
+<meta property="og:updated_time" content="2017-09-12T07:22:39.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Data Structure] Binary Search Tree">
+<meta name="twitter:description" content="이진 탐색 Tree (Binary Search Tree)이진 탐색 Tree는 데이터의 삽입, 삭제, 탐색 등이 자주 발생하는 경우에 효율적인 구조이다.
+같은 값을 갖는 Node가 없어야 한다. 왼쪽 Sub Tree에 있는 모든 데이터는 현재 Node의 값보다 작고,
+오른쪽 Sub Tree에 있는 모든 Node의 데이터는 현재 Node의 값보다 크다.
+데이터">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Algorithm/">Algorithm</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-09-08-algorithm-data_structure-binary_search_tree" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Data Structure] Binary Search Tree
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/09/11/2017-09-08-algorithm-data_structure-binary_search_tree/" class="article-date">
+    <time datetime="2017-09-11T13:00:00.000Z" itemprop="datePublished">2017-09-11</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binarysearchtree/">binarysearchtree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datastructure/">datastructure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tree/">tree</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#이진-탐색-Tree-Binary-Search-Tree"><span class="toc-number">1.</span> <span class="toc-text">이진 탐색 Tree (Binary Search Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#데이터의-탐색"><span class="toc-number">1.1.</span> <span class="toc-text">데이터의 탐색</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#데이터-삽입"><span class="toc-number">1.2.</span> <span class="toc-text">데이터 삽입</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#데이터-삭제"><span class="toc-number">1.3.</span> <span class="toc-text">데이터 삭제</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#삭제할-Node가-단말-Node일-경우"><span class="toc-number">1.3.1.</span> <span class="toc-text">삭제할 Node가 단말 Node일 경우</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#삭제할-Node의-자식-Node가-하나일-경우"><span class="toc-number">1.3.2.</span> <span class="toc-text">삭제할 Node의 자식 Node가 하나일 경우</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#삭제할-Node의-자식-Node가-두-개일-경우"><span class="toc-number">1.3.3.</span> <span class="toc-text">삭제할 Node의 자식 Node가 두 개일 경우</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#구현"><span class="toc-number">1.4.</span> <span class="toc-text">구현</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참조"><span class="toc-number">2.</span> <span class="toc-text">참조</span></a></li></ol>
+                
+            </div>
+            <h2 id="이진-탐색-Tree-Binary-Search-Tree"><a href="#이진-탐색-Tree-Binary-Search-Tree" class="headerlink" title="이진 탐색 Tree (Binary Search Tree)"></a>이진 탐색 Tree (Binary Search Tree)</h2><p><code>이진 탐색 Tree</code>는 <code>데이터</code>의 <code>삽입</code>, <code>삭제</code>, <code>탐색</code> 등이 자주 발생하는 경우에 효율적인 구조이다.</p>
+<p>같은 값을 갖는 <code>Node</code>가 없어야 한다. 왼쪽 Sub Tree에 있는 모든 데이터는 현재 Node의 값보다 작고,</p>
+<p>오른쪽 Sub Tree에 있는 모든 Node의 데이터는 현재 Node의 값보다 크다.</p>
+<h3 id="데이터의-탐색"><a href="#데이터의-탐색" class="headerlink" title="데이터의 탐색"></a>데이터의 탐색</h3><p><code>Root</code>에서부터 탐색이 시작되며 <code>Root node</code>의 데이터가 찾으려는 데이터보다 작으면 오른쪽 Sub Tree를 탐색하고 찾으려는 데이터보다 크면 왼쪽 Subtree를 탐색한다.</p>
+<h3 id="데이터-삽입"><a href="#데이터-삽입" class="headerlink" title="데이터 삽입"></a>데이터 삽입</h3><p><code>Binary Search Tree</code>에서의 데이터 삽입은 탐색을 통해 이루어지며, 탐색에 성공하면 데이터 삽입에 실패한다. (Binary tree는 같은 데이터를 갖는 Node가 없어야 하기 때문)</p>
+<p>탐색에 실패할 경우 데이터를 삽입하며, 아래와 같은 과정을 거친다.</p>
+<ol>
+<li>삽입하려는 데이터가 Root node의 데이터보다 작으면 왼쪽 Subtree로.</li>
+<li>왼쪽 Subtree의 Root node보다 크면 오른쪽 Subtree로.</li>
+<li>만약에 단말 Node를 만난다면 더 이상 탐색은 진행하지 않는다.</li>
+<li>단말 Node보다 작으면 단말 Node의 왼쪽 자식 Node로, 단말 Node보다 크면 단말 Node의 오른쪽 자식 Node로 새 Node를 삽입한다.</li>
+</ol>
+<h3 id="데이터-삭제"><a href="#데이터-삭제" class="headerlink" title="데이터 삭제"></a>데이터 삭제</h3><p>데이터 삭제는 삭제할 Node의 위치에 따라 세 가지 케이스로 구분된다.</p>
+<h4 id="삭제할-Node가-단말-Node일-경우"><a href="#삭제할-Node가-단말-Node일-경우" class="headerlink" title="삭제할 Node가 단말 Node일 경우"></a>삭제할 Node가 단말 Node일 경우</h4><p>부모 Node에서 삭제할 Node를 가리키는 링크를 제거하면 된다.</p>
+<h4 id="삭제할-Node의-자식-Node가-하나일-경우"><a href="#삭제할-Node의-자식-Node가-하나일-경우" class="headerlink" title="삭제할 Node의 자식 Node가 하나일 경우"></a>삭제할 Node의 자식 Node가 하나일 경우</h4><p>부모 Node가 삭제할 Node의 자식 Node를 가리키게 한 후 제거하면 된다.</p>
+<h4 id="삭제할-Node의-자식-Node가-두-개일-경우"><a href="#삭제할-Node의-자식-Node가-두-개일-경우" class="headerlink" title="삭제할 Node의 자식 Node가 두 개일 경우"></a>삭제할 Node의 자식 Node가 두 개일 경우</h4><p>삭제할 Node를 왼쪽 Sub Tree에서 가장 큰 Node로 대체하거나 오른쪽 Sub Tree에서 가장 작은 Node로 대체한 후 원래 Node를 삭제한다.</p>
+<p><del>이거 이해하는데 시간이 걸렸다. 멍청해 멍청해…</del></p>
+<h3 id="구현"><a href="#구현" class="headerlink" title="구현"></a>구현</h3><p>Node는 아래와 같이 꾸미고,</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> mData;</div><div class="line">	</div><div class="line">	<span class="keyword">private</span> Node leftNode;</div><div class="line">	<span class="keyword">private</span> Node rightNode;</div><div class="line">	</div><div class="line">	Node(<span class="keyword">int</span> data) &#123;</div><div class="line">		mData = data;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">getLeftNode</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> leftNode;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">getRightNode</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> rightNode;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLeftNode</span><span class="params">(Node newNode)</span> </span>&#123;</div><div class="line">		leftNode = newNode;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRightNode</span><span class="params">(Node newNode)</span> </span>&#123;</div><div class="line">		rightNode = newNode;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mData;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</div><div class="line">		mData = data;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>BST (Binary Search Tree)는 아래와 같이 꾸민다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTree</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> Node mRootNode;</div><div class="line">	</div><div class="line">	BinarySearchTree(Node newNode) &#123;</div><div class="line">		mRootNode = newNode;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">getRoot</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mRootNode;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertNode</span><span class="params">(Node newNode)</span> </span>&#123;</div><div class="line">		</div><div class="line">		Node offset = mRootNode; <span class="comment">// 반복적 탐색 알고리즘을 이용</span></div><div class="line">		</div><div class="line">		<span class="keyword">while</span> (offset != <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">if</span> (offset.getData() == newNode.getData()) &#123;</div><div class="line">				System.out.println(<span class="string">"insert fail because same data. BST regulation violation."</span>);</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			<span class="keyword">if</span> (newNode.getData() &lt; offset.getData()) &#123;</div><div class="line">				<span class="keyword">if</span> (offset.getLeftNode() == <span class="keyword">null</span>) &#123;</div><div class="line">					offset.setLeftNode(newNode);</div><div class="line">					<span class="keyword">return</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					offset = offset.getLeftNode(); </div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="keyword">if</span> (offset.getRightNode() == <span class="keyword">null</span>) &#123;</div><div class="line">					offset.setRightNode(newNode);</div><div class="line">					<span class="keyword">return</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					offset = offset.getRightNode();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">// 순환적 탐색 알고리즘을 이용</span></div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">searchNode</span><span class="params">(Node curNode, <span class="keyword">int</span> data)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (curNode == <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> (curNode.getData() == data) &#123;</div><div class="line">			<span class="keyword">return</span> curNode;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> (curNode.getLeftNode() == <span class="keyword">null</span> &amp;&amp; curNode.getRightNode() == <span class="keyword">null</span>) &#123;</div><div class="line">			System.out.println(<span class="string">"search fail. BST is not contained this element."</span>); </div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (data &lt; curNode.getData()) &#123;</div><div class="line">			<span class="keyword">return</span> searchNode(curNode.getLeftNode(), data);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="comment">// data &gt; curNode.getData()</span></div><div class="line">		<span class="keyword">return</span> searchNode(curNode.getRightNode(), data);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</div><div class="line">		deleteTarget(mRootNode, data);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">deleteTarget</span><span class="params">(Node curNode, <span class="keyword">int</span> data)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (curNode == <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="keyword">if</span> (data &lt; curNode.getData()) &#123;</div><div class="line">			curNode.setLeftNode(deleteTarget(curNode.getLeftNode(), data));</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (data &gt; curNode.getData()) &#123;</div><div class="line">			curNode.setRightNode(deleteTarget(curNode.getRightNode(), data));</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="comment">// found!!</span></div><div class="line"></div><div class="line">			<span class="comment">// parent has no or one node.</span></div><div class="line">			<span class="keyword">if</span> (curNode.getLeftNode() == <span class="keyword">null</span>) &#123;</div><div class="line">				<span class="keyword">return</span> curNode.getRightNode();</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (curNode.getRightNode() == <span class="keyword">null</span>) &#123;</div><div class="line">				<span class="keyword">return</span> curNode.getLeftNode();</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="comment">// parent has two nodes. find smallest nodes in right tree.</span></div><div class="line">			Node temp = curNode.getRightNode();</div><div class="line">			<span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</div><div class="line">				<span class="keyword">if</span> (temp.getLeftNode() != <span class="keyword">null</span>) &#123;</div><div class="line">					temp = temp.getLeftNode();</div><div class="line">					<span class="keyword">continue</span>;</div><div class="line">				&#125;</div><div class="line">				curNode.setData(temp.getData());</div><div class="line">				temp = <span class="keyword">null</span>;</div><div class="line">			&#125;</div><div class="line">			curNode.setRightNode(deleteTarget(curNode.getRightNode(), data));</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> curNode;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main에서 Tree 생성 후 실행해보면</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		</div><div class="line">		BinarySearchTree bst = <span class="keyword">new</span> BinarySearchTree(<span class="keyword">new</span> Node(<span class="number">20</span>));</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">"making tree..."</span>);</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">10</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">4</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">15</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">2</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">7</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">5</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">15</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">12</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">18</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">30</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">25</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">22</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">23</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">27</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">26</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">36</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">33</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">34</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">50</span>));</div><div class="line">		bst.insertNode(<span class="keyword">new</span> Node(<span class="number">60</span>));</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">"print some nodes..."</span>);</div><div class="line">		System.out.println(bst.getRoot().getData());</div><div class="line">		System.out.println(bst.getRoot().getLeftNode().getData());</div><div class="line">		System.out.println(bst.getRoot().getLeftNode().getLeftNode().getData());</div><div class="line">		System.out.println(bst.getRoot().getLeftNode().getLeftNode().getLeftNode().getData());</div><div class="line">		System.out.println(bst.getRoot().getLeftNode().getLeftNode().getRightNode().getData());</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">"delete node data \'4\'"</span>);</div><div class="line">		bst.deleteNode(<span class="number">4</span>);</div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			System.out.println(<span class="string">"print some nodes..."</span>);</div><div class="line">			System.out.println(bst.getRoot().getData());</div><div class="line">			System.out.println(bst.getRoot().getLeftNode().getData());</div><div class="line">			System.out.println(bst.getRoot().getLeftNode().getLeftNode().getData());</div><div class="line">			System.out.println(bst.getRoot().getLeftNode().getLeftNode().getLeftNode().getData());</div><div class="line">			System.out.println(bst.getRoot().getLeftNode().getLeftNode().getRightNode().getData());</div><div class="line"></div><div class="line">			System.out.println(<span class="string">"search some datas..."</span>);</div><div class="line">			System.out.println(bst.searchNode(bst.getRoot(), <span class="number">2</span>).getData());</div><div class="line">			System.out.println(bst.searchNode(bst.getRoot(), <span class="number">30</span>).getData());</div><div class="line">			System.out.println(bst.searchNode(bst.getRoot(), <span class="number">25</span>).getData());</div><div class="line">			System.out.println(bst.searchNode(bst.getRoot(), <span class="number">11</span>).getData());</div><div class="line">			System.out.println(bst.searchNode(bst.getRoot(), <span class="number">9</span>).getData());</div><div class="line">		&#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</div><div class="line">			System.out.println(<span class="string">"null"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>각각 아래와 같은 결과를 얻을 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">making tree...</div><div class="line">insert fail because same data. BST regulation violation.</div><div class="line"><span class="built_in">print</span> some nodes...</div><div class="line">20</div><div class="line">10</div><div class="line">4</div><div class="line">2</div><div class="line">7</div><div class="line">delete node data <span class="string">'4'</span></div><div class="line"><span class="built_in">print</span> some nodes...</div><div class="line">20</div><div class="line">10</div><div class="line">5</div><div class="line">2</div><div class="line">7</div><div class="line">search some datas...</div><div class="line">2</div><div class="line">30</div><div class="line">25</div><div class="line">search fail. BST is not contained this element.</div><div class="line">null</div></pre></td></tr></table></figure>
+<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+<li><a href="http://terms.naver.com/entry.nhn?docId=2270430&amp;cid=51173&amp;categoryId=51173&amp;expCategoryId=51173" target="_blank" rel="external">http://terms.naver.com/entry.nhn?docId=2270430&amp;cid=51173&amp;categoryId=51173&amp;expCategoryId=51173</a></li>
+<li><a href="http://www.algolist.net/Data_structures/Binary_search_tree/Removal" target="_blank" rel="external">http://www.algolist.net/Data_structures/Binary_search_tree/Removal</a></li>
+<li><a href="https://helloacm.com/how-to-delete-a-node-from-a-binary-search-tree/" target="_blank" rel="external">https://helloacm.com/how-to-delete-a-node-from-a-binary-search-tree/</a></li>
+<li><a href="http://www.geeksforgeeks.org/binary-search-tree-set-2-delete/" target="_blank" rel="external">http://www.geeksforgeeks.org/binary-search-tree-set-2-delete/</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/09/11/2017-09-08-algorithm-data_structure-binary_search_tree/" data-id="cj7e9ljr80000tjw6ia3ymovx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/09/07/2017-09-07-algorithm-data_structure-binary_tree/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Data Structure] Binary tree</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/11/2017-09-08-algorithm-data_structure-binary_search_tree/" class="title">[Data Structure] Binary Search Tree</a></p>
+                            <p class="item-date"><time datetime="2017-09-11T13:00:00.000Z" itemprop="datePublished">2017-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/07/2017-09-07-algorithm-data_structure-binary_tree/" class="title">[Data Structure] Binary tree</a></p>
+                            <p class="item-date"><time datetime="2017-09-07T12:20:00.000Z" itemprop="datePublished">2017-09-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/06/2017-09-06-algorithm-data_structure-queue/" class="title">[Data Structure] Queue</a></p>
+                            <p class="item-date"><time datetime="2017-09-06T12:20:00.000Z" itemprop="datePublished">2017-09-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/05/2017-09-05-algorithm-data_structure-stack/" class="title">[Data Structure] Stack</a></p>
+                            <p class="item-date"><time datetime="2017-09-05T12:20:00.000Z" itemprop="datePublished">2017-09-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/04/2017-09-04-algorithm-data_structure-linkedlist/" class="title">[Data Structure] Linked-list</a></p>
+                            <p class="item-date"><time datetime="2017-09-04T12:20:00.000Z" itemprop="datePublished">2017-09-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/android/" style="font-size: 18.33px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/bash/" style="font-size: 11.67px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/binarysearchtree/" style="font-size: 10px;">binarysearchtree</a> <a href="/tags/binarytree/" style="font-size: 10px;">binarytree</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 10px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 11.67px;">database</a> <a href="/tags/datastructure/" style="font-size: 16.67px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 16.67px;">docs</a> <a href="/tags/docthread/" style="font-size: 13.33px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 11.67px;">gerrit</a> <a href="/tags/git/" style="font-size: 18.33px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 11.67px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 11.67px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 11.67px;">interview</a> <a href="/tags/java/" style="font-size: 18.33px;">java</a> <a href="/tags/javascript/" style="font-size: 11.67px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/linux/" style="font-size: 11.67px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 11.67px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 11.67px;">queue</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 13.33px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 15px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 13.33px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/tree/" style="font-size: 11.67px;">tree</a> <a href="/tags/troubleshooting/" style="font-size: 13.33px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 11.67px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 11.67px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/09/11/2017-09-08-algorithm-data_structure-binary_search_tree/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
