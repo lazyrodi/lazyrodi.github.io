@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Spring Troubleshooting | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="spring" />
+    
+    <meta name="description" content="java.lang.IllegalStateException: Could not load JDBC driver class [oracle.jdbc.driver.OracleDriver]Oracle DB를 사용하는 경우 Library를 찾을 수 없어서 발생하는 에러이다.
+
+http://www.oracle.com/technetwork/database/features/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Troubleshooting">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/09/18/2017-09-18-troubleshooting-spring/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="java.lang.IllegalStateException: Could not load JDBC driver class [oracle.jdbc.driver.OracleDriver]Oracle DB를 사용하는 경우 Library를 찾을 수 없어서 발생하는 에러이다.
+
+http://www.oracle.com/technetwork/database/features/">
+<meta property="og:updated_time" content="2017-09-18T14:02:55.778Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Troubleshooting">
+<meta name="twitter:description" content="java.lang.IllegalStateException: Could not load JDBC driver class [oracle.jdbc.driver.OracleDriver]Oracle DB를 사용하는 경우 Library를 찾을 수 없어서 발생하는 에러이다.
+
+http://www.oracle.com/technetwork/database/features/">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-09-18-troubleshooting-spring" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Spring Troubleshooting
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/09/18/2017-09-18-troubleshooting-spring/" class="article-date">
+    <time datetime="2017-09-18T11:22:00.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#java-lang-IllegalStateException-Could-not-load-JDBC-driver-class-oracle-jdbc-driver-OracleDriver"><span class="toc-number">1.</span> <span class="toc-text">java.lang.IllegalStateException: Could not load JDBC driver class [oracle.jdbc.driver.OracleDriver]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataSource에-MySQL과-Oracle-각각-설정하는-방법"><span class="toc-number">2.</span> <span class="toc-text">DataSource에 MySQL과 Oracle 각각 설정하는 방법</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-연동"><span class="toc-number">2.1.</span> <span class="toc-text">MySQL 연동</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Oracle-연동"><span class="toc-number">2.2.</span> <span class="toc-text">Oracle 연동</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestMapping-에서-PathVariable-로-값을-넘겨받을-때-또는-등의-문자로-인해-String이-잘리는-문제"><span class="toc-number">3.</span> <span class="toc-text">@RequestMapping 에서 @PathVariable 로 값을 넘겨받을 때 @ 또는 . 등의 문자로 인해 String이 잘리는 문제</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Establishing-SSL-connection-without-server’s-identity-verification-is-not-recommended……"><span class="toc-number">4.</span> <span class="toc-text">Establishing SSL connection without server’s identity verification is not recommended……</span></a></li></ol>
+                
+            </div>
+            <h3 id="java-lang-IllegalStateException-Could-not-load-JDBC-driver-class-oracle-jdbc-driver-OracleDriver"><a href="#java-lang-IllegalStateException-Could-not-load-JDBC-driver-class-oracle-jdbc-driver-OracleDriver" class="headerlink" title="java.lang.IllegalStateException: Could not load JDBC driver class [oracle.jdbc.driver.OracleDriver]"></a>java.lang.IllegalStateException: Could not load JDBC driver class [oracle.jdbc.driver.OracleDriver]</h3><p>Oracle DB를 사용하는 경우 Library를 찾을 수 없어서 발생하는 에러이다.</p>
+<ul>
+<li><a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html" target="_blank" rel="external">http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html</a></li>
+</ul>
+<p>여기서 JDK8에 맞는 최신 버전인 ojdbc8.jar 를 다운받을 수 있다.</p>
+<p>이 파일을 c: 에 복사해놓고 <code>cmd &gt; c:\</code>로 이동 한 후 아래 명령을 수행하면 Maven 환경에 추가할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">mvn install:install-file -Dfile=ojdbc8.jar -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2.0.1 -Dpackaging=jar</div></pre></td></tr></table></figure>
+<h3 id="DataSource에-MySQL과-Oracle-각각-설정하는-방법"><a href="#DataSource에-MySQL과-Oracle-각각-설정하는-방법" class="headerlink" title="DataSource에 MySQL과 Oracle 각각 설정하는 방법"></a>DataSource에 MySQL과 Oracle 각각 설정하는 방법</h3><ul>
+<li><a href="http://houki.tistory.com/41" target="_blank" rel="external">http://houki.tistory.com/41</a></li>
+</ul>
+<h4 id="MySQL-연동"><a href="#MySQL-연동" class="headerlink" title="MySQL 연동"></a>MySQL 연동</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span>  <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DriverManagerDataSource"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/mydb?characterEncoding=EUCKR"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"abcd"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"pppw"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">출처: http://houki.tistory.com/41 [아이고 어렵다]</div></pre></td></tr></table></figure>
+<h4 id="Oracle-연동"><a href="#Oracle-연동" class="headerlink" title="Oracle 연동"></a>Oracle 연동</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span>  <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DriverManagerDataSource"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"oracle.jdbc.driver.OracleDriver"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:oracle:thin:@localhost:1521:orcl"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"abcd"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"pppw"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">출처: http://houki.tistory.com/41 [아이고 어렵다]</div></pre></td></tr></table></figure>
+<h3 id="RequestMapping-에서-PathVariable-로-값을-넘겨받을-때-또는-등의-문자로-인해-String이-잘리는-문제"><a href="#RequestMapping-에서-PathVariable-로-값을-넘겨받을-때-또는-등의-문자로-인해-String이-잘리는-문제" class="headerlink" title="@RequestMapping 에서 @PathVariable 로 값을 넘겨받을 때 @ 또는 . 등의 문자로 인해 String이 잘리는 문제"></a>@RequestMapping 에서 @PathVariable 로 값을 넘겨받을 때 @ 또는 . 등의 문자로 인해 String이 잘리는 문제</h3><ul>
+<li><a href="http://winmargo.tistory.com/category/%E2%99%A8%20FrameWork" target="_blank" rel="external">http://winmargo.tistory.com/category/%E2%99%A8%20FrameWork</a></li>
+</ul>
+<p>문제 : email 정보(abc@gmail.com)를 query 할 때 제대로 query되지 않았음.<br>해결 : 아래와 같이 {email} 값을 사용할 때 {email:.+} 의 형식으로 정규표현식을 사용하면 해결됨.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">@RequestMapping(value = "user/email/&#123;email:.+&#125;", method = RequestMethod.GET)</div><div class="line">public ModelAndView getUserByEmail(@PathVariable("email") String email) &#123;</div><div class="line"></div><div class="line">출처: http://winmargo.tistory.com/category/♨ FrameWork [보리 &amp; 마고]</div></pre></td></tr></table></figure>
+<h3 id="Establishing-SSL-connection-without-server’s-identity-verification-is-not-recommended……"><a href="#Establishing-SSL-connection-without-server’s-identity-verification-is-not-recommended……" class="headerlink" title="Establishing SSL connection without server’s identity verification is not recommended……"></a>Establishing SSL connection without server’s identity verification is not recommended……</h3><p>왠지 모르겠지만 아래와 같은 에러가 발생하였고 찾아보니 간단한 해결책이 있었다.</p>
+<blockquote><p>WARN: Establishing SSL connection without server’s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn’t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to ‘false’. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.</p>
+</blockquote>
+<p>아래와 같이 <code>autoReconnect=true&amp;useSSL=false</code> 를 붙여준다. 그냥 &amp; 으로 붙이면 예약어의 시작으로 인식할 수 있으므로 <code>&amp;amp;</code> 를 사용한다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/crudtest?characterEncoding=EUCKR&amp;amp;autoReconnect=true&amp;amp;useSSL=false"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://stackoverflow.com/questions/34189756/warning-about-ssl-connection-when-connecting-to-mysql-database" target="_blank" rel="external">https://stackoverflow.com/questions/34189756/warning-about-ssl-connection-when-connecting-to-mysql-database</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/09/18/2017-09-18-troubleshooting-spring/" data-id="cj7q81smv000hpuw6kc7ls9iw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/09/18/2017-09-18-spring-quick_guide/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Spring] Quick Guide</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2017/09/18/2017-09-18-troubleshooting-spring/" class="title">Spring Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T11:22:00.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/18/2017-09-18-spring-quick_guide/" class="title">[Spring] Quick Guide</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T08:20:00.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/13/2017-09-13-spring-crud/" class="title">[Spring] CRUD</a></p>
+                            <p class="item-date"><time datetime="2017-09-13T04:20:00.000Z" itemprop="datePublished">2017-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/11/2017-09-08-algorithm-data_structure-binary_search_tree/" class="title">[Data Structure] Binary Search Tree</a></p>
+                            <p class="item-date"><time datetime="2017-09-11T13:00:00.000Z" itemprop="datePublished">2017-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/07/2017-09-07-algorithm-data_structure-binary_tree/" class="title">[Data Structure] Binary tree</a></p>
+                            <p class="item-date"><time datetime="2017-09-07T12:20:00.000Z" itemprop="datePublished">2017-09-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/android/" style="font-size: 18.33px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/bash/" style="font-size: 11.67px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/binarysearchtree/" style="font-size: 10px;">binarysearchtree</a> <a href="/tags/binarytree/" style="font-size: 10px;">binarytree</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 13.33px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 11.67px;">database</a> <a href="/tags/datastructure/" style="font-size: 16.67px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 16.67px;">docs</a> <a href="/tags/docthread/" style="font-size: 13.33px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 11.67px;">gerrit</a> <a href="/tags/git/" style="font-size: 18.33px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 11.67px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 11.67px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 11.67px;">interview</a> <a href="/tags/java/" style="font-size: 18.33px;">java</a> <a href="/tags/javascript/" style="font-size: 11.67px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/linux/" style="font-size: 11.67px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 11.67px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 11.67px;">queue</a> <a href="/tags/quick-guide/" style="font-size: 10px;">quick guide</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 13.33px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 15px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 18.33px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/tree/" style="font-size: 11.67px;">tree</a> <a href="/tags/troubleshooting/" style="font-size: 13.33px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 11.67px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 11.67px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/09/18/2017-09-18-troubleshooting-spring/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

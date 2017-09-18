@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Spring] Quick Guide | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="crud,spring,quick guide" />
+    
+    <meta name="description" content="나만의 빠른 가이드.
+
+STS 설치
+Maven 설치
+New Spring Legacy Project 생성
+pom.xml 수정
+Project property 수정
+JSTL 파일 변경
+Tomcat 설정 변경
+MySQL Workbench에서 DB Schema 및 Table 생성
+CRUD 구성
+
+STS 설치
+https://spring.io/tools
+
+Maven 설">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Spring] Quick Guide">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/09/18/2017-09-18-spring-quick_guide/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="나만의 빠른 가이드.
+
+STS 설치
+Maven 설치
+New Spring Legacy Project 생성
+pom.xml 수정
+Project property 수정
+JSTL 파일 변경
+Tomcat 설정 변경
+MySQL Workbench에서 DB Schema 및 Table 생성
+CRUD 구성
+
+STS 설치
+https://spring.io/tools
+
+Maven 설">
+<meta property="og:updated_time" content="2017-09-18T14:13:48.046Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Spring] Quick Guide">
+<meta name="twitter:description" content="나만의 빠른 가이드.
+
+STS 설치
+Maven 설치
+New Spring Legacy Project 생성
+pom.xml 수정
+Project property 수정
+JSTL 파일 변경
+Tomcat 설정 변경
+MySQL Workbench에서 DB Schema 및 Table 생성
+CRUD 구성
+
+STS 설치
+https://spring.io/tools
+
+Maven 설">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Spring/">Spring</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-09-18-spring-quick_guide" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Spring] Quick Guide
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/09/18/2017-09-18-spring-quick_guide/" class="article-date">
+    <time datetime="2017-09-18T08:20:00.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/crud/">crud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/quick-guide/">quick guide</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#STS-설치"><span class="toc-number">1.</span> <span class="toc-text">STS 설치</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-설치"><span class="toc-number">2.</span> <span class="toc-text">Maven 설치</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#New-Spring-Legacy-Project-생성"><span class="toc-number">3.</span> <span class="toc-text">New Spring Legacy Project 생성</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pom-xml-수정"><span class="toc-number">4.</span> <span class="toc-text">pom.xml 수정</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-version-변경"><span class="toc-number">4.1.</span> <span class="toc-text">Spring version 변경</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log4j-slf4j-를-dependency에-추가"><span class="toc-number">4.2.</span> <span class="toc-text">log4j-slf4j 를 dependency에 추가</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBC와-MySQL-사용을-위한-dependency-추가"><span class="toc-number">4.3.</span> <span class="toc-text">JDBC와 MySQL 사용을 위한 dependency 추가</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Project-property-수정"><span class="toc-number">5.</span> <span class="toc-text">Project property 수정</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSTL-파일-변경"><span class="toc-number">6.</span> <span class="toc-text">JSTL 파일 변경</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat-설정-변경"><span class="toc-number">7.</span> <span class="toc-text">Tomcat 설정 변경</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#한글이-깨질-경우"><span class="toc-number">7.1.</span> <span class="toc-text">한글이 깨질 경우</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-Workbench에서-DB-Schema-및-Table-생성"><span class="toc-number">8.</span> <span class="toc-text">MySQL Workbench에서 DB Schema 및 Table 생성</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRUD-구성"><span class="toc-number">9.</span> <span class="toc-text">CRUD 구성</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Class-생성"><span class="toc-number">9.1.</span> <span class="toc-text">Data Class 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DAO-Class-생성"><span class="toc-number">9.2.</span> <span class="toc-text">DAO Class 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data를-다루기-위한-Controller-생성"><span class="toc-number">9.3.</span> <span class="toc-text">Data를 다루기 위한 Controller 생성.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-추가를-위한-form-생성"><span class="toc-number">9.4.</span> <span class="toc-text">Data 추가를 위한 form 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-수정을-위한-form-생성"><span class="toc-number">9.5.</span> <span class="toc-text">Data 수정을 위한 form 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data를-보여주기-위한-view-page-생성-삭제"><span class="toc-number">9.6.</span> <span class="toc-text">Data를 보여주기 위한 view page 생성 (+삭제)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet에-bean-추가"><span class="toc-number">9.7.</span> <span class="toc-text">servlet에 bean 추가</span></a></li></ol></li></ol>
+                
+            </div>
+            <p>나만의 빠른 가이드.</p>
+<ol>
+<li>STS 설치</li>
+<li>Maven 설치</li>
+<li>New Spring Legacy Project 생성</li>
+<li>pom.xml 수정</li>
+<li>Project property 수정</li>
+<li>JSTL 파일 변경</li>
+<li>Tomcat 설정 변경</li>
+<li>MySQL Workbench에서 DB Schema 및 Table 생성</li>
+<li>CRUD 구성</li>
+</ol>
+<h2 id="STS-설치"><a href="#STS-설치" class="headerlink" title="STS 설치"></a>STS 설치</h2><ul>
+<li><a href="https://spring.io/tools" target="_blank" rel="external">https://spring.io/tools</a></li>
+</ul>
+<h2 id="Maven-설치"><a href="#Maven-설치" class="headerlink" title="Maven 설치"></a>Maven 설치</h2><ul>
+<li><a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a></li>
+<li>설치 후 cmd 에서 <code>mvn -version</code> 으로 설치 확인</li>
+</ul>
+<h2 id="New-Spring-Legacy-Project-생성"><a href="#New-Spring-Legacy-Project-생성" class="headerlink" title="New Spring Legacy Project 생성"></a>New Spring Legacy Project 생성</h2><h2 id="pom-xml-수정"><a href="#pom-xml-수정" class="headerlink" title="pom.xml 수정"></a>pom.xml 수정</h2><h3 id="Spring-version-변경"><a href="#Spring-version-변경" class="headerlink" title="Spring version 변경"></a>Spring version 변경</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line">// before</div><div class="line"><span class="tag">&lt;<span class="name">org.springframework-version</span>&gt;</span>3.1.1.RELEASE<span class="tag">&lt;/<span class="name">org.springframework-version</span>&gt;</span></div><div class="line"></div><div class="line">// after</div><div class="line"><span class="tag">&lt;<span class="name">org.springframework-version</span>&gt;</span>4.3.10.RELEASE<span class="tag">&lt;/<span class="name">org.springframework-version</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="log4j-slf4j-를-dependency에-추가"><a href="#log4j-slf4j-를-dependency에-추가" class="headerlink" title="log4j-slf4j 를 dependency에 추가"></a>log4j-slf4j 를 dependency에 추가</h3><p>Library 충돌 문제 해결을 위한 것으로, Spring <code>3.0 이상</code>의 경우 아래의 코드를 pom.xml 에 추가.</p>
+<h3 id="JDBC와-MySQL-사용을-위한-dependency-추가"><a href="#JDBC와-MySQL-사용을-위한-dependency-추가" class="headerlink" title="JDBC와 MySQL 사용을 위한 dependency 추가"></a>JDBC와 MySQL 사용을 위한 dependency 추가</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.11.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>6.0.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Project-property-수정"><a href="#Project-property-수정" class="headerlink" title="Project property 수정"></a>Project property 수정</h2><ol>
+<li>Java 의 Version을 <code>1.8</code> 로 변경</li>
+<li><code>Project Facets</code> 검색 &gt; Runtimes 탭에서 Apache Tomcat V7.0 선택</li>
+</ol>
+<h2 id="JSTL-파일-변경"><a href="#JSTL-파일-변경" class="headerlink" title="JSTL 파일 변경"></a>JSTL 파일 변경</h2><ol>
+<li>다운로드 : <a href="https://mvnrepository.com/artifact/javax.servlet/jstl/1.2" target="_blank" rel="external">https://mvnrepository.com/artifact/javax.servlet/jstl/1.2</a></li>
+<li>C:\Users\사용자\.m2\repository\javax\servlet\jstl\1.2 경로의 파일 바꿔치기</li>
+</ol>
+<h2 id="Tomcat-설정-변경"><a href="#Tomcat-설정-변경" class="headerlink" title="Tomcat 설정 변경"></a>Tomcat 설정 변경</h2><ol>
+<li>Eclipse의 Tomcat server 더블 클릭</li>
+<li><code>Server Options</code>의 <code>Publish module contexts to separate XML files</code> 체크</li>
+<li>TOMCAT 재구동</li>
+</ol>
+<h3 id="한글이-깨질-경우"><a href="#한글이-깨질-경우" class="headerlink" title="한글이 깨질 경우"></a>한글이 깨질 경우</h3><p>jsp 파일의 상단에 아래 코드 추가</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span>%&gt;</span> </div></pre></td></tr></table></figure>
+<h2 id="MySQL-Workbench에서-DB-Schema-및-Table-생성"><a href="#MySQL-Workbench에서-DB-Schema-및-Table-생성" class="headerlink" title="MySQL Workbench에서 DB Schema 및 Table 생성"></a>MySQL Workbench에서 DB Schema 및 Table 생성</h2><p>예시 Table.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">email: VARCHAR(100), PK, NN</div><div class="line">password: VARCHAR(20), NN</div><div class="line">number: VARCHAR(20)</div><div class="line">age: INT(10), UN</div></pre></td></tr></table></figure>
+<h2 id="CRUD-구성"><a href="#CRUD-구성" class="headerlink" title="CRUD 구성"></a>CRUD 구성</h2><h3 id="Data-Class-생성"><a href="#Data-Class-생성" class="headerlink" title="Data Class 생성"></a>Data Class 생성</h3><p>사용할 Data의 Class 생성.</p>
+<ul>
+<li>src/main/java/com.lazyrodi.crud/User.java</li>
+</ul>
+<figure class="highlight java"><figcaption><span>User.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.lazyrodi.crud;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String mEmail;</div><div class="line">	<span class="keyword">private</span> String mPassword;</div><div class="line">	<span class="keyword">private</span> String mNumber;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> mAge;</div><div class="line"></div><div class="line">	User() &#123;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	User(String email, String password, String number, <span class="keyword">int</span> age) &#123;</div><div class="line">		mEmail = email;</div><div class="line">		mPassword = password;</div><div class="line">		mNumber = number;</div><div class="line">		mAge = age;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mEmail;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mPassword;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getNumber</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mNumber;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> mAge;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>&#123;</div><div class="line">		mEmail = email;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</div><div class="line">		mPassword = password;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNumber</span><span class="params">(String number)</span> </span>&#123;</div><div class="line">		mNumber = number;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		mAge = age;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="DAO-Class-생성"><a href="#DAO-Class-생성" class="headerlink" title="DAO Class 생성"></a>DAO Class 생성</h3><p>Data와 Database 간 connection을 위한 DAO (Data Access Object) 생성.</p>
+<ul>
+<li>src/main/java/com.lazyrodi.crud/UserDao.java</li>
+</ul>
+<figure class="highlight java"><figcaption><span>UserDao.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.lazyrodi.crud;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.jdbc.core.BeanPropertyRowMapper;</div><div class="line"><span class="keyword">import</span> org.springframework.jdbc.core.JdbcTemplate;</div><div class="line"><span class="keyword">import</span> org.springframework.jdbc.core.RowMapper;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDao</span> </span>&#123;</div><div class="line">	JdbcTemplate mTemplate;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTemplate</span><span class="params">(JdbcTemplate template)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserDao] Created"</span>);</div><div class="line">		mTemplate = template;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">save</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserDao] save(), email = "</span> + user.getEmail());</div><div class="line">		String sql = <span class="string">"insert into User(email, password, number, age)"</span></div><div class="line">				+ <span class="string">"values('"</span> + user.getEmail() + <span class="string">"','"</span> + user.getPassword() + <span class="string">"','"</span> + user.getNumber() + <span class="string">"', "</span> + user.getAge() + <span class="string">")"</span>;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> mTemplate.update(sql);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserDao] update(), email = "</span> + user.getEmail());</div><div class="line">		String sql = <span class="string">"update User set password='"</span> + user.getPassword()</div><div class="line">					+ <span class="string">"', number='"</span> + user.getNumber()</div><div class="line">					+ <span class="string">"', age="</span> + user.getAge()</div><div class="line">					+ <span class="string">" where email='"</span> + user.getEmail() + <span class="string">"'"</span>;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> mTemplate.update(sql);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">delete</span><span class="params">(String email)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserDao] delete(), email = "</span> + email);</div><div class="line">		String sql = <span class="string">"delete from User where email='"</span> + email + <span class="string">"'"</span>;</div><div class="line">		</div><div class="line">		<span class="keyword">return</span> mTemplate.update(sql);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> User <span class="title">getUserByEmail</span><span class="params">(String email)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserDao] getUserByEmail(), email = "</span> + email);</div><div class="line">		String sql = <span class="string">"select * from User where email=?"</span>;</div><div class="line">		</div><div class="line">		<span class="keyword">return</span> mTemplate.queryForObject(sql, <span class="keyword">new</span> Object[] &#123;email&#125;, <span class="keyword">new</span> BeanPropertyRowMapper&lt;User&gt;(User.class));</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">getUsers</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserDao] getUsers()"</span>);</div><div class="line">		<span class="keyword">return</span> mTemplate.query(<span class="string">"select * from User"</span>,  <span class="keyword">new</span> RowMapper&lt;User&gt;() &#123;</div><div class="line">			<span class="function"><span class="keyword">public</span> User <span class="title">mapRow</span><span class="params">(ResultSet rs, <span class="keyword">int</span> row)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">				User user = <span class="keyword">new</span> User();</div><div class="line">				user.setEmail(rs.getString(<span class="number">1</span>));</div><div class="line">				user.setPassword(rs.getString(<span class="number">2</span>));</div><div class="line">				user.setNumber(rs.getString(<span class="number">3</span>));</div><div class="line">				user.setAge(rs.getInt(<span class="number">4</span>));</div><div class="line"></div><div class="line">				<span class="keyword">return</span> user;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Data를-다루기-위한-Controller-생성"><a href="#Data를-다루기-위한-Controller-생성" class="headerlink" title="Data를 다루기 위한 Controller 생성."></a>Data를 다루기 위한 Controller 생성.</h3><ul>
+<li>src/main/java/com.lazyrodi.crud/UserController.java</li>
+</ul>
+<figure class="highlight java"><figcaption><span>UserController.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.lazyrodi.crud;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ModelAttribute;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.PathVariable;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</div><div class="line"><span class="keyword">import</span> org.springframework.web.servlet.ModelAndView;</div><div class="line"></div><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@Autowired</span></div><div class="line">	UserDao dao;</div><div class="line">	</div><div class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/userform"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">showform</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserController] showform()"</span>);</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ModelAndView(<span class="string">"userform"</span>, <span class="string">"command"</span>, <span class="keyword">new</span> User());</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/save"</span>, method = RequestMethod.POST)</div><div class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">save</span><span class="params">(@ModelAttribute(<span class="string">"user"</span>)</span> User user) </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserController] save(), email = "</span> + user.getEmail());</div><div class="line">		dao.save(user);</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ModelAndView(<span class="string">"redirect:/viewuser"</span>);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/viewuser"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">viewuser</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserController] viewuser()"</span>);</div><div class="line">		List&lt;User&gt; userList = dao.getUsers();</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ModelAndView(<span class="string">"viewuser"</span>, <span class="string">"list"</span>, userList);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/edituser/&#123;email:.+&#125;"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">edit</span><span class="params">(@PathVariable(<span class="string">"email"</span>)</span> String email) </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserController] edit(), email = "</span> + email);</div><div class="line">		User user = dao.getUserByEmail(email);</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ModelAndView(<span class="string">"usereditform"</span>, <span class="string">"command"</span>, user);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/editsave"</span>, method = RequestMethod.POST)</div><div class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">editsave</span><span class="params">(@ModelAttribute(<span class="string">"user"</span>)</span> User user) </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserController] editsave(), email = "</span> + user.getEmail());</div><div class="line">		dao.update(user);</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ModelAndView(<span class="string">"redirect:/viewuser"</span>);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/deleteuser/&#123;email:.+&#125;"</span>, method = RequestMethod.GET)</div><div class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">delete</span><span class="params">(@PathVariable(<span class="string">"email"</span>)</span> String email) </span>&#123;</div><div class="line">		System.out.println(<span class="string">"[UserController] delete(), email = "</span> + email);</div><div class="line">		dao.delete(email);</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ModelAndView(<span class="string">"redirect:/viewuser"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="Data-추가를-위한-form-생성"><a href="#Data-추가를-위한-form-생성" class="headerlink" title="Data 추가를 위한 form 생성"></a>Data 추가를 위한 form 생성</h3><ul>
+<li>/src/main/webapp/WEB-INF/views/userform.jsp</li>
+</ul>
+<figure class="highlight html"><figcaption><span>userform.jsp</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></div><div class="line">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://www.springframework.org/tags/form"</span> <span class="attr">prefix</span>=<span class="string">"form"</span>%&gt;</span>    </div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> <span class="attr">prefix</span>=<span class="string">"c"</span>%&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Edit User<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Edit User<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form:form</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">"/crud/editsave"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"email"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"password"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Phone Number<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"number"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Age<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"age"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Edit save"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form:form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Data-수정을-위한-form-생성"><a href="#Data-수정을-위한-form-생성" class="headerlink" title="Data 수정을 위한 form 생성"></a>Data 수정을 위한 form 생성</h3><ul>
+<li>/src/main/webapp/WEB-INF/views/usereditform.jsp</li>
+</ul>
+<figure class="highlight html"><figcaption><span>usereditform.jsp</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></div><div class="line">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://www.springframework.org/tags/form"</span> <span class="attr">prefix</span>=<span class="string">"form"</span>%&gt;</span>    </div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> <span class="attr">prefix</span>=<span class="string">"c"</span>%&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Edit User<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Edit User<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form:form</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">"editsave"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"email"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"password"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Phone Number<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"number"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Age<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">form:input</span> <span class="attr">path</span>=<span class="string">"age"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Edit save"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form:form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Data를-보여주기-위한-view-page-생성-삭제"><a href="#Data를-보여주기-위한-view-page-생성-삭제" class="headerlink" title="Data를 보여주기 위한 view page 생성 (+삭제)"></a>Data를 보여주기 위한 view page 생성 (+삭제)</h3><ul>
+<li>/src/main/webapp/WEB-INF/views/viewuser.jsp</li>
+</ul>
+<figure class="highlight html"><figcaption><span>viewuser.jsp</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></div><div class="line">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://www.springframework.org/tags/form"</span> <span class="attr">prefix</span>=<span class="string">"form"</span>%&gt;</span>    </div><div class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> <span class="attr">prefix</span>=<span class="string">"c"</span>%&gt;</span>    </div><div class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>View User<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>User List<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">th</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">th</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">th</span>&gt;</span>Phone Number<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">th</span>&gt;</span>Age<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">th</span>&gt;</span>Edit<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">th</span>&gt;</span>Delete<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">c:forEach</span> <span class="attr">var</span>=<span class="string">"user"</span> <span class="attr">items</span>=<span class="string">"$&#123;list&#125;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;user.email&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;user.password&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;user.number&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>$&#123;user.age&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"edituser/$&#123;user.email&#125;"</span>&gt;</span>edit<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"deleteuser/$&#123;user.email&#125;"</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">c:forEach</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="servlet에-bean-추가"><a href="#servlet에-bean-추가" class="headerlink" title="servlet에 bean 추가"></a>servlet에 bean 추가</h3><ul>
+<li>/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</li>
+</ul>
+<figure class="highlight html"><figcaption><span>servlet-context.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans:beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/mvc"</span></span></div><div class="line">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">	<span class="attr">xmlns:beans</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></div><div class="line">	<span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></div><div class="line">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd</span></div><div class="line">		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</div><div class="line">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"&gt;</div><div class="line"></div><div class="line">	<span class="comment">&lt;!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure --&gt;</span></div><div class="line">	</div><div class="line">	<span class="comment">&lt;!-- Enables the Spring MVC @Controller programming model --&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">annotation-driven</span> /&gt;</span></div><div class="line"></div><div class="line">	<span class="comment">&lt;!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the $&#123;webappRoot&#125;/resources directory --&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">resources</span> <span class="attr">mapping</span>=<span class="string">"/resources/**"</span> <span class="attr">location</span>=<span class="string">"/resources/"</span> /&gt;</span></div><div class="line"></div><div class="line">	<span class="comment">&lt;!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory --&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">beans:bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"prefix"</span> <span class="attr">value</span>=<span class="string">"/WEB-INF/views/"</span> /&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"suffix"</span> <span class="attr">value</span>=<span class="string">".jsp"</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">beans:bean</span>&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.lazyrodi.crud"</span> /&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;<span class="name">beans:bean</span> <span class="attr">id</span>=<span class="string">"ds"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DriverManagerDataSource"</span>&gt;</span>  </div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span>  </div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/스키마이름?characterEncoding=EUCKR&amp;amp;autoReconnect=true&amp;amp;useSSL=false"</span> /&gt;</span>  </div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"MySQL아이디"</span> /&gt;</span>  </div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"비밀번호"</span> /&gt;</span>  </div><div class="line">	<span class="tag">&lt;/<span class="name">beans:bean</span>&gt;</span>  </div><div class="line">	  </div><div class="line">	<span class="tag">&lt;<span class="name">beans:bean</span> <span class="attr">id</span>=<span class="string">"jt"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.core.JdbcTemplate"</span>&gt;</span>  </div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"ds"</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">beans:bean</span>&gt;</span>  </div><div class="line">	  </div><div class="line">	<span class="tag">&lt;<span class="name">beans:bean</span> <span class="attr">id</span>=<span class="string">"dao"</span> <span class="attr">class</span>=<span class="string">"com.lazyrodi.crud.UserDao"</span>&gt;</span>  </div><div class="line">		<span class="tag">&lt;<span class="name">beans:property</span> <span class="attr">name</span>=<span class="string">"template"</span> <span class="attr">ref</span>=<span class="string">"jt"</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">beans:bean</span>&gt;</span>  	</div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">beans:beans</span>&gt;</span></div></pre></td></tr></table></figure>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/09/18/2017-09-18-spring-quick_guide/" data-id="cj7q7zv7f0005puw6kpkgdtka" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/09/18/2017-09-18-troubleshooting-spring/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Spring Troubleshooting
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/09/13/2017-09-13-spring-crud/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Spring] CRUD</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2017/09/18/2017-09-18-troubleshooting-spring/" class="title">Spring Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T11:22:00.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/18/2017-09-18-spring-quick_guide/" class="title">[Spring] Quick Guide</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T08:20:00.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/13/2017-09-13-spring-crud/" class="title">[Spring] CRUD</a></p>
+                            <p class="item-date"><time datetime="2017-09-13T04:20:00.000Z" itemprop="datePublished">2017-09-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/11/2017-09-08-algorithm-data_structure-binary_search_tree/" class="title">[Data Structure] Binary Search Tree</a></p>
+                            <p class="item-date"><time datetime="2017-09-11T13:00:00.000Z" itemprop="datePublished">2017-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/09/07/2017-09-07-algorithm-data_structure-binary_tree/" class="title">[Data Structure] Binary tree</a></p>
+                            <p class="item-date"><time datetime="2017-09-07T12:20:00.000Z" itemprop="datePublished">2017-09-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/android/" style="font-size: 18.33px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/bash/" style="font-size: 11.67px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/binarysearchtree/" style="font-size: 10px;">binarysearchtree</a> <a href="/tags/binarytree/" style="font-size: 10px;">binarytree</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 13.33px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 11.67px;">database</a> <a href="/tags/datastructure/" style="font-size: 16.67px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 16.67px;">docs</a> <a href="/tags/docthread/" style="font-size: 13.33px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/gerrit/" style="font-size: 11.67px;">gerrit</a> <a href="/tags/git/" style="font-size: 18.33px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 11.67px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 11.67px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 11.67px;">interview</a> <a href="/tags/java/" style="font-size: 18.33px;">java</a> <a href="/tags/javascript/" style="font-size: 11.67px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/linux/" style="font-size: 11.67px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 11.67px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 11.67px;">queue</a> <a href="/tags/quick-guide/" style="font-size: 10px;">quick guide</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 13.33px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/setting/" style="font-size: 15px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 18.33px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/tree/" style="font-size: 11.67px;">tree</a> <a href="/tags/troubleshooting/" style="font-size: 13.33px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 11.67px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 11.67px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/09/18/2017-09-18-spring-quick_guide/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
