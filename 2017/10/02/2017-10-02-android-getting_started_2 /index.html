@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Android] Getting Started (2) | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="android,study" />
+    
+    <meta name="description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+Building a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Perm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Android] Getting Started (2)">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/10/02/2017-10-02-android-getting_started_2 /index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+Building a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Perm">
+<meta property="og:updated_time" content="2017-10-03T06:18:06.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Android] Getting Started (2)">
+<meta name="twitter:description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+Building a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Perm">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/android/">android</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-10-02-android-getting_started_2 " class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Android] Getting Started (2)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/10/02/2017-10-02-android-getting_started_2 /" class="article-date">
+    <time datetime="2017-10-02T01:00:00.000Z" itemprop="datePublished">2017-10-02</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study/">study</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#다양한-언어의-지원"><span class="toc-number">1.</span> <span class="toc-text">다양한 언어의 지원</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Locale-디렉토리-및-문자열-파일-생성"><span class="toc-number">1.1.</span> <span class="toc-text">Locale 디렉토리 및 문자열 파일 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#문자열-리소스-사용"><span class="toc-number">1.2.</span> <span class="toc-text">문자열 리소스 사용</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#소스-코드-구문에서-참조"><span class="toc-number">1.2.1.</span> <span class="toc-text">소스 코드 구문에서 참조</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#다른-XML-파일에서-참조"><span class="toc-number">1.2.2.</span> <span class="toc-text">다른 XML 파일에서 참조</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#다양한-화면의-지원"><span class="toc-number">2.</span> <span class="toc-text">다양한 화면의 지원</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#다른-레이아웃의-생성"><span class="toc-number">2.1.</span> <span class="toc-text">다른 레이아웃의 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#서로-다른-비트맵-생성"><span class="toc-number">2.2.</span> <span class="toc-text">서로 다른 비트맵 생성</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#서로-다른-플랫폼-버전의-지원"><span class="toc-number">3.</span> <span class="toc-text">서로 다른 플랫폼 버전의 지원</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Minimum-API-level-및-Target-API-level-정하기"><span class="toc-number">3.1.</span> <span class="toc-text">Minimum API level 및 Target API level 정하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Runtime에-시스템-버전-체크하기"><span class="toc-number">3.2.</span> <span class="toc-text">Runtime에 시스템 버전 체크하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#플랫폼-스타일과-테마-사용하기"><span class="toc-number">3.3.</span> <span class="toc-text">플랫폼 스타일과 테마 사용하기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#출처"><span class="toc-number">4.</span> <span class="toc-text">출처</span></a></li></ol>
+                
+            </div>
+            <blockquote><p>Android developer site study</p>
+<ul>
+<li><b>Getting Started</b><ul>
+<li>Building Your First App</li>
+<li><b>Supporting Different Devices</b></li>
+<li>Building a Dynamic UI with Fragments</li>
+<li>Saving Data</li>
+<li>Interacting with Other Apps</li>
+<li>Working with System Permissions</li>
+</ul>
+</li>
+</ul>
+<footer><strong>https://developer.android.com/training/index.html</strong></footer></blockquote>
+<h2 id="다양한-언어의-지원"><a href="#다양한-언어의-지원" class="headerlink" title="다양한 언어의 지원"></a>다양한 언어의 지원</h2><h3 id="Locale-디렉토리-및-문자열-파일-생성"><a href="#Locale-디렉토리-및-문자열-파일-생성" class="headerlink" title="Locale 디렉토리 및 문자열 파일 생성"></a>Locale 디렉토리 및 문자열 파일 생성</h3><p>더 많은 언어를 지원하기 위해서는 추가 <code>values</code> 디렉토리를 생성해야 한다. 이 때 디렉토리 이름 끝에 하이픈과 ISO 언어 코드를 포함하여 res/ 디렉토리 아래 생성한다.</p>
+<p>예를 들면, <code>values-es/</code>는 언어 코드가 “es”인 locale의 리소스를 포함하는 디렉토리이다.</p>
+<p>지원할 언어를 결정하고 나면 리소스 하위 디렉토리 및 문자열 리소스 파일을 생성한다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">MyProject/</div><div class="line">  res/</div><div class="line">    values/</div><div class="line">      strings.xml</div><div class="line">    values-kr/</div><div class="line">      strings.xml</div><div class="line">    values-fr/</div><div class="line">      strings.xml</div></pre></td></tr></table></figure>
+<h3 id="문자열-리소스-사용"><a href="#문자열-리소스-사용" class="headerlink" title="문자열 리소스 사용"></a>문자열 리소스 사용</h3><p><code>&lt;string&gt;</code> 요소의 name 특성으로 정의된 리소스 이름을 사용하여 소스 코드 및 다른 XML 파일에서 문자열 리소스를 참조할 수 있다.</p>
+<h4 id="소스-코드-구문에서-참조"><a href="#소스-코드-구문에서-참조" class="headerlink" title="소스 코드 구문에서 참조"></a>소스 코드 구문에서 참조</h4><p><code>R.string.&lt;string_name&gt;</code>을 사용하여 문자열 리소스를 참조.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// App의 리소스로부터 string 리소스를 가져오기</span></div><div class="line">String hello = getResources().getString(R.string.hello_world);</div><div class="line"></div><div class="line"><span class="comment">// 메서드가 요구하는 string을 string 리소스로 제공</span></div><div class="line">TextView textView = <span class="keyword">new</span> TextView(<span class="keyword">this</span>);</div><div class="line">textView.setText(R.string.hello_world);</div></pre></td></tr></table></figure>
+<h4 id="다른-XML-파일에서-참조"><a href="#다른-XML-파일에서-참조" class="headerlink" title="다른 XML 파일에서 참조"></a>다른 XML 파일에서 참조</h4><p><code>@string/&lt;string_name&gt;</code>을 사용하여 문자열 리소스를 참조</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:text</span>=<span class="string">"@string/hello_world"</span> /&gt;</div></pre></td></tr></table></figure>
+<h2 id="다양한-화면의-지원"><a href="#다양한-화면의-지원" class="headerlink" title="다양한 화면의 지원"></a>다양한 화면의 지원</h2><p>Android는 <code>size</code>와 <code>density</code> 두 가지의 프로퍼티를 사용하여 장치의 화면을 분류한다.</p>
+<p>따라서 다양한 화면 크기 및 해상도에 최적화하기 위해 대체 리소스를 준비해야 한다.</p>
+<ul>
+<li>일반적으로 사용하는 네 가지 <code>size</code><ul>
+<li><code>small</code>, <code>normal</code>, <code>large</code>, <code>xlarge</code></li>
+</ul>
+</li>
+<li>일반적으로 사용하는 네 가지 <code>density</code><ul>
+<li><code>low (ldpi)</code>, <code>medium (mdpi)</code>, <code>high (hdpi)</code>, <code>extra high (xhdpi)</code></li>
+</ul>
+</li>
+</ul>
+<p>다양한 화면을 지원하기 위한 레이아웃과 비트맵은 분리된 디렉토리에 위치시켜야 한다. 이는 앞에서 보았던 언어 별 문자열을 나눈 것과 비슷하다.</p>
+<p>화면 방향 (landscape 또는 portrait) 또한 고려해야 한다. 많은 App들이 화면 방향에 따라 서로 다른 사용자 경험을 제공하고 있다.</p>
+<h3 id="다른-레이아웃의-생성"><a href="#다른-레이아웃의-생성" class="headerlink" title="다른 레이아웃의 생성"></a>다른 레이아웃의 생성</h3><p>서로 다른 화면 크기에 대한 사용자 경험을 최적화하기 위해 각 화면 크기에 맞는 고유한 레이아웃 XML 파일을 생성해야 한다.</p>
+<p>각 레이아웃은 올바른 리소스 디렉토리에 저장해야 하며 접미사로 <code>-&lt;screen_size&gt;</code>를 사용한다. 예를 들어 large screen에 대한 레이아웃은 <code>res/layout-large/</code>에 저장해야 한다.</p>
+<blockquote><p>Android는 자동으로 레이아웃의 비율을 조정하여 화면에 맞춰준다. 그리하여 개발자는 절대적인 크기에 연연할 필요가 없고 레이아웃 구조에 대해 더 신경써야 한다.</p>
+</blockquote>
+<p>예를 들어, 이 프로젝트가 기본 레이아웃과 large screen을 위한 레이아웃을 가지고 있다고 하면 아래와 같은 구조를 갖는다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">MyProject/</div><div class="line">  res/</div><div class="line">    layout/</div><div class="line">      main.xml</div><div class="line">    layout-large/</div><div class="line">      main.xml</div></pre></td></tr></table></figure>
+<p>파일 이름은 완전히 같아야 한다.</p>
+<p>레이아웃 파일은 app 내에서 일반적으로 아래와 같이 참조한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.main);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>App이 시행되면 시스템은 화면 크기에 맞는 적당한 레이아웃 디렉토리로부터 레이아웃 파일을 읽어온다.</p>
+<p>또 다른 예로, landscape 방향을 위한 레이아웃은 아래와 같이 사용할 수 있다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">MyProject/</div><div class="line">  res/</div><div class="line">    layout/</div><div class="line">      main.xml</div><div class="line">    layout-land/</div><div class="line">      main.xml</div></pre></td></tr></table></figure>
+<p>layout/main.xml 파일의 기본 값은 portrait 방향이다.</p>
+<p>large와 landscape를 모두 사용할 경우 아래와 같이 구성한다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">MyProject/</div><div class="line">  res/</div><div class="line">    layout/</div><div class="line">      main.xml</div><div class="line">    layout-land/</div><div class="line">      main.xml</div><div class="line">    layout-large/</div><div class="line">      main.xml</div><div class="line">    layout-large-land/</div><div class="line">      main.xml</div></pre></td></tr></table></figure>
+<h3 id="서로-다른-비트맵-생성"><a href="#서로-다른-비트맵-생성" class="headerlink" title="서로 다른 비트맵 생성"></a>서로 다른 비트맵 생성</h3><p>개발자는 일반적인 해상도들(low, medium high, extra-high)에 맞춘 적절한 비트맵 리소스들을 준비해 두어야 한다.</p>
+<p>이러한 이미지들을 생성하기 위해 raw 리소스를 vector format으로 시작하고 아래의 해상도에 맞는 각각의 이미지를 생성해야 한다.</p>
+<ul>
+<li>xhdpi: 2.0</li>
+<li>hdpi: 1.5</li>
+<li>mdpi: 1.0 (baseline)</li>
+<li>ldpi: 0.75</li>
+</ul>
+<p>이것의 의미는 xhdpi 기기를 위해 200x200 이미지를, hdpi 기기를 위해 150x150 이미지를, mdpi 기기를 위해 100x100 이미지를, ldpi 기기를 위해 75x75 이미지를 준비해야 한다는 것이다.</p>
+<p>그 후 각각의 drawable 리소스 디렉토리에 위치시킨다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">MyProject/</div><div class="line">    res/</div><div class="line">        drawable-xhdpi/</div><div class="line">            awesomeimage.png</div><div class="line">        drawable-hdpi/</div><div class="line">            awesomeimage.png</div><div class="line">        drawable-mdpi/</div><div class="line">            awesomeimage.png</div><div class="line">        drawable-ldpi/</div><div class="line">            awesomeimage.png</div></pre></td></tr></table></figure>
+<p>이 파일의 참조는 <code>@drawable/awesomeimage</code> 의 방식으로 할 수 있다. 그러면 시스템이 알아서 화면 해상도에 맞는 이미지를 찾아줄 것이다.</p>
+<blockquote><p>Low-density(ldpi) 리소스는 꼭 필요한 것은 아니다. 개발자가 hdpi 리소스들만 준비해 둔다면 시스템은 해상도를 조정하여 ldpi 화면에 맞춰줄 것이다.</p>
+</blockquote>
+<h2 id="서로-다른-플랫폼-버전의-지원"><a href="#서로-다른-플랫폼-버전의-지원" class="headerlink" title="서로 다른 플랫폼 버전의 지원"></a>서로 다른 플랫폼 버전의 지원</h2><p>최신 버전의 Android에서는 새로운 API들을 지원하기 때문에 이전 버전의 Android를 업데이트 해야한다.</p>
+<blockquote><p>각각의 Android 버전에서 최상의 기능을 지원하기 위해서 <a href="https://developer.android.com/topic/libraries/support-library/index.html" target="_blank" rel="external">Android Support Library</a>를 사용하는 것을 추천한다.<br>이를 사용하여 이전 버전의 Android App에서도 최신 플랫폼 API를 사용할 수 있게 된다.</p>
+</blockquote>
+<h3 id="Minimum-API-level-및-Target-API-level-정하기"><a href="#Minimum-API-level-및-Target-API-level-정하기" class="headerlink" title="Minimum API level 및 Target API level 정하기"></a>Minimum API level 및 Target API level 정하기</h3><p>AndroidManifest.xml 파일에는 App에 대한 정보들에 대해 기술되어 있다. 특별히 <code>minSdkVersion</code>과 <code>targetSdkVersion</code> 특성은 <code>&lt;uses-sdk&gt;</code> 요소에 정의된다. 이는 호환을 지원하는 최저 API level과 App이 어떤 버전을 Target으로 하여 제작되었는지를 나타낸다.</p>
+<p>예를 들면 아래와 같다.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> <span class="attr">...</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-sdk</span> <span class="attr">android:minSdkVersion</span>=<span class="string">"4"</span> <span class="attr">android:targetSdkVersion</span>=<span class="string">"15"</span> /&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Android의 새 버전이 릴리즈되면 몇몇의 스타일 및 동작이 달라진다. App이 이러한 변화들을 받아들일 수 있게 하려면 targetSdkVersion에는 꼭 최신 버전을 넣어주는 것이 좋다.</p>
+<h3 id="Runtime에-시스템-버전-체크하기"><a href="#Runtime에-시스템-버전-체크하기" class="headerlink" title="Runtime에 시스템 버전 체크하기"></a>Runtime에 시스템 버전 체크하기</h3><p>Android는 <code>Build</code> 라는 상수에 각 플랫폼 버전에 대한 고유한 코드를 넣어둔다.</p>
+<p>이 코드를 이용하여 특정 API를 현재 App에서 사용할 수 있는지 확인할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpActionBar</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">// Make sure we're running on Honeycomb or higher to use ActionBar APIs</span></div><div class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) &#123;</div><div class="line">        ActionBar actionBar = getActionBar();</div><div class="line">        actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote><p>XML 리소스를 파싱할 때 Android는 현재 기기가 지원하지 않는 XML 특성들을 무시한다. 따라서 새 버전에서만 지원하는 XML 속성들을 안전하게 사용할 수 있다.<br>예를 들어, targetSdkVersion = “11”로 설정되면 Android 3.0 이상에서는 기본적으로 ActionBar가 App에 포함된다.<br>Menu item을 ActionBar에 추가하기 위해서는 menu 리소스 XML 파일에 android:showAsAction=”ifRoom” 을 설정해주면 된다.<br>이 방법은 서로 다른 버전의 XML 파일에서 안전하게 작동하는데 그 이유는 이전 버전의 Android에서는 showAsAction 특성을 무시하기 때문이다. (즉, res/menu-v11/ 내에 별도의 버전이 필요하지 않다는 것이다.)</p>
+</blockquote>
+<h3 id="플랫폼-스타일과-테마-사용하기"><a href="#플랫폼-스타일과-테마-사용하기" class="headerlink" title="플랫폼 스타일과 테마 사용하기"></a>플랫폼 스타일과 테마 사용하기</h3><p>Android는 OS에 맞는 look and feel을 위해 App에 테마를 제공한다.</p>
+<p>테마는 manifest 파일에서 설정할 수 있다.</p>
+<p>이런 내장 스타일과 테마를 사용함으로써 App은 최신 Androrid의 look and feel을 자연스럽게 적용할 수 있게 된다.</p>
+<p>Activity를 Dialog box처럼 보이게 하기</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">&lt;activity android:theme=<span class="string">"@android:style/Theme.Dialog"</span>&gt;</div></pre></td></tr></table></figure>
+<p>Activity에 투명 배경으로 만들기</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">&lt;activity android:theme=<span class="string">"@android:style/Theme.Translucent"</span>&gt;</div></pre></td></tr></table></figure>
+<p>/res/values/styles.xml 에 정의한 커스텀 테마 적용하기</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">&lt;activity android:theme=<span class="string">"@style/CustomTheme"</span>&gt;</div></pre></td></tr></table></figure>
+<p>App의 모든 Activity에 테마를 적용하고 싶을 때에는 <code>&lt;application&gt;</code> 요소에 <code>android:theme</code> 특성을 추가한다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">&lt;application android:theme=<span class="string">"@style/CustomTheme"</span>&gt;</div></pre></td></tr></table></figure>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><ul>
+<li><a href="https://developer.android.com/training/basics/firstapp/index.html" target="_blank" rel="external">https://developer.android.com/training/basics/firstapp/index.html</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/10/02/2017-10-02-android-getting_started_2 /" data-id="cj8b4zou2000f7qw6hc5v83lw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/10/01/2017-10-01-android-getting_started_1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Android] Getting Started (1)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/02/2017-10-02-android-getting_started_2 /" class="title">[Android] Getting Started (2)</a></p>
+                            <p class="item-date"><time datetime="2017-10-02T01:00:00.000Z" itemprop="datePublished">2017-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/01/2017-10-01-android-getting_started_1/" class="title">[Android] Getting Started (1)</a></p>
+                            <p class="item-date"><time datetime="2017-10-01T01:00:00.000Z" itemprop="datePublished">2017-10-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/24/2017-09-24-spring-vuejs-semanticui/" class="title">[Spring] Vue.js, Semantic UI 사용하기</a></p>
+                            <p class="item-date"><time datetime="2017-09-24T08:22:00.000Z" itemprop="datePublished">2017-09-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/23/2017-09-23-spring-header-footer/" class="title">[Spring] Header, Footer 넣기 (Apache Tiles)</a></p>
+                            <p class="item-date"><time datetime="2017-09-23T05:22:00.000Z" itemprop="datePublished">2017-09-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></p>
+                            <p class="item-title"><a href="/2017/09/18/2017-09-18-troubleshooting-spring/" class="title">Spring Troubleshooting</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T11:22:00.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/android/" style="font-size: 18.57px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/bash/" style="font-size: 11.43px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/binarysearchtree/" style="font-size: 10px;">binarysearchtree</a> <a href="/tags/binarytree/" style="font-size: 10px;">binarytree</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 12.86px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 11.43px;">database</a> <a href="/tags/datastructure/" style="font-size: 15.71px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 15.71px;">docs</a> <a href="/tags/docthread/" style="font-size: 12.86px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/footer/" style="font-size: 10px;">footer</a> <a href="/tags/gerrit/" style="font-size: 11.43px;">gerrit</a> <a href="/tags/git/" style="font-size: 17.14px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/header/" style="font-size: 10px;">header</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 11.43px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 11.43px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 11.43px;">interview</a> <a href="/tags/java/" style="font-size: 17.14px;">java</a> <a href="/tags/javascript/" style="font-size: 11.43px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/linux/" style="font-size: 11.43px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 11.43px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 11.43px;">queue</a> <a href="/tags/quick-guide/" style="font-size: 10px;">quick guide</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 12.86px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/semantic-ui/" style="font-size: 10px;">semantic ui</a> <a href="/tags/setting/" style="font-size: 14.29px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 18.57px;">spring</a> <a href="/tags/springboot/" style="font-size: 11.43px;">springboot</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/study/" style="font-size: 11.43px;">study</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/tiles/" style="font-size: 10px;">tiles</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/tree/" style="font-size: 11.43px;">tree</a> <a href="/tags/troubleshooting/" style="font-size: 12.86px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 11.43px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vuejs/" style="font-size: 10px;">vuejs</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 11.43px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/10/02/2017-10-02-android-getting_started_2 /';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
