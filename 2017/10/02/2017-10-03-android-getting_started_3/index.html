@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Android] Getting Started (3) | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="android,study" />
+    
+    <meta name="description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+Building a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Perm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Android] Getting Started (3)">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/10/02/2017-10-03-android-getting_started_3/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+Building a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Perm">
+<meta property="og:image" content="https://developer.android.com/images/training/basics/fragments-screen-mock.png">
+<meta property="og:updated_time" content="2017-10-04T14:24:01.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Android] Getting Started (3)">
+<meta name="twitter:description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+Building a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Perm">
+<meta name="twitter:image" content="https://developer.android.com/images/training/basics/fragments-screen-mock.png">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/android/">android</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-10-03-android-getting_started_3" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Android] Getting Started (3)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/10/02/2017-10-03-android-getting_started_3/" class="article-date">
+    <time datetime="2017-10-02T09:00:00.000Z" itemprop="datePublished">2017-10-02</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study/">study</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fragment의-생성"><span class="toc-number">1.</span> <span class="toc-text">Fragment의 생성</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fragment-Class의-생성"><span class="toc-number">1.1.</span> <span class="toc-text">Fragment Class의 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML을-사용하여-Activity에-Fragment를-추가하는-방법"><span class="toc-number">1.2.</span> <span class="toc-text">XML을 사용하여 Activity에 Fragment를 추가하는 방법</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flexible-UI-구현"><span class="toc-number">2.</span> <span class="toc-text">Flexible UI 구현</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Runtime-시-activity에-fragment를-추가하는-방법"><span class="toc-number">2.1.</span> <span class="toc-text">Runtime 시 activity에 fragment를 추가하는 방법</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#다른-fragment와-교체하는-방법"><span class="toc-number">2.2.</span> <span class="toc-text">다른 fragment와 교체하는 방법</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#다른-Fragment와의-커뮤니케이션"><span class="toc-number">3.</span> <span class="toc-text">다른 Fragment와의 커뮤니케이션</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Interface의-정의"><span class="toc-number">3.1.</span> <span class="toc-text">Interface의 정의</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interface의-구현"><span class="toc-number">3.2.</span> <span class="toc-text">Interface의 구현</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fragment로-Message-전달"><span class="toc-number">3.3.</span> <span class="toc-text">Fragment로 Message 전달</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#출처"><span class="toc-number">4.</span> <span class="toc-text">출처</span></a></li></ol>
+                
+            </div>
+            <blockquote><p>Android developer site study</p>
+<ul>
+<li><b>Getting Started</b><ul>
+<li>Building Your First App</li>
+<li>Supporting Different Devices</li>
+<li><b>Building a Dynamic UI with Fragments</b></li>
+<li>Saving Data</li>
+<li>Interacting with Other Apps</li>
+<li>Working with System Permissions</li>
+</ul>
+</li>
+</ul>
+<footer><strong>https://developer.android.com/training/index.html</strong></footer></blockquote>
+<p>동적이고 multi-pane 사용자 인터페이스를 생성하기 위해 UI 컴포넌트들과 activity 행동들을 캡슐화하여 모듈을 만들고 이를 activity에 넣었다 뺐다 할 수 있다.</p>
+<p>이런 모듈들은 <code>Fragment</code>class로 생성할 수 있다. 이는 중첩된 activity처럼 행동하며 자신의 레이아웃을 정의하고 스스로의 라이프사이클을 관리한다.</p>
+<p>fragment가 자신의 레이아웃을 정하면 여러가지 화면 크기에 따라 레이아웃 구성을 변경하기 위해 activity 내의 다른 fragmet들과 다르게 조합될 수 있다. (작은 화면에서는 하나의 fragment만 보여주지만 큰 화면에서는 두 개 이상의 fragment를 한 번에 보여줄 수 있다.)</p>
+<h2 id="Fragment의-생성"><a href="#Fragment의-생성" class="headerlink" title="Fragment의 생성"></a>Fragment의 생성</h2><p><code>Fragment</code>를 스스로의 라이프사이클을 갖고, 스스로의 입력 이벤트를 수신하고, activity가 동작하는 동안 추가/삭제가 가능한 activity의 모듈부라고 생각해도 된다. (“sub activity”로서 다른 activity들에서 재사용하는 것의 일종)</p>
+<p>아래 예제들을 따라하기 전에…</p>
+<p>만약 Suport Library를 사용한 적이 없다면 아래 페이지를 통해 v4 library를 setup하는 과정이 선행되어야 한다.</p>
+<ul>
+<li><a href="https://developer.android.com/topic/libraries/support-library/setup.html" target="_blank" rel="external">https://developer.android.com/topic/libraries/support-library/setup.html</a></li>
+</ul>
+<p>v7 appcompat Library를 사용해도 된다.</p>
+<h3 id="Fragment-Class의-생성"><a href="#Fragment-Class의-생성" class="headerlink" title="Fragment Class의 생성"></a>Fragment Class의 생성</h3><p>fragment를 생성하기 위해 Fragment Class를 상속받아야 한다. 그 후 key lifecycle 메서드를 Override하여 app logic에 삽입한다. 이는 Activity class의 사용과 유사한 부분이다.</p>
+<p>Fragment를 생성할 때 하나의 차이점이 있는데 레이아웃을 정의할 때 반드시 <code>onCreateView()</code> callback를 사용해야 한다는 것이다.</p>
+<p>사실 이것이 fragment가 수행될 때 필요한 유일한 callback이다.</p>
+<p>간단한 fragment 예제를 살펴보자.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.support.v4.app.Fragment;</div><div class="line"><span class="keyword">import</span> android.view.LayoutInflater;</div><div class="line"><span class="keyword">import</span> android.view.ViewGroup;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArticleFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,</span></span></div><div class="line">        Bundle savedInstanceState) &#123;</div><div class="line">        <span class="comment">// Inflate the layout for this fragment</span></div><div class="line">        <span class="keyword">return</span> inflater.inflate(R.layout.article_view, container, <span class="keyword">false</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Activity와 비슷하게, fragment는 다른 라이프사이클 callback들을 구현해야 한다. 이는 activity에 추가/삭제될 때, 그리고 activity가 라이프사이클 상태를 천이(transition)하는 것을 관리할 수 있어야 한다.</p>
+<p>예를 들어, activity의 <code>onPause()</code> 메서드가 호출되면 activity에 속한 fragment들도 <code>onPause()</code>를 수신한다.</p>
+<h3 id="XML을-사용하여-Activity에-Fragment를-추가하는-방법"><a href="#XML을-사용하여-Activity에-Fragment를-추가하는-방법" class="headerlink" title="XML을 사용하여 Activity에 Fragment를 추가하는 방법"></a>XML을 사용하여 Activity에 Fragment를 추가하는 방법</h3><p>모듈러 UI 요소로서의 fragment가 재사용 가능할 때 <code>Fragment</code> class의 각 인스턴스는 반드시 부모인 <code>FragmentActivity</code>와 연결되어야 한다.</p>
+<p>이는 각 fragment를 activity 레이아웃 XML 파일에 정의함으로써 연결이 가능하다.</p>
+<blockquote><p><code>FragmentActivity</code>는 API level 11 이전의 오래된 시스템 버전에서 fragment를 다루기 위한 Support Libary에 속한 특별한 activity이다. 만약 시스템 버전이 API level 11보다 높다면 일반적인 Activity를 사용하면 된다.</p>
+</blockquote>
+<p>아래의 예시는 activity 내의 두 개의 fragment를 결합하는 레이아웃 파일이다.</p>
+<figure class="highlight xml"><figcaption><span>res/layout-large/news_article.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"fill_parent"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">fragment</span> <span class="attr">android:name</span>=<span class="string">"com.example.android.fragments.HeadlinesFragment"</span></span></div><div class="line">              <span class="attr">android:id</span>=<span class="string">"@+id/headlines_fragment"</span></div><div class="line">              <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></div><div class="line">              <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">fragment</span> <span class="attr">android:name</span>=<span class="string">"com.example.android.fragments.ArticleFragment"</span></span></div><div class="line">              <span class="attr">android:id</span>=<span class="string">"@+id/article_fragment"</span></div><div class="line">              <span class="attr">android:layout_weight</span>=<span class="string">"2"</span></div><div class="line">              <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>그리고 이 레이아웃은 activity 내에 아래와 같이 적용한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.support.v4.app.FragmentActivity;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.news_articles);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>만약 <code>v7 appcompat library</code>를 사용한다면 <code>FragmentActivity</code>의 subclass인 <code>AppCompatActivity</code>를 상속받아야 한다.</p>
+<blockquote><p>레이아웃 XML 파일 내에 fragment를 정의하여 activity 레이아웃 내에 fragment를 추가하는 경우 runtime 시 이 fragment를 제거할 수 없다.</p>
+<p>만약 동작 중에 fragment를 제거하거나 바꿔치기 해야 할 경우 반드시 activity가 처음 시작할 때 activity 내에 넣어야 한다.</p>
+<p>이에 대해서는 아래 계속 살펴본다.</p>
+</blockquote>
+<h2 id="Flexible-UI-구현"><a href="#Flexible-UI-구현" class="headerlink" title="Flexible UI 구현"></a>Flexible UI 구현</h2><p>다양한 화면 크기를 지원하는 App의 경우 fragment를 여러가지 레이아웃 구성에 재활용할 수 있다.</p>
+<p><a href="https://developer.android.com/reference/android/support/v4/app/FragmentManager.html" target="_blank" rel="external"><code>FragmentManager</code></a> Class는 동적 환경 생성을 위해 runtime 시 activity에 fragment를 추가/삭제/교체할 수 있는 메서드를 제공한다.</p>
+<img src="https://developer.android.com/images/training/basics/fragments-screen-mock.png">
+<h3 id="Runtime-시-activity에-fragment를-추가하는-방법"><a href="#Runtime-시-activity에-fragment를-추가하는-방법" class="headerlink" title="Runtime 시 activity에 fragment를 추가하는 방법"></a>Runtime 시 activity에 fragment를 추가하는 방법</h3><p>Fragment의 추가/삭제 등의 트랜잭션을 수행하려면 <a href="https://developer.android.com/reference/android/support/v4/app/FragmentManager.html" target="_blank" rel="external"><code>FragmentManager</code></a>를 사용하여 <code>FragmentTransaction</code>을 생성해야 한다.<br><code>FragmentTransaction</code>은 fragment를 추가/삭제/교체 및 기타 fragment transaction을 수행하는 API를 제공한다.</p>
+<p>Activity에서 fragment의 교체와 제거를 허용하는 경우, activity의 onCreate() 메서드에서 fragment를 activity에 추가해야 한다.</p>
+<p>Fragment 관련 작업 시 (특히 runtime 시 fragment를 추가하는 경우) 주의해야 할 것은 fragment를 삽입할 수 있는 Container View를 activity 레이아웃에 포함하는 것이다.</p>
+<p>아래 코드는 fragment를 다른 fragment와 교체하기 위해 Container View로 빈 FrameLayout을 사용한 것이다.</p>
+<figure class="highlight xml"><figcaption><span>res/layout/new_articles.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">FrameLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/fragment_container"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>Activity에서 Support Library API를 통해 <code>getSupportFragmentManager()</code>를 호출하여 <code>FragmentManager</code>를 가져오고</li>
+<li><code>beginTransaction()</code>으로 <code>FragmentTransaction</code>을 생성하고</li>
+<li><code>add()</code>로 fragment를 추가한다.</li>
+</ol>
+<p>하나의 <code>FragmentTransaction</code>으로 activity의 여러 fragment transaction을 수행할 수 있다. 변경 준비가 완료되면 <code>commit()</code>을 호출해야 한다.</p>
+<p>아래 코드는 레이아웃에 fragment를 추가하는 방법이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.support.v4.app.FragmentActivity;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.news_articles);</div><div class="line"></div><div class="line">        <span class="comment">// Check that the activity is using the layout version with</span></div><div class="line">        <span class="comment">// the fragment_container FrameLayout</span></div><div class="line">        <span class="keyword">if</span> (findViewById(R.id.fragment_container) != <span class="keyword">null</span>) &#123;</div><div class="line"></div><div class="line">            <span class="comment">// However, if we're being restored from a previous state,</span></div><div class="line">            <span class="comment">// then we don't need to do anything and should return or else</span></div><div class="line">            <span class="comment">// we could end up with overlapping fragments.</span></div><div class="line">            <span class="keyword">if</span> (savedInstanceState != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// Create a new Fragment to be placed in the activity layout</span></div><div class="line">            HeadlinesFragment firstFragment = <span class="keyword">new</span> HeadlinesFragment();</div><div class="line"></div><div class="line">            <span class="comment">// In case this activity was started with special instructions from an</span></div><div class="line">            <span class="comment">// Intent, pass the Intent's extras to the fragment as arguments</span></div><div class="line">            firstFragment.setArguments(getIntent().getExtras());</div><div class="line"></div><div class="line">            <span class="comment">// Add the fragment to the 'fragment_container' FrameLayout</span></div><div class="line">            getSupportFragmentManager().beginTransaction()</div><div class="line">                    .add(R.id.fragment_container, firstFragment).commit();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="다른-fragment와-교체하는-방법"><a href="#다른-fragment와-교체하는-방법" class="headerlink" title="다른 fragment와 교체하는 방법"></a>다른 fragment와 교체하는 방법</h3><p>추가하는 절차와 비슷하지만 <code>add()</code> 대신 <code>replace()</code>를 사용한다.</p>
+<p>Fragment 교체 또는 제거와 같은 fragment transaction 수행 시 사용자가 변경 사항을 “실행 취소”할 수 있도록 허용해야 할 때도 있다. 이런 동작 (fragment transaction에서 사용자가 뒤로 돌아갈 수 있게 하는 동작)을 위해서는 <code>FragmentTransaction</code>을 <code>commit</code>하기 전에 <code>addToBackStack()</code>을 호출하면 된다.</p>
+<blockquote><p>Fragment를 제거 또는 교체 후 해당 transaction을 BackStack에 추가하면 제거된 fragment가 파기되지 않고 중단된다. 사용자가 되돌아가서 fragment를 복원하면 fragment가 재시작된다.<br>반면 transaction을 BackStack에 추가하지 않으면 fragment가 제거되거나 교체될 때 파기된다.</p>
+</blockquote>
+<p>다른 fragment와의 교체는 아래와 같이 이루어진다.</p>
+<p><code>addToBackStack()</code> 메서드는 transaction의 고유한 이름을 지정하는 문자열 매개변수를 취한다. 하지만 <code>FragmentManager.BackStackEntry</code> API를 사용하여 고급 fragment 작업을 수행하는 경우 외에는 이 이름이 필요하지 않다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Create fragment and give it an argument specifying the article it should show</span></div><div class="line">ArticleFragment newFragment = <span class="keyword">new</span> ArticleFragment();</div><div class="line">Bundle args = <span class="keyword">new</span> Bundle();</div><div class="line">args.putInt(ArticleFragment.ARG_POSITION, position);</div><div class="line">newFragment.setArguments(args);</div><div class="line"></div><div class="line">FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();</div><div class="line"></div><div class="line"><span class="comment">// Replace whatever is in the fragment_container view with this fragment,</span></div><div class="line"><span class="comment">// and add the transaction to the back stack so the user can navigate back</span></div><div class="line">transaction.replace(R.id.fragment_container, newFragment);</div><div class="line">transaction.addToBackStack(<span class="keyword">null</span>);</div><div class="line"></div><div class="line"><span class="comment">// Commit the transaction</span></div><div class="line">transaction.commit();</div></pre></td></tr></table></figure>
+<h2 id="다른-Fragment와의-커뮤니케이션"><a href="#다른-Fragment와의-커뮤니케이션" class="headerlink" title="다른 Fragment와의 커뮤니케이션"></a>다른 Fragment와의 커뮤니케이션</h2><p>Fragment UI 요소를 재사용하기 위해 스스로의 레이아웃 및 행동을 갖는 각각의 독립적인 모듈러 요소를 빌드해야 한다. 이 재사용 가능한 Fragment를 한 번 정의한 뒤, 이들을 Activity와 연결하고 App의 로직과 연결하여 복합적인 UI를 실제로 구현할 수 있다.</p>
+<p>사용자 이벤트 기반의 컨텐츠를 교환하는 등의 동작을 위해 하나의 Fragment를 다른 fragment와 연결하고 싶을 때가 있을 것이다.</p>
+<p>모든 Fragment-to-Fragment 통신은 연관된 activity를 통해 수행된다. 두 개의 fragment는 직접 통신할 수 없다.</p>
+<h3 id="Interface의-정의"><a href="#Interface의-정의" class="headerlink" title="Interface의 정의"></a>Interface의 정의</h3><p>Activity에 속한 Fragment가 통신을 하기 위해 Activity와 연관된 fragment class의 interface와 구현체를 정의해야 한다.</p>
+<p>Fragment는 <code>onAttach()</code> 라이프사이클 메서드에서 interface 구현을 확인하고 Activity와 통신하기 위해 interface 메서드를 호출한다.</p>
+<p>아래는 Fragment와 Activity 간 통신하는 예제이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeadlinesFragment</span> <span class="keyword">extends</span> <span class="title">ListFragment</span> </span>&#123;</div><div class="line">    OnHeadlineSelectedListener mCallback;</div><div class="line"></div><div class="line">    <span class="comment">// Container Activity must implement this interface</span></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OnHeadlineSelectedListener</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onArticleSelected</span><span class="params">(<span class="keyword">int</span> position)</span></span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onAttach(activity);</div><div class="line"></div><div class="line">        <span class="comment">// This makes sure that the container activity has implemented</span></div><div class="line">        <span class="comment">// the callback interface. If not, it throws an exception</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            mCallback = (OnHeadlineSelectedListener) activity;</div><div class="line">        &#125; <span class="keyword">catch</span> (ClassCastException e) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ClassCastException(activity.toString()</div><div class="line">                    + <span class="string">" must implement OnHeadlineSelectedListener"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>이제 fragment는 <code>onArticleSelected()</code> 메서드(또는 interface 내의 다른 메서드)를 통해 activity에 <code>message</code>를 전달할 수 있다. 이 때 <code>OnHeadlineSelectedListener</code> interface의 <code>mCallback</code> 인스턴스가 사용된다.</p>
+<p>예를 들어, fragment의 아래 메서드는 사용자가 list item을 클릭하면 호출된다. Fragment는 이 이벤트를 부모 activity로 전달할 때 callback interface를 사용한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onListItemClick</span><span class="params">(ListView l, View v, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</div><div class="line">    <span class="comment">// Send the event to the host activity</span></div><div class="line">    mCallback.onArticleSelected(position);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Interface의-구현"><a href="#Interface의-구현" class="headerlink" title="Interface의 구현"></a>Interface의 구현</h3><p>Fragment로부터 이벤트 콜백을 수신하기 위해 activity는 fragment class에 정의된 interface를 구현해야 한다.</p>
+<p>아래 코드는 위의 예제 interface를 구현한 코드이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span></div><div class="line">        <span class="keyword">implements</span> <span class="title">HeadlinesFragment</span>.<span class="title">OnHeadlineSelectedListener</span>&#123;</div><div class="line">    ...</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onArticleSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="comment">// The user selected the headline of an article from the HeadlinesFragment</span></div><div class="line">        <span class="comment">// Do something here to display that article</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Fragment로-Message-전달"><a href="#Fragment로-Message-전달" class="headerlink" title="Fragment로 Message 전달"></a>Fragment로 Message 전달</h3><p>Activity는 <code>findFragmentById()</code> 메서드로 Fragment 인스턴스를 가져온 후 직접 fragment의 public 메서드를 호출하믕로써 message를 전달할 수 있다.</p>
+<p>만약, 위의 activity가 fragment를 포함할 수 있다고 가정한다면 activity는 콜백 메서드에서 받은 정보를 다른 fragment로 전달하여 해당 정보를 표시하게 할 수도 있따.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span></div><div class="line">        <span class="keyword">implements</span> <span class="title">HeadlinesFragment</span>.<span class="title">OnHeadlineSelectedListener</span>&#123;</div><div class="line">    ...</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onArticleSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="comment">// The user selected the headline of an article from the HeadlinesFragment</span></div><div class="line">        <span class="comment">// Do something here to display that article</span></div><div class="line"></div><div class="line">        ArticleFragment articleFrag = (ArticleFragment)</div><div class="line">                getSupportFragmentManager().findFragmentById(R.id.article_fragment);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (articleFrag != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// If article frag is available, we're in two-pane layout...</span></div><div class="line"></div><div class="line">            <span class="comment">// Call a method in the ArticleFragment to update its content</span></div><div class="line">            articleFrag.updateArticleView(position);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// Otherwise, we're in the one-pane layout and must swap frags...</span></div><div class="line"></div><div class="line">            <span class="comment">// Create fragment and give it an argument for the selected article</span></div><div class="line">            ArticleFragment newFragment = <span class="keyword">new</span> ArticleFragment();</div><div class="line">            Bundle args = <span class="keyword">new</span> Bundle();</div><div class="line">            args.putInt(ArticleFragment.ARG_POSITION, position);</div><div class="line">            newFragment.setArguments(args);</div><div class="line"></div><div class="line">            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();</div><div class="line"></div><div class="line">            <span class="comment">// Replace whatever is in the fragment_container view with this fragment,</span></div><div class="line">            <span class="comment">// and add the transaction to the back stack so the user can navigate back</span></div><div class="line">            transaction.replace(R.id.fragment_container, newFragment);</div><div class="line">            transaction.addToBackStack(<span class="keyword">null</span>);</div><div class="line"></div><div class="line">            <span class="comment">// Commit the transaction</span></div><div class="line">            transaction.commit();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><ul>
+<li><a href="https://developer.android.com/training/basics/firstapp/index.html" target="_blank" rel="external">https://developer.android.com/training/basics/firstapp/index.html</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/10/02/2017-10-03-android-getting_started_3/" data-id="cj8cofl6w00007pw67825zlgq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/10/02/2017-10-02-android-getting_started_2 /" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Android] Getting Started (2)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/02/2017-10-03-android-getting_started_3/" class="title">[Android] Getting Started (3)</a></p>
+                            <p class="item-date"><time datetime="2017-10-02T09:00:00.000Z" itemprop="datePublished">2017-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/02/2017-10-02-android-getting_started_2 /" class="title">[Android] Getting Started (2)</a></p>
+                            <p class="item-date"><time datetime="2017-10-02T01:00:00.000Z" itemprop="datePublished">2017-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/01/2017-10-01-android-getting_started_1/" class="title">[Android] Getting Started (1)</a></p>
+                            <p class="item-date"><time datetime="2017-10-01T01:00:00.000Z" itemprop="datePublished">2017-10-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/24/2017-09-24-spring-vuejs-semanticui/" class="title">[Spring] Vue.js, Semantic UI 사용하기</a></p>
+                            <p class="item-date"><time datetime="2017-09-24T08:22:00.000Z" itemprop="datePublished">2017-09-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Spring/">Spring</a></p>
+                            <p class="item-title"><a href="/2017/09/23/2017-09-23-spring-header-footer/" class="title">[Spring] Header, Footer 넣기 (Apache Tiles)</a></p>
+                            <p class="item-date"><time datetime="2017-09-23T05:22:00.000Z" itemprop="datePublished">2017-09-23</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/bash/" style="font-size: 11.43px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/binarysearchtree/" style="font-size: 10px;">binarysearchtree</a> <a href="/tags/binarytree/" style="font-size: 10px;">binarytree</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 12.86px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 11.43px;">database</a> <a href="/tags/datastructure/" style="font-size: 15.71px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 15.71px;">docs</a> <a href="/tags/docthread/" style="font-size: 12.86px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/footer/" style="font-size: 10px;">footer</a> <a href="/tags/gerrit/" style="font-size: 11.43px;">gerrit</a> <a href="/tags/git/" style="font-size: 17.14px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/header/" style="font-size: 10px;">header</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 11.43px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 11.43px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 11.43px;">interview</a> <a href="/tags/java/" style="font-size: 17.14px;">java</a> <a href="/tags/javascript/" style="font-size: 11.43px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/linux/" style="font-size: 11.43px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 11.43px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 11.43px;">queue</a> <a href="/tags/quick-guide/" style="font-size: 10px;">quick guide</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 12.86px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/semantic-ui/" style="font-size: 10px;">semantic ui</a> <a href="/tags/setting/" style="font-size: 14.29px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 18.57px;">spring</a> <a href="/tags/springboot/" style="font-size: 11.43px;">springboot</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/study/" style="font-size: 12.86px;">study</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/tiles/" style="font-size: 10px;">tiles</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/tree/" style="font-size: 11.43px;">tree</a> <a href="/tags/troubleshooting/" style="font-size: 12.86px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 11.43px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vuejs/" style="font-size: 10px;">vuejs</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 11.43px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/10/02/2017-10-03-android-getting_started_3/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -3,32 +3,15 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Memory management | Lazy Rodriguez</title>
+    <title>Archive: 2017 | Lazy Rodriguez</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="computer memory" />
-    
-    <meta name="description" content="CPU가 접근 가능한 저장소는 CPU 내부의 Register그리고 Main memory이다.
-CPU는 여기에서 command를 load하여 processing 한다.
-보통 CPU는 register에 1 clock cycle 내에 접근이 가능하다.
-하지만 만약 command가 Main memory에 있을 경우 1 clock이상의 시간이 소요되어 stall(지">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Memory management">
-<meta property="og:url" content="http://lazyrodi.github.io/2016/07/01/2016-07-01-common-memory-management/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Lazy Rodriguez">
+<meta property="og:url" content="http://lazyrodi.github.io/archives/2017/page/3/index.html">
 <meta property="og:site_name" content="Lazy Rodriguez">
-<meta property="og:description" content="CPU가 접근 가능한 저장소는 CPU 내부의 Register그리고 Main memory이다.
-CPU는 여기에서 command를 load하여 processing 한다.
-보통 CPU는 register에 1 clock cycle 내에 접근이 가능하다.
-하지만 만약 command가 Main memory에 있을 경우 1 clock이상의 시간이 소요되어 stall(지">
-<meta property="og:image" content="http://lazyrodi.github.io/images/2016-07-01-common-memory-management-001.jpg">
-<meta property="og:updated_time" content="2016-08-05T12:40:33.860Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Memory management">
-<meta name="twitter:description" content="CPU가 접근 가능한 저장소는 CPU 내부의 Register그리고 Main memory이다.
-CPU는 여기에서 command를 load하여 processing 한다.
-보통 CPU는 register에 1 clock cycle 내에 접근이 가능하다.
-하지만 만약 command가 Main memory에 있을 경우 1 clock이상의 시간이 소요되어 stall(지">
-<meta name="twitter:image" content="http://lazyrodi.github.io/images/2016-07-01-common-memory-management-001.jpg">
+<meta name="twitter:title" content="Lazy Rodriguez">
     
 
     
@@ -144,7 +127,7 @@ CPU는 여기에서 command를 load하여 processing 한다.
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/common/">common</a>
+    <i class="icon fa fa-archive"></i>Archive: 2017
     </h1>
 </div>
                         <div class="main-body-content">
@@ -158,244 +141,60 @@ CPU는 여기에서 command를 load하여 processing 한다.
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                            <article id="post-2016-07-01-common-memory-management" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <p class="category">
+            <a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/etc/">etc</a>
+            </p>
+            <p class="date"><time datetime="2017-02-06T11:46:50.000Z" itemprop="datePublished">2017-02-06</time></p>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        Memory management
+        <a href="/2017/02/06/2017-02-06-etc-install-sonarqube/">[Sonarqube] 설치하기</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-subtitle">
-                <a href="/2016/07/01/2016-07-01-common-memory-management/" class="article-date">
-    <time datetime="2016-07-01T11:00:00.000Z" itemprop="datePublished">2016-07-01</time>
-</a>
-                
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/computer-memory/">computer memory</a></li></ul>
-
-            </div>
-        
-        <div class="article-entry" itemprop="articleBody">
-            <div class="lazyrodi-toc">
-                
-            </div>
-            <p>CPU가 접근 가능한 저장소는 CPU 내부의 <code>Register</code>그리고 <code>Main memory</code>이다.</p>
-<p>CPU는 여기에서 <code>command</code>를 <code>load</code>하여 <code>processing</code> 한다.</p>
-<p>보통 CPU는 <code>register</code>에 <code>1 clock cycle</code> 내에 접근이 가능하다.</p>
-<p>하지만 만약 <code>command</code>가 <code>Main memory</code>에 있을 경우 <code>1 clock</code>이상의 시간이 소요되어 <code>stall(지연)</code>된다. 이러면 낭비가 심해지기 때문에 <code>CPU</code>와 <code>Main memory</code> 사이에 <code>Cache</code>를 두어 문제를 해결한다.</p>
-<p>Program은 <code>Binary execution file</code> 형태로 디스크에 저장되어 있으며 실행되기 위해서는 <code>Main memory</code>로 올라와서 <code>Process</code>가 되어야 한다.</p>
-<p>Process는 효율적인 실행을 위해 디스크와 Main memory 사이를 왔다갔다 하는데 이 때 Main memory에 올라오기 위해 대기하고 있는 <code>Process들의 집합</code>을 <code>Input Queue</code>라 부른다.</p>
-<p>코드에서 사용하는 <code>symbol 형태</code>(ex. pointer, *a)는 <code>Compiler</code>에 의해 <code>Relocatable address(재배치 가능 주소)</code>로 <code>binding</code>되고 이는 <code>linkage editor</code> 또는 <code>loader</code>에 의해 <code>Absolute address(절대 주소, 물리 주소)</code>로 <code>binding</code>된다.</p>
-<p><code>Binding</code>은 시점에 따라 세 가지로 나눌 수 있다.</p>
-<ul>
-<li>Compile time binding<ul>
-<li>Compile time에 Memory 내의 위치를 직접 알 수 있으면(process가 R번지부터 시작한다는 사실) Compiler는 <code>Absolute code(절대 코드)</code>를 생성할 수 있다. 하지만 이 위치가 변경되어야 한다면 이 코드는 다시 compile되어야 한다.</li>
-</ul>
-</li>
-<li>Load time binding<ul>
-<li>Compile time에 적재 장소를 알 수 없다면 <code>Compiler</code>는 <code>Binary code</code>를 <code>Relocatable code</code>로 만들어야 한다. <code>Relocatable code</code>는 시작 주소가 변경되더라도 사용자 코드를 다시 reload만 하면 된다.</li>
-</ul>
-</li>
-<li>Excution binding<ul>
-<li>Process가 실행되는 중간에 memory 내의 한 segment에서 다른 segment로 옮겨질 수 있을 때 “바인딩이 실행 시간까지 허용되었다” 라고 이야기 하며, 이것이 가능하려면 특별한 Hardware를 이용해야 한다.</li>
-</ul>
-</li>
-</ul>
-<p>CPU가 생성하는 주소를 <code>Logical address(논리 주소)</code>라 하며, Memory가 다루는 주소를 <code>Physical address(물리 주소)</code>라 한다.</p>
-<p><code>Compile time binding</code>, <code>Load time binding</code>에서는 <code>Logical address</code>와 <code>Physical address</code>가 같지만 <code>Excution binding</code>에서는 서로 다르다. 이 때 사용하는 Logical address를 <code>Virtual address</code>라고 부른다.</p>
-<h4 id="Virtual-address"><a href="#Virtual-address" class="headerlink" title="Virtual address"></a>Virtual address</h4><p>  프로그램 실행 중 <code>Physical address</code>로 바뀌어야 하는데 이 바꾸는 작업을 <code>Mapping</code>이라 하며 <code>MMU (Memory Management Unit)</code>에서 작업이 이루어진다.</p>
-<h4 id="Dynamic-Loading-동적-적재"><a href="#Dynamic-Loading-동적-적재" class="headerlink" title="Dynamic Loading(동적 적재)"></a>Dynamic Loading(동적 적재)</h4><p>  Physical memory 크기의 제한때문에 큰 program의 경우 미리 memory에 모두 올라와있지 못한다. 이를 해결하지 위해 <code>Dynamic Loading</code>이 사용된다.</p>
-<p>  각 routine은 실제 호출되기 전까지는 memory에 올라오지 않고 relocatable 상태로 disk에 대기하고 있다가 Main program이 memory에 올라와 실행되고 이 routine이 다른 routine을 호출하게 되면 호출된 routine이 이미 memory에 laoding되어 있는지 확인한다. 없으면 <code>Relocatable linking loader</code>가 호출되어 요구된 routine을 memory로 가져오고 이러한 변화를 테이블에 기록해 둔다. 그 후 CPU 제어는 중단되었던 routine으로 보내진다.</p>
-<h4 id="Swapping"><a href="#Swapping" class="headerlink" title="Swapping"></a>Swapping</h4><p>  Process가 실행되기 위해서는 memory에 있어야 하지만 항상 점유하고 있을 수는 없다. 따라서 실행되는 도중에 임시로 Sub memory로 보내졌다가 다시 Main memory로 돌아올 수 있다.</p>
-<p>  Swapping을 변형하여 우선순위를 두어 처리하는 것을 <code>Roll-in, Roll-out</code> 이라고도 부른다.</p>
-<p>  Swapping system은 Context-switching time이 상당히 오래 걸린다.</p>
-<h4 id="Fragmentation"><a href="#Fragmentation" class="headerlink" title="Fragmentation"></a>Fragmentation</h4><p>  memory의 이곳 저곳을 점유하다보면 크기에 따라 중간중간 비는 공간이 나타나게 되고 이를 <code>Fragmentation</code>이라 부른다.</p>
-<p>  <code>Fragmentation</code> 문제를 해결하기 위해 두 가지 기법을 사용할 수 있다.</p>
-<ul>
-<li>Paging</li>
-<li>Segmentation</li>
-</ul>
-<h4 id="Paging"><a href="#Paging" class="headerlink" title="Paging"></a>Paging</h4><p>  Physical memory는 <code>frame</code>이라는 같은 크기의 block들로 나누어져 있고 Logical memory는 <code>page</code>라는 같은 크기의 block들로 나누어져 있다.</p>
-<p>  CPU에서 나오는 모든 주소는 <code>Page number(p)</code>와 <code>Offset(d)</code>로 구성된다. <code>Page number</code>는 <code>Page table</code>에 access할 때 사용되며 <code>Page table</code>은 Main memory에서 각 page가 점유하는 주소를 가지고 있다. 이 주소에 <code>Offset</code>을 더하면 원하는 <code>Physical address</code>가 된다.</p>
-<p><img src="/images/2016-07-01-common-memory-management-001.jpg" alt="paging hardware">{:class=”img-responsive”}</p>
-<p>  Frame 및 Page의 크기는 Hardware에 의해 정의되며 <code>Page의 크기는 일반적으로 512 byte ~ 16 MB 사이이며 2의 제곱으로 증가한다.</code></p>
-<p>  Logical address의 크기가 2^m 이고 page가 2^n의 크기를 갖는다면 Logical address의 상위 m-n 비트는 page number를 나타내고, 하위 n 비트는 page offset을 나타낸다.</p>
-<p><img src="/images/2016-07-01-common-memory-management-002.jpg" alt="paging model">{:class=”img-responsive”}</p>
-<h4 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h4><p>  사용자는 하나의 Program을 <code>subroutine</code>, <code>procedure</code>, <code>function 또는 module</code>들을 가지고 있는 것으로 생각하고, <code>Table</code>, <code>Array</code>, <code>Stack</code> 등의 다양한 변수를 사용한다. </p>
-<p>  이러한 사용자가 바라보는 Memory의 관점을 그대로 지원하는 Memory Management 기법이다.</p>
-<p>  쉬운 구현을 위해 Segment name 대신 Segment number가 System에 의해 매겨지고 Segment는 number로 불리운다. 때문에 Logical address는 <code>&lt;segment-number, offset&gt;</code>으로 구성된다.</p>
-<p><img src="/images/2016-07-01-common-memory-management-003.jpg" alt="segment example">{:class=”img-responsive”}</p>
-<h2 id="Virtual-Memory"><a href="#Virtual-Memory" class="headerlink" title="Virtual Memory"></a>Virtual Memory</h2><p>  Process 전체가 Memory에 올라오지 않더라도 실행이 가능하게 하는 기법이다. Physical memory로부터 사용자 관점의 Logical memory를 분리시켜 Main memory를 균일한 크기의 저장 공간으로 구성된 엄청나게 큰 배열로 추상화시켜 준다.</p>
-<ul>
-<li>장점<ul>
-<li>(Physical) Memory size의 제약으로부터 자유로워진다.</li>
-<li>File의 공유를 쉽게 해주고 Shared memory 구현을 가능케 한다.</li>
-<li>Process 생성을 효율적으로 처리할 수 있는 Mechanism을 제공한다.</li>
-<li>많은 program을 동시에 수행 가능하고 이에 따라 응답 시간(response time, turnaround time)은 늘어나지 않으면서도 CPU 이용률(utilization)과 처리율(throughput)이 높아진다.</li>
-<li>swap하는데 필요한 입/출력 횟수가 줄어들어 program들이 상대적으로 빠르게 실행된다.</li>
-</ul>
-</li>
-<li><p>단점</p>
-<ul>
-<li>구현하기 어렵다.</li>
-<li>잘못 사용하면 성능이 크게 저하된다.</li>
-</ul>
-<p>앞에서 본 Memory management 기법 중 Dynamic loading은 process 전체를 memory에 올려야 한다는 제약을 어느정도 막아주긴 하지만 프로그래머가 추가적인 작업을 해야한다.</p>
-<p>앞서 본 것처럼 <code>page frame</code>들로 인해 Physical memory는 연속적인 공간이 아닐 수 있다. MMU(Memory Management Unit)는 Physical memory를 Logical memory로 mapping한다.</p>
-<p><code>Virtual Memory</code>의 각 <code>area</code>는 다음과 같이 사용된다.</p>
-</li>
-<li><p>Stack</p>
-<ul>
-<li>main() 함수, Callback 함수의 주소, 지역변수, 파라미터, return value가 저장되는 영역이다.</li>
-</ul>
-</li>
-<li>Sparse<ul>
-<li>빈 공간을 포함한 Stack과 Heap 사이의 영역이다.</li>
-</ul>
-</li>
-<li>Heap<ul>
-<li>동적 메모리 할당 영역이다.</li>
-</ul>
-</li>
-<li>Data<ul>
-<li>전역변수, 정적변수(static), 배열, 구조체, 상수가 저장되는 영역이다.</li>
-<li>Data 영역은 두 가지 영역으로 구분할 수 있다.<ul>
-<li>Data<ul>
-<li>초기값이 있는 경우</li>
-</ul>
-</li>
-<li>BSS (Block Started by Symbol)<ul>
-<li>초기값이 없는 경우우</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Code<ul>
-<li>작성한 Code가 저장되는 영역이다.</li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/2016-07-01-common-memory-management-004.jpg" alt="virtual memory">{:class=”img-responsive”}</p>
-<ul>
-<li>Code, Data, Stack 영역은 Compiler가 Memory의 크기를 결정한다.</li>
-<li>Heap 영역의 크기는 개발자에 의해 프로그램 동작 시 결정된다.</li>
-<li>Stack의 지역변수는 사용 후 소멸하므로 데이터 용량이 불확실하다. 따라서 밑에서부터 올라가면서 값이 채워진다.</li>
-<li>Heap overflow<ul>
-<li>Heap 영역이 Stack 영역을 침범한 경우</li>
-</ul>
-</li>
-<li>Stack overflow<ul>
-<li>Stack 영역이 Heap 영역을 침범한 경우</li>
-</ul>
-</li>
-</ul>
-<p>아래 그림은 wikipedia에서 설명하고 있는 동적 할당에 대한 그림이다.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/ko/2/22/C_MemMap_Exam_VS.png" alt="Memory map">{:class=”img-responsive”}</p>
-<hr>
-<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><p>아래의 글들을 교재삼아 작성하였습니다.</p>
-<ul>
-<li><a href="http://blog.naver.com/k5248/220724196178" target="_blank" rel="external">http://blog.naver.com/k5248/220724196178</a></li>
-<li><a href="https://ko.wikipedia.org/wiki/%EB%8F%99%EC%A0%81_%EB%A9%94%EB%AA%A8%EB%A6%AC_%ED%95%A0%EB%8B%B9" target="_blank" rel="external">https://ko.wikipedia.org/wiki/%EB%8F%99%EC%A0%81_%EB%A9%94%EB%AA%A8%EB%A6%AC_%ED%95%A0%EB%8B%B9</a></li>
-<li>Operating System Concepts (공룡책)</li>
-</ul>
-
-        </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- github-001 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5237023707102425"
-     data-ad-slot="5100567191"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="http://lazyrodi.github.io/2016/07/01/2016-07-01-common-memory-management/" data-id="cj8bj1e6y00187zw6xeo4vx4a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        <p class="article-excerpt">
+            SonarQube는 우연히 알게된 Tool로 코드 품질 관리 툴이다.
+회사에서 개인적으로 사용하고 있다.
+젠킨스 등의 CI 툴과도 연계(https://www.sonarqube.org/features/integration/)가 가능하여 잘 사용하면 파워풀하게 사용할 수도 있다.
+개인적인 사용을 위해서는 별로 세팅할 것도 없이 그냥 사용하면 된다.
+SonarQ
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
+
+
+    <nav id="page-nav">
+        <span class="pages">Page 3 of 3</span>
+        <a class="extend prev" rel="prev" href="/archives/2017/page/2/">&laquo;</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+
 
                         </div>
                     </section>
@@ -431,29 +230,6 @@ CPU는 여기에서 command를 load하여 processing 한다.
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2016/07/02/2016-07-02-etc-regular-expression/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Regular Expression (정규표현식)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2016/06/30/2016-04-13-db-fundamental-of-database/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Fundamental of Database</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -573,13 +349,11 @@ CPU는 여기에서 command를 load하여 processing 한다.
     var disqus_shortname = 'lazyrodi';
     
     
-    var disqus_url = 'http://lazyrodi.github.io/2016/07/01/2016-07-01-common-memory-management/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
