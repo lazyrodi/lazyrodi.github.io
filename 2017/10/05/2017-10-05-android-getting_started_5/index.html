@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Android] Getting Started (5) | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="android,study" />
+    
+    <meta name="description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+uilding a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Permi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Android] Getting Started (5)">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/10/05/2017-10-05-android-getting_started_5/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+uilding a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Permi">
+<meta property="og:image" content="https://developer.android.com/images/training/basics/intents-choice.png">
+<meta property="og:updated_time" content="2017-10-08T08:10:27.004Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Android] Getting Started (5)">
+<meta name="twitter:description" content="Android developer site study
+
+Getting Started
+Building Your First App
+Supporting Different Devices
+uilding a Dynamic UI with Fragments
+Saving Data
+Interacting with Other Apps
+Working with System Permi">
+<meta name="twitter:image" content="https://developer.android.com/images/training/basics/intents-choice.png">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/android/">android</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-10-05-android-getting_started_5" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Android] Getting Started (5)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/10/05/2017-10-05-android-getting_started_5/" class="article-date">
+    <time datetime="2017-10-05T02:00:00.000Z" itemprop="datePublished">2017-10-05</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study/">study</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#다른-App으로-사용자-이동시키기"><span class="toc-number">1.</span> <span class="toc-text">다른 App으로 사용자 이동시키기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#암시적-Intent-만들기"><span class="toc-number">1.1.</span> <span class="toc-text">암시적 Intent 만들기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intent를-수신할-app이-있는지-확인하기"><span class="toc-number">1.2.</span> <span class="toc-text">Intent를 수신할 app이 있는지 확인하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intent를-사용하여-Activity-시작하기"><span class="toc-number">1.3.</span> <span class="toc-text">Intent를 사용하여 Activity 시작하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-선택기-표시하기"><span class="toc-number">1.4.</span> <span class="toc-text">App 선택기 표시하기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity로부터-결과-가져오기"><span class="toc-number">2.</span> <span class="toc-text">Activity로부터 결과 가져오기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity의-시작"><span class="toc-number">2.1.</span> <span class="toc-text">Activity의 시작</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#결과-수신하기"><span class="toc-number">3.</span> <span class="toc-text">결과 수신하기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#보너스-연락처-데이터-읽기"><span class="toc-number">3.0.1.</span> <span class="toc-text">보너스: 연락처 데이터 읽기</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#다른-App이-자신의-Activity를-시작할-수-있도록-허용하기"><span class="toc-number">4.</span> <span class="toc-text">다른 App이 자신의 Activity를 시작할 수 있도록 허용하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Intent-filter-추가하기"><span class="toc-number">4.1.</span> <span class="toc-text">Intent filter 추가하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity-에서-intent-처리하기"><span class="toc-number">4.2.</span> <span class="toc-text">Activity 에서 intent 처리하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#결과-반환하기"><span class="toc-number">4.3.</span> <span class="toc-text">결과 반환하기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#출처"><span class="toc-number">5.</span> <span class="toc-text">출처</span></a></li></ol>
+                
+            </div>
+            <blockquote><p>Android developer site study</p>
+<ul>
+<li><b>Getting Started</b><ul>
+<li>Building Your First App</li>
+<li>Supporting Different Devices</li>
+<li>uilding a Dynamic UI with Fragments</li>
+<li>Saving Data</li>
+<li><b>Interacting with Other Apps</b></li>
+<li>Working with System Permissions</li>
+</ul>
+</li>
+</ul>
+<footer><strong>https://developer.android.com/training/index.html</strong></footer></blockquote>
+<p>Android App은 보통 여러 개의 Activity를 가지고 있다. 사용자가 하나의 Activity에서 다른 Activity로 전환하기 위해서는 Intent를 사용하여 App의 intent가 어떠한 작업을 하도록 정의해야 한다.</p>
+<p><code>startActivity()</code>와 같은 메서드로 시스템에 Intent를 전달하면 시스템은 Intent를 사용하여 적절한 App 구성 요소를 식별하고 시작한다.</p>
+<p><code>Intent</code>는 크게 두 가지로 나눌 수 있다.</p>
+<ol>
+<li>특정 구성 요소 (특정 Activity 인스턴스)를 시작하기 위한 명시적 Intent</li>
+<li>“사진 캡쳐”와 같은 의도된 작업을 처리할 수 있는 임의의 구성 요소를 시작하기 위한 암시적 Intent</li>
+</ol>
+<h2 id="다른-App으로-사용자-이동시키기"><a href="#다른-App으로-사용자-이동시키기" class="headerlink" title="다른 App으로 사용자 이동시키기"></a>다른 App으로 사용자 이동시키기</h2><div class="video-container"><iframe src="//www.youtube.com/embed/HGElAW224dE" frameborder="0" allowfullscreen></iframe></div>
+<h3 id="암시적-Intent-만들기"><a href="#암시적-Intent-만들기" class="headerlink" title="암시적 Intent 만들기"></a>암시적 Intent 만들기</h3><p>암시적 Intent는 시작할 구성 요소의 class 이름을 선언하지 않고 그 대신 수행할 작업을 선언한다.</p>
+<p>작업은 <code>보기</code>, <code>편집</code>, <code>보내기</code>, <code>가져오기</code>와 같이 수행하고자 하는 동작을 지정한다.</p>
+<p>또한 보기 원하는 주소 또는 전송하기 원하는 이메일 등과 같이 작업과 연결된 데이터를 함께 포함하는 경우가 많다.</p>
+<p>생성하고자 하는 Intent에 따라 데이터는 Uri이거나 다른 여러가지 데이터 유형 중 하나일 수 있으며, intent가 데이터를 전혀 필요로 하지 않을 수도 있다.</p>
+<p>데이터가 Uri인 경우 간단한 <code>Intent()</code> 생성자를 이용하여 작업 및 데이터를 정의할 수 있다.</p>
+<p>아래 코드는 Uri 데이터르 사용하여 전화번호를 지정하여 전화 걸기를 시작하는 Intent를 생성한다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Uri number = Uri.parse(<span class="string">"tel:5551234"</span>);</div><div class="line">Intent callIntent = <span class="keyword">new</span> Intent(Intent.ACTION_DIAL, number);</div></pre></td></tr></table></figure>
+<p>App이 <code>startActivity()</code>를 호출하여 이 intent를 호출하면 전화 app이 주어진 전화번호로 전화를 건다.</p>
+<p>아래는 몇 가지 다른 intent와 해당 작업 및 Uri 데이터 쌍이다.</p>
+<ul>
+<li>지도 보기</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 주소 기반의 지도 지점</span></div><div class="line">Uri location = Uri.parse(<span class="string">"geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California"</span>);</div><div class="line"><span class="comment">// 또는 위도/경도 기반의 지도 지점</span></div><div class="line"><span class="comment">// Uri location = Uri.parse("geo:37.422219,-122.08364?z=14"); // z param is zoom level</span></div><div class="line">Intent mapIntent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, location);</div></pre></td></tr></table></figure>
+<ul>
+<li>웹 페이지 보기</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Uri webpage = Uri.parse(<span class="string">"http://www.android.com"</span>);</div><div class="line">Intent webIntent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, webpage);</div></pre></td></tr></table></figure>
+<p>다른 종류의 암시적인 intent는 문자열과 같이 여러 데이터 유형을 제공하는 “Extra” 데이터를 필요로 한다. 다양한 <code>putExtra()</code> 메서드를 사용하여 하나 이상의 Extra 데이터를 추가할 수 있다.</p>
+<p>기본적으로 시스템은 포함된 Uri 데이터를 바탕으로 intent가 필요로 하느 ㄴ적절한 MIME 유형을 결정한다.</p>
+<p>Uri를 intent에 포함하지 않을 경우, 일반적으로 <code>setType()</code>을 사용하여 intent와 관련된 데이터의 유형을 지정해야 한다.</p>
+<p>MIME 유형을 설정하면 intent를 수신할 activity의 종류도 지정된다.</p>
+<ul>
+<li>첨부 파일과 함께 이메일 보내기</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent emailIntet = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line"><span class="comment">// 이 Intent는 URI를 가지고 있지 않다. 때문에 "text/plain" MIME type을 선언한다.</span></div><div class="line">emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);</div><div class="line">emailIntent.putExtra(Intent.EXTRA_EMAIL, <span class="keyword">new</span> String[] &#123;<span class="string">"jon@example.com"</span>&#125;); <span class="comment">// 수신자</span></div><div class="line">emailIntent.putExtra(Intent.EXTRA_SUBJECT, <span class="string">"Email subject"</span>);</div><div class="line">emailIntent.putExtra(Intent.EXTRA_TEXT, <span class="string">"Email message text"</span>);</div><div class="line">emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(content:<span class="comment">//path/to/email/attachment"));</span></div><div class="line"><span class="comment">// Uri들의 arrayList를 여러 개 보내는 것도 가능하다.</span></div></pre></td></tr></table></figure>
+<ul>
+<li>캘린더 이벤트 생성</li>
+</ul>
+<p>캘린더 이벤트에 대한 아래 intent는 API Level 14 이상에서만 지원한다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent calendarIntent = <span class="keyword">new</span> Intent(Intent.ACTION_INSERT, Events.CONTENT_URI);</div><div class="line">Calendar beginTime = Calendar.getInstance().set(<span class="number">2017</span>, <span class="number">0</span>, <span class="number">19</span>, <span class="number">7</span>, <span class="number">30</span>);</div><div class="line">Calendar endTime = Calendar.getInstance()set(<span class="number">2017</span>, <span class="number">0</span>, <span class="number">19</span>, <span class="number">10</span>, <span class="number">30</span>);</div><div class="line">calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis());</div><div class="line">calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());</div><div class="line">calendarIntent.putExtra(Events.TITLE, <span class="string">"Ninja class"</span>);</div><div class="line">calendarIntent.putExtra(Events.EVENT_LOCATION, <span class="string">"Secret dojo"</span>);</div></pre></td></tr></table></figure>
+<blockquote><p>Intent는 되도록 구체적으로 정의해야 한다.</p>
+<p>예를 들어, ACTION_VIEW intent를 사용하여 이미지를 표시하고자 할 경우, <code>image/*</code>의 MIME 유형을 지정해야 한다.</p>
+<p>그렇게 하면 지도 app과 같은 다른 유형의 데이터를 볼 수 있는 app이 intent에 의해 실행되는 것이 방지된다.</p>
+</blockquote>
+<h3 id="Intent를-수신할-app이-있는지-확인하기"><a href="#Intent를-수신할-app이-있는지-확인하기" class="headerlink" title="Intent를 수신할 app이 있는지 확인하기"></a>Intent를 수신할 app이 있는지 확인하기</h3><p>Intent를 호출한 후 해당 intent를 처리할 수 있는 app이 기기에 없을 경우 app은 작동을 중단하기 때문에 intent를 호출하기 전에 항상 확인 단계를 포함하는 것이 좋다.</p>
+<p>이를 위해 <code>queryIntentActivities()</code>를 호출하여 Intent를 처리할 수 있는 activity 목록을 가져와야 한다.</p>
+<p>얻어온 List가 비어있지 않을 경우 intent를 안심하고 사용할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">PackageManager packageManager = getPackageManager();</div><div class="line">List activities = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);</div><div class="line"><span class="keyword">boolean</span> isIntentSafe = activities.size() &gt; <span class="number">0</span>;</div></pre></td></tr></table></figure>
+<p>위의 코드에서 <code>isIntentSafe</code>가 <code>true</code>일 경우 하나 이상의 intent가 응답하고 있는 것이므로 안심하고 intent를 호출한다.</p>
+<blockquote><p>사용자가 intent를 사용하려고 하기 전에 이 intent를 사용하는 기능을 해제해야 하는 경우, activity가 처음 시작될 때 이 확인 작업을 수행해야 한다.</p>
+<p>Intent를 처리할 수 있는 app을 알고 있을 경우, 사용자가 app을 다운로드 할 수 있도록 link를 제공할 수도 있다.</p>
+</blockquote>
+<h3 id="Intent를-사용하여-Activity-시작하기"><a href="#Intent를-사용하여-Activity-시작하기" class="headerlink" title="Intent를 사용하여 Activity 시작하기"></a>Intent를 사용하여 Activity 시작하기</h3><p>Intent를 생성하고 EXTRA 정보를 설정한 후에는 <code>startActivity()</code>를 호출하여 시스템에 보내야 한다.</p>
+<p>시스템이 Intent를 처리할 수 있는 activity를 둘 이상 식별하는 경우, 아래 그림과 같이 사용자가 사용할 app을 선택할 수 있는 대화상자를 표시한다.</p>
+<img src="https://developer.android.com/images/training/basics/intents-choice.png">
+<p>Intent를 처리할 수 있는 activity가 하나밖에 없을 경우, 시스템이 해당 activity를 바로 시작한다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>아래 코드는 지도 보기 intent를 생성하고 intent를 처리할 수 있는 app의 존재 여부를 확인한 후 app을 시작하는 방법에 대한 완벽한 예시이다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">// intent 생성하기</span></div><div class="line">Uri location = Uri.parse(<span class="string">"geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California"</span>);</div><div class="line">Intent mapIntent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, location);</div><div class="line"></div><div class="line"><span class="comment">// intent 호출 가능여부 확인</span></div><div class="line">PackageManager packageManager = getPackageManager();</div><div class="line">List&lt;ResolveInfo&gt; activities = packageManager.queryIntentActivities(mapIntent, <span class="number">0</span>);</div><div class="line"><span class="keyword">boolean</span> isIntentSafe = activities.size() &gt; <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="comment">// 안전하다면, activity 시작</span></div><div class="line"><span class="keyword">if</span> (isIntentSafe) &#123;</div><div class="line">    startActivity(mapIntent);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="App-선택기-표시하기"><a href="#App-선택기-표시하기" class="headerlink" title="App 선택기 표시하기"></a>App 선택기 표시하기</h3><p>Intent에 응답하는 app이 두 개 이상인 경우 사용자는 어떤 app을 default로 사용할지 선택할 수 있다.</p>
+<p>이 방법은 사용자가 일반적으로 항상 동일한 app을 사용하기 원하는 작업을 수행할 때 유용하게 사용된다.</p>
+<p>예를 들어, 웹페이지를 열 때 브라우저를 선택하거나 사진을 찍을 때 카메라의 종류를 선택할 때 사용된다.</p>
+<p>하지만 “공유” 작업 등과 같이 항목을 공유할 app을 여러 개 보유하고 있는 경우처럼 수행할 작업을 처리할 수 있는 app이 여러 개 있고 사용자가 매번 다른 app을 원한다면, 아래 그림과 같이 선택기 대화상자를 명시적으로 표시할 수 있다.</p>
+<img src="https://developer.android.com/images/training/basics/intent-chooser.png">
+<p>선택기를 명시적으로 표시하려면, <code>createChooser()</code>를 사용하여 Intent를 만들고 <code>startActivity()</code>에 전달한다.</p>
+<p>아래의 예시는 <code>createChooser()</code> 메서드에 전달된 intent에 응답하는 app들의 목록을 대화상자에 표시하며, 제공된 text를 대화상자 제목으로 사용한다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line">...</div><div class="line"></div><div class="line"><span class="comment">// UI text는 항상 string 리소스를 사용한다.</span></div><div class="line"><span class="comment">// "Share this photo with" 등...</span></div><div class="line">String title = getResource().getString(R.string.chooser_title);</div><div class="line"></div><div class="line"><span class="comment">// 선택기에서 보여줄 intent 생성하기</span></div><div class="line">Intent chooser = Intent.createChooser(intent, title);</div><div class="line"></div><div class="line"><span class="comment">// intent를 수신할 수 있는 activity 존재 확인</span></div><div class="line"><span class="keyword">if</span> (intent.resolveActivity(getaPackageManager()) != <span class="keyword">null</span>) &#123;</div><div class="line">    startActivity(chooser);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Activity로부터-결과-가져오기"><a href="#Activity로부터-결과-가져오기" class="headerlink" title="Activity로부터 결과 가져오기"></a>Activity로부터 결과 가져오기</h2><p>다른 Activity를 시작시킨 후 그 activity로부터 결과를 수신할 수도 있다.</p>
+<p>결과를 수신하고 싶을 때는 <code>startActivity()</code> 대신 <code>startActivityForResult()</code>를 호출한다.</p>
+<p>예를 들어, 자신의 App에서 카메라 app을 실행시킨 후 그 결과로 캡쳐된 사진을 수신할 수 있다.</p>
+<p>연락처의 선택 후 그 상세 정보를 수신하는 등의 동작에도 사용 가능하다.</p>
+<p>응답하는 activity는 반드시 결과를 반환하도록 설계되어 있어야 하며 해당 activity는 또 다른 Intent 객체의 형태로 결과를 전송한다.</p>
+<p>그러면 최초 호출한 activity는 <code>onActivityResult()</code> 콜백으로 결과를 수신한다.</p>
+<blockquote><p><code>startActivityForResult()</code>를 호출할 때 명시적 또는 암시적 intent를 사용할 수 있다.</p>
+<p>자신이 정의한 activity 중 하나를 시작하여 결과를 수신하는 경우 예상하는 결과를 수신하도록 보장하려면 명시적인 intent를 사용해야 한다.</p>
+</blockquote>
+<h3 id="Activity의-시작"><a href="#Activity의-시작" class="headerlink" title="Activity의 시작"></a>Activity의 시작</h3><p>결과를 수신하기 위해서 <code>startActivityForResult()</code> 메서드에 추가적인 정수 인수를 전달해야 한다.</p>
+<p>이 정수 인수는 요청을 식별하는 <code>요청 코드</code>이다. 결과 intent를 수신하는 경우 app이 결과를 올바르게 식별하여 이를 처리할 방법을 결정할 수 있도록 콜백이 이와 똑같은 <code>요청 코드</code>를 제공한다.</p>
+<p>아래는 사용자가 연락처를 선택할 수 있게 하는 activity를 시작하는 방법이다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PICK_CONTACT_REQUEST = <span class="number">1</span>; <span class="comment">// 요청 코드</span></div><div class="line">...</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">pickContact</span><span class="params">()</span> </span>&#123;</div><div class="line">    Intent pickContactIntent = <span class="keyword">new</span> Intent(Intent.ACTION_PICK, Uri.parse(<span class="string">"content://contacts"</span>));</div><div class="line">    pickContactIntent.setType(Phone.CONTENT_TYPE); <span class="comment">// 주소록에 있는 사용자와 폰 번호를 보여줌</span></div><div class="line">    startActivityForResult(pickContactIntent, PICK_CONTACT_REQUEST);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="결과-수신하기"><a href="#결과-수신하기" class="headerlink" title="결과 수신하기"></a>결과 수신하기</h2><p>사용자가 후속 activity 작업을 마치고 돌아오면 시스템은 개발자가 정의한 원래 activity의 <code>onActivityResult()</code> 메서드를 호출한다.</p>
+<p>이 메서드는 아래의 세 가지 인수를 포함한다.</p>
+<ol>
+<li><code>startActivityForResult()</code>에 전달한 <code>요청 코드</code></li>
+<li>두 번째 activity가 지정한 <code>결과 코드</code>. 이 코드는 작업이 성공한 경우 <code>RESULT_OK</code>이고 사용자가 작업을 취소하였거나 어떠한 이유로 실패한 경우 `RESULT_CANCELED’가 된다.</li>
+<li>결과 데이터를 전달하는 <code>Intent</code></li>
+</ol>
+<p>아래는 “연락처 선택하기” intent에 대한 결과를 처리하는 방법이다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</div><div class="line">    <span class="comment">// 요청했던 내용에 대한 응답인지 확인</span></div><div class="line">    <span class="keyword">if</span> (requestCode == PICK_CONTACT_REQUEST) &#123;</div><div class="line">        <span class="comment">// 요청이 성공했는지 확인</span></div><div class="line">        <span class="keyword">if</span> (resultCode == RESULT_OK) &#123;</div><div class="line">            <span class="comment">// 사용자가 주소록을 선택함.</span></div><div class="line">            <span class="comment">// Intent는 사용자가 선택한 주소록의 Uri 값을 가지고 있음</span></div><div class="line"></div><div class="line">            <span class="comment">// 주소록을 가지고 여기서 필요한 작업을 수행함. (다음 코드 예제를 참조)</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위의 예시에서는 Android 주소록에서 반환되는 결과 intent가 사용자가 선택한 연락처를 식별하는 Uri 콘텐츠를 제공한다.</p>
+<p>결과를 성공적으로 처리하기 위해서는 결과 intent의 형식이 무엇인지 이해하고 있어야 한다. 결과를 반환하는 activity가 자신이 정의한 activity 중 하나인 경우에는 그 결과를 이해하기가 쉽다.</p>
+<p>Android 플랫폼에 포함된 app은 특정한 결과 데이터를 기대할 수 있는 고유한 API를 제공한다.</p>
+<p>예를 들어, PEOPLE app은 선택된 연락처를 식별하는 콘텐츠 URI와 함께 항상 결과를 반환한다. 또한 카메라 app은 “data” EXTRA에 Bitmap을 반환한다.</p>
+<h4 id="보너스-연락처-데이터-읽기"><a href="#보너스-연락처-데이터-읽기" class="headerlink" title="보너스: 연락처 데이터 읽기"></a>보너스: 연락처 데이터 읽기</h4><p>아래 코드는 데이터를 쿼리하여 선택된 연락처에서 전화번호를 가져오는 방법을 나타낸다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</div><div class="line">    <span class="comment">// 요청했던 내용에 대한 응답인지 확인</span></div><div class="line">    <span class="keyword">if</span> (requestCode == PICK_CONTACT_REQUEST) &#123;</div><div class="line">        <span class="comment">// 요청이 성공했는지 확인</span></div><div class="line">        <span class="keyword">if</span> (resultCode == RESULT_OK) &#123;</div><div class="line">            <span class="comment">// 사용자가 주소록을 선택함.</span></div><div class="line">            Uri contactUri = data.getData();</div><div class="line"></div><div class="line">            <span class="comment">// NUMBER column만을 필요로 한다고 가정한다. 왜냐하면 결과로 하나의 row만 얻었을 것이기 때문이다.</span></div><div class="line">            String[] projection = &#123;Phone.NUMBER&#125;;</div><div class="line"></div><div class="line">            <span class="comment">// NUMBER column을 주소록으로부터 얻어오기 위한 쿼리를 실행한다.</span></div><div class="line">            <span class="comment">// 결과 값이 URI로 넘어오기 때문에 별도의 정렬을 할 필요는 없다.</span></div><div class="line">            <span class="comment">// 주의: query() 메서드는 blocking을 피하기 위해 UI thread와 다른 별도의 thread에서 수행되어야 한다.</span></div><div class="line">            <span class="comment">// 이 코드에서는 간단한 수행만 할 것이라 굳이 그렇게 코드를 짜지는 않았다.</span></div><div class="line">            <span class="comment">// query를 수행 할 때 CursorLoader를 사용하는 것을 고려하라.</span></div><div class="line">            Cursor cursor = getContentResolver()</div><div class="line">                                    .query(contactUri, projection, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            cursor.moveToFirst();</div><div class="line"></div><div class="line">            <span class="comment">// NUMBER column으로부터 폰 번호를 검색한다.</span></div><div class="line">            <span class="keyword">int</span> column = cursor.getColumnIndex(Phone.NUMBER);</div><div class="line">            String number = cursor.getString(column);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote><p>Android 2.3 (API level 9) 이전에서는 위의 코드와 같이 Contacts Provider에 대해 쿼리를 수행하려면 App에서 READ_CONTACTS 권한을 선언해야 한다.</p>
+<p>하지만 Android 2.3부터는 Contact Provider가 결과를 반환할 때 자신의 app에서 그 결과를 읽어올 수 있도록 주소록 app이 임시 권한을 부여한다.</p>
+<p>임시 권한은 해당 연락처 요청에만 적용되기 때문에 intent의 Uri로 지정된 연락처 외에는 쿼리할 수 없다. 다만, READ_CONTACTS 권한을 명시적으로 선언한 경우는 된다.</p>
+</blockquote>
+<h2 id="다른-App이-자신의-Activity를-시작할-수-있도록-허용하기"><a href="#다른-App이-자신의-Activity를-시작할-수-있도록-허용하기" class="headerlink" title="다른 App이 자신의 Activity를 시작할 수 있도록 허용하기"></a>다른 App이 자신의 Activity를 시작할 수 있도록 허용하기</h2><p>자신의 app이 다른 app에 유용할 수 있는 작업을 수행할 수 있다면 다른 app의 작업 요청에 응답할 수 있도록 준비해 두어야 한다.</p>
+<p>예를 들어, 사용자가 친구와 메시지 또는 사진을 공유할 수 있는 소셜 app을 만드는 경우 사용자가 다른 app에서 “공유” 작업을 시작하고 이 작업을 수행하기 위해 내가 만든 app을 시작할 수 있도록 <code>ACTION_SEND</code> intent를 지원하는 것이 좋다.</p>
+<p>다른 app이 자신의 activity를 시작할 수 있도록 하기 위해서는 manifest 파일에서 해당 <code>&lt;activity&gt;</code> 요소에 대해 <code>&lt;intent-filter&gt;</code> 요소를 추가해야 한다.</p>
+<p>App이 기기에 설치되면 시스템이 intent filter를 식별한 후 설치된 모든 app에서 지원되는 intent의 내부 카탈로그에 해당 정보를 추가한다.</p>
+<p>App이 암시적 intent를 사용하여 <code>startActivity()</code> 또는 <code>startActivityForResult()</code>를 호출하면 시스템이 intent에 응답 가능한 activity(들)을 찾는다.</p>
+<h3 id="Intent-filter-추가하기"><a href="#Intent-filter-추가하기" class="headerlink" title="Intent filter 추가하기"></a>Intent filter 추가하기</h3><p>Activity가 처리 가능한 intent를 올바르게 정의하려면 activity가 받아들이는 데이터와 작업 유형 측면에서 추가하는 intent filter가 최대한 구체적이어야 한다.</p>
+<p>Activity의 Intent filter가 Intent 객체의 아래 기준을 충족할 경우 시스템이 주어진 Intent를 해당 activity에 보낼 수 있다.</p>
+<ol>
+<li>Action</li>
+<li>Data</li>
+<li><p>Category</p>
+</li>
+<li><p>Action</p>
+</li>
+</ol>
+<p>수행할 작업의 이름을 지정하는 문자열이다. 일반적으로, 플랫폼에서 정의하는 값 중 하나이다. (예. ACTION_SEND 또는 ACTION_VIEW)</p>
+<p><code>&lt;action&gt;</code> 요소를 사용하여 Intent filter에 지정해야 한다. 이 요소에 지정하는 값은 API 상수 대신 작업의 전체 문자열 이름이어야 한다.</p>
+<ol>
+<li>Data</li>
+</ol>
+<p>Intent와 관련된 Data에 대한 설명이다.</p>
+<p><code>&lt;data&gt;</code> 요소를 사용하여 Intent filter에 지정한다. 이 요소에서 하나 이상의 특성을 사용하여 MIME 유형, URI 접두사, URI 구성표 또는 이들의 조합 그리고 수락된 데이터 유형을 나타내는 다른 요소들을 지정할 수 있다.</p>
+<blockquote><p>Activity가 URI가 아닌 다른 종류의 EXTRA 데이터를 처리할 때와 같이 데이터 Uri에 대한 세부사항을 선언할 필요가 없는 경우, text/plain 또는 image/jpeg과 같이 activity가 처리하는 데이터 유형을 선언하는데 android.mimeType 특성만 지정하면 된다.</p>
+</blockquote>
+<ol>
+<li>Category</li>
+</ol>
+<p>Intent를 처리하는 activity의 특징을 지정할 수 있는 추가적인 방법을 제공한다. 일반적으로 사용자 제스쳐 또는 이러한 제스쳐가 시작된 위치와 관련이 있다.</p>
+<p>시스템이 지원하는 category는 여러가지가 있지만 대부분은 거의 사용되지 않는다. 하지만 모든 암시적 intent는 기본적으로 <code>CATEGORY_DEFAULT</code>로 지정된다.</p>
+<p><code>&lt;category&gt;</code> 요소를 사용하여 Intent filter에 지정한다.</p>
+<p>Intent filter에서 activity가 허용하는 기준을 선언할 수 있다. 이는 이러한 기준 각각을 <code>&lt;intent-filter&gt;</code> 요소 내에 해당 XML 요소를 중첩하여 선언하면 된다.</p>
+<p>아래 코드는 데이터 유형이 텍스트 또는 이미지인 경우 ACTION_SEND intent를 처리하는 intent filter가 지정된 activity이다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">"ShareActivity"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.SEND"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:mimeType</span>=<span class="string">"text/plane"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:mimeType</span>=<span class="string">"image/*"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>수신되는 intent는 각각 하나의 action 및 하나의 데이터 유형만 지정한다. 하지만 <code>&lt;intent-filter&gt;</code> 각각에 <code>&lt;action&gt;</code>, <code>&lt;category&gt;</code>, <code>&lt;data&gt;</code> 요소에 대한 여러 인스턴스를 선언해도 문제가 되지는 않는다.</p>
+<p>action 및 data의 두 쌍이 서로 배타적으로 동작하는 경우 어떤 데이터 유형과 페어링되었을 때 어떤 작업이 가능한지를 지정하는 intent filter를 각각 따로 생성해야 한다.</p>
+<p>예를 들어, activity가 ACTION_SEND 및 ACTION_SENDTO intent 모두에서 텍스트와 이미지를 모두  처리한다고 가정할 경우, 두 작업 각각에 별도의 intent filter를 정의해야 한다.</p>
+<p>그 이유는 ACTION_SENDTO intent는 데이터 Uri를 사용해여 send 또는 sendto URI 구성표를 사용하는 수신자 주소를 지정해야 하기 때문이다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">"ShareActivity"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- filter for sending text; accepts SENDTO action with sms URI schemes --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.SENDTO"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:scheme</span>=<span class="string">"sms"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:scheme</span>=<span class="string">"smsto"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- filter for sending text or images; accepts SEND action and text or image data --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.SEND"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:mimeType</span>=<span class="string">"image/*"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:mimeType</span>=<span class="string">"text/plain"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote><p>암시적 intent를 수신하기 위해서는 CATEGORY_DEFAULT category를 intent filter에 포함해야 한다.</p>
+<p>startActivity() 및 startActivityForResult() 메서드는 모든 intent를 마치 CATEGORY_DEFAULT를 선언한 것처럼 취급한다.</p>
+<p>Intent filter에서 이 category를 선언하지 않으면 어떠한 암시적 intent오 activity로 확인할 수 없다.</p>
+</blockquote>
+<h3 id="Activity-에서-intent-처리하기"><a href="#Activity-에서-intent-처리하기" class="headerlink" title="Activity 에서 intent 처리하기"></a>Activity 에서 intent 처리하기</h3><p>Activity를 시작하는데 사용된 intent를 읽어서 Activity에서 할 작업을 결정할 수 있다.</p>
+<p>Activity가 시작되면, <code>getIntent()</code>를 호출하여 activity를 시작한 intent를 검색한다. 이 작업은 activity의 수명 주기 동안 언제든지 가능하지만, 일반적으로 <code>onCreate()</code> 또는 <code>onStart()</code>와 같은 초기 콜백 과정에서 수행한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line"></div><div class="line">    setContentView(R.layout.main);</div><div class="line"></div><div class="line">    <span class="comment">// 이 activity를 구동시킨 intent를 얻어온다.</span></div><div class="line">    Intent intent = getIntent();</div><div class="line">    Uri data = intent.getData();</div><div class="line"></div><div class="line">    <span class="comment">// intent type에 기반하여 무엇을 할 것인지 정한다.</span></div><div class="line">    <span class="keyword">if</span> (intent.getType().indexOf(<span class="string">"image/"</span>) != -<span class="number">1</span>) &#123;</div><div class="line">        <span class="comment">// 이미지 데이터를 다룬다.</span></div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (intent.getType().equals(<span class="string">"text/palain"</span>)) &#123;</div><div class="line">        <span class="comment">// 텍스트 데이터를 다룬다.</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="결과-반환하기"><a href="#결과-반환하기" class="headerlink" title="결과 반환하기"></a>결과 반환하기</h3><p>Activity를 호출한 activity로 결과를 반환하고자 하는 경우, 간단하게 <code>setResult()</code>를 호출하여 결과 코드 및 결과 intent를 지정하면 된다.</p>
+<p>작업이 끝나고 사용자가 원래 activity로 되돌아갈 경우 <code>finish()</code>를 호출하여 activity를 종료(및 소멸)한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 결과 데이터를 전달할 intent를 생성한다.</span></div><div class="line">Intent result = <span class="keyword">new</span> Intent(<span class="string">"com.example.RESULT_ACTION"</span>, Uri.parse(<span class="string">"content://result_uri"</span>));</div><div class="line">setResult(Activity.RESULT_OK, result);</div><div class="line">finish();</div></pre></td></tr></table></figure>
+<p>결과 코드는 항상 결과와 함께 지정해야 한다. 일반적으로 <code>RESULT_OK</code> 또는 <code>RESULT_CANCELED</code> 이다.</p>
+<p>Intent를 사용하여 추가 데이터를 제공할 수 있다.</p>
+<blockquote><p>결과는 기본적으로 <code>RESULT_CANCELED</code>로 설정된다. 따라서 작업을 완료하기 전 또는 개발자가 결과를 설정하기 전에 사용자가 Back 버튼을 누를 경우, 원래의 activity는 취소 결과를 받게된다.</p>
+</blockquote>
+<p>단순히 여러 결과 옵션 중 하나를 나타내는 정수만 반환하면 되는 경우, 결과 코드를 0보다 큰 임의의 값으로 설정하면 된다.</p>
+<p>결과 코드를 사용하여 정수만 제공하고 Intent를 포함할 필요는 없는 경우, <code>setResult()</code>를 호출하고 결과 코드만 전달하면 된다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">setResult(RESULT_COLOR_RED);</div><div class="line">finish();</div></pre></td></tr></table></figure>
+<p>이 경우, 가능한 결과는 몇 개 없을 것이므로 결과 코드는 local로 정의된 0보다 큰 정수이다.</p>
+<blockquote><p><code>startActivity()</code> 또는 <code>startActivityForResult()</code>로 activity가 시작되었는지 확인할 필요는 없다. activity를 시작한 intent가 결과를 원할 경우, <code>setResult()</code>를 호출하기만 하면 된다.</p>
+<p>원래의 activity가 <code>startActivityRForResult()</code>를 호출한 경우, 시스템은 개발자가 <code>setResult()</code>에 제공하는 결과를 activity에 제공한다. 그렇지 않은 경우 결과는 무시된다.</p>
+</blockquote>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><ul>
+<li><a href="https://developer.android.com/training/basics/data-storage/index.html" target="_blank" rel="external">https://developer.android.com/training/basics/data-storage/index.html</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/10/05/2017-10-05-android-getting_started_5/" data-id="cj8iewq6y00007fw678p5vaek" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/10/06/2017-10-06-android-getting_started_6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            [Android] Getting Started (6)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/10/04/2017-10-04-android-getting_started_4/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Android] Getting Started (4)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/06/2017-10-06-android-getting_started_6/" class="title">[Android] Getting Started (6)</a></p>
+                            <p class="item-date"><time datetime="2017-10-06T02:00:00.000Z" itemprop="datePublished">2017-10-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/05/2017-10-05-android-getting_started_5/" class="title">[Android] Getting Started (5)</a></p>
+                            <p class="item-date"><time datetime="2017-10-05T02:00:00.000Z" itemprop="datePublished">2017-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/04/2017-10-04-android-getting_started_4/" class="title">[Android] Getting Started (4)</a></p>
+                            <p class="item-date"><time datetime="2017-10-04T02:00:00.000Z" itemprop="datePublished">2017-10-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/03/2017-10-03-android-getting_started_3/" class="title">[Android] Getting Started (3)</a></p>
+                            <p class="item-date"><time datetime="2017-10-03T09:00:00.000Z" itemprop="datePublished">2017-10-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/02/2017-10-02-android-getting_started_2 /" class="title">[Android] Getting Started (2)</a></p>
+                            <p class="item-date"><time datetime="2017-10-02T01:00:00.000Z" itemprop="datePublished">2017-10-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 18.75px;">algorithm</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/bash/" style="font-size: 11.25px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/binarysearchtree/" style="font-size: 10px;">binarysearchtree</a> <a href="/tags/binarytree/" style="font-size: 10px;">binarytree</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 12.5px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 11.25px;">database</a> <a href="/tags/datastructure/" style="font-size: 15px;">datastructure</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 15px;">docs</a> <a href="/tags/docthread/" style="font-size: 12.5px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/footer/" style="font-size: 10px;">footer</a> <a href="/tags/gerrit/" style="font-size: 11.25px;">gerrit</a> <a href="/tags/git/" style="font-size: 16.25px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/header/" style="font-size: 10px;">header</a> <a href="/tags/hexo/" style="font-size: 11.25px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 11.25px;">hr</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 11.25px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 11.25px;">interview</a> <a href="/tags/java/" style="font-size: 16.25px;">java</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/linux/" style="font-size: 11.25px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 11.25px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 11.25px;">queue</a> <a href="/tags/quick-guide/" style="font-size: 10px;">quick guide</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 12.5px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/semantic-ui/" style="font-size: 10px;">semantic ui</a> <a href="/tags/setting/" style="font-size: 13.75px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 17.5px;">spring</a> <a href="/tags/springboot/" style="font-size: 11.25px;">springboot</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/study/" style="font-size: 16.25px;">study</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/tiles/" style="font-size: 10px;">tiles</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/tree/" style="font-size: 11.25px;">tree</a> <a href="/tags/troubleshooting/" style="font-size: 12.5px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 11.25px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vuejs/" style="font-size: 10px;">vuejs</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows-10/" style="font-size: 11.25px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/10/05/2017-10-05-android-getting_started_5/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
