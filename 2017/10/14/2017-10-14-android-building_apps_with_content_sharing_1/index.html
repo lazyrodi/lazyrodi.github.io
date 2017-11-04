@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Android] Building Apps with Content Sharing (1) | Lazy Rodriguez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="android,study" />
+    
+    <meta name="description" content="Android developer site study
+
+Building Apps with Content Sharing
+Sharing Simple Data
+Sharing Files
+Sharing Files with NFC
+
+
+
+https://developer.android.com/training/index.html
+간단한 Data 공유하기Android app의">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Android] Building Apps with Content Sharing (1)">
+<meta property="og:url" content="http://lazyrodi.github.io/2017/10/14/2017-10-14-android-building_apps_with_content_sharing_1/index.html">
+<meta property="og:site_name" content="Lazy Rodriguez">
+<meta property="og:description" content="Android developer site study
+
+Building Apps with Content Sharing
+Sharing Simple Data
+Sharing Files
+Sharing Files with NFC
+
+
+
+https://developer.android.com/training/index.html
+간단한 Data 공유하기Android app의">
+<meta property="og:image" content="https://developer.android.com/images/training/sharing/share-text-screenshot.png">
+<meta property="og:updated_time" content="2017-10-22T06:16:34.679Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Android] Building Apps with Content Sharing (1)">
+<meta name="twitter:description" content="Android developer site study
+
+Building Apps with Content Sharing
+Sharing Simple Data
+Sharing Files
+Sharing Files with NFC
+
+
+
+https://developer.android.com/training/index.html
+간단한 Data 공유하기Android app의">
+<meta name="twitter:image" content="https://developer.android.com/images/training/sharing/share-text-screenshot.png">
+    
+
+    
+
+    
+        <link rel="icon" href="https://raw.githubusercontent.com/lazyrodi/misc/master/assets/logo_lazyrodi/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/bookmark/">Bookmark</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/keywords/">Keywords</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Ruby-on-rails/">Ruby on rails</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Security/">Security</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/TroubleShooting/">TroubleShooting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/android/">android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/common/">common</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/interview/">interview</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/network/">network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/pattern/">pattern</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docs/">docs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hr/">hr</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/works/">works</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/android/">android</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2017-10-14-android-building_apps_with_content_sharing_1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [Android] Building Apps with Content Sharing (1)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/10/14/2017-10-14-android-building_apps_with_content_sharing_1/" class="article-date">
+    <time datetime="2017-10-14T00:00:00.000Z" itemprop="datePublished">2017-10-14</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study/">study</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="lazyrodi-toc">
+                
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#간단한-Data-공유하기"><span class="toc-number">1.</span> <span class="toc-text">간단한 Data 공유하기</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#간단한-data를-다른-app으로-전송하기"><span class="toc-number">1.1.</span> <span class="toc-text">간단한 data를 다른 app으로 전송하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Text-정보-전송하기"><span class="toc-number">1.1.1.</span> <span class="toc-text">Text 정보 전송하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binary-정보-전송하기"><span class="toc-number">1.1.2.</span> <span class="toc-text">Binary 정보 전송하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#여러-개의-컨텐츠를-한-번에-보내기"><span class="toc-number">1.1.3.</span> <span class="toc-text">여러 개의 컨텐츠를 한 번에 보내기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#다른-app으로부터-간단한-데이터를-수신하기"><span class="toc-number">1.2.</span> <span class="toc-text">다른 app으로부터 간단한 데이터를 수신하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Manifest-업데이트하기"><span class="toc-number">1.2.1.</span> <span class="toc-text">Manifest 업데이트하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#수신한-컨텐츠를-다루기"><span class="toc-number">1.2.2.</span> <span class="toc-text">수신한 컨텐츠를 다루기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#간단한-공유-action을-추가해보기"><span class="toc-number">1.3.</span> <span class="toc-text">간단한 공유 action을 추가해보기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#메뉴-선언-업데이트하기"><span class="toc-number">1.3.1.</span> <span class="toc-text">메뉴 선언 업데이트하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Share-intent-설정하기"><span class="toc-number">1.3.2.</span> <span class="toc-text">Share intent 설정하기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#출처"><span class="toc-number">1.4.</span> <span class="toc-text">출처</span></a></li></ol></li></ol>
+                
+            </div>
+            <blockquote><p>Android developer site study</p>
+<ul>
+<li><b>Building Apps with Content Sharing</b><ul>
+<li><b>Sharing Simple Data</b></li>
+<li>Sharing Files</li>
+<li>Sharing Files with NFC</li>
+</ul>
+</li>
+</ul>
+<footer><strong>https://developer.android.com/training/index.html</strong></footer></blockquote>
+<h1 id="간단한-Data-공유하기"><a href="#간단한-Data-공유하기" class="headerlink" title="간단한 Data 공유하기"></a>간단한 Data 공유하기</h1><p>Android app의 중요한 기능 중 하나는 다른 app과 통신할 수 있다는 것이다.</p>
+<h2 id="간단한-data를-다른-app으로-전송하기"><a href="#간단한-data를-다른-app으로-전송하기" class="headerlink" title="간단한 data를 다른 app으로 전송하기"></a>간단한 data를 다른 app으로 전송하기</h2><p>Intent 생성 시 원하는 action을 명확히 해야 한다. Android는 몇 가지 action에 대해 정의하고 있다. <code>ACTION_SEND</code>는 하나의 activity에서 다른 activity로 data를 보낼 때 사용된다. process 경계를 넘어갈 수도 있다.</p>
+<p>Data를 다른 activity로 보내기 위해서는 <code>data</code>와 <code>type</code>을 지정하는 것이 전부이다. 그러면 시스템은 수신이 가능한 적당한 activity를 찾아 사용자에게 보여준다(여러가지 선택이 가능하다면). 아니면 바로 해당 activity를 시작한다(하나의 선택만 가능하다면).</p>
+<p>이와 비슷하게, 개발자는 activity에서 사용 가능한 <code>data</code>와 <code>type</code>에 대해 manifest에 기술하여 다른 app들에게 알릴 수 있다.</p>
+<p>Intetnt를 사용하여 app 사이에 data를 주고받는 것은 가장 일반적인 공유 방법이다. Intent는 쉽고 빠르게 정보를 주고 받을 수 있게 해준다.</p>
+<h3 id="Text-정보-전송하기"><a href="#Text-정보-전송하기" class="headerlink" title="Text 정보 전송하기"></a>Text 정보 전송하기</h3><p>가장 간단하고 일반적인 사용법은 <code>ACTION_SEND</code> action을 사용하여 text를 다른 activity로 전송하는 것이다.</p>
+<p>예를 들어, 브라우저는 현재 보고있는 페이지의 URL 정보를 다른 app과 공유할 수 있다. 이는 글이나 웹사이트를 다른 사람과 공유하고 싶을 때 편하게 사용할 수 있는 방법이다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent sendIntent = <span class="keyword">new</span> Intent();</div><div class="line">sendIntent.setAction(Intent.ACTION_SEND);</div><div class="line">sendIntent.putExtra(Intent.EXTRA_TEXT, <span class="string">"This is my text to send."</span>);</div><div class="line">sendIntent.setType(<span class="string">"text/plain"</span>);</div><div class="line">startActivity(sendIntent);</div></pre></td></tr></table></figure>
+<p><code>ACTION_SEND</code>와 text/plane type에 맞는 filter가 존재한다면 Android 시스템은 해당 app을 구동시킬 것이다. 여러 개의 app을 발견한다면 시스템은 선택상자 (“chooser”)를 사용자에게 보여주고 선택하게 할 것이다.</p>
+<p>하지만, <code>Intent.createChooser()</code>를 호출할 때 intent를 전달할 경우 항상 chooser을 보여주게 된다. 이 방법에는 몇 가지 장점이 있다.</p>
+<ul>
+<li>사용자가 해당 intent에 대해 default action을 지정해둔 경우에도 chooser를 보여준다.</li>
+<li>알맞은 app이 없을 때에는 Android는 시스템 메시지를 보여준다.</li>
+<li>Chooser dialog의 Title을 정할 수 있다.</li>
+</ul>
+<p>이를 반영한 코드는 아래와 같다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent sendIntent = <span class="keyword">new</span> Intent();</div><div class="line">sendIntent.setAction(Intent.ACTION_SEND);</div><div class="line">sendIntent.putExtra(Intent.EXTRA_TEXT, <span class="string">"This is my text to send"</span>);</div><div class="line">sendIntent.setTYpe(<span class="string">"text/plane"</span>);</div><div class="line">startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));</div></pre></td></tr></table></figure>
+<p>실행 결과는 아래 그림과 같다.</p>
+<img src="https://developer.android.com/images/training/sharing/share-text-screenshot.png">
+<p>선택적으로, 개발자는 몇 가지 기본 EXTRA들을 세팅할 수 있다: <code>EXTRA_EMAIL</code>, <code>EXTRA_CC</code>, <code>EXTRA_BCC</code>, <code>EXTRA_SUBJECT</code>. 만약, 수신하는 app이 이 EXTRA들을 지원하지 않는다면 간단히 무시된다.</p>
+<blockquote><p>Gmail 등의 몇몇 e-mail app에서는 <code>EXTRA_EMAIL</code>, <code>EXTRA_CC</code>등의 EXTRA를 사용할 때 String[] 을 기대하므로 이러한 EXTRA를 intent에 추가할 때에는 putExtra(String, String[])을 사용하도록 하라.</p>
+</blockquote>
+<h3 id="Binary-정보-전송하기"><a href="#Binary-정보-전송하기" class="headerlink" title="Binary 정보 전송하기"></a>Binary 정보 전송하기</h3><p>Binary 데이터는 적당한 MIME type을 설정하여 <code>ACTION_SEND</code>를 사용하고 <code>EXTRA_STREAM</code> 내에 적절한 URI를 지정하여 공유할 수 있다.</p>
+<p>일반적으로 image를 공유할 때 사용되지만 어떤 형태의 binary 데이터도 공유할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Intent shareIntent = <span class="keyword">new</span> Intent();</div><div class="line">shareIntent.setAction(Intent.ACTION_SEND);</div><div class="line">shareIntent.putExtra(Intent.EXTRA_STREAM, uriToImage);</div><div class="line">shareIntent.setType(<span class="string">"image/jpeg"</span>);</div><div class="line">startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.send_to)));</div></pre></td></tr></table></figure>
+<p>아래 사항들에 대해 주의하라.</p>
+<ul>
+<li>MIME type으로 “<em>/</em>“을 사용할 수 있지만 이는 generic data stream을 처리할 수 있는 activity만 이를 수신할 수 있다.</li>
+<li>수신하는 app은 Uri가 가리키는 data에 접근할 수 있는 권한을 필요로 한다. 따라서 아래와 같은 방식을 추천한다.<ul>
+<li>Data를 <code>ContentProvider</code>에 저장한 후 다른 app이 내 app의 provider에 저장할 수 있는 permission이 있는지 확인한다. 추천하는 방법은 <code>per-URI permissions</code>를 사용하여 접근을 준비해두는 것이다. 이는 intent를 수신하는 app에게 임시로 permission을 부여한다. 쉬운 방법으로는 <code>FileProvider</code> helper class를 사용하여 <code>ContentProvider</code>를 생성하는 것이다.</li>
+<li>시스템의 <code>MediaStore</code>를 사용하라. <code>MEdiaStore</code>는 비디오, 오디오, 이미지 MIME type에 최적화 되어있다. 하지만 Android 3.0 (API level 11)부터 non-media type들도 저장할 수 있게 되었다(자세한 것은 <a href="https://developer.android.com/reference/android/provider/MediaStore.Files.html" target="_blank" rel="external">MediaStore.Files</a>를 참조하라.). 공유에 적합한 content:// 스타일의 Uri 을 <code>onScanCompleted()</code>에 통과시킨 후 <code>scanFile()</code>을 사용하여 파일들을 <code>MediaStore</code>에 저장할 수 있다. 한 번 시스템 <code>MediaStore</code>에 추가한 컨텐츠는 기기의 모든 app들이 접근할 수 있다는 사실을 반드시 기억하라.</li>
+</ul>
+</li>
+</ul>
+<h3 id="여러-개의-컨텐츠를-한-번에-보내기"><a href="#여러-개의-컨텐츠를-한-번에-보내기" class="headerlink" title="여러 개의 컨텐츠를 한 번에 보내기"></a>여러 개의 컨텐츠를 한 번에 보내기</h3><p>여러 개의 컨텐츠를 한 번에 공유하기 위해서는 <code>ACTION_SEND_MULTIPLE</code> action에 URI의 목록을 넣어서 보내면 된다.</p>
+<p>MIME type은 공유하고자 하는 컨텐츠들에 따라 넣어준다.</p>
+<p>예를 들어, 3개의 JPEG 이미지들은 “image/jpeg”로 한다. 이미지들을 섞어서 보낸다면 “iamge/*”로 보낸다.</p>
+<p>만약 공유하고자 하는 type들이 광범위하게 다양할 때에는 “<em>/</em>“를 사용한다.</p>
+<p>시작할 때 기술했던 것처럼 해당 데이터를 수신하는 것은 수신 app의 역량에 달려있다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">ArrayList&lt;Uri&gt; imageUris = <span class="keyword">new</span> ArrayList&lt;Uri&gt;();</div><div class="line">imageUris.add(imageUri1); <span class="comment">// iamge URI 추가</span></div><div class="line">imageUris.add(imageUri2);</div><div class="line"></div><div class="line">Intent shareIntent = <span class="keyword">new</span> Intent();</div><div class="line">shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);</div><div class="line">shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, imageUris);</div><div class="line">shareIntent.setType(<span class="string">"image/*"</span>);</div><div class="line">startActivity(Intent.createChooser(shareIntent, <span class="string">"Share images to."</span>));</div></pre></td></tr></table></figure>
+<h2 id="다른-app으로부터-간단한-데이터를-수신하기"><a href="#다른-app으로부터-간단한-데이터를-수신하기" class="headerlink" title="다른 app으로부터 간단한 데이터를 수신하기"></a>다른 app으로부터 간단한 데이터를 수신하기</h2><h3 id="Manifest-업데이트하기"><a href="#Manifest-업데이트하기" class="headerlink" title="Manifest 업데이트하기"></a>Manifest 업데이트하기</h3><p>Intent filter를 통해 이 app 컴포넌트가 어떤 intent에 접근하길 원하는지 시스템에 알려줄 수 있다.</p>
+<p>Intent를 수신하기 위해 <code>&lt;intent-filter&gt;</code> 를 manifest에 정의해야 한다.</p>
+<p>만약 app이 text, 하나의 image 또는 여러 개의 image들을 수신하길 원한다면 아래와 같이 작성하면 된다.</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;activity android:name=".ui.MyActivity"&gt;</div><div class="line">    &lt;intent-filter&gt;</div><div class="line">        &lt;action android:name="android.intent.action.SEND" /&gt;</div><div class="line">        &lt;category android:name="android.intent.category.DEFAULT" /&gt;</div><div class="line">        &lt;data android:mimeType="image/*" /&gt;</div><div class="line">    &lt;/intent-filter&gt;</div><div class="line">    &lt;intent-filter&gt;</div><div class="line">        &lt;action android:name="android.intent.action.SEND" /&gt;</div><div class="line">        &lt;category android:name="android.intent.category.DEFAULT" /&gt;</div><div class="line">        &lt;data android.mimeType="text/plain" /&gt;</div><div class="line">    &lt;/intent-filter&gt;</div><div class="line">    &lt;intent-filter&gt;</div><div class="line">        &lt;action android:name="android.intent.action.SEND_MULTIPLE" /&gt;</div><div class="line">        &lt;category android:name="android.intent.category.DEFAULT" /&gt;</div><div class="line">        &lt;data android.mimeType="image/*" /&gt;</div><div class="line">    &lt;/intent-filter&gt;</div><div class="line">&lt;/activity&gt;</div></pre></td></tr></table></figure>
+<p>더 많은 정보는 <a href="https://developer.android.com/guide/components/intents-filters.html#ifs" target="_blank" rel="external">Intents and Intent Filters</a> 에서 확인할 수 있다.</p>
+<p>다른 app이 이런 정보들을 담은 intent를 생성하고 <code>startActivity()</code>를 통해 공유할 때 내 app이 intent chooser의 목록에 보이게 될 것이다.</p>
+<p>만약 사용자가 내 app을 선택한다면 그에 해당하는 activity (여기서는 .ui.MyActivity)가 시작될 것이다.</p>
+<p>이 때부터 전달된 정보를 통해 app 내에서 가공하여 사용할 수 있다.</p>
+<h3 id="수신한-컨텐츠를-다루기"><a href="#수신한-컨텐츠를-다루기" class="headerlink" title="수신한 컨텐츠를 다루기"></a>수신한 컨텐츠를 다루기</h3><p>Intent를 통해 전달된 컨텐츠를 다루기 위해 <code>getIntent()</code>를 호출하여 Intent 객체를 얻어올 수 있다.</p>
+<p>객체를 한 번 갖게 되면 컨텐츠의 내용을 살펴본 후 다음에 무엇을 할지 정하게 된다.</p>
+<p>만약 이 activity가 launcher 등의 시스템의 다른 부분으로부터 시작이 가능한 것이라면 intent가 수신되었을 때 의도를 파악하는 것이 중요하다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">  ...</div><div class="line">  <span class="comment">// intent, action, MIME type을 얻어온다</span></div><div class="line">  Intent intent = getIntent();</div><div class="line">  String action = intent.getAction();</div><div class="line">  String type = intent.getType();</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (Intent.ACTION_SEND.equals(action) &amp;&amp; type != <span class="keyword">null</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (<span class="string">"text/plain"</span>.equals(type)) &#123;</div><div class="line">          handleSendText(intent); <span class="comment">// 수신한 text 다루기</span></div><div class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (type.startsWith(<span class="string">"image/"</span>)) &#123;</div><div class="line">        handleSendImage(intent); <span class="comment">// 수신한 이미지 처리</span></div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Intent.ACTION_SEND_MULTIPLE.equals(action) &amp;&amp; type != <span class="keyword">null</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (type.startsWith(<span class="string">"image/"</span>)) &#123;</div><div class="line">        handleSendMultipleImages(intent); <span class="comment">// 수신한 여러 개의 이미지 처리</span></div><div class="line">      &#125;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="comment">// 다른 intent를 처리 (ex. home screen으로부터 시작되었을 때 등)</span></div><div class="line">  &#125;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">handleSendText</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">    String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);</div><div class="line">    <span class="keyword">if</span> (sharedTExt != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">// 수신한 text를 사용하여 UI 업데이트</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">handleSendImage</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">    Uri imageUri = (Uri) intent.getParcelableExtra(Intent.EXTRA_STREAM);</div><div class="line">    <span class="keyword">if</span> (imageUri != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">// 수신한 image를 사용하여 UI 업데이트</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">handleSendMultipleImages</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">    ArrayList&lt;Uri&gt; imageUris = intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);</div><div class="line">    <span class="keyword">if</span> (imageUris != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">// 수신한 image들을 사용하여 UI 업데이트</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote><p>수신한 데이터를 처리할 때는 특별히 더 주의를 기해야 한다. 왜냐하면 어떤 app에서 어떤 데이터를 보낸 것인지 알 수 없기 때문이다. 예를 들어, 틀린 MIME type이 세팅되거나 엄청나게 큰 image 파일이 전송될 수도 있다.</p>
+<p>마찬가지로, binary 데이터를 처리할 때에도 thread를 분리하여 main(UI) thread가 아닌 곳에서 처리하도록 하자.</p>
+</blockquote>
+<h2 id="간단한-공유-action을-추가해보기"><a href="#간단한-공유-action을-추가해보기" class="headerlink" title="간단한 공유 action을 추가해보기"></a>간단한 공유 action을 추가해보기</h2><p>효과적이고 사용자 친화적인 action을 처리 위해 <code>ActionProvider</code>와 함께 <code>ActionBar</code>를 사용한다면 좀 더 쉬운 구현이 가능하다.</p>
+<p>Action bar에 한 번 메뉴 아이템이 추가되고 난 후 <code>ActionProvider</code>는 해당 아이템의 외견과 행동 모두를 제어한다. <code>ShareActionProvider</code>의 경우 개발자는 share intent를 준비하고 그것이 나머지를 수행한다.</p>
+<blockquote><p><code>ShareActionProvider</code>는 API level 14 이상에서 사용 가능하다.</p>
+</blockquote>
+<h3 id="메뉴-선언-업데이트하기"><a href="#메뉴-선언-업데이트하기" class="headerlink" title="메뉴 선언 업데이트하기"></a>메뉴 선언 업데이트하기</h3><p><code>ShareActionProvider</code>와 함께 시작하기 위해 메뉴 리소스 파일 내의 <code>&lt;item&gt;</code>에 <code>android:actionProviderClass</code>를 정의해야 한다.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/menu_item_share"</span></div><div class="line">            <span class="attr">android:showAsAction</span>=<span class="string">"ifRoom"</span></div><div class="line">            <span class="attr">android:title</span>=<span class="string">"Share"</span></div><div class="line">            <span class="attr">android:action:actionProviderClass</span>=</div><div class="line">                <span class="string">"android.widget.ShareActionProvider"</span> /&gt;</div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>이 방법은 아이템의 외견 및 기능에 대한 권한을 <code>ShareActionProvider</code>로 이관한다. 하지만, 개발자는 공유하고 싶은 내용을 provider에 전달해줘야 한다.</p>
+<img src="https://developer.android.com/images/ui/actionbar-shareaction.png" title="title Gallery app 내의 ShareActionProvider">
+<h3 id="Share-intent-설정하기"><a href="#Share-intent-설정하기" class="headerlink" title="Share intent 설정하기"></a>Share intent 설정하기</h3><p><code>ShareActionProvider</code>가 기능을 수행하기 위해 개발자는 반드시 share intent를 준비해두어야 한다.</p>
+<p>이 Share intent는 앞서 “간단한-data를-다른-app으로-전송하기”에서 본 것과 같이 <code>ACTION_SEND</code> action과 추가 data인 <code>EXTRA_TEXT</code>, <code>EXTRA_STREAM</code> 등을 포함하여 작성되어야 한다.</p>
+<p>Share intent 할당을 위해 메뉴 리소스를 Activity나 Fragment에 inflating하는 동안 올바른 MenuItem을 찾아야 한다.</p>
+<p>그 후, <code>MenuItem.getActionProvider()</code>를 호출하여 <code>ShareActionProvider</code>의 인스턴스를 찾아야 한다.</p>
+<p><code>setShareIntent()</code>를 사용하여 action item과 연관된 share intent를 업데이트 한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">Private ShareActionProvider mShareActionProvider;</div><div class="line">...</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreateOptionsMenu</span><span class="params">(Menu menu)</span> </span>&#123;</div><div class="line">    <span class="comment">// 메뉴 리소스 파일을 inflat한다.</span></div><div class="line">    getMenuInflater().inflate(R.menu.share_menu, menu);</div><div class="line"></div><div class="line">    <span class="comment">// MenuItem을 ShareActionProvider와 함께 위치시킨다.</span></div><div class="line">    MenuItem item = menu.findItem(R.id.menu_item_share);</div><div class="line"></div><div class="line">    <span class="comment">// ShareActionProvider를 fetch하고 저장한다.</span></div><div class="line">    mShareActionProvider = (ShareActionProvider) item.getActionProvider();</div><div class="line"></div><div class="line">    <span class="comment">// 디스플레이 메뉴로 true를 리턴한다.</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// share intent의 update를 호출한다.</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setShareIntent</span><span class="params">(Intent shareIntent)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (mShareActionProvider != <span class="keyword">null</span>) &#123;</div><div class="line">        mShareActionProvider.setShareIntent(shareIntent);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Share intent는 메뉴를 생성할 때 한 번만 설정해두면 된다. 또는 UI 변경이 발생할 때 업데이트 할 수도 있다.</p>
+<p>예를 들어, Gallery app에서 사진을 전체 화면으로 보면서 화면을 전환할 때, sharing intent가 변경된다.</p>
+<h2 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h2><ul>
+<li><a href="https://developer.android.com/training/sharing/shareaction.html" target="_blank" rel="external">https://developer.android.com/training/sharing/shareaction.html</a></li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://lazyrodi.github.io/2017/10/14/2017-10-14-android-building_apps_with_content_sharing_1/" data-id="cj9c91cto00707fw615edn4vk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://twitter.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lazyrodi" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/10/22/2017-10-22-web-snippets/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            [HTML] Snippet
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/10/06/2017-10-06-android-getting_started_6/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Android] Getting Started (6)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Security/">Security</a></p>
+                            <p class="item-title"><a href="/2017/11/04/2017-11-04-rsa_encryption/" class="title">[Security] RSA Encryption</a></p>
+                            <p class="item-date"><time datetime="2017-11-04T03:00:00.000Z" itemprop="datePublished">2017-11-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Web/">Web</a></p>
+                            <p class="item-title"><a href="/2017/10/22/2017-10-22-web-snippets/" class="title">[HTML] Snippet</a></p>
+                            <p class="item-date"><time datetime="2017-10-22T08:00:00.000Z" itemprop="datePublished">2017-10-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/14/2017-10-14-android-building_apps_with_content_sharing_1/" class="title">[Android] Building Apps with Content Sharing (1)</a></p>
+                            <p class="item-date"><time datetime="2017-10-14T00:00:00.000Z" itemprop="datePublished">2017-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/06/2017-10-06-android-getting_started_6/" class="title">[Android] Getting Started (6)</a></p>
+                            <p class="item-date"><time datetime="2017-10-06T02:00:00.000Z" itemprop="datePublished">2017-10-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/android/">android</a></p>
+                            <p class="item-title"><a href="/2017/10/05/2017-10-05-android-getting_started_5/" class="title">[Android] Getting Started (5)</a></p>
+                            <p class="item-date"><time datetime="2017-10-05T02:00:00.000Z" itemprop="datePublished">2017-10-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/STS/" style="font-size: 10px;">STS</a> <a href="/tags/algorithm/" style="font-size: 18.75px;">algorithm</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/bash/" style="font-size: 11.25px;">bash</a> <a href="/tags/big-o/" style="font-size: 10px;">big o</a> <a href="/tags/binarysearchtree/" style="font-size: 10px;">binarysearchtree</a> <a href="/tags/binarytree/" style="font-size: 10px;">binarytree</a> <a href="/tags/chown/" style="font-size: 10px;">chown</a> <a href="/tags/cipher/" style="font-size: 10px;">cipher</a> <a href="/tags/codility/" style="font-size: 10px;">codility</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/command/" style="font-size: 10px;">command</a> <a href="/tags/complexity/" style="font-size: 10px;">complexity</a> <a href="/tags/computer-memory/" style="font-size: 10px;">computer memory</a> <a href="/tags/conference/" style="font-size: 10px;">conference</a> <a href="/tags/converter/" style="font-size: 10px;">converter</a> <a href="/tags/crud/" style="font-size: 12.5px;">crud</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/database/" style="font-size: 11.25px;">database</a> <a href="/tags/datastructure/" style="font-size: 15px;">datastructure</a> <a href="/tags/decryption/" style="font-size: 10px;">decryption</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/df/" style="font-size: 10px;">df</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/docs/" style="font-size: 15px;">docs</a> <a href="/tags/docthread/" style="font-size: 12.5px;">docthread</a> <a href="/tags/eclipse/" style="font-size: 11.25px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/encryption/" style="font-size: 10px;">encryption</a> <a href="/tags/famous-quotes/" style="font-size: 10px;">famous quotes</a> <a href="/tags/fileio/" style="font-size: 10px;">fileio</a> <a href="/tags/fire/" style="font-size: 10px;">fire</a> <a href="/tags/footer/" style="font-size: 10px;">footer</a> <a href="/tags/gerrit/" style="font-size: 11.25px;">gerrit</a> <a href="/tags/git/" style="font-size: 16.25px;">git</a> <a href="/tags/gitweb/" style="font-size: 10px;">gitweb</a> <a href="/tags/graphic/" style="font-size: 10px;">graphic</a> <a href="/tags/header/" style="font-size: 10px;">header</a> <a href="/tags/hexo/" style="font-size: 11.25px;">hexo</a> <a href="/tags/hire/" style="font-size: 10px;">hire</a> <a href="/tags/hr/" style="font-size: 11.25px;">hr</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/ifconfig/" style="font-size: 10px;">ifconfig</a> <a href="/tags/image/" style="font-size: 11.25px;">image</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/interview/" style="font-size: 11.25px;">interview</a> <a href="/tags/java/" style="font-size: 16.25px;">java</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/korean/" style="font-size: 10px;">korean</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/linux/" style="font-size: 11.25px;">linux</a> <a href="/tags/mediarecorder/" style="font-size: 10px;">mediarecorder</a> <a href="/tags/mysql/" style="font-size: 11.25px;">mysql</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/osi7/" style="font-size: 10px;">osi7</a> <a href="/tags/parser/" style="font-size: 10px;">parser</a> <a href="/tags/pattern/" style="font-size: 10px;">pattern</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/queue/" style="font-size: 11.25px;">queue</a> <a href="/tags/quick-guide/" style="font-size: 10px;">quick guide</a> <a href="/tags/refactoring/" style="font-size: 10px;">refactoring</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/regular-expression/" style="font-size: 10px;">regular expression</a> <a href="/tags/rsa/" style="font-size: 10px;">rsa</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/ruby-on-rails/" style="font-size: 12.5px;">ruby on rails</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a> <a href="/tags/screen/" style="font-size: 10px;">screen</a> <a href="/tags/semantic-ui/" style="font-size: 10px;">semantic ui</a> <a href="/tags/setting/" style="font-size: 13.75px;">setting</a> <a href="/tags/settings/" style="font-size: 10px;">settings</a> <a href="/tags/singleton/" style="font-size: 10px;">singleton</a> <a href="/tags/sniffet/" style="font-size: 10px;">sniffet</a> <a href="/tags/sonarqube/" style="font-size: 10px;">sonarqube</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spring/" style="font-size: 17.5px;">spring</a> <a href="/tags/springboot/" style="font-size: 11.25px;">springboot</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/stringbuffer/" style="font-size: 10px;">stringbuffer</a> <a href="/tags/stringbuilder/" style="font-size: 10px;">stringbuilder</a> <a href="/tags/stringtokenizer/" style="font-size: 10px;">stringtokenizer</a> <a href="/tags/structure/" style="font-size: 10px;">structure</a> <a href="/tags/study/" style="font-size: 17.5px;">study</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tcp-ip/" style="font-size: 10px;">tcp/ip</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/tiles/" style="font-size: 10px;">tiles</a> <a href="/tags/translate/" style="font-size: 10px;">translate</a> <a href="/tags/tree/" style="font-size: 11.25px;">tree</a> <a href="/tags/troubleshooting/" style="font-size: 12.5px;">troubleshooting</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/ui/" style="font-size: 10px;">ui</a> <a href="/tags/ux/" style="font-size: 10px;">ux</a> <a href="/tags/vector/" style="font-size: 11.25px;">vector</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vuejs/" style="font-size: 10px;">vuejs</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows-10/" style="font-size: 11.25px;">windows 10</a> <a href="/tags/work/" style="font-size: 10px;">work</a> <a href="/tags/wysiwyg-editor/" style="font-size: 10px;">wysiwyg editor</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5237023707102425"
+     data-ad-slot="5100567191"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <div class="logo-wrap" style="float:left">
+                    <img src="/images/50x50_lazyrodi.jpg" id="copyright-img">
+                    <!-- <a href="/" class="logo"></a> -->
+                </div>
+                <div style="padding: 7px 0px 0px 60px;">
+                    <p>&copy; 2017 Lazy Rodriguez</p>
+                    <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'lazyrodi';
+    
+    
+    var disqus_url = 'http://lazyrodi.github.io/2017/10/14/2017-10-14-android-building_apps_with_content_sharing_1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
